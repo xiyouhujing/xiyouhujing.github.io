@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-03-12T06:56:28.635Z</updated>
+  <updated>2019-03-14T08:41:01.208Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,29 +17,28 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>test哈哈哈</title>
-    <link href="http://yoursite.com/2019/03/12/test_top/"/>
-    <id>http://yoursite.com/2019/03/12/test_top/</id>
-    <published>2019-03-12T04:55:39.141Z</published>
-    <updated>2019-03-12T06:56:28.635Z</updated>
+    <title>Java数据类型</title>
+    <link href="http://yoursite.com/2019/03/14/Java%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
+    <id>http://yoursite.com/2019/03/14/Java数据类型/</id>
+    <published>2019-03-14T03:19:54.177Z</published>
+    <updated>2019-03-14T08:41:01.208Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>]]></content>
+    <content type="html"><![CDATA[<hr><p>###数据类型划分<br>Java的数据类型可以分为<strong>基本数据类型</strong>和<strong>应用数据类型两类</strong>，原始数据类型也称为基本数据类型，包括最基本的boolean、byte、char、short、int、long、float、与double等类型；引用数据类型以一种特殊的方式指向变量的实体，类似于C/C++的指针，这类变量在声明时不会分配内存，必须另外开辟内存空间的操作，如字符串和数组均属于这种数据类型。Java的数据类型如下图所示：<br>$$<br>y = \left{ \begin{array}{cl}<br>              0, &amp; ET&lt;t&lt;LT\<br>              \alpha(ET-t), &amp; 0&lt;t&lt;ET\<br>              \beta(t-LT), &amp; LT&lt;t&lt;LLT\<br>              M, &amp; t&gt;LLT<br>              \end{array} \right.<br>$$</p><p>###基本数据类型</p><p>###数据类型转换</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+        &lt;hr&gt;
+&lt;p&gt;###数据类型划分&lt;br&gt;Java的数据类型可以分为&lt;strong&gt;基本数据类型&lt;/strong&gt;和&lt;strong&gt;应用数据类型两类&lt;/strong&gt;，原始数据类型也称为基本数据类型，包括最基本的boolean、byte、char、short、int、long、f
       
     
     </summary>
     
-      <category term="Hexo" scheme="http://yoursite.com/categories/Hexo/"/>
+      <category term="Java" scheme="http://yoursite.com/categories/Java/"/>
     
     
-      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
-    
-      <category term="NexT" scheme="http://yoursite.com/tags/NexT/"/>
+      <category term="java基础" scheme="http://yoursite.com/tags/java%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
