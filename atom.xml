@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-03-14T08:41:01.208Z</updated>
+  <updated>2019-03-14T09:05:05.769Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,16 +21,16 @@
     <link href="http://yoursite.com/2019/03/14/Java%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
     <id>http://yoursite.com/2019/03/14/Java数据类型/</id>
     <published>2019-03-14T03:19:54.177Z</published>
-    <updated>2019-03-14T08:41:01.208Z</updated>
+    <updated>2019-03-14T09:05:05.769Z</updated>
     
-    <content type="html"><![CDATA[<hr><p>###数据类型划分<br>Java的数据类型可以分为<strong>基本数据类型</strong>和<strong>应用数据类型两类</strong>，原始数据类型也称为基本数据类型，包括最基本的boolean、byte、char、short、int、long、float、与double等类型；引用数据类型以一种特殊的方式指向变量的实体，类似于C/C++的指针，这类变量在声明时不会分配内存，必须另外开辟内存空间的操作，如字符串和数组均属于这种数据类型。Java的数据类型如下图所示：<br>$$<br>y = \left{ \begin{array}{cl}<br>              0, &amp; ET&lt;t&lt;LT\<br>              \alpha(ET-t), &amp; 0&lt;t&lt;ET\<br>              \beta(t-LT), &amp; LT&lt;t&lt;LLT\<br>              M, &amp; t&gt;LLT<br>              \end{array} \right.<br>$$</p><p>###基本数据类型</p><p>###数据类型转换</p>]]></content>
+    <content type="html"><![CDATA[<hr><h3 id="数据类型划分"><a href="#数据类型划分" class="headerlink" title="数据类型划分"></a>数据类型划分</h3><p>Java的数据类型可以分为<strong>基本数据类型</strong>和<strong>应用数据类型两类</strong>，原始数据类型也称为基本数据类型，包括最基本的boolean、byte、char、short、int、long、float、与double等类型；引用数据类型以一种特殊的方式指向变量的实体，类似于C/C++的指针，这类变量在声明时不会分配内存，必须另外开辟内存空间的操作，如字符串和数组均属于这种数据类型。Java的数据类型如下图所示：<br>$$<br>f(n)<br>\begin{cases}<br>基本数据类型<br>\begin{cases}<br>数值型<br>\begin{cases}<br>整数类型（byte、short、int、long）\<br>浮点类型（float、double）<br>\end{cases}\<br>字符型(char)\<br>布尔型（boolean）<br>\end{cases}\<br>引用数据类型<br>\begin{cases}<br>类（class）<br>接口（interface）<br>数组<br>\end{cases}<br>\end{cases}<br>$$</p><h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h3><h3 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h3>]]></content>
     
     <summary type="html">
     
       
       
         &lt;hr&gt;
-&lt;p&gt;###数据类型划分&lt;br&gt;Java的数据类型可以分为&lt;strong&gt;基本数据类型&lt;/strong&gt;和&lt;strong&gt;应用数据类型两类&lt;/strong&gt;，原始数据类型也称为基本数据类型，包括最基本的boolean、byte、char、short、int、long、f
+&lt;h3 id=&quot;数据类型划分&quot;&gt;&lt;a href=&quot;#数据类型划分&quot; class=&quot;headerlink&quot; title=&quot;数据类型划分&quot;&gt;&lt;/a&gt;数据类型划分&lt;/h3&gt;&lt;p&gt;Java的数据类型可以分为&lt;strong&gt;基本数据类型&lt;/strong&gt;和&lt;strong&gt;应用数据
       
     
     </summary>
