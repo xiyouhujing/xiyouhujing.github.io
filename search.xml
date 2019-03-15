@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title><![CDATA[Java数据类型]]></title>
-    <url>%2F2019%2F03%2F14%2FJava%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%2F</url>
+    <url>%2F2019%2F03%2F15%2FJava%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%2F</url>
     <content type="text"><![CDATA[数据类型划分Java的数据类型可以分为基本数据类型和应用数据类型两类，原始数据类型也称为基本数据类型，包括最基本的boolean、byte、char、short、int、long、float、与double等类型；引用数据类型以一种特殊的方式指向变量的实体，类似于C/C++的指针，这类变量在声明时不会分配内存，必须另外开辟内存空间的操作，如字符串和数组均属于这种数据类型。Java的数据类型如下图所示： f(n) \begin{cases} 基本数据类型 \begin{cases} 数值型 \begin{cases} 整数类型（byte、short、int、long）\\ 浮点类型（float、double） \end{cases}\\ 字符型(char)\\ 布尔型（boolean） \end{cases}\\ 引用数据类型 \begin{cases} 类（class）\\ 接口（interface）\\ 数组 \end{cases} \end{cases}基本数据类型Java中基本的数据类型如下表所示： 序号 数据类型 大小/位 1 long（长整数） 64 2 int（整数） 32 3 short（短整数） 16 4 byte（位） 8 5 char（字符） 16 6 float（单精度） 32 7 double（双精度） 64 8 Boolean（布尔） — 整数类型整数类型可以分为long、int、short、及byte 4种，其中long为64位，即8个字节（bytes），int为32位，即4个字节，short为16位，也就是2个字节，byte为8位，也就是1个字节。例如，sum是一个短整型变量，在程序中作出如下声明： 1short num; //声明sum为短整型 经过声明之后，Java会在可使用的内存空间中寻找一个占有两个字节的块供sum变量使用。在Java中对于一个整型常量，其默认类型为int型，所以一般在声明常量时不要超过int数据类型的范围。 数据溢出当整数的数据大小超过其类型可以表示的范围，而程序中又没有做数值范围的检查时，一个整型变量所输出的值将会发生紊乱，且不是预期的运行结果。例如下面的程序中声明了一个整型的数，并把它赋值为整型所可以表示范围的最大值，然后将它分别加1和加2： 12345678class Demo1&#123; public static void main(String[] args)&#123; int max = Integer.MAX_VALUE; // 得到整型的最大值 System.out.println("整型的最大值：" + max); // 输出最大值 System.out.println("整型最大值 + 1：" + (max + 1)); // 最大值加1 System.out.println("整型最大值 + 2：" + (max + 2)); // 最大值加2 &#125;&#125; 程序的运行结果如下图： int型的范围为-2147483648~2147483647，从输出结果可以看出，当最大值2147483647加上1之后，结果变成了最小值；当最大值加上2时，结果变成了次小值，这就是数据类型的溢出。参考下图了解数据类型的溢出问题： 浮点数类型数据类型转换]]></content>
       <categories>
         <category>Java</category>
