@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://xiyouhujing.github.io/"/>
   <updated>2019-03-15T08:59:26.096Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://xiyouhujing.github.io/</id>
   
   <author>
     <name>xiyou</name>
@@ -18,12 +18,12 @@
   
   <entry>
     <title>Java数据类型</title>
-    <link href="http://yoursite.com/2019/03/15/Java%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
-    <id>http://yoursite.com/2019/03/15/Java数据类型/</id>
+    <link href="http://xiyouhujing.github.io/2019/03/15/Java%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
+    <id>http://xiyouhujing.github.io/2019/03/15/Java数据类型/</id>
     <published>2019-03-15T08:58:43.179Z</published>
     <updated>2019-03-15T08:59:26.096Z</updated>
     
-    <content type="html"><![CDATA[<hr><h3 id="数据类型划分"><a href="#数据类型划分" class="headerlink" title="数据类型划分"></a>数据类型划分</h3><p>Java的数据类型可以分为<strong>基本数据类型</strong>和<strong>应用数据类型两类</strong>，原始数据类型也称为基本数据类型，包括最基本的boolean、byte、char、short、int、long、float、与double等类型；引用数据类型以一种特殊的方式指向变量的实体，类似于C/C++的指针，这类变量在声明时不会分配内存，必须另外开辟内存空间的操作，如字符串和数组均属于这种数据类型。Java的数据类型如下图所示：</p><script type="math/tex; mode=display">f(n)\begin{cases}基本数据类型\begin{cases}数值型\begin{cases}整数类型（byte、short、int、long）\\浮点类型（float、double）\end{cases}\\字符型(char)\\布尔型（boolean）\end{cases}\\引用数据类型\begin{cases}类（class）\\接口（interface）\\数组\end{cases}\end{cases}</script><h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h3><p>Java中基本的数据类型如下表所示：</p><div class="table-container"><table><thead><tr><th style="text-align:center">序号</th><th style="text-align:center">数据类型</th><th style="text-align:center">大小/位</th></tr></thead><tbody><tr><td style="text-align:center">1</td><td style="text-align:center">long（长整数）</td><td style="text-align:center">64</td></tr><tr><td style="text-align:center">2</td><td style="text-align:center">int（整数）</td><td style="text-align:center">32</td></tr><tr><td style="text-align:center">3</td><td style="text-align:center">short（短整数）</td><td style="text-align:center">16</td></tr><tr><td style="text-align:center">4</td><td style="text-align:center">byte（位）</td><td style="text-align:center">8</td></tr><tr><td style="text-align:center">5</td><td style="text-align:center">char（字符）</td><td style="text-align:center">16</td></tr><tr><td style="text-align:center">6</td><td style="text-align:center">float（单精度）</td><td style="text-align:center">32</td></tr><tr><td style="text-align:center">7</td><td style="text-align:center">double（双精度）</td><td style="text-align:center">64</td></tr><tr><td style="text-align:center">8</td><td style="text-align:center">Boolean（布尔）</td><td style="text-align:center">—</td></tr></tbody></table></div><h4 id="整数类型"><a href="#整数类型" class="headerlink" title="整数类型"></a>整数类型</h4><p>整数类型可以分为<strong>long</strong>、<strong>int</strong>、<strong>short</strong>、及<strong>byte</strong> 4种，其中long为64位，即8个字节（bytes），int为32位，即4个字节，short为16位，也就是2个字节，byte为8位，也就是1个字节。例如，sum是一个短整型变量，在程序中作出如下声明：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">short</span> num;   <span class="comment">//声明sum为短整型</span></span><br></pre></td></tr></table></figure><p>经过声明之后，Java会在可使用的内存空间中寻找一个占有两个字节的块供sum变量使用。在Java中对于一个整型常量，其默认类型为int型，所以一般在声明常量时不要超过int数据类型的范围。</p><h4 id="数据溢出"><a href="#数据溢出" class="headerlink" title="数据溢出"></a>数据溢出</h4><p>当整数的数据大小超过其类型可以表示的范围，而程序中又没有做数值范围的检查时，一个整型变量所输出的值将会发生紊乱，且不是预期的运行结果。例如下面的程序中声明了一个整型的数，并把它赋值为整型所可以表示范围的最大值，然后将它分别加1和加2：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Demo1</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> max = Integer.MAX_VALUE;                         <span class="comment">// 得到整型的最大值</span></span><br><span class="line">        System.out.println(<span class="string">"整型的最大值："</span> + max);           <span class="comment">// 输出最大值</span></span><br><span class="line">        System.out.println(<span class="string">"整型最大值 + 1："</span> + (max + <span class="number">1</span>));   <span class="comment">// 最大值加1</span></span><br><span class="line">        System.out.println(<span class="string">"整型最大值 + 2："</span> + (max + <span class="number">2</span>));   <span class="comment">// 最大值加2</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>程序的运行结果如下图：</p><p><img src="//yoursite.com/2019/03/15/Java数据类型/数据溢出的输出.png" alt="数据溢出的输出"></p><p>int型的范围为-2147483648~2147483647，从输出结果可以看出，当最大值2147483647加上1之后，结果变成了最小值；当最大值加上2时，结果变成了次小值，这就是<strong>数据类型的溢出</strong>。参考下图了解数据类型的溢出问题：</p><h4 id="浮点数类型"><a href="#浮点数类型" class="headerlink" title="浮点数类型"></a>浮点数类型</h4><h3 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h3>]]></content>
+    <content type="html"><![CDATA[<hr><h3 id="数据类型划分"><a href="#数据类型划分" class="headerlink" title="数据类型划分"></a>数据类型划分</h3><p>Java的数据类型可以分为<strong>基本数据类型</strong>和<strong>应用数据类型两类</strong>，原始数据类型也称为基本数据类型，包括最基本的boolean、byte、char、short、int、long、float、与double等类型；引用数据类型以一种特殊的方式指向变量的实体，类似于C/C++的指针，这类变量在声明时不会分配内存，必须另外开辟内存空间的操作，如字符串和数组均属于这种数据类型。Java的数据类型如下图所示：</p><script type="math/tex; mode=display">f(n)\begin{cases}基本数据类型\begin{cases}数值型\begin{cases}整数类型（byte、short、int、long）\\浮点类型（float、double）\end{cases}\\字符型(char)\\布尔型（boolean）\end{cases}\\引用数据类型\begin{cases}类（class）\\接口（interface）\\数组\end{cases}\end{cases}</script><h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h3><p>Java中基本的数据类型如下表所示：</p><div class="table-container"><table><thead><tr><th style="text-align:center">序号</th><th style="text-align:center">数据类型</th><th style="text-align:center">大小/位</th></tr></thead><tbody><tr><td style="text-align:center">1</td><td style="text-align:center">long（长整数）</td><td style="text-align:center">64</td></tr><tr><td style="text-align:center">2</td><td style="text-align:center">int（整数）</td><td style="text-align:center">32</td></tr><tr><td style="text-align:center">3</td><td style="text-align:center">short（短整数）</td><td style="text-align:center">16</td></tr><tr><td style="text-align:center">4</td><td style="text-align:center">byte（位）</td><td style="text-align:center">8</td></tr><tr><td style="text-align:center">5</td><td style="text-align:center">char（字符）</td><td style="text-align:center">16</td></tr><tr><td style="text-align:center">6</td><td style="text-align:center">float（单精度）</td><td style="text-align:center">32</td></tr><tr><td style="text-align:center">7</td><td style="text-align:center">double（双精度）</td><td style="text-align:center">64</td></tr><tr><td style="text-align:center">8</td><td style="text-align:center">Boolean（布尔）</td><td style="text-align:center">—</td></tr></tbody></table></div><h4 id="整数类型"><a href="#整数类型" class="headerlink" title="整数类型"></a>整数类型</h4><p>整数类型可以分为<strong>long</strong>、<strong>int</strong>、<strong>short</strong>、及<strong>byte</strong> 4种，其中long为64位，即8个字节（bytes），int为32位，即4个字节，short为16位，也就是2个字节，byte为8位，也就是1个字节。例如，sum是一个短整型变量，在程序中作出如下声明：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">short</span> num;   <span class="comment">//声明sum为短整型</span></span><br></pre></td></tr></table></figure><p>经过声明之后，Java会在可使用的内存空间中寻找一个占有两个字节的块供sum变量使用。在Java中对于一个整型常量，其默认类型为int型，所以一般在声明常量时不要超过int数据类型的范围。</p><h4 id="数据溢出"><a href="#数据溢出" class="headerlink" title="数据溢出"></a>数据溢出</h4><p>当整数的数据大小超过其类型可以表示的范围，而程序中又没有做数值范围的检查时，一个整型变量所输出的值将会发生紊乱，且不是预期的运行结果。例如下面的程序中声明了一个整型的数，并把它赋值为整型所可以表示范围的最大值，然后将它分别加1和加2：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Demo1</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> max = Integer.MAX_VALUE;                         <span class="comment">// 得到整型的最大值</span></span><br><span class="line">        System.out.println(<span class="string">"整型的最大值："</span> + max);           <span class="comment">// 输出最大值</span></span><br><span class="line">        System.out.println(<span class="string">"整型最大值 + 1："</span> + (max + <span class="number">1</span>));   <span class="comment">// 最大值加1</span></span><br><span class="line">        System.out.println(<span class="string">"整型最大值 + 2："</span> + (max + <span class="number">2</span>));   <span class="comment">// 最大值加2</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>程序的运行结果如下图：</p><p><img src="//xiyouhujing.github.io/2019/03/15/Java数据类型/数据溢出的输出.png" alt="数据溢出的输出"></p><p>int型的范围为-2147483648~2147483647，从输出结果可以看出，当最大值2147483647加上1之后，结果变成了最小值；当最大值加上2时，结果变成了次小值，这就是<strong>数据类型的溢出</strong>。参考下图了解数据类型的溢出问题：</p><h4 id="浮点数类型"><a href="#浮点数类型" class="headerlink" title="浮点数类型"></a>浮点数类型</h4><h3 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h3>]]></content>
     
     <summary type="html">
     
@@ -35,17 +35,17 @@
     
     </summary>
     
-      <category term="Java" scheme="http://yoursite.com/categories/Java/"/>
+      <category term="Java" scheme="http://xiyouhujing.github.io/categories/Java/"/>
     
     
-      <category term="java基础" scheme="http://yoursite.com/tags/java%E5%9F%BA%E7%A1%80/"/>
+      <category term="java基础" scheme="http://xiyouhujing.github.io/tags/java%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2018/07/14/hello-world/"/>
-    <id>http://yoursite.com/2018/07/14/hello-world/</id>
+    <link href="http://xiyouhujing.github.io/2018/07/14/hello-world/"/>
+    <id>http://xiyouhujing.github.io/2018/07/14/hello-world/</id>
     <published>2018-07-14T06:59:40.728Z</published>
     <updated>2019-03-12T04:58:28.745Z</updated>
     
@@ -60,10 +60,10 @@
     
     </summary>
     
-      <category term="Hexo" scheme="http://yoursite.com/categories/Hexo/"/>
+      <category term="Hexo" scheme="http://xiyouhujing.github.io/categories/Hexo/"/>
     
     
-      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://xiyouhujing.github.io/tags/Hexo/"/>
     
   </entry>
   
