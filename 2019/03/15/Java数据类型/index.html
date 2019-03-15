@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="xiyou">
 <meta property="og:description" content="数据类型划分Java的数据类型可以分为基本数据类型和应用数据类型两类，原始数据类型也称为基本数据类型，包括最基本的boolean、byte、char、short、int、long、float、与double等类型；引用数据类型以一种特殊的方式指向变量的实体，类似于C/C++的指针，这类变量在声明时不会分配内存，必须另外开辟内存空间的操作，如字符串和数组均属于这种数据类型。Java的数据类型如下图">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-15T11:16:15.474Z">
+<meta property="og:updated_time" content="2019-03-15T12:16:16.383Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java数据类型">
 <meta name="twitter:description" content="数据类型划分Java的数据类型可以分为基本数据类型和应用数据类型两类，原始数据类型也称为基本数据类型，包括最基本的boolean、byte、char、short、int、long、float、与double等类型；引用数据类型以一种特殊的方式指向变量的实体，类似于C/C++的指针，这类变量在声明时不会分配内存，必须另外开辟内存空间的操作，如字符串和数组均属于这种数据类型。Java的数据类型如下图">
@@ -422,7 +422,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.5k
+                  2.6k
                 </span>
               
 
@@ -438,7 +438,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5
+                  9
                 </span>
               
             </div>
@@ -537,7 +537,7 @@ f(n)
 <h4 id="整数类型"><a href="#整数类型" class="headerlink" title="整数类型"></a>整数类型</h4><p>整数类型可以分为<strong>long</strong>、<strong>int</strong>、<strong>short</strong>、及<strong>byte</strong> 4种，其中long为64位，即8个字节（bytes），int为32位，即4个字节，short为16位，也就是2个字节，byte为8位，也就是1个字节。例如，sum是一个短整型变量，在程序中作出如下声明：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">short</span> num;   <span class="comment">//声明sum为短整型</span></span><br></pre></td></tr></table></figure>
 <p>经过声明之后，Java会在可使用的内存空间中寻找一个占有两个字节的块供sum变量使用。在Java中对于一个整型常量，其默认类型为int型，所以一般在声明常量时不要超过int数据类型的范围。</p>
-<h4 id="数据溢出"><a href="#数据溢出" class="headerlink" title="数据溢出"></a>数据溢出</h4><p>当整数的数据大小超过其类型可以表示的范围，而程序中又没有做数值范围的检查时，一个整型变量所输出的值将会发生紊乱，且不是预期的运行结果。例如下面的程序中声明了一个整型的数，并把它赋值为整型所可以表示范围的最大值，然后将它分别加1和加2：</p>
+<h5 id="数据溢出"><a href="#数据溢出" class="headerlink" title="数据溢出"></a>数据溢出</h5><p>当整数的数据大小超过其类型可以表示的范围，而程序中又没有做数值范围的检查时，一个整型变量所输出的值将会发生紊乱，且不是预期的运行结果。例如下面的程序中声明了一个整型的数，并把它赋值为整型所可以表示范围的最大值，然后将它分别加1和加2：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DataDemo01</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> max = Integer.MAX_VALUE;                         <span class="comment">// 得到整型的最大值</span></span><br><span class="line">        System.out.println(<span class="string">"整型的最大值："</span> + max);           <span class="comment">// 输出最大值</span></span><br><span class="line">        System.out.println(<span class="string">"整型最大值 + 1："</span> + (max + <span class="number">1</span>));   <span class="comment">// 最大值加1</span></span><br><span class="line">        System.out.println(<span class="string">"整型最大值 + 2："</span> + (max + <span class="number">2</span>));   <span class="comment">// 最大值加2</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>程序的运行结果如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">整型的最大值：2147483647</span><br><span class="line">整型最大值+1：-2147483648</span><br><span class="line">整型最大值+2：-2147483647</span><br></pre></td></tr></table></figure>
@@ -606,10 +606,31 @@ f(n)
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DataDemo03</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">char</span> ch1 = <span class="string">'\"'</span>;                            <span class="comment">// 定义转义字符</span></span><br><span class="line">        <span class="keyword">char</span> ch2 = <span class="string">'\\'</span>;                            <span class="comment">// 定义转义字符</span></span><br><span class="line">        System.out.println(<span class="string">"ch1 = "</span> + ch1);         <span class="comment">// 打印输出</span></span><br><span class="line">        System.out.println(<span class="string">"ch2 = "</span> + ch2);         <span class="comment">// 打印输出</span></span><br><span class="line">        System.out.println(<span class="string">"\"Hello World\""</span>);      <span class="comment">// 直接输出转义字符</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>程序输出如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ch1 = &quot;</span><br><span class="line">ch2 = \</span><br><span class="line">&quot;Hello World&quot;</span><br></pre></td></tr></table></figure>
-<h3 id="浮点数类型与双精度浮点数类型"><a href="#浮点数类型与双精度浮点数类型" class="headerlink" title="浮点数类型与双精度浮点数类型"></a>浮点数类型与双精度浮点数类型</h3><p>在Java中，带有小数点的数据类型称为浮点数类型（float），其长度为32个字节，当浮点数的表示范围不够大时，还有一种双精度（double）浮点数可以使用，双精度浮点数类型的长度为64个字节。两种数据类型的声明如下：</p>
+<h4 id="浮点数类型与双精度浮点数类型"><a href="#浮点数类型与双精度浮点数类型" class="headerlink" title="浮点数类型与双精度浮点数类型"></a>浮点数类型与双精度浮点数类型</h4><p>在Java中，带有小数点的数据类型称为浮点数类型（float），其长度为32个字节，当浮点数的表示范围不够大时，还有一种双精度（double）浮点数可以使用，双精度浮点数类型的长度为64个字节。两种数据类型的声明如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> num;          <span class="comment">// 声明num为双精度浮点型变量</span></span><br><span class="line"><span class="keyword">float</span> sum = <span class="number">3.0f</span>；   <span class="comment">// 声明sum为浮点型变量，其初值为3.0</span></span><br></pre></td></tr></table></figure>
-<p>需要注意的是，在Java中使用浮点型数值时，默认类型时double，在数值后面可以加上D或者d，</p>
-<h3 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h3>
+<p>需要注意的是，在Java中使用浮点型数值时，默认类型时double，在数值后面可以加上D或者d，作为double类型的标识，在数据后面加上F或者f，则作为float类型的标识。若什么都没加，Java会将该数据默认为double类型。</p>
+<h4 id="布尔类型"><a href="#布尔类型" class="headerlink" title="布尔类型"></a>布尔类型</h4><p>布尔（boolean）类型的变量只有true（真）和false（假）两种，程序中对布尔类型的数据声明如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">boolean</span> flag = <span class="keyword">true</span>;   <span class="comment">// 声明布尔变量flag，并赋值为true</span></span><br></pre></td></tr></table></figure>
+<h3 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h3><p>数据类型的转换方式可以分为<strong>自动类型转换</strong>及<strong>强制类型转换</strong>两种。</p>
+<h4 id="自动转换"><a href="#自动转换" class="headerlink" title="自动转换"></a>自动转换</h4><p>在程序中已经定义好了数据类型的变量，若要用另一种数据类习表示时，Java会在下列条件皆成立时，自动做数据类型的转换：</p>
+<p>​    （1） 转换前的数据类型与转换后的类型兼容。</p>
+<p>​    （2） 转换后的数据类型的表示范围比转换前的类型大。</p>
+<p>例如，将short类型的变量a转换成int类型，由于short与int皆为整数类型，符合上述条件（1）；而int的表示范围比short大，符合条件（2），因此Java会自动将原为short类型的变量a转换成int类型。</p>
+<p>值得注意的是，类型的转换只限该行语句，并不会影响原先所定义的变量的类型，而且通过自动类型的转换可以保证数据的精确度，它不会因为转换而损失数据内容，这种类型的转换方式也称为<strong>扩大转换</strong>。</p>
+<p>以扩大转换来看，字符和整数是可以使用自动类型转换的，整数和浮点数亦是兼容的，但是由于boolean类型只能存放true或false，与整数及字符是不兼容的，因此不能做类型的转换。下面介绍当两个数其中一个为浮点数时，其运算结果会怎么变化：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public class DataDemo04 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        int x = 30;</span><br><span class="line">        float y = 22.19f;</span><br><span class="line">        System.out.println(&quot;x/y = &quot; + (x/y));</span><br><span class="line">        System.out.println(&quot;10/3.5 = &quot; + (10/3.5));</span><br><span class="line">        System.out.println(&quot;10/3 = &quot; + (10/3));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>程序运行结果为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x/y = 1.3519603</span><br><span class="line">10/3.5 = 2.857142857142857</span><br><span class="line">10/3 = 3</span><br></pre></td></tr></table></figure>
+<p>从输出结果来看，int类型与float类型进行计算之后，输出的结果会变成float类型，一个整型常量和一个浮点型常量进行计算之后，结果也会变成一个浮点数据，而如果两个int型的常量进行计算，最终结果也时int型，而其小树部分将会被忽略。也就是说，假设有一个整数和双精度浮点数作运算时，Java会把整数转换成双精度浮点数后再做运算，运算结果也会变成双精度浮点数。</p>
+<h4 id="强制转换"><a href="#强制转换" class="headerlink" title="强制转换"></a>强制转换</h4><p>当两个整数进行运算时，其运算结果也会是整数，例如，做除法运算8/3，其结果为整数2，而不是实际的2.33333···，因此，在Java中若是想要得到的计算结果是浮点数时，就必须将数据类型做强制性的转换，转换语法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">（要转换的数据类型） 变量名称；</span><br></pre></td></tr></table></figure>
+<p>因为这种强制类型的转换时直接变写在程序代码中的，所以也称为<strong>显示转换</strong>。强制转换例子如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DataDemo05</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">float</span> f = <span class="number">30.3f</span>;</span><br><span class="line">        <span class="keyword">int</span> x = (<span class="keyword">int</span>)f;</span><br><span class="line">        System.out.println(<span class="string">"x = "</span> + x);</span><br><span class="line">        System.out.println(<span class="string">"10 / 3 = "</span> + ((<span class="keyword">float</span>)<span class="number">10</span> /<span class="number">3</span> ));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>程序运行结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x = 30</span><br><span class="line">10 / 3 = 3.3333333</span><br></pre></td></tr></table></figure>
+<p>在程序中，首先将一个浮点型的变量f的内容赋给了int型变量x，因为int数据类型的长度小于float类型的长度，所以此处需要进行强制转换。程序的最后使用了两个整型常量进行计算，但是因为将其中一个整型变量变为了float类型，所以在计算时会强制把其他的整型也变成float类型，最后计算结果也就是包含小数的。</p>
+<p>和自动转换一样，强制转换并不会影响原先定义的变量的类型，运行时只会将强制转换的那行语句进行变量的数据类型转换。此外，若是将一个超出该变量可表示范围的值赋值给这个变量，这种转换称为<strong>缩小转换</strong>，这种转换可能会丢失数据精度，因此Java并不会主动进行这种类型的转换，此时就必须做强制转换。</p>
+
       
     </div>
     
@@ -833,7 +854,7 @@ f(n)
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型划分"><span class="nav-number">1.</span> <span class="nav-text">数据类型划分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本数据类型"><span class="nav-number">2.</span> <span class="nav-text">基本数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#整数类型"><span class="nav-number">2.1.</span> <span class="nav-text">整数类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据溢出"><span class="nav-number">2.2.</span> <span class="nav-text">数据溢出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符类型"><span class="nav-number">2.3.</span> <span class="nav-text">字符类型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浮点数类型与双精度浮点数类型"><span class="nav-number">3.</span> <span class="nav-text">浮点数类型与双精度浮点数类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型转换"><span class="nav-number">4.</span> <span class="nav-text">数据类型转换</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型划分"><span class="nav-number">1.</span> <span class="nav-text">数据类型划分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本数据类型"><span class="nav-number">2.</span> <span class="nav-text">基本数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#整数类型"><span class="nav-number">2.1.</span> <span class="nav-text">整数类型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#数据溢出"><span class="nav-number">2.1.1.</span> <span class="nav-text">数据溢出</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符类型"><span class="nav-number">2.2.</span> <span class="nav-text">字符类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#浮点数类型与双精度浮点数类型"><span class="nav-number">2.3.</span> <span class="nav-text">浮点数类型与双精度浮点数类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#布尔类型"><span class="nav-number">2.4.</span> <span class="nav-text">布尔类型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型转换"><span class="nav-number">3.</span> <span class="nav-text">数据类型转换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#自动转换"><span class="nav-number">3.1.</span> <span class="nav-text">自动转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#强制转换"><span class="nav-number">3.2.</span> <span class="nav-text">强制转换</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -869,7 +890,7 @@ f(n)
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">1.6k</span>
+    <span title="Site words total count">2.7k</span>
   
   -->
 </div>
@@ -887,7 +908,7 @@ f(n)
 <div class="theme-info">
   <div class="powered-by"></div>
   <i class="fa fa-paint-brush" aria-hidden="true"></i><span class="post-count">
-  博客全站共1.6k字</span>
+  博客全站共2.7k字</span>
 </div>
 
 <!--
