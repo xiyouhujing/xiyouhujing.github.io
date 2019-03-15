@@ -96,12 +96,10 @@
 <meta property="og:site_name" content="xiyou">
 <meta property="og:description" content="数据类型划分Java的数据类型可以分为基本数据类型和应用数据类型两类，原始数据类型也称为基本数据类型，包括最基本的boolean、byte、char、short、int、long、float、与double等类型；引用数据类型以一种特殊的方式指向变量的实体，类似于C/C++的指针，这类变量在声明时不会分配内存，必须另外开辟内存空间的操作，如字符串和数组均属于这种数据类型。Java的数据类型如下图">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://xiyouhujing.github.io/2019/03/15/Java数据类型/数据溢出的输出.png">
-<meta property="og:updated_time" content="2019-03-15T08:59:26.096Z">
+<meta property="og:updated_time" content="2019-03-15T11:07:50.075Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java数据类型">
 <meta name="twitter:description" content="数据类型划分Java的数据类型可以分为基本数据类型和应用数据类型两类，原始数据类型也称为基本数据类型，包括最基本的boolean、byte、char、short、int、long、float、与double等类型；引用数据类型以一种特殊的方式指向变量的实体，类似于C/C++的指针，这类变量在声明时不会分配内存，必须另外开辟内存空间的操作，如字符串和数组均属于这种数据类型。Java的数据类型如下图">
-<meta name="twitter:image" content="http://xiyouhujing.github.io/2019/03/15/Java数据类型/数据溢出的输出.png">
 
 
 
@@ -424,7 +422,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  724
+                  1.5k
                 </span>
               
 
@@ -440,7 +438,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  5
                 </span>
               
             </div>
@@ -540,11 +538,78 @@ f(n)
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">short</span> num;   <span class="comment">//声明sum为短整型</span></span><br></pre></td></tr></table></figure>
 <p>经过声明之后，Java会在可使用的内存空间中寻找一个占有两个字节的块供sum变量使用。在Java中对于一个整型常量，其默认类型为int型，所以一般在声明常量时不要超过int数据类型的范围。</p>
 <h4 id="数据溢出"><a href="#数据溢出" class="headerlink" title="数据溢出"></a>数据溢出</h4><p>当整数的数据大小超过其类型可以表示的范围，而程序中又没有做数值范围的检查时，一个整型变量所输出的值将会发生紊乱，且不是预期的运行结果。例如下面的程序中声明了一个整型的数，并把它赋值为整型所可以表示范围的最大值，然后将它分别加1和加2：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Demo1</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> max = Integer.MAX_VALUE;                         <span class="comment">// 得到整型的最大值</span></span><br><span class="line">        System.out.println(<span class="string">"整型的最大值："</span> + max);           <span class="comment">// 输出最大值</span></span><br><span class="line">        System.out.println(<span class="string">"整型最大值 + 1："</span> + (max + <span class="number">1</span>));   <span class="comment">// 最大值加1</span></span><br><span class="line">        System.out.println(<span class="string">"整型最大值 + 2："</span> + (max + <span class="number">2</span>));   <span class="comment">// 最大值加2</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>程序的运行结果如下图：</p>
-<p><img src="//xiyouhujing.github.io/2019/03/15/Java数据类型/数据溢出的输出.png" alt="数据溢出的输出"></p>
-<p>int型的范围为-2147483648~2147483647，从输出结果可以看出，当最大值2147483647加上1之后，结果变成了最小值；当最大值加上2时，结果变成了次小值，这就是<strong>数据类型的溢出</strong>。参考下图了解数据类型的溢出问题：</p>
-<h4 id="浮点数类型"><a href="#浮点数类型" class="headerlink" title="浮点数类型"></a>浮点数类型</h4><h3 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DataDemo01</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> max = Integer.MAX_VALUE;                         <span class="comment">// 得到整型的最大值</span></span><br><span class="line">        System.out.println(<span class="string">"整型的最大值："</span> + max);           <span class="comment">// 输出最大值</span></span><br><span class="line">        System.out.println(<span class="string">"整型最大值 + 1："</span> + (max + <span class="number">1</span>));   <span class="comment">// 最大值加1</span></span><br><span class="line">        System.out.println(<span class="string">"整型最大值 + 2："</span> + (max + <span class="number">2</span>));   <span class="comment">// 最大值加2</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>程序的运行结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">整型的最大值：2147483647</span><br><span class="line">整型最大值+1：-2147483648</span><br><span class="line">整型最大值+2：-2147483647</span><br></pre></td></tr></table></figure>
+<p>int型的范围为-2147483648~2147483647，从输出结果可以看出，当最大值2147483647加上1之后，结果变成了最小值；当最大值加上2时，结果变成了次小值，这就是<strong>数据类型的溢出</strong>。为了避免int类型的溢出，可以再该表达式中的任一常量后加上大写的L，或者在变量前面加上long，做<strong>强制类型的转换</strong>，例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ublic <span class="class"><span class="keyword">class</span> <span class="title">DataDemo02</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> max = Integer.MAX_VALUE;                            <span class="comment">// 整型最大值</span></span><br><span class="line">        System.out.println(<span class="string">"整型的最大值："</span> + max);              <span class="comment">// 输出最大值</span></span><br><span class="line">        System.out.println(<span class="string">"整型最大值+1："</span> + (max+<span class="number">1</span>));          <span class="comment">// 最大值加1</span></span><br><span class="line">        System.out.println(<span class="string">"整型最大值+2："</span> + (max+<span class="number">2L</span>));         <span class="comment">// 变成long型 </span></span><br><span class="line">        System.out.println(<span class="string">"整型最大值+2："</span> + ((<span class="keyword">long</span>)max+<span class="number">2</span>));    <span class="comment">// 转换成long型</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>程序运行的结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">整型的最大值：2147483647</span><br><span class="line">整型最大值+1：-2147483648</span><br><span class="line">整型最大值+2：2147483649</span><br><span class="line">整型最大值+2：2147483649</span><br></pre></td></tr></table></figure>
+<p>处理int型的溢出，可以采用强制类型转换方式，但是对于long型的溢出，就没有处理办法了，此时就需要在程序中加上变量值的界限检查，在运行时才不会发生错误。</p>
+<h4 id="字符类型"><a href="#字符类型" class="headerlink" title="字符类型"></a>字符类型</h4><p>字符类型在内存中占两个字节，可以用来保存英文字母等字符。给字符变量赋值可以使用数字和字符，它们都能使程序正确的运行，例如，Java中使用Unicode编码系统，Unicode中小写的a是以97表示的，所以，如果要给一个字符变量赋值为a，可以使用小写“a”，也可以使用数字97，需要注意的是，字符要用一队单引号（’ ‘）括起。程序中字符类型的声明如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> ch = <span class="string">'a'</span>;   <span class="comment">// 声明ch为字符型，其值为a</span></span><br></pre></td></tr></table></figure>
+<p>在程序中输出一个包括双引号的字符串时，可以把字符变量赋值为转义字符，再将它输出，即：再程序中声明一个字符类型变量ch，然后把ch设置为“\\””，再进行输出操作，或者，也可以直接再要输出的字符穿中加入特殊的转义字符。常用的转义字符如下表：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">序号</th>
+<th style="text-align:center">转义字符</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">\\f</td>
+<td style="text-align:center">换页</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">\\\</td>
+<td style="text-align:center">反斜线</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">\\b</td>
+<td style="text-align:center">倒退一格</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">\\’</td>
+<td style="text-align:center">单引号</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center">\\r</td>
+<td style="text-align:center">归位</td>
+</tr>
+<tr>
+<td style="text-align:center">6</td>
+<td style="text-align:center">\\”</td>
+<td style="text-align:center">双引号</td>
+</tr>
+<tr>
+<td style="text-align:center">7</td>
+<td style="text-align:center">\\t</td>
+<td style="text-align:center">制表符Tab</td>
+</tr>
+<tr>
+<td style="text-align:center">8</td>
+<td style="text-align:center">\\n</td>
+<td style="text-align:center">换行</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DataDemo03</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">char</span> ch1 = <span class="string">'\"'</span>;                            <span class="comment">// 定义转义字符</span></span><br><span class="line">        <span class="keyword">char</span> ch2 = <span class="string">'\\'</span>;                            <span class="comment">// 定义转义字符</span></span><br><span class="line">        System.out.println(<span class="string">"ch1 = "</span> + ch1);         <span class="comment">// 打印输出</span></span><br><span class="line">        System.out.println(<span class="string">"ch2 = "</span> + ch2);         <span class="comment">// 打印输出</span></span><br><span class="line">        System.out.println(<span class="string">"\"Hello World\""</span>);      <span class="comment">// 直接输出转义字符</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>程序输出如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ch1 = &quot;</span><br><span class="line">ch2 = \</span><br><span class="line">&quot;Hello World&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="浮点数类型与双精度浮点数类型"><a href="#浮点数类型与双精度浮点数类型" class="headerlink" title="浮点数类型与双精度浮点数类型"></a>浮点数类型与双精度浮点数类型</h3><p>在Java中，带有小数点的数据类型称为浮点数类型（float），其长度为32个字节，当浮点数的表示范围不够大时，还有一种双精度（double）浮点数可以使用，双精度浮点数类型的长度为64个字节。两种数据类型的声明如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> num;          <span class="comment">// 声明num为双精度浮点型变量</span></span><br><span class="line"><span class="keyword">float</span> sum = <span class="number">3.0f</span>；   <span class="comment">// 声明sum为浮点型变量，其初值为3.0</span></span><br></pre></td></tr></table></figure>
+<p>需要注意的是，在Java中使用浮点型数值时，默认类型时double，在数值后面可以加上D或者d，</p>
+<h3 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h3>
       
     </div>
     
@@ -768,7 +833,7 @@ f(n)
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型划分"><span class="nav-number">1.</span> <span class="nav-text">数据类型划分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本数据类型"><span class="nav-number">2.</span> <span class="nav-text">基本数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#整数类型"><span class="nav-number">2.1.</span> <span class="nav-text">整数类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据溢出"><span class="nav-number">2.2.</span> <span class="nav-text">数据溢出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#浮点数类型"><span class="nav-number">2.3.</span> <span class="nav-text">浮点数类型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型转换"><span class="nav-number">3.</span> <span class="nav-text">数据类型转换</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型划分"><span class="nav-number">1.</span> <span class="nav-text">数据类型划分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本数据类型"><span class="nav-number">2.</span> <span class="nav-text">基本数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#整数类型"><span class="nav-number">2.1.</span> <span class="nav-text">整数类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据溢出"><span class="nav-number">2.2.</span> <span class="nav-text">数据溢出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符类型"><span class="nav-number">2.3.</span> <span class="nav-text">字符类型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浮点数类型与双精度浮点数类型"><span class="nav-number">3.</span> <span class="nav-text">浮点数类型与双精度浮点数类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型转换"><span class="nav-number">4.</span> <span class="nav-text">数据类型转换</span></a></li></ol></div>
             
 
           </div>
@@ -804,7 +869,7 @@ f(n)
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">797</span>
+    <span title="Site words total count">1.6k</span>
   
   -->
 </div>
@@ -822,7 +887,7 @@ f(n)
 <div class="theme-info">
   <div class="powered-by"></div>
   <i class="fa fa-paint-brush" aria-hidden="true"></i><span class="post-count">
-  博客全站共797字</span>
+  博客全站共1.6k字</span>
 </div>
 
 <!--
