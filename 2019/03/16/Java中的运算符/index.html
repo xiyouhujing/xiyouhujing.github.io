@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="xiyou">
 <meta property="og:description" content="Java中的运算符表达式时Java的一种语句，它由操作数和操作符组成，操作数可以是常量、变量，也可以是方法，而运算符就是数学中的运算符号，如“+”、“-”、“*”、“/”等，在表达式（z+100）中，z和100都是操作数，“+”就是运算符。 Java提供了很多运算符，这些运算符除了做一般的数学运算之外，还可以做逻辑运算、位运算等。根据所使用类的不同，运算符可以分为赋值运算符、算术运算符、逻辑运算符">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-16T13:03:06.328Z">
+<meta property="og:updated_time" content="2019-03-17T08:27:54.750Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java中的运算符">
 <meta name="twitter:description" content="Java中的运算符表达式时Java的一种语句，它由操作数和操作符组成，操作数可以是常量、变量，也可以是方法，而运算符就是数学中的运算符号，如“+”、“-”、“*”、“/”等，在表达式（z+100）中，z和100都是操作数，“+”就是运算符。 Java提供了很多运算符，这些运算符除了做一般的数学运算之外，还可以做逻辑运算、位运算等。根据所使用类的不同，运算符可以分为赋值运算符、算术运算符、逻辑运算符">
@@ -412,7 +412,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.5k
+                  3.6k
                 </span>
               
 
@@ -428,7 +428,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  10
+                  14
                 </span>
               
             </div>
@@ -456,7 +456,7 @@
 <p>第五行中，把num-3的值赋给了num，所以程序运行的结果如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">第一次输出：num = 22</span><br><span class="line">第二次输出：num = 19</span><br></pre></td></tr></table></figure>
 <p>当然，也可以将等号后面的值赋给其他变量，例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int sum = num1 + num2;   // num1与num2相加之后的值再赋给变量sum存放</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> sum = num1 + num2;   <span class="comment">// num1与num2相加之后的值再赋给变量sum存放</span></span><br></pre></td></tr></table></figure>
 <h3 id="一元运算符"><a href="#一元运算符" class="headerlink" title="一元运算符"></a>一元运算符</h3><p>对于大部分表达式而言，运算符的前后都有操作数，但是一元运算符比较特别，它只需要一个操作数。下表列出了一元运算符的成员：</p>
 <div class="table-container">
 <table>
@@ -784,6 +784,140 @@
 <p>下面通过一段代码来观察位运算符：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OperatorDemo10</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> x = <span class="number">3</span>;                  <span class="comment">// 3的二进制数据：00000000 00000000 00000000 00000011</span></span><br><span class="line">        <span class="keyword">int</span> y = <span class="number">6</span>;                  <span class="comment">// 6的二进制数据：00000000 00000000 00000000 00000110</span></span><br><span class="line">        System.out.println(x &amp; y);  <span class="comment">// 与操作的结果： 00000000 00000000 00000000 00000010</span></span><br><span class="line">        System.out.println(x | y);  <span class="comment">// 或操作的结果： 00000000 00000000 00000000 00000111</span></span><br><span class="line">        System.out.println(x ^ y);  <span class="comment">// 异或操作结果： 00000000 00000000 00000000 00000101</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>运行结果如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">7</span><br><span class="line">5</span><br></pre></td></tr></table></figure></p>
+<p>在计算机的数据表示中只定义了整数的表现形式，并没有定义负数的表现形式，所以，负数一般用<strong>补码</strong>的形式表示，整数的原码、反码、补码都相同，负数的反码除符号位为1外，其余位取相反；补码就是“<strong>反码+1</strong>”。</p>
+<p>求出负数的反码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OperatorDemo16</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> x = -<span class="number">3</span>;             <span class="comment">// -3的二进制数据：11111111 11111111 11111111 11111101</span></span><br><span class="line">        System.out.println(x + <span class="string">"的反码时："</span> + ~x);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>程序输出的结果位2（二进制数据：00000000 00000000 00000000 00000010），因为计算机中负数都是使用补码的形式计算，补码的计算是“反码+1”，然后对-3进行反码，操作过程如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">10000000 00000000 00000000 00000011   // -3原码</span><br><span class="line">11111111 11111111 11111111 11111100   // -3反码</span><br><span class="line">11111111 11111111 11111111 11111101   // -3补码 = -3反码 + 1</span><br><span class="line">00000000 00000000 00000000 00000010   // ~-3</span><br></pre></td></tr></table></figure>
+<p>在Java中也提供了左移“&lt;&lt;”和右移“&gt;&gt;”两种操作。左移操作是将运算数的二进制嘛整体左移指定位数，左移之后的空位由0来填充，例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OperatorDemo17</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> x = <span class="number">3</span>;     <span class="comment">// 3的二进制数据： 00000000 00000000 00000000 00000011</span></span><br><span class="line">        System.out.println(x + <span class="string">"左移2位之后的内容："</span> + (x &lt;&lt; <span class="number">2</span>)); </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>程序输出为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3左移2位之后的内容：12   // 12二进制数：00000000 00000000 00000000 00001100</span><br></pre></td></tr></table></figure>
+<p>右移操作“&gt;&gt;”是将运算数的二进制码整体右移，右移之后的空位以符号位填充，即如果整数就用0填充，如果是负数则用1填充，例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OperatorDemo18</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> x = <span class="number">3</span>;    <span class="comment">// 3的二进制数据：00000000 00000000 00000000 00000011</span></span><br><span class="line">        <span class="keyword">int</span> y = -<span class="number">3</span>;   <span class="comment">// -3的二进制数： 11111111 11111111 11111111 11111101</span></span><br><span class="line">        System.out.println(x + <span class="string">"右移2位之后的内容："</span> + (x &gt;&gt; <span class="number">2</span>));</span><br><span class="line">        System.out.println(y + <span class="string">"右移2位之后的内容："</span> + (y &gt;&gt; <span class="number">2</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>程序运行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">3右移2位之后的内容：0     // 3右移两位之后的二进制：00000000 00000000 00000000 00000000</span><br><span class="line">-3右移2位之后的内容：-1   // -3右移两位后的二进制： 11111111 11111111 11111111 11111111</span><br></pre></td></tr></table></figure>
+<p>因为-3右移后的二进制依然是负数，负数用的补码表示，而补码=反码+1，所以求出对应的反码=补码-1，原码也可以根据反码求出：</p>
+<ul>
+<li>-3右移两位后的二进制补码：11111111 11111111 11111111 11111111</li>
+<li>反码 = 补码-1，即补码为：   11111111 11111111 11111111 11111110</li>
+<li>-3右移两位后的二进制原码：10000000 00000000 00000000 00000001</li>
+</ul>
+<p>以上右移操作是带符号位的右移操作，Java也提供无符号位的右移操作“&gt;&gt;&gt;”，即右移后的空位由0来填充，例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OperatorDemo19</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> x = <span class="number">3</span>;    <span class="comment">// 3的二进制数据：00000000 00000000 00000000 00000011</span></span><br><span class="line">        <span class="keyword">int</span> y = -<span class="number">3</span>;   <span class="comment">// -3的二进制数： 11111111 11111111 11111111 11111101</span></span><br><span class="line">        System.out.println(x + <span class="string">"右移2位后的内容："</span> + (x &gt;&gt;&gt; <span class="number">2</span>));</span><br><span class="line">        System.out.println(y + <span class="string">"右移2位后的内容："</span> + (y &gt;&gt;&gt; <span class="number">2</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>程序运行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">3右移2位后的内容：0               // 3右移两位之后的二进制：00000000 00000000 00000000 00000000</span><br><span class="line">-3右移2位后的内容：1073741823     // 不带符号位-3右移两位： 00111111 11111111 11111111 11111111</span><br></pre></td></tr></table></figure>
+<h3 id="运算符的优先级"><a href="#运算符的优先级" class="headerlink" title="运算符的优先级"></a>运算符的优先级</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">优先级</th>
+<th style="text-align:center">运算符</th>
+<th style="text-align:center">类</th>
+<th style="text-align:center">结合性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">()</td>
+<td style="text-align:center">括号运算符</td>
+<td style="text-align:center">由左至右</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">[]</td>
+<td style="text-align:center">方括号运算符</td>
+<td style="text-align:center">由左至右</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">!、+（正号）、-（负号）</td>
+<td style="text-align:center">一元运算符</td>
+<td style="text-align:center">由右至左</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">~</td>
+<td style="text-align:center">位逻辑运算符</td>
+<td style="text-align:center">由右至左</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">++、—</td>
+<td style="text-align:center">自增与自减运算符</td>
+<td style="text-align:center">由右至左</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">*、/、%</td>
+<td style="text-align:center">算术运算符</td>
+<td style="text-align:center">由左至右</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">+、-</td>
+<td style="text-align:center">算术运算符</td>
+<td style="text-align:center">由左至右</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center">&lt;&lt;、&gt;&gt;</td>
+<td style="text-align:center">位左移、位右移运算符</td>
+<td style="text-align:center">由左至右</td>
+</tr>
+<tr>
+<td style="text-align:center">6</td>
+<td style="text-align:center">&gt;、&gt;=、&lt;、&lt;=</td>
+<td style="text-align:center">关系运算符</td>
+<td style="text-align:center">由左至右</td>
+</tr>
+<tr>
+<td style="text-align:center">7</td>
+<td style="text-align:center">==、!=</td>
+<td style="text-align:center">关系运算符</td>
+<td style="text-align:center">由左至右</td>
+</tr>
+<tr>
+<td style="text-align:center">8</td>
+<td style="text-align:center">&amp;（位运算符AND）</td>
+<td style="text-align:center">位逻辑运算符</td>
+<td style="text-align:center">由左至右</td>
+</tr>
+<tr>
+<td style="text-align:center">9</td>
+<td style="text-align:center">^（位运算符XOR）</td>
+<td style="text-align:center">位逻辑运算符</td>
+<td style="text-align:center">由左至右</td>
+</tr>
+<tr>
+<td style="text-align:center">10</td>
+<td style="text-align:center">&#124;（位运算符OR）</td>
+<td style="text-align:center">位逻辑运算符</td>
+<td style="text-align:center">由左至右</td>
+</tr>
+<tr>
+<td style="text-align:center">11</td>
+<td style="text-align:center">&amp;&amp;</td>
+<td style="text-align:center">逻辑运算符</td>
+<td style="text-align:center">由左至右</td>
+</tr>
+<tr>
+<td style="text-align:center">12</td>
+<td style="text-align:center">&#124;&#124;</td>
+<td style="text-align:center">逻辑运算符</td>
+<td style="text-align:center">由左至右</td>
+</tr>
+<tr>
+<td style="text-align:center">13</td>
+<td style="text-align:center">?:</td>
+<td style="text-align:center">三目运算符</td>
+<td style="text-align:center">由右至左</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>当使用同一级运算符的时候，结合性非常重要，因为它决定了谁会被先处理，即在相同优先级的运算符中，根据结合性来处理操作数。对于以上优先级没有必要完全记下，可以多使用括号改变优先级。</p>
 
       
     </div>
@@ -1008,7 +1142,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Java中的运算符"><span class="nav-number">1.</span> <span class="nav-text">Java中的运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#赋值运算符号"><span class="nav-number">2.</span> <span class="nav-text">赋值运算符号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一元运算符"><span class="nav-number">3.</span> <span class="nav-text">一元运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算术运算符"><span class="nav-number">4.</span> <span class="nav-text">算术运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关系运算符"><span class="nav-number">5.</span> <span class="nav-text">关系运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自增与自减运算符"><span class="nav-number">6.</span> <span class="nav-text">自增与自减运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑运算符"><span class="nav-number">7.</span> <span class="nav-text">逻辑运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#括号运算符"><span class="nav-number">8.</span> <span class="nav-text">括号运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#位运算符"><span class="nav-number">9.</span> <span class="nav-text">位运算符</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Java中的运算符"><span class="nav-number">1.</span> <span class="nav-text">Java中的运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#赋值运算符号"><span class="nav-number">2.</span> <span class="nav-text">赋值运算符号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一元运算符"><span class="nav-number">3.</span> <span class="nav-text">一元运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算术运算符"><span class="nav-number">4.</span> <span class="nav-text">算术运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关系运算符"><span class="nav-number">5.</span> <span class="nav-text">关系运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自增与自减运算符"><span class="nav-number">6.</span> <span class="nav-text">自增与自减运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑运算符"><span class="nav-number">7.</span> <span class="nav-text">逻辑运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#括号运算符"><span class="nav-number">8.</span> <span class="nav-text">括号运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#位运算符"><span class="nav-number">9.</span> <span class="nav-text">位运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运算符的优先级"><span class="nav-number">10.</span> <span class="nav-text">运算符的优先级</span></a></li></ol></div>
             
 
           </div>
@@ -1044,7 +1178,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">5.2k</span>
+    <span title="Site words total count">6.3k</span>
   
   -->
 </div>
@@ -1062,7 +1196,7 @@
 <div class="theme-info">
   <div class="powered-by"></div>
   <i class="fa fa-paint-brush" aria-hidden="true"></i><span class="post-count">
-  博客全站共5.2k字</span>
+  博客全站共6.3k字</span>
 </div>
 
 <!--
