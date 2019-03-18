@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xiyouhujing.github.io/"/>
-  <updated>2019-03-17T08:27:54.750Z</updated>
+  <updated>2019-03-18T07:02:04.530Z</updated>
   <id>http://xiyouhujing.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java选择和循环语句</title>
+    <link href="http://xiyouhujing.github.io/2019/03/18/Java%E9%80%89%E6%8B%A9%E5%92%8C%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/"/>
+    <id>http://xiyouhujing.github.io/2019/03/18/Java选择和循环语句/</id>
+    <published>2019-03-18T03:14:09.000Z</published>
+    <updated>2019-03-18T07:02:04.530Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="程序的结构"><a href="#程序的结构" class="headerlink" title="程序的结构"></a>程序的结构</h3><p>一般来说程序的结构可以分为<strong>顺序结构</strong>、<strong>选择结构</strong>以及<strong>循环结构</strong>三种，这三种结构只有一个共同点，就是它们只有一个入口，也只有一个出口，这些单一的入、出口可以让程序易读、好维护，也可以减少调试时间。</p><h4 id="顺序结构"><a href="#顺序结构" class="headerlink" title="顺序结构"></a>顺序结构</h4><p>顺序结构下的程序至上而下的逐条执行，一条语句执行完之后继续执行下一条语句，一直到程序的末尾，其结构如下图所示：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">A(开始) --&gt;B(语句1)</span><br><span class="line"></span><br><span class="line">    B --&gt; C(语句2)</span><br><span class="line"></span><br><span class="line">    C --&gt;|...| D(语句n)</span><br></pre></td></tr></table></figure><h4 id="选择结构"><a href="#选择结构" class="headerlink" title="选择结构"></a>选择结构</h4><h3 id="选择结构-1"><a href="#选择结构-1" class="headerlink" title="选择结构"></a>选择结构</h3><h3 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h3><h3 id="循环的中断"><a href="#循环的中断" class="headerlink" title="循环的中断"></a>循环的中断</h3>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;程序的结构&quot;&gt;&lt;a href=&quot;#程序的结构&quot; class=&quot;headerlink&quot; title=&quot;程序的结构&quot;&gt;&lt;/a&gt;程序的结构&lt;/h3&gt;&lt;p&gt;一般来说程序的结构可以分为&lt;strong&gt;顺序结构&lt;/strong&gt;、&lt;strong&gt;选择结构&lt;/strong&gt;以及
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="http://xiyouhujing.github.io/categories/Java/"/>
+    
+    
+      <category term="java基础" scheme="http://xiyouhujing.github.io/tags/java%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
   
   <entry>
     <title>Java中的运算符</title>
