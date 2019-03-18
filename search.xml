@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Java选择和循环语句]]></title>
     <url>%2F2019%2F03%2F18%2FJava%E9%80%89%E6%8B%A9%E5%92%8C%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5%2F</url>
-    <content type="text"><![CDATA[程序的结构一般来说程序的结构可以分为顺序结构、选择结构以及循环结构三种，这三种结构只有一个共同点，就是它们只有一个入口，也只有一个出口，这些单一的入、出口可以让程序易读、好维护，也可以减少调试时间。 顺序结构顺序结构下的程序至上而下的逐条执行，一条语句执行完之后继续执行下一条语句，一直到程序的末尾，其结构如下图所示： 123456graph LRA(开始) --&gt;B(语句1) B --&gt; C(语句2) C --&gt;|...| D(语句n) 选择结构选择结构循环结构循环的中断]]></content>
+    <content type="text"><![CDATA[程序的结构一般来说程序的结构可以分为顺序结构、选择结构以及循环结构三种，这三种结构只有一个共同点，就是它们只有一个入口，也只有一个出口，这些单一的入、出口可以让程序易读、好维护，也可以减少调试时间。 顺序结构顺序结构下的程序至上而下的逐条执行，一条语句执行完之后继续执行下一条语句，一直到程序的末尾，其结构如下图所示： 123456789101112131415st=&gt;start: Start|past:&gt;http://www.google.com[blank]e=&gt;end: End:&gt;http://www.google.comop1=&gt;operation: My Operation|pastop2=&gt;operation: Stuff|currentsub1=&gt;subroutine: My Subroutine|invalidcond=&gt;condition: Yesor No?|approved:&gt;http://www.google.comc2=&gt;condition: Good idea|rejectedio=&gt;inputoutput: catch something...|requestst-&gt;op1(right)-&gt;condcond(yes, right)-&gt;c2cond(no)-&gt;sub1(left)-&gt;op1c2(yes)-&gt;io-&gt;ec2(no)-&gt;op2-&gt;e 选择结构选择结构循环结构循环的中断]]></content>
       <categories>
         <category>Java</category>
       </categories>
