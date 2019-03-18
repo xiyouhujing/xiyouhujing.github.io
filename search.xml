@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Java选择和循环语句]]></title>
     <url>%2F2019%2F03%2F18%2FJava%E9%80%89%E6%8B%A9%E5%92%8C%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5%2F</url>
-    <content type="text"><![CDATA[程序的结构一般来说程序的结构可以分为顺序结构、选择结构以及循环结构三种，这三种结构只有一个共同点，就是它们只有一个入口，也只有一个出口，这些单一的入、出口可以让程序易读、好维护，也可以减少调试时间。 顺序结构顺序结构下的程序至上而下的逐条执行，一条语句执行完之后继续执行下一条语句，一直到程序的末尾，其结构如下图所示： graph LR start(开始) --> statement1[语句1] statement1 --> statement2[语句2] statement2 -->statement3[语句n] statement3 --> stop(结束) 选择结构graph TD start(开始) --> statement1[语句1] statement1 --> condition{判断条件} condition -- true --> statement2[语句2] condition -- false --> statement3[语句3] statement3 --> statement4[语句4] statement2 --> statement4 statement4 --> stop(结束) 选择结构循环结构循环的中断]]></content>
+    <content type="text"><![CDATA[程序的结构一般来说程序的结构可以分为顺序结构、选择结构以及循环结构三种，这三种结构只有一个共同点，就是它们只有一个入口，也只有一个出口，这些单一的入、出口可以让程序易读、好维护，也可以减少调试时间。 顺序结构顺序结构下的程序至上而下的逐条执行，一条语句执行完之后继续执行下一条语句，一直到程序的末尾，其结构如下图所示： 选择结构graph TD start(开始) --> statement1[语句1] statement1 --> condition{判断条件} condition -- true --> statement2[语句2] condition -- false --> statement3[语句3] statement3 --> statement4[语句4] statement2 --> statement4 statement4 --> stop(结束) 选择结构循环结构循环的中断]]></content>
       <categories>
         <category>Java</category>
       </categories>
@@ -31,17 +31,6 @@
       </categories>
       <tags>
         <tag>java基础</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F2018%2F07%2F14%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
       </tags>
   </entry>
 </search>

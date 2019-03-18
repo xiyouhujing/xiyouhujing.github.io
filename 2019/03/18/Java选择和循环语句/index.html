@@ -88,18 +88,20 @@
 
 
 
-<meta name="description" content="程序的结构一般来说程序的结构可以分为顺序结构、选择结构以及循环结构三种，这三种结构只有一个共同点，就是它们只有一个入口，也只有一个出口，这些单一的入、出口可以让程序易读、好维护，也可以减少调试时间。 顺序结构顺序结构下的程序至上而下的逐条执行，一条语句执行完之后继续执行下一条语句，一直到程序的末尾，其结构如下图所示： graph LR     start(开始) --&amp;gt; statement1[语句">
+<meta name="description" content="程序的结构一般来说程序的结构可以分为顺序结构、选择结构以及循环结构三种，这三种结构只有一个共同点，就是它们只有一个入口，也只有一个出口，这些单一的入、出口可以让程序易读、好维护，也可以减少调试时间。 顺序结构顺序结构下的程序至上而下的逐条执行，一条语句执行完之后继续执行下一条语句，一直到程序的末尾，其结构如下图所示：  选择结构graph TD    start(开始) --&amp;gt; statement">
 <meta name="keywords" content="java基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java选择和循环语句">
 <meta property="og:url" content="http://xiyouhujing.github.io/2019/03/18/Java选择和循环语句/index.html">
 <meta property="og:site_name" content="xiyou">
-<meta property="og:description" content="程序的结构一般来说程序的结构可以分为顺序结构、选择结构以及循环结构三种，这三种结构只有一个共同点，就是它们只有一个入口，也只有一个出口，这些单一的入、出口可以让程序易读、好维护，也可以减少调试时间。 顺序结构顺序结构下的程序至上而下的逐条执行，一条语句执行完之后继续执行下一条语句，一直到程序的末尾，其结构如下图所示： graph LR     start(开始) --&amp;gt; statement1[语句">
+<meta property="og:description" content="程序的结构一般来说程序的结构可以分为顺序结构、选择结构以及循环结构三种，这三种结构只有一个共同点，就是它们只有一个入口，也只有一个出口，这些单一的入、出口可以让程序易读、好维护，也可以减少调试时间。 顺序结构顺序结构下的程序至上而下的逐条执行，一条语句执行完之后继续执行下一条语句，一直到程序的末尾，其结构如下图所示：  选择结构graph TD    start(开始) --&amp;gt; statement">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-18T11:54:54.475Z">
+<meta property="og:image" content="http://xiyouhujing.github.io/2019/03/18/Java选择和循环语句/程序的顺序结构流程图.png">
+<meta property="og:updated_time" content="2019-03-18T12:19:15.051Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java选择和循环语句">
-<meta name="twitter:description" content="程序的结构一般来说程序的结构可以分为顺序结构、选择结构以及循环结构三种，这三种结构只有一个共同点，就是它们只有一个入口，也只有一个出口，这些单一的入、出口可以让程序易读、好维护，也可以减少调试时间。 顺序结构顺序结构下的程序至上而下的逐条执行，一条语句执行完之后继续执行下一条语句，一直到程序的末尾，其结构如下图所示： graph LR     start(开始) --&amp;gt; statement1[语句">
+<meta name="twitter:description" content="程序的结构一般来说程序的结构可以分为顺序结构、选择结构以及循环结构三种，这三种结构只有一个共同点，就是它们只有一个入口，也只有一个出口，这些单一的入、出口可以让程序易读、好维护，也可以减少调试时间。 顺序结构顺序结构下的程序至上而下的逐条执行，一条语句执行完之后继续执行下一条语句，一直到程序的末尾，其结构如下图所示：  选择结构graph TD    start(开始) --&amp;gt; statement">
+<meta name="twitter:image" content="http://xiyouhujing.github.io/2019/03/18/Java选择和循环语句/程序的顺序结构流程图.png">
 
 
 
@@ -412,7 +414,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  223
+                  200
                 </span>
               
 
@@ -449,14 +451,9 @@
       
 
       
-        <h3 id="程序的结构"><a href="#程序的结构" class="headerlink" title="程序的结构"></a>程序的结构</h3><p>一般来说程序的结构可以分为<strong>顺序结构</strong>、<strong>选择结构</strong>以及<strong>循环结构</strong>三种，这三种结构只有一个共同点，就是它们只有一个入口，也只有一个出口，这些单一的入、出口可以让程序易读、好维护，也可以减少调试时间。</p>
+        <h2 id="程序的结构"><a href="#程序的结构" class="headerlink" title="程序的结构"></a>程序的结构</h2><p>一般来说程序的结构可以分为<strong>顺序结构</strong>、<strong>选择结构</strong>以及<strong>循环结构</strong>三种，这三种结构只有一个共同点，就是它们只有一个入口，也只有一个出口，这些单一的入、出口可以让程序易读、好维护，也可以减少调试时间。</p>
 <h4 id="顺序结构"><a href="#顺序结构" class="headerlink" title="顺序结构"></a>顺序结构</h4><p>顺序结构下的程序至上而下的逐条执行，一条语句执行完之后继续执行下一条语句，一直到程序的末尾，其结构如下图所示：</p>
-<pre class="mermaid">graph LR
-    start(开始) --> statement1[语句1]
-    statement1 --> statement2[语句2]
-    statement2 -->statement3[语句n]
-    statement3 --> stop(结束)</pre>
-
+<p><img src="//xiyouhujing.github.io/2019/03/18/Java选择和循环语句/程序的顺序结构流程图.png" alt="程序的顺序结构流程图"></p>
 <h4 id="选择结构"><a href="#选择结构" class="headerlink" title="选择结构"></a>选择结构</h4><pre class="mermaid">graph TD
    start(开始) --> statement1[语句1]
    statement1 --> condition{判断条件}
@@ -466,7 +463,7 @@
    statement2 --> statement4
    statement4 --> stop(结束)</pre>
 
-<h3 id="选择结构-1"><a href="#选择结构-1" class="headerlink" title="选择结构"></a>选择结构</h3><h3 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h3><h3 id="循环的中断"><a href="#循环的中断" class="headerlink" title="循环的中断"></a>循环的中断</h3>
+<h2 id="选择结构-1"><a href="#选择结构-1" class="headerlink" title="选择结构"></a>选择结构</h2><h2 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h2><h2 id="循环的中断"><a href="#循环的中断" class="headerlink" title="循环的中断"></a>循环的中断</h2>
       
     </div>
     
@@ -606,7 +603,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -617,7 +614,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">1</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -628,7 +625,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">1</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -690,7 +687,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#程序的结构"><span class="nav-number">1.</span> <span class="nav-text">程序的结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#顺序结构"><span class="nav-number">1.1.</span> <span class="nav-text">顺序结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#选择结构"><span class="nav-number">1.2.</span> <span class="nav-text">选择结构</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择结构-1"><span class="nav-number">2.</span> <span class="nav-text">选择结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#循环结构"><span class="nav-number">3.</span> <span class="nav-text">循环结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#循环的中断"><span class="nav-number">4.</span> <span class="nav-text">循环的中断</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#程序的结构"><span class="nav-number">1.</span> <span class="nav-text">程序的结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#顺序结构"><span class="nav-number">1.0.1.</span> <span class="nav-text">顺序结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#选择结构"><span class="nav-number">1.0.2.</span> <span class="nav-text">选择结构</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择结构-1"><span class="nav-number">2.</span> <span class="nav-text">选择结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#循环结构"><span class="nav-number">3.</span> <span class="nav-text">循环结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#循环的中断"><span class="nav-number">4.</span> <span class="nav-text">循环的中断</span></a></li></ol></div>
             
 
           </div>
@@ -726,7 +723,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">6.5k</span>
+    <span title="Site words total count">6.4k</span>
   
   -->
 </div>
@@ -744,7 +741,7 @@
 <div class="theme-info">
   <div class="powered-by"></div>
   <i class="fa fa-paint-brush" aria-hidden="true"></i><span class="post-count">
-  博客全站共6.5k字</span>
+  博客全站共6.4k字</span>
 </div>
 
 <!--
