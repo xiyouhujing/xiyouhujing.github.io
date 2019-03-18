@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xiyouhujing.github.io/"/>
-  <updated>2019-03-18T12:32:16.142Z</updated>
+  <updated>2019-03-18T12:34:32.746Z</updated>
   <id>http://xiyouhujing.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://xiyouhujing.github.io/2019/03/18/Java%E9%80%89%E6%8B%A9%E5%92%8C%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/"/>
     <id>http://xiyouhujing.github.io/2019/03/18/Java选择和循环语句/</id>
     <published>2019-03-18T03:14:09.000Z</published>
-    <updated>2019-03-18T12:32:16.142Z</updated>
+    <updated>2019-03-18T12:34:32.746Z</updated>
     
     <content type="html"><![CDATA[<h2 id="程序的结构"><a href="#程序的结构" class="headerlink" title="程序的结构"></a>程序的结构</h2><p>一般来说程序的结构可以分为<strong>顺序结构</strong>、<strong>选择结构</strong>以及<strong>循环结构</strong>三种，这三种结构只有一个共同点，就是它们只有一个入口，也只有一个出口，这些单一的入、出口可以让程序易读、好维护，也可以减少调试时间。</p><h4 id="顺序结构"><a href="#顺序结构" class="headerlink" title="顺序结构"></a>顺序结构</h4><p>顺序结构下的程序至上而下的逐条执行，一条语句执行完之后继续执行下一条语句，一直到程序的末尾，其结构如下图所示：</p><p><img src="//xiyouhujing.github.io/2019/03/18/Java选择和循环语句/程序的顺序结构流程图.png" alt="程序的顺序结构流程图"></p><h4 id="选择结构"><a href="#选择结构" class="headerlink" title="选择结构"></a>选择结构</h4><p><img src="//xiyouhujing.github.io/2019/03/18/Java选择和循环语句/程序的选择结构流程图.png" alt="程序的选择结构流程图"></p><h2 id="选择结构-1"><a href="#选择结构-1" class="headerlink" title="选择结构"></a>选择结构</h2><h2 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h2><h2 id="循环的中断"><a href="#循环的中断" class="headerlink" title="循环的中断"></a>循环的中断</h2>]]></content>
     
