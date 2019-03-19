@@ -88,20 +88,22 @@
 
 
 
-<meta name="description" content="程序的结构一般来说程序的结构可以分为顺序结构、选择结构以及循环结构三种，这三种结构只有一个共同点，就是它们只有一个入口，也只有一个出口，这些单一的入、出口可以让程序易读、好维护，也可以减少调试时间。 顺序结构顺序结构下的程序至上而下的逐条执行，一条语句执行完之后继续执行下一条语句，一直到程序的末尾，其结构如下图所示：  选择结构 选择结构循环结构循环的中断">
+<meta name="description" content="程序的结构一般来说程序的结构可以分为顺序结构、选择结构以及循环结构三种，这三种结构只有一个共同点，就是它们只有一个入口，也只有一个出口，这些单一的入、出口可以让程序易读、好维护，也可以减少调试时间。 顺序结构顺序结构下的程序至上而下的逐条执行，一条语句执行完之后继续执行下一条语句，一直到程序的末尾，其结构如下图所示：  选择结构选择结构的流程图如下，这种结构可以依据判断条件的结构来决定要执行的语句">
 <meta name="keywords" content="java基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java选择和循环语句">
 <meta property="og:url" content="http://xiyouhujing.github.io/2019/03/18/Java选择和循环语句/index.html">
 <meta property="og:site_name" content="xiyou">
-<meta property="og:description" content="程序的结构一般来说程序的结构可以分为顺序结构、选择结构以及循环结构三种，这三种结构只有一个共同点，就是它们只有一个入口，也只有一个出口，这些单一的入、出口可以让程序易读、好维护，也可以减少调试时间。 顺序结构顺序结构下的程序至上而下的逐条执行，一条语句执行完之后继续执行下一条语句，一直到程序的末尾，其结构如下图所示：  选择结构 选择结构循环结构循环的中断">
+<meta property="og:description" content="程序的结构一般来说程序的结构可以分为顺序结构、选择结构以及循环结构三种，这三种结构只有一个共同点，就是它们只有一个入口，也只有一个出口，这些单一的入、出口可以让程序易读、好维护，也可以减少调试时间。 顺序结构顺序结构下的程序至上而下的逐条执行，一条语句执行完之后继续执行下一条语句，一直到程序的末尾，其结构如下图所示：  选择结构选择结构的流程图如下，这种结构可以依据判断条件的结构来决定要执行的语句">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://xiyouhujing.github.io/2019/03/18/Java选择和循环语句/程序的顺序结构流程图.png">
 <meta property="og:image" content="http://xiyouhujing.github.io/2019/03/18/Java选择和循环语句/程序的选择结构流程图.png">
-<meta property="og:updated_time" content="2019-03-18T12:41:57.107Z">
+<meta property="og:image" content="http://xiyouhujing.github.io/2019/03/18/Java选择和循环语句/switch语句的流程图.png">
+<meta property="og:image" content="http://xiyouhujing.github.io/2019/03/18/Java选择和循环语句/while循环流程图.png">
+<meta property="og:updated_time" content="2019-03-19T12:28:18.941Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java选择和循环语句">
-<meta name="twitter:description" content="程序的结构一般来说程序的结构可以分为顺序结构、选择结构以及循环结构三种，这三种结构只有一个共同点，就是它们只有一个入口，也只有一个出口，这些单一的入、出口可以让程序易读、好维护，也可以减少调试时间。 顺序结构顺序结构下的程序至上而下的逐条执行，一条语句执行完之后继续执行下一条语句，一直到程序的末尾，其结构如下图所示：  选择结构 选择结构循环结构循环的中断">
+<meta name="twitter:description" content="程序的结构一般来说程序的结构可以分为顺序结构、选择结构以及循环结构三种，这三种结构只有一个共同点，就是它们只有一个入口，也只有一个出口，这些单一的入、出口可以让程序易读、好维护，也可以减少调试时间。 顺序结构顺序结构下的程序至上而下的逐条执行，一条语句执行完之后继续执行下一条语句，一直到程序的末尾，其结构如下图所示：  选择结构选择结构的流程图如下，这种结构可以依据判断条件的结构来决定要执行的语句">
 <meta name="twitter:image" content="http://xiyouhujing.github.io/2019/03/18/Java选择和循环语句/程序的顺序结构流程图.png">
 
 
@@ -415,7 +417,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  162
+                  2.1k
                 </span>
               
 
@@ -431,7 +433,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  8
                 </span>
               
             </div>
@@ -455,8 +457,101 @@
         <h2 id="程序的结构"><a href="#程序的结构" class="headerlink" title="程序的结构"></a>程序的结构</h2><p>一般来说程序的结构可以分为<strong>顺序结构</strong>、<strong>选择结构</strong>以及<strong>循环结构</strong>三种，这三种结构只有一个共同点，就是它们只有一个入口，也只有一个出口，这些单一的入、出口可以让程序易读、好维护，也可以减少调试时间。</p>
 <h4 id="顺序结构"><a href="#顺序结构" class="headerlink" title="顺序结构"></a>顺序结构</h4><p>顺序结构下的程序至上而下的逐条执行，一条语句执行完之后继续执行下一条语句，一直到程序的末尾，其结构如下图所示：</p>
 <p><img src="//xiyouhujing.github.io/2019/03/18/Java选择和循环语句/程序的顺序结构流程图.png" alt="程序的顺序结构流程图"></p>
-<h4 id="选择结构"><a href="#选择结构" class="headerlink" title="选择结构"></a>选择结构</h4><p><img src="//xiyouhujing.github.io/2019/03/18/Java选择和循环语句/程序的选择结构流程图.png" alt="程序的选择结构流程图"></p>
-<h2 id="选择结构-1"><a href="#选择结构-1" class="headerlink" title="选择结构"></a>选择结构</h2><h2 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h2><h2 id="循环的中断"><a href="#循环的中断" class="headerlink" title="循环的中断"></a>循环的中断</h2>
+<h4 id="选择结构"><a href="#选择结构" class="headerlink" title="选择结构"></a>选择结构</h4><p>选择结构的流程图如下，这种结构可以依据判断条件的结构来决定要执行的语句，当判断条件的值为真时，就运行语句1；当判断的条件为假，则执行语句2。不论执行哪一句，最后都会回到语句3继续执行。选择结构的流程图如下：</p>
+<p><img src="//xiyouhujing.github.io/2019/03/18/Java选择和循环语句/程序的选择结构流程图.png" alt="程序的选择结构流程图"></p>
+<p>验证选择结构：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">IfDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> x = <span class="number">3</span>;</span><br><span class="line">        <span class="keyword">int</span> y = <span class="number">10</span>;</span><br><span class="line">        System.out.println(<span class="string">"======比较开始====="</span>);</span><br><span class="line">        <span class="keyword">if</span> (x &gt; y)&#123;</span><br><span class="line">            System.out.println(<span class="string">"x比y大！"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (x &lt; y)&#123;</span><br><span class="line">            System.out.println(<span class="string">"x比y小！"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">"=====比较完成====="</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>程序运行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">======比较开始=====</span><br><span class="line">x比y小！</span><br><span class="line">=====比较完成=====</span><br></pre></td></tr></table></figure>
+<p>选择结构包括if、if···else及switch语句。</p>
+<ol>
+<li><strong>if语句</strong></li>
+</ol>
+<p>要根据判断的结果来执行不同的语句时，使用if语句是一个很好的选择，它会准确地判断条件成立与否，再决定是否要执行后面的语句。if语句的格式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if (判断条件) &#123;</span><br><span class="line">    语句1;</span><br><span class="line">    ···</span><br><span class="line">    语句2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当判断条件的值不满足时（true），就会逐一执行大括号里面所有的语句，否则执行大括号外的语句。</p>
+<ol>
+<li><strong>if···else语句</strong></li>
+</ol>
+<p>当程序中存在含有分支的判断语句时，就可以用if···else语句处理，当判断条件成立时，即执行if语句主题；判断条件不成立时，则会执行else后面的语句主题。if···else语句的格式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if (判断条件) &#123;</span><br><span class="line">    语句主体1;</span><br><span class="line">&#125;else &#123;</span><br><span class="line">    语句主体2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>例如，通过if···else语句判断一个数字是奇数还是偶数：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">IfElseDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> x = <span class="number">3</span>;</span><br><span class="line">        <span class="keyword">if</span> (x % <span class="number">2</span> == <span class="number">1</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">"x是基数！"</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">"x是偶数！"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li><strong>三目运算符</strong></li>
+</ol>
+<p>三目运算符可以等价于使用if···else进行变量赋值的语句。如下表所示：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">三目运算符</th>
+<th style="text-align:center">意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">?:</td>
+<td style="text-align:center">根据条件的成立与否来决定结果为“：”前或者“：”后的表达式</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>三目运算符的使用格式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">变量 = 条件判断?表达式1:表达式2</span><br></pre></td></tr></table></figure>
+<p>该语句的意思是，当条件成立时执行表达式1，否则执行表达式2，通常会将这两个表达式之一的运算结果指定给某个变量，用if···else表示为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if (条件判断)&#123;</span><br><span class="line">    变量x = 表达式1;</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    变量x = 表达式2；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>例如，使用三目运算符求出两个数字中的最大值：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MaxDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> max = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> x = <span class="number">3</span>;</span><br><span class="line">        <span class="keyword">int</span> y = <span class="number">10</span>;</span><br><span class="line">        max = x &gt; y ? x:y;</span><br><span class="line">        System.out.println(<span class="string">"最大值为："</span> + max);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li><strong>if···else if···else语句</strong></li>
+</ol>
+<p>如果需要在if···else中判断多个条件时，就需要if···else if···else语句了，其格式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">if (条件判断1) &#123;</span><br><span class="line">    语句主体1;</span><br><span class="line">&#125;else if (条件判断2) &#123;</span><br><span class="line">    语句主体2;</span><br><span class="line">&#125;</span><br><span class="line">···     // 多个else if()语句</span><br><span class="line">else&#123;</span><br><span class="line">    语句主体3;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MoreIfElseDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> x = <span class="number">3</span>;</span><br><span class="line">        <span class="keyword">if</span> (x ==<span class="number">1</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">"x的值是1！"</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (x == <span class="number">2</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">"x的值是2！"</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (x == <span class="number">3</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">"x的值是3！"</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">"x的值不是1、2、3中的一个！"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li><strong>switch语句</strong></li>
+</ol>
+<p>switch语句可以将多选一的情况简化，使程序简洁易懂，使用嵌套if···else语句最常发生的状况就是容易将if与else配对混淆，从而造成阅读及运行上的错误，而使用switch语句则可以避免这种错误发生，switch语句的格式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">switch (表达式) &#123;</span><br><span class="line">    case 选择值1:	语句主体1;</span><br><span class="line">                   break；</span><br><span class="line">    case 选择值2:	语句主体2：</span><br><span class="line">                   break;</span><br><span class="line">    ……</span><br><span class="line">    case 选择值n:	语句主体n;</span><br><span class="line">                   break;</span><br><span class="line">    default:       语句主体;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>特别注意的是，在switch语句中选择值只能是字符或常量，在JDK 1.5之后，switch也支持枚举类的判断。</p>
+<p>switch语句执行的流程如下：</p>
+<p>（1） switch语句先计算括号内的表达式结果，结果是数字、字符或者枚举。</p>
+<p>（2）根据表达式的值检测是否符合case后面的选择值，若是所有case的选择值皆不符合，则执行default所包含的语句，执行完毕即离开switch语句。</p>
+<p>（3）如果某个case的选择值符合表达式的结果，就会执行该case所包含的语句，一直遇到break语句后才离开switch语句</p>
+<p>（4）如果没有在case语句结尾处加上break语句，则会一直执行到switch语句的尾端才离开switch语句。</p>
+<p>（5）若是没有定义default执行语句，则什么都不会执行，直接退出switch语句。</p>
+<p>根据以上描述，绘制如下的switch语句的流程图：</p>
+<p><img src="//xiyouhujing.github.io/2019/03/18/Java选择和循环语句/switch语句的流程图.png" alt="switch语句的流程图"></p>
+<p>以下程序验证了switch语句的作用：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SwitchDemo01</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> x = <span class="number">3</span>;</span><br><span class="line">        <span class="keyword">int</span> y = <span class="number">6</span>;</span><br><span class="line">        <span class="keyword">char</span> oper = <span class="string">'+'</span>;</span><br><span class="line">        <span class="keyword">switch</span> (oper)&#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'+'</span>:&#123;</span><br><span class="line">                System.out.println(<span class="string">"x + y ="</span> + (x + y));</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'-'</span>:&#123;</span><br><span class="line">                System.out.println(<span class="string">"x - y = "</span> + (x - y));</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'*'</span>:&#123;</span><br><span class="line">                System.out.println(<span class="string">"x * y = "</span> + (x * y));</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'/'</span>:&#123;</span><br><span class="line">                System.out.println(<span class="string">"x / y = "</span> + (x / y));</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">default</span>:&#123;</span><br><span class="line">                System.out.println(<span class="string">"未知操作！"</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>程序的运行结果为：x + y = 9.</p>
+<blockquote>
+<p><strong>break语句的作用</strong></p>
+<p>从以上程序可以发现，在每一个case语句后面都加上了break语句，如果不加，则switch语句会从第一个满足条件的case开始依此执行操作，例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SwitchDemo02</span> </span>&#123;</span><br><span class="line">&gt;     <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">&gt;         <span class="keyword">int</span> x = <span class="number">3</span>;</span><br><span class="line">&gt;         <span class="keyword">int</span> y = <span class="number">6</span>;</span><br><span class="line">&gt;         <span class="keyword">char</span> oper = <span class="string">'+'</span>;</span><br><span class="line">&gt;         <span class="keyword">switch</span> (oper)&#123;</span><br><span class="line">&gt;             <span class="keyword">case</span> <span class="string">'+'</span>:&#123;</span><br><span class="line">&gt;                 System.out.println(<span class="string">"x + y ="</span> + (x + y));</span><br><span class="line">&gt;             &#125;</span><br><span class="line">&gt;             <span class="keyword">case</span> <span class="string">'-'</span>:&#123;</span><br><span class="line">&gt;                 System.out.println(<span class="string">"x - y ="</span> + (x - y));</span><br><span class="line">&gt;             &#125;</span><br><span class="line">&gt;             <span class="keyword">case</span> <span class="string">'*'</span>:&#123;</span><br><span class="line">&gt;                 System.out.println(<span class="string">"x * y ="</span> + (x * y));</span><br><span class="line">&gt;             &#125;</span><br><span class="line">&gt;             <span class="keyword">case</span> <span class="string">'/'</span>:&#123;</span><br><span class="line">&gt;                 System.out.println(<span class="string">"x / y ="</span> + (x / y));</span><br><span class="line">&gt;             &#125;</span><br><span class="line">&gt;             <span class="keyword">default</span>:&#123;</span><br><span class="line">&gt;                 System.out.println(<span class="string">"未知操作！"</span>);</span><br><span class="line">&gt;             &#125;</span><br><span class="line">&gt;         &#125;</span><br><span class="line">&gt;     &#125;</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>最后得到的结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; x + y =9</span><br><span class="line">&gt; x - y =-3</span><br><span class="line">&gt; x * y =18</span><br><span class="line">&gt; x / y =0</span><br><span class="line">&gt; 未知操作！</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>从运行的结果可以发现，程序在满足第一个条件后，由于没有设置break语句，所以从第一个满足条件的语句case开始依此向后继续执行，知道最后一个条件执行完毕。</p>
+</blockquote>
+<h4 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h4><ol>
+<li><strong>while循环</strong></li>
+</ol>
+<p>while是循环语句，也是判断语句，当事前不知道循环执行多少次时，就要用while循环，其格式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">while (循环条件判断)&#123;</span><br><span class="line">    语句1;</span><br><span class="line">    语句2;</span><br><span class="line">    ···</span><br><span class="line">    语句n;</span><br><span class="line">    循环条件改变；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在while循环语句中，只有一个判断条件，当判断条件为真时，循环就会执行一次，再重复测试判断条件，执行循环主体，知道判断条件为假，才会跳出while循环。下面是while循环的流程及流程图：</p>
+<p>（1）第一次进入while循环前，必须先为循环控制变量（或表达式）赋起始值。</p>
+<p>（2）根据判断条件的内容决定是否要继续执行循环，如果条件判断值为真（true），继续执行循环主体，若条件判断值为假（false），则跳出循环执行其他语句。</p>
+<p>（3）执行完循环主体内的语句后，重新为循环控制变量（或表达式）赋值（增加或者减少），由于while循环不会自动更改循环控制变量（或表达式）的内容，所以while循环中为循环控制变量赋值的工作要自己来做，完成后再回到步骤（2）重新判断是否继续执行循环。</p>
+<p><img src="//xiyouhujing.github.io/2019/03/18/Java选择和循环语句/while循环流程图.png" alt="while循环流程图"></p>
+<h2 id="循环的中断"><a href="#循环的中断" class="headerlink" title="循环的中断"></a>循环的中断</h2>
       
     </div>
     
@@ -680,7 +775,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#程序的结构"><span class="nav-number">1.</span> <span class="nav-text">程序的结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#顺序结构"><span class="nav-number">1.0.1.</span> <span class="nav-text">顺序结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#选择结构"><span class="nav-number">1.0.2.</span> <span class="nav-text">选择结构</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择结构-1"><span class="nav-number">2.</span> <span class="nav-text">选择结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#循环结构"><span class="nav-number">3.</span> <span class="nav-text">循环结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#循环的中断"><span class="nav-number">4.</span> <span class="nav-text">循环的中断</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#程序的结构"><span class="nav-number">1.</span> <span class="nav-text">程序的结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#顺序结构"><span class="nav-number">1.0.1.</span> <span class="nav-text">顺序结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#选择结构"><span class="nav-number">1.0.2.</span> <span class="nav-text">选择结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#循环结构"><span class="nav-number">1.0.3.</span> <span class="nav-text">循环结构</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#循环的中断"><span class="nav-number">2.</span> <span class="nav-text">循环的中断</span></a></li></ol></div>
             
 
           </div>
@@ -716,7 +811,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">6.4k</span>
+    <span title="Site words total count">8.3k</span>
   
   -->
 </div>
@@ -734,7 +829,7 @@
 <div class="theme-info">
   <div class="powered-by"></div>
   <i class="fa fa-paint-brush" aria-hidden="true"></i><span class="post-count">
-  博客全站共6.4k字</span>
+  博客全站共8.3k字</span>
 </div>
 
 <!--
