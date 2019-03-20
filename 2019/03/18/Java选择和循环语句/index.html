@@ -100,7 +100,9 @@
 <meta property="og:image" content="http://xiyouhujing.github.io/2019/03/18/Java选择和循环语句/程序的选择结构流程图.png">
 <meta property="og:image" content="http://xiyouhujing.github.io/2019/03/18/Java选择和循环语句/switch语句的流程图.png">
 <meta property="og:image" content="http://xiyouhujing.github.io/2019/03/18/Java选择和循环语句/while循环流程图.png">
-<meta property="og:updated_time" content="2019-03-19T12:43:18.994Z">
+<meta property="og:image" content="http://xiyouhujing.github.io/2019/03/18/Java选择和循环语句/do···while循环流程图.png">
+<meta property="og:image" content="http://xiyouhujing.github.io/2019/03/18/Java选择和循环语句/for循环流程图.png">
+<meta property="og:updated_time" content="2019-03-20T12:27:26.939Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java选择和循环语句">
 <meta name="twitter:description" content="程序的结构一般来说程序的结构可以分为顺序结构、选择结构以及循环结构三种，这三种结构只有一个共同点，就是它们只有一个入口，也只有一个出口，这些单一的入、出口可以让程序易读、好维护，也可以减少调试时间。 顺序结构顺序结构下的程序至上而下的逐条执行，一条语句执行完之后继续执行下一条语句，一直到程序的末尾，其结构如下图所示：  选择结构选择结构的流程图如下，这种结构可以依据判断条件的结构来决定要执行的语句">
@@ -417,7 +419,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.1k
+                  3k
                 </span>
               
 
@@ -433,7 +435,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  8
+                  12
                 </span>
               
             </div>
@@ -551,6 +553,43 @@
 <p>（2）根据判断条件的内容决定是否要继续执行循环，如果条件判断值为真（true），继续执行循环主体，若条件判断值为假（false），则跳出循环执行其他语句。</p>
 <p>（3）执行完循环主体内的语句后，重新为循环控制变量（或表达式）赋值（增加或者减少），由于while循环不会自动更改循环控制变量（或表达式）的内容，所以while循环中为循环控制变量赋值的工作要自己来做，完成后再回到步骤（2）重新判断是否继续执行循环。</p>
 <p><img src="//xiyouhujing.github.io/2019/03/18/Java选择和循环语句/while循环流程图.png" alt="while循环流程图"></p>
+<p>使用while循环进行累加操作：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WhileDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> x = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (x &lt;= <span class="number">10</span>) &#123;</span><br><span class="line">            sum += x;</span><br><span class="line">            x++;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">"1--&gt;10累加结果为："</span> + sum);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>程序运行结果为：</p>
+<p><code>1--&gt;10累加结果为：55</code></p>
+<p>如果程序中没有修改循环条件（x++），那么程序将出现“死循环”的情况。</p>
+<ol>
+<li>do···while循环</li>
+</ol>
+<p>do···while循环也是用于未知循环执行次数的情况，而while循环及do···while循环最大的不同就是进入while循环前，while语句会先测试判断条件的真假，再决定是否执行循环主体，而do···while循环则是每次都是先执行一次循环主体，然后再测试判断条件的真假，<strong>所以无论循环成立的条件是什么，使用do···while循环时，至少都会执行一次循环主体</strong>。do···while循环的格式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">do&#123;</span><br><span class="line">    语句1;</span><br><span class="line">    语句2;</span><br><span class="line">    ···</span><br><span class="line">    语句n;</span><br><span class="line">    循环条件改变;</span><br><span class="line">&#125;while(循环条件判断)</span><br></pre></td></tr></table></figure>
+<p>下面描述的do···while循环的流程及流程图：</p>
+<p>（1）进入do···while循环前，要先为循环控制变量（或表达式）赋起始值。</p>
+<p>（2）直接执行循环主体，循环主体执行完毕，才开始根据判断条件的内容决定是否继续执行循环，条件为真（true）时，继续执行循环主体；条件为假（false）时，则跳出循环，执行其他语句。</p>
+<p>（3）执行完循环主体内的语句后，重新为循环控制变量（或表达式）赋值（增加或减少），由于do···while循环和while循环一样，不会自动更改循环控制变量（或表达式）的内容，所以在do···while循环中赋值循环控制变量的工作要由自己来做，然后再回到步骤（2）重新判断是否继续执行循环。</p>
+<p><img src="//xiyouhujing.github.io/2019/03/18/Java选择和循环语句/do···while循环流程图.png" alt="do···while循环流程图"></p>
+<p>使用while循环进行累加操作：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DoWhileDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> x = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">do</span> &#123;</span><br><span class="line">            sum += x;</span><br><span class="line">            x++;</span><br><span class="line">        &#125;<span class="keyword">while</span> (x &lt;= <span class="number">10</span>);</span><br><span class="line">        System.out.println(<span class="string">"1--&gt;10累加结果为："</span> + sum);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>程序的运行结果为：</p>
+<p><code>1--&gt;10累加结果为：55</code></p>
+<p>从程序的运行结果来看，while和do···while的结果是一样的，但是do···while与while循环不同的是do···while操作中就算条件不满足，也至少会执行一次，而while如果条件不满足，则一次也不会被执行。</p>
+<ol>
+<li>for循环</li>
+</ol>
+<p>对于while和do···while两种循环来讲，操作时并不一定要明确地知道循环次数，而如果开发者已经明确地知道了循环次数，那么就可以使用另一种循环语句——for循环。for循环的格式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">for(赋值初值；判断条件；赋值增减量)&#123;</span><br><span class="line">    语句1;</span><br><span class="line">    ···</span><br><span class="line">    语句n;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>下面是for循环的流程和流程图：</p>
+<p>（1）第一次进入for循环时，要为循环控制变量赋起始值。</p>
+<p>（2）根据判断条件的内容检查是否继续执行循环，当判断条件为真（true）时，继续执行循环主体内的语句；判断条件为假（false）时，则会跳出循环，执行其他语句。</p>
+<p>（3）执行完循环主体内的语句后，循环控制变量会根据增减量的要求更改循环控制变量的值，然后再回到步骤（2）重新判断是否继续执行循环。</p>
+<p><img src="//xiyouhujing.github.io/2019/03/18/Java选择和循环语句/for循环流程图.png" alt="for循环流程图"></p>
+<p>使用for循环进行累加操作：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ForDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> x = <span class="number">1</span>; x &lt;= <span class="number">10</span>; x++)&#123;</span><br><span class="line">            sum += x;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">"1--&gt;10累加结果为："</span> + sum);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>程序的运行结果依旧如下：</p>
+<p><code>1--&gt;10累加结果为：55</code></p>
+<ol>
+<li>循环的嵌套</li>
+</ol>
 <h2 id="循环的中断"><a href="#循环的中断" class="headerlink" title="循环的中断"></a>循环的中断</h2>
       
     </div>
@@ -811,7 +850,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">8.3k</span>
+    <span title="Site words total count">9.2k</span>
   
   -->
 </div>
@@ -829,7 +868,7 @@
 <div class="theme-info">
   <div class="powered-by"></div>
   <i class="fa fa-paint-brush" aria-hidden="true"></i><span class="post-count">
-  博客全站共8.3k字</span>
+  博客全站共9.2k字</span>
 </div>
 
 <!--
