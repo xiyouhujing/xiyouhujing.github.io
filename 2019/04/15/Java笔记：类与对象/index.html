@@ -88,18 +88,18 @@
 
 
 
-<meta name="description" content="Java新特性——可变参数在调用一个方法时，必须根据方法的定义传递指定的参数，但是在JDK 1.5（JAVA SE 5.0）之后产生了新的概念——可变参数，即方法中可以接收的参数不再是固定的，而是随着需要传递的，可变参数的定义格式如下： 1返回值类型 方法名称(类型...参数名称)&amp;#123;&amp;#125; 向方法中传递可变参数后，其中的参数是以数组的形式保存下来的。 123456789101112">
+<meta name="description" content="类与对象的关系在面向对象中，类和对象是最基本、最重要的组成单元。类实际上是表示一个客观世界某类群体的一些基本特征抽象。对象就是表示一个个具体的东西。例如，现实生活中，人可以称为一个类，因为人是一种广义的概念，并不是具体的。而某一个人就可以称为一个对象，某个人可以通过他的各种特征来描述，例如姓名、性别、年龄等。这些信息在面向对象的概念中就称为属性；当然人是可以吃饭、睡觉的，这些人的行为在类中就称为方">
 <meta name="keywords" content="java基础">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java笔记：Java新特性对数组的支持">
-<meta property="og:url" content="http://xiyouhujing.github.io/2019/04/05/Java笔记：Java新特性对数组的支持/index.html">
+<meta property="og:title" content="Java笔记：类与对象">
+<meta property="og:url" content="http://xiyouhujing.github.io/2019/04/15/Java笔记：类与对象/index.html">
 <meta property="og:site_name" content="xiyou">
-<meta property="og:description" content="Java新特性——可变参数在调用一个方法时，必须根据方法的定义传递指定的参数，但是在JDK 1.5（JAVA SE 5.0）之后产生了新的概念——可变参数，即方法中可以接收的参数不再是固定的，而是随着需要传递的，可变参数的定义格式如下： 1返回值类型 方法名称(类型...参数名称)&amp;#123;&amp;#125; 向方法中传递可变参数后，其中的参数是以数组的形式保存下来的。 123456789101112">
+<meta property="og:description" content="类与对象的关系在面向对象中，类和对象是最基本、最重要的组成单元。类实际上是表示一个客观世界某类群体的一些基本特征抽象。对象就是表示一个个具体的东西。例如，现实生活中，人可以称为一个类，因为人是一种广义的概念，并不是具体的。而某一个人就可以称为一个对象，某个人可以通过他的各种特征来描述，例如姓名、性别、年龄等。这些信息在面向对象的概念中就称为属性；当然人是可以吃饭、睡觉的，这些人的行为在类中就称为方">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-05T10:33:48.690Z">
+<meta property="og:updated_time" content="2019-04-17T12:26:23.846Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java笔记：Java新特性对数组的支持">
-<meta name="twitter:description" content="Java新特性——可变参数在调用一个方法时，必须根据方法的定义传递指定的参数，但是在JDK 1.5（JAVA SE 5.0）之后产生了新的概念——可变参数，即方法中可以接收的参数不再是固定的，而是随着需要传递的，可变参数的定义格式如下： 1返回值类型 方法名称(类型...参数名称)&amp;#123;&amp;#125; 向方法中传递可变参数后，其中的参数是以数组的形式保存下来的。 123456789101112">
+<meta name="twitter:title" content="Java笔记：类与对象">
+<meta name="twitter:description" content="类与对象的关系在面向对象中，类和对象是最基本、最重要的组成单元。类实际上是表示一个客观世界某类群体的一些基本特征抽象。对象就是表示一个个具体的东西。例如，现实生活中，人可以称为一个类，因为人是一种广义的概念，并不是具体的。而某一个人就可以称为一个对象，某个人可以通过他的各种特征来描述，例如姓名、性别、年龄等。这些信息在面向对象的概念中就称为属性；当然人是可以吃饭、睡觉的，这些人的行为在类中就称为方">
 
 
 
@@ -129,7 +129,7 @@
 
 
 
-  <link rel="canonical" href="http://xiyouhujing.github.io/2019/04/05/Java笔记：Java新特性对数组的支持/"/>
+  <link rel="canonical" href="http://xiyouhujing.github.io/2019/04/15/Java笔记：类与对象/"/>
 
 
 
@@ -145,7 +145,7 @@
   </script>
 
 
-  <title>Java笔记：Java新特性对数组的支持 | xiyou</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>Java笔记：类与对象 | xiyou</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -317,7 +317,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xiyouhujing.github.io/2019/04/05/Java笔记：Java新特性对数组的支持/">
+    <link itemprop="mainEntityOfPage" href="http://xiyouhujing.github.io/2019/04/15/Java笔记：类与对象/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xiyou">
@@ -334,7 +334,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java笔记：Java新特性对数组的支持</h1>
+          <h1 class="post-title" itemprop="name headline">Java笔记：类与对象</h1>
         
 
         <div class="post-meta">
@@ -346,8 +346,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-05T18:10:19+08:00">
-                2019-04-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-15T19:39:10+08:00">
+                2019-04-15
               </time>
             
 
@@ -386,7 +386,7 @@
 
           
           
-             <span id="/2019/04/05/Java笔记：Java新特性对数组的支持/" class="leancloud_visitors" data-flag-title="Java笔记：Java新特性对数组的支持">
+             <span id="/2019/04/15/Java笔记：类与对象/" class="leancloud_visitors" data-flag-title="Java笔记：类与对象">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -412,7 +412,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  596
+                  2k
                 </span>
               
 
@@ -428,7 +428,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  7
                 </span>
               
             </div>
@@ -449,22 +449,74 @@
       
 
       
-        <h3 id="Java新特性——可变参数"><a href="#Java新特性——可变参数" class="headerlink" title="Java新特性——可变参数"></a>Java新特性——可变参数</h3><p>在调用一个方法时，必须根据方法的定义传递指定的参数，但是在JDK 1.5（JAVA SE 5.0）之后产生了新的概念——可变参数，即方法中可以接收的参数不再是固定的，而是随着需要传递的，可变参数的定义格式如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">返回值类型 方法名称(类型...参数名称)&#123;&#125;</span><br></pre></td></tr></table></figure>
-<p>向方法中传递可变参数后，其中的参数是以数组的形式保存下来的。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NewDemo01</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.print(<span class="string">"不传递参数 （fun()）："</span>);</span><br><span class="line">        fun();                                      <span class="comment">// 不传递参数</span></span><br><span class="line">        System.out.print(<span class="string">"\n传递1个参数 （fun(1)）："</span>);</span><br><span class="line">        fun(<span class="number">1</span>);                                     <span class="comment">// 传递一个参数</span></span><br><span class="line">        System.out.print(<span class="string">"\n传递5个参数 （fun(1, 2, 3, 4, 5)）："</span>);</span><br><span class="line">        fun(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>);                         <span class="comment">// 传递五个参数</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span>...arg)</span></span>&#123;              <span class="comment">// 可变参数，可以接收任意多个参数</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i&lt;arg.length; i++)&#123;</span><br><span class="line">            System.out.print(arg[i] + <span class="string">"、"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>程序输出结果为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">不传递参数 （fun()）：</span><br><span class="line">传递1个参数 （fun(1)）：1、</span><br><span class="line">传递5个参数 （fun(1, 2, 3, 4, 5)）：1、2、3、4、5、</span><br></pre></td></tr></table></figure>
-<p>在使用可变参数的时候，也可以直接向方法中传递一个数组，如下所示：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> temp[] = &#123;<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>&#125;;      <span class="comment">// 定义数组</span></span><br><span class="line">fun(temp);                   <span class="comment">// 向可变参数中传递数组</span></span><br></pre></td></tr></table></figure>
-<p>对于以上传递数组的操作，也可以变成以下形式的代码：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fun(<span class="keyword">new</span> <span class="keyword">int</span>[] &#123;<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>&#125;)</span><br></pre></td></tr></table></figure>
-<h3 id="Java新特性——foreach输出"><a href="#Java新特性——foreach输出" class="headerlink" title="Java新特性——foreach输出"></a>Java新特性——foreach输出</h3><p>数组的输出一般都会使用for循环，但是在JDK 1.5之后为了方便数组的输出，提供了一种foreach语法，此语法的使用格式如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(数据类型 变量名称：数组名称)&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h3 id="类与对象的关系"><a href="#类与对象的关系" class="headerlink" title="类与对象的关系"></a>类与对象的关系</h3><p>在面向对象中，类和对象是最基本、最重要的组成单元。类实际上是表示一个客观世界某类群体的一些基本特征抽象。对象就是表示一个个具体的东西。例如，现实生活中，人可以称为一个类，因为人是一种广义的概念，并不是具体的。而某一个人就可以称为一个对象，某个人可以通过他的各种特征来描述，例如姓名、性别、年龄等。这些信息在面向对象的概念中就称为属性；当然人是可以吃饭、睡觉的，这些人的行为在类中就称为方法。</p>
+<p>如果要使用一个类，就一定要产生一个对象，每个对象之间是靠属性的不同来进行区分的，而每个对象所具备的操作就是类中规定好的方法。</p>
+<h3 id="类的定义"><a href="#类的定义" class="headerlink" title="类的定义"></a>类的定义</h3><p>类是由属性和方法组成的，属性中定义的是类需要的一个个具体信息，实际上一个属性就是一个变量，而方法是一些操作行为，但是在程序设计中，定义类也是要按照具体的语法要求完成的，类的定义语法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class 类名称&#123;</span><br><span class="line">    数据类型 属性；</span><br><span class="line">    ···</span><br><span class="line">    public 返回值的数据类型 方法名称（参数1，参数2...）&#123;</span><br><span class="line">        程序语句；</span><br><span class="line">        [return 表达式；]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>类中定义方法的补充说明</strong></p>
+<p>可以发现，此处的方法与之前的方法定义有区别，并没有加上static关键字，这是因为此时定义的方法将有对象调用，而不像之前那样与主方法定义在一个类中并且由主方法之间调用。</p>
+</blockquote>
+<p>例如我们定义一个Person类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    String name;             <span class="comment">// 声明姓名属性</span></span><br><span class="line">    <span class="keyword">int</span> age;                 <span class="comment">// 声明年龄属性</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">tell</span><span class="params">()</span></span>&#123;      <span class="comment">// 取得信息的方法</span></span><br><span class="line">        System.out.println(<span class="string">"姓名："</span> + name + <span class="string">"，年龄："</span> + age);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>类定义完成后，我们可以通过下图所示的图形样式来表示出类的定义：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Person</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">name : String <br> age : int</td>
+</tr>
+<tr>
+<td style="text-align:center">+ tell() : void</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol>
+<li>第一层表示类的名称，类的名称要求开头首字母大写。</li>
+<li>第二层表示属性的定义，按照“访问权限 属性名称：属性类型”的格式定义，在本类中因为声明属性处没有写任何的访问权限，所以前面暂时不加任何的符号。</li>
+<li>第三层表示类中方法的定义，按照“访问权限 方法名称():方法返回值”的格式定义，在本类中，方法的声明处加上了public（此为访问权限，表示任何地方都可以访问），所以使用“+”表示，另外，如果方法中由传递的参数，则此方法定义格式为“访问权限 方法名称(参数名称: 参数类型, 参数名称: 参数类型, …): 方法返回值”</li>
+</ol>
+<h3 id="对象的创建及使用"><a href="#对象的创建及使用" class="headerlink" title="对象的创建及使用"></a>对象的创建及使用</h3><p>要想使用一个类则必须由对象，下面给出了对象的创建格式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">类名 对象名称 = null;                 // 声明对象</span><br><span class="line">对象名称 = new 类名();                // 实例化对象</span><br></pre></td></tr></table></figure>
+<p>以上格式产生对象分为声明对象和实例化对象两步。</p>
+<p>当然也可以直接通过以下方式一步完成：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">类名 对象名称 = new 类名();</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>以上格式与之前数组定义的格式相似，因为类和数组都属于引用数据类型，只要引用数据类型的使用格式都可以使用如上的定义样式。</p>
+</blockquote>
+<p>创建对象的具体范例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    String name;                    <span class="comment">// 声明姓名属性</span></span><br><span class="line">    <span class="keyword">int</span> age;                        <span class="comment">// 声明年龄属性</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">tell</span><span class="params">()</span></span>&#123;             <span class="comment">// 取得信息的方法</span></span><br><span class="line">        System.out.println(<span class="string">"姓名："</span> + name + <span class="string">"，年龄："</span> + age);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClassDemo02</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">        Person per = <span class="keyword">new</span> Person();   <span class="comment">// 创建并实例化对象</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果要使用对象访问类中的某个属性或方法可以使用如下的语法实现：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">访问属性：对象名称.属性名</span><br><span class="line">访问方法：对象名称.方法名()</span><br></pre></td></tr></table></figure>
 <p>例如：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NewDemo02</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.print(<span class="string">"不传递参数 （fun()）："</span>);</span><br><span class="line">        fun();                                 <span class="comment">// 不传递参数</span></span><br><span class="line">        System.out.print(<span class="string">"\n传递1个参数 （fun(1)）:"</span>);</span><br><span class="line">        fun(<span class="number">1</span>);                                <span class="comment">// 传递一个参数</span></span><br><span class="line">        System.out.print(<span class="string">"\n传递5个参数 （fun(1, 2, 3, 4, 5)）："</span>);</span><br><span class="line">        fun(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>);                    <span class="comment">// 传递五个参数</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span>...arg)</span></span>&#123;                <span class="comment">// 可变参数，可以接收任意多个参数</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> x : arg)&#123;                            <span class="comment">// 使用foreach输出</span></span><br><span class="line">            System.out.print(x + <span class="string">"、"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person2</span></span>&#123;</span><br><span class="line">    String name;                <span class="comment">// 声明姓名属性</span></span><br><span class="line">    <span class="keyword">int</span> age;                    <span class="comment">// 声明年龄属性</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">tell</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"姓名："</span> + name + <span class="string">"，年龄："</span> + age);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClassDemo03</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Person2 per = <span class="keyword">null</span>;            <span class="comment">// 声明对象</span></span><br><span class="line">        per = <span class="keyword">new</span> Person2();           <span class="comment">// 实例化对象</span></span><br><span class="line">        per.name = <span class="string">"张三"</span>;            <span class="comment">// 为name属性赋值</span></span><br><span class="line">        per.age = <span class="number">30</span>;                 <span class="comment">// 为age属性赋值</span></span><br><span class="line">        per.tell();                   <span class="comment">// 调用类中的方法</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>程序运行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">姓名：张三，年龄：30</span><br></pre></td></tr></table></figure>
+<h3 id="创建多个对象"><a href="#创建多个对象" class="headerlink" title="创建多个对象"></a>创建多个对象</h3><p>前面介绍过创建一个对象的方法，可以按照同样的格式同时创建多个对象，每个对象会分别占据自己的堆、栈空间。</p>
+<p>创建两个对象：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person3</span></span>&#123;</span><br><span class="line">    String name;          <span class="comment">// 声明姓名属性</span></span><br><span class="line">    <span class="keyword">int</span> age;              <span class="comment">// 声明年龄属性</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">tell</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"姓名："</span> + name + <span class="string">"，年龄："</span> + age);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClassDemo04</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Person3 per1 = <span class="keyword">null</span>;              <span class="comment">// 声明per1对象</span></span><br><span class="line">        Person3 per2 = <span class="keyword">null</span>;              <span class="comment">// 声明per2对象</span></span><br><span class="line">        per1 = <span class="keyword">new</span> Person3();             <span class="comment">// 实例化per1对象</span></span><br><span class="line">        per2 = <span class="keyword">new</span> Person3();             <span class="comment">// 实例化per2对象</span></span><br><span class="line">        per1.name = <span class="string">"张三"</span>;               <span class="comment">// 设置per1对象的name属性内容</span></span><br><span class="line">        per1.age = <span class="number">30</span>;                    <span class="comment">// 设置per1对象的age属性内容</span></span><br><span class="line">        per2.name = <span class="string">"李四"</span>;               <span class="comment">// 设置per2对象的name属性内容</span></span><br><span class="line">        per2.age = <span class="number">33</span>;                    <span class="comment">// 设置per2对象的age属性内容</span></span><br><span class="line">        System.out.print(<span class="string">"per1对象中的内容 --&gt;"</span>);</span><br><span class="line">        per1.tell();                      <span class="comment">// per1调用方法</span></span><br><span class="line">        System.out.print(<span class="string">"per2对象中的内容 --&gt;"</span>);</span><br><span class="line">        per2.tell();                      <span class="comment">// per2调用方法</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>程序运行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">per1对象中的内容 --&gt;姓名：张三，年龄：30</span><br><span class="line">per2对象中的内容 --&gt;姓名：李四，年龄：33</span><br></pre></td></tr></table></figure>
+<p>类属于引用数据类型，而且从数组的使用上也可以发现，引用数据类型就是指一段堆内存空间可以同时被多个栈内存指向。下面来看一个引用传递的例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person4</span></span>&#123;</span><br><span class="line">    String name;</span><br><span class="line">    <span class="keyword">int</span> age;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">tell</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"姓名："</span> + name + <span class="string">"，年龄："</span> + age);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClassDemo05</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Person4 per1 = <span class="keyword">null</span>;</span><br><span class="line">        Person4 per2 = <span class="keyword">null</span>;</span><br><span class="line">        per1 = <span class="keyword">new</span> Person4();</span><br><span class="line">        per2 = per1;                 <span class="comment">// 把per1的堆内存空间使用权给per2</span></span><br><span class="line">        per1.name = <span class="string">"张三"</span>;</span><br><span class="line">        per1.age = <span class="number">30</span>;</span><br><span class="line">        <span class="comment">// 设置per2对象的内容，实际上就是设置per1对象的内容</span></span><br><span class="line">        per2.age = <span class="number">33</span>;</span><br><span class="line">        System.out.print(<span class="string">"per1对象中的内容 --&gt;"</span>);</span><br><span class="line">        per1.tell();</span><br><span class="line">        System.out.print(<span class="string">"per2对象中的内容 --&gt;"</span>);</span><br><span class="line">        per2.tell();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>程序运行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">per1对象中的内容 --&gt;姓名：张三，年龄：33</span><br><span class="line">per2对象中的内容 --&gt;姓名：张三，年龄：33</span><br></pre></td></tr></table></figure>
+<p>从程序运行结果可以发现，两个对象的输出内容是一样的，实际上所谓的引用传递就是将一个堆内存空间的使用权给多个栈内存空间，每个栈内存空间都可以修改堆内存的内容。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person5</span></span>&#123;</span><br><span class="line">    String name;</span><br><span class="line">    <span class="keyword">int</span> age;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">tell</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"姓名："</span> + name + <span class="string">"，年龄："</span> + age);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClassDemo06</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Person5 per1 = <span class="keyword">null</span>;</span><br><span class="line">        Person5 per2 = <span class="keyword">null</span>;</span><br><span class="line">        per1 = <span class="keyword">new</span> Person5();</span><br><span class="line">        per2 = <span class="keyword">new</span> Person5();</span><br><span class="line">        per1.name = <span class="string">"张三"</span>;</span><br><span class="line">        per1.age = <span class="number">30</span>;</span><br><span class="line">        per2.name = <span class="string">"李四"</span>;</span><br><span class="line">        per2.age = <span class="number">33</span>;</span><br><span class="line">        per2 = per1;</span><br><span class="line">        System.out.print(<span class="string">"per1对象中的内容 --&gt;"</span>);</span><br><span class="line">        per1.tell();</span><br><span class="line">        System.out.print(<span class="string">"per2对象中的内容 --&gt;"</span>);</span><br><span class="line">        per2.tell();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>程序运行结果为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">不传递参数 （fun()）：</span><br><span class="line">传递1个参数 （fun(1)）:1、</span><br><span class="line">传递5个参数 （fun(1, 2, 3, 4, 5)）：1、2、3、4、5、</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">per1对象中的内容 --&gt;姓名：张三，年龄：30</span><br><span class="line">per2对象中的内容 --&gt;姓名：张三，年龄：30</span><br></pre></td></tr></table></figure>
+<p>因为per2本身有堆内存空间，所以如果要想再指向per1对应的空间，则必须先断开已有的连接。而per2原来的空间没有任何的栈内存空间所引用，就形成了垃圾空间，等待垃圾收集机制进行回收。</p>
+<blockquote>
+<p><strong>关于垃圾空间的释放</strong></p>
+<p>Java本身提供垃圾收集机制（Garbage Collection, GC），会不定期地释放不用的内存空间，只要对象不使用了，就会等待GC释放空间。</p>
+</blockquote>
+<p>从上面的程序中明确的一点，即一个栈内存空间只能指向一个堆内存空间，如果要想再指向其他的堆内存空间，则必须先断开已有的指向才能分配新的指向。</p>
 
       
     </div>
@@ -491,12 +543,12 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2019/04/05/Java笔记：Java新特性对数组的支持/">Java笔记：Java新特性对数组的支持</a></p>
+  <p><span>本文标题:</span><a href="/2019/04/15/Java笔记：类与对象/">Java笔记：类与对象</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 xiyou 的个人博客">xiyou</a></p>
-  <p><span>发布时间:</span>2019年04月05日 - 18:10</p>
-  <p><span>最后更新:</span>2019年04月05日 - 18:33</p>
-  <p><span>原始链接:</span><a href="/2019/04/05/Java笔记：Java新特性对数组的支持/" title="Java笔记：Java新特性对数组的支持">http://xiyouhujing.github.io/2019/04/05/Java笔记：Java新特性对数组的支持/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://xiyouhujing.github.io/2019/04/05/Java笔记：Java新特性对数组的支持/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2019年04月15日 - 19:39</p>
+  <p><span>最后更新:</span>2019年04月17日 - 20:26</p>
+  <p><span>原始链接:</span><a href="/2019/04/15/Java笔记：类与对象/" title="Java笔记：类与对象">http://xiyouhujing.github.io/2019/04/15/Java笔记：类与对象/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://xiyouhujing.github.io/2019/04/15/Java笔记：类与对象/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -540,8 +592,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/05/Java笔记：数组的引用传递/" rel="next" title="Java笔记：数组的引用传递">
-                <i class="fa fa-chevron-left"></i> Java笔记：数组的引用传递
+              <a href="/2019/04/05/Java开发实战经典习题4-6/" rel="next" title="Java开发实战经典习题4-6">
+                <i class="fa fa-chevron-left"></i> Java开发实战经典习题4-6
               </a>
             
           </div>
@@ -549,10 +601,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/05/Java开发实战经典习题4-6/" rel="prev" title="Java开发实战经典习题4-6">
-                Java开发实战经典习题4-6 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -722,7 +770,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Java新特性——可变参数"><span class="nav-number">1.</span> <span class="nav-text">Java新特性——可变参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java新特性——foreach输出"><span class="nav-number">2.</span> <span class="nav-text">Java新特性——foreach输出</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#类与对象的关系"><span class="nav-number">1.</span> <span class="nav-text">类与对象的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类的定义"><span class="nav-number">2.</span> <span class="nav-text">类的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象的创建及使用"><span class="nav-number">3.</span> <span class="nav-text">对象的创建及使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建多个对象"><span class="nav-number">4.</span> <span class="nav-text">创建多个对象</span></a></li></ol></div>
             
 
           </div>
