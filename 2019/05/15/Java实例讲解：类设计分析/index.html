@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="xiyou">
 <meta property="og:description" content="题目定义并测试一个名为Student的类，包括的属性有“学号”、“姓名”以及3门课程“数学”、“英语”和“计算机”的成绩，包括的方法有计算3门课程的“总分”、“平均分”、“最高分”以及“最低分”。 属性及类型    序号 属性 属性类型 属性名称        1 学号 String stuno        2 姓名 String name        3 数学成绩 float math">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-15T08:14:26.353Z">
+<meta property="og:updated_time" content="2019-05-15T10:27:44.589Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java实例讲解：类设计分析">
 <meta name="twitter:description" content="题目定义并测试一个名为Student的类，包括的属性有“学号”、“姓名”以及3门课程“数学”、“英语”和“计算机”的成绩，包括的方法有计算3门课程的“总分”、“平均分”、“最高分”以及“最低分”。 属性及类型    序号 属性 属性类型 属性名称        1 学号 String stuno        2 姓名 String name        3 数学成绩 float math">
@@ -412,7 +412,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  121
+                  832
                 </span>
               
 
@@ -428,7 +428,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  3
                 </span>
               
             </div>
@@ -494,7 +494,120 @@
 </tbody>
 </table>
 </div>
-<h3 id="需要的方法"><a href="#需要的方法" class="headerlink" title="需要的方法"></a>需要的方法</h3>
+<h3 id="需要的方法"><a href="#需要的方法" class="headerlink" title="需要的方法"></a>需要的方法</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>方法名称</th>
+<th>返回值类型</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>public void setStuno(String s)</td>
+<td>void</td>
+<td>设置学生编号</td>
+</tr>
+<tr>
+<td>2</td>
+<td>public void setName(String n)</td>
+<td>void</td>
+<td>设置学生姓名</td>
+</tr>
+<tr>
+<td>3</td>
+<td>public void setMath(float m)</td>
+<td>void</td>
+<td>设置数学成绩</td>
+</tr>
+<tr>
+<td>4</td>
+<td>public void setEnglish(float e)</td>
+<td>void</td>
+<td>设置英语成绩</td>
+</tr>
+<tr>
+<td>5</td>
+<td>public void setComputer(float c)</td>
+<td>void</td>
+<td>设置计算机成绩</td>
+</tr>
+<tr>
+<td>6</td>
+<td>public String getStuno()</td>
+<td>String</td>
+<td>取得学生编号</td>
+</tr>
+<tr>
+<td>7</td>
+<td>public String getName()</td>
+<td>String</td>
+<td>取得学生姓名</td>
+</tr>
+<tr>
+<td>8</td>
+<td>public float getMath()</td>
+<td>float</td>
+<td>取得数学成绩</td>
+</tr>
+<tr>
+<td>9</td>
+<td>public float getEnglish()</td>
+<td>float</td>
+<td>取得英语成绩</td>
+</tr>
+<tr>
+<td>10</td>
+<td>public float getComputer()</td>
+<td>float</td>
+<td>取得计算机成绩</td>
+</tr>
+<tr>
+<td>11</td>
+<td>public float sum()</td>
+<td>float</td>
+<td>计算成绩总和</td>
+</tr>
+<tr>
+<td>12</td>
+<td>public float avg()</td>
+<td>float</td>
+<td>计算平均成绩</td>
+</tr>
+<tr>
+<td>13</td>
+<td>public float max()</td>
+<td>float</td>
+<td>求出最高成绩</td>
+</tr>
+<tr>
+<td>14</td>
+<td>public float min()</td>
+<td>float</td>
+<td>求出最低成绩</td>
+</tr>
+<tr>
+<td>151</td>
+<td>public Student()</td>
+<td>-</td>
+<td>无参构造方法</td>
+</tr>
+<tr>
+<td>16</td>
+<td>public Student(String stuno, String name, float math, float english, float computer)</td>
+<td>-</td>
+<td>在对象实例化时直接将学号、姓名、数学成绩、英语成绩、计算机成绩设置进去</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String stuno;                      <span class="comment">// 学生编号</span></span><br><span class="line">    <span class="keyword">private</span> String name;                       <span class="comment">// 学生姓名</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">float</span> math;                        <span class="comment">// 数学成绩</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">float</span> english;                     <span class="comment">// 英语成绩</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">float</span> computer;                    <span class="comment">// 计算机成绩</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">()</span></span>&#123;                          <span class="comment">// 定义无参构造</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 定义有五个参数的构造方法，为类中的属性初始化</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(String stuno, String name, <span class="keyword">float</span> math, <span class="keyword">float</span> english, <span class="keyword">float</span> computer)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.setStuno(stuno);</span><br><span class="line">        <span class="keyword">this</span>.setName(name);</span><br><span class="line">        <span class="keyword">this</span>.setMath(math);</span><br><span class="line">        <span class="keyword">this</span>.setEnglish(english);</span><br><span class="line">        <span class="keyword">this</span>.setComputer(computer);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setStuno</span><span class="params">(String s)</span></span>&#123;             <span class="comment">// 设置编号</span></span><br><span class="line">        stuno = s;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String n)</span></span>&#123;              <span class="comment">// 设置姓名</span></span><br><span class="line">        name = n;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setMath</span><span class="params">(<span class="keyword">float</span> m)</span></span>&#123;               <span class="comment">// 设置数学成绩</span></span><br><span class="line">        math = m;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setEnglish</span><span class="params">(<span class="keyword">float</span> e)</span></span>&#123;             <span class="comment">// 设置英语成绩</span></span><br><span class="line">        english = e;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setComputer</span><span class="params">(<span class="keyword">float</span> c)</span></span>&#123;            <span class="comment">// 设置计算机成绩</span></span><br><span class="line">        computer = c;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getStuno</span><span class="params">()</span></span>&#123;                   <span class="comment">// 取得编号</span></span><br><span class="line">        <span class="keyword">return</span> stuno;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span></span>&#123;                     <span class="comment">// 取得姓名</span></span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">float</span> <span class="title">getMath</span><span class="params">()</span></span>&#123;                      <span class="comment">// 取得数学成绩</span></span><br><span class="line">        <span class="keyword">return</span> math;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">float</span> <span class="title">getEnglish</span><span class="params">()</span></span>&#123;                   <span class="comment">// 取得英语成绩</span></span><br><span class="line">        <span class="keyword">return</span> english;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">float</span> <span class="title">getComputer</span><span class="params">()</span></span>&#123;                  <span class="comment">// 取得计算机成绩</span></span><br><span class="line">        <span class="keyword">return</span> computer;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">float</span> <span class="title">sum</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> math + english + computer;        <span class="comment">// 计算总分</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">float</span> <span class="title">avg</span><span class="params">()</span></span>&#123;                          <span class="comment">// 计算平均分</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.sum() / <span class="number">3</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">float</span> <span class="title">max</span><span class="params">()</span></span>&#123;                          <span class="comment">// 最高成绩</span></span><br><span class="line">        <span class="keyword">float</span> max = math;</span><br><span class="line">        max = max &gt; computer ? max : computer;     <span class="comment">// 使用三目运算符</span></span><br><span class="line">        max = max &gt; english ? max : english;       <span class="comment">// 使用三目运算符</span></span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">float</span> <span class="title">min</span><span class="params">()</span></span>&#123;                           <span class="comment">// 最低成绩</span></span><br><span class="line">        <span class="keyword">float</span> min = math;</span><br><span class="line">        min = math &lt; computer ? math : computer;    <span class="comment">// 使用三目运算符</span></span><br><span class="line">        min = math &lt; english ? math : english;      <span class="comment">// 使用三目运算符</span></span><br><span class="line">        <span class="keyword">return</span> min;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ExampleDemo01</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Student stu = <span class="keyword">null</span>;                       <span class="comment">// 声明对象</span></span><br><span class="line">        <span class="comment">// 实例化Student对象，并通过构造方法赋值</span></span><br><span class="line">        stu = <span class="keyword">new</span> Student(<span class="string">"MLDN-33"</span>, <span class="string">"李兴华"</span>, <span class="number">95.0f</span>, <span class="number">89.0f</span>, <span class="number">96.0f</span>);</span><br><span class="line">        System.out.println(<span class="string">"学生编号："</span> + stu.getStuno());</span><br><span class="line">        System.out.println(<span class="string">"学生姓名："</span> + stu.getName());</span><br><span class="line">        System.out.println(<span class="string">"数学成绩："</span> + stu.getMath());</span><br><span class="line">        System.out.println(<span class="string">"英语成绩："</span> + stu.getEnglish());</span><br><span class="line">        System.out.println(<span class="string">"计算机成绩："</span> + stu.getComputer());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>程序运行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">学生编号：MLDN-33</span><br><span class="line">学生姓名：李兴华</span><br><span class="line">数学成绩：95.0</span><br><span class="line">英语成绩：89.0</span><br><span class="line">计算机成绩：96.0</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -523,7 +636,7 @@
   <p><span>本文标题:</span><a href="/2019/05/15/Java实例讲解：类设计分析/">Java实例讲解：类设计分析</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 xiyou 的个人博客">xiyou</a></p>
   <p><span>发布时间:</span>2019年05月15日 - 15:53</p>
-  <p><span>最后更新:</span>2019年05月15日 - 16:14</p>
+  <p><span>最后更新:</span>2019年05月15日 - 18:27</p>
   <p><span>原始链接:</span><a href="/2019/05/15/Java实例讲解：类设计分析/" title="Java实例讲解：类设计分析">http://xiyouhujing.github.io/2019/05/15/Java实例讲解：类设计分析/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://xiyouhujing.github.io/2019/05/15/Java实例讲解：类设计分析/"  aria-label="复制成功！"></i></span>
   </p>
@@ -747,7 +860,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性及类型"><span class="nav-number">2.</span> <span class="nav-text">属性及类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#需要的方法"><span class="nav-number">3.</span> <span class="nav-text">需要的方法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性及类型"><span class="nav-number">2.</span> <span class="nav-text">属性及类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#需要的方法"><span class="nav-number">3.</span> <span class="nav-text">需要的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码实现"><span class="nav-number">4.</span> <span class="nav-text">代码实现</span></a></li></ol></div>
             
 
           </div>
@@ -783,7 +896,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">24.5k</span>
+    <span title="Site words total count">25.2k</span>
   
   -->
 </div>
@@ -801,7 +914,7 @@
 <div class="theme-info">
   <div class="powered-by"></div>
   <i class="fa fa-paint-brush" aria-hidden="true"></i><span class="post-count">
-  博客全站共24.5k字</span>
+  博客全站共25.2k字</span>
 </div>
 
 <!--
