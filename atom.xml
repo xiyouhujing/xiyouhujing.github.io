@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xiyouhujing.github.io/"/>
-  <updated>2019-05-15T10:27:44.589Z</updated>
+  <updated>2019-05-16T12:48:21.568Z</updated>
   <id>http://xiyouhujing.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java笔记：String</title>
+    <link href="http://xiyouhujing.github.io/2019/05/16/Java%E7%AC%94%E8%AE%B0%EF%BC%9AString/"/>
+    <id>http://xiyouhujing.github.io/2019/05/16/Java笔记：String/</id>
+    <published>2019-05-16T09:05:40.000Z</published>
+    <updated>2019-05-16T12:48:21.568Z</updated>
+    
+    <content type="html"><![CDATA[<p>String类定义时单词的首字母大写，所以String本身也是一个类本类，但是此类在使用时却有很多的要求，而且此类在Java中也算是一个比较特殊的类。</p><h3 id="实例化String对象"><a href="#实例化String对象" class="headerlink" title="实例化String对象"></a>实例化String对象</h3><p>对于String可以采用直接赋值的方式进行操作，如下面的代码：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StringDemo01</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        String name = <span class="string">"LiXingHua"</span>;            <span class="comment">// 实例化String对象</span></span><br><span class="line">        System.out.println(<span class="string">"姓名："</span> + name);  <span class="comment">// 输出字符串的内容</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>在String的使用上还有另外一种形式的实例化方法，就是直接调用String类中的构造方法，在String类存在以下的构造方法：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">String</span><span class="params">(String original)</span></span></span><br></pre></td></tr></table></figure><p>所以上面的代码也可以通过如下的代码进行编写：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StringDemo02</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        String name = <span class="keyword">new</span> String(<span class="string">"LiXingHua"</span>);        <span class="comment">// 实例化String对象</span></span><br><span class="line">        System.out.println(<span class="string">"姓名："</span> + name);          <span class="comment">// 输出字符串的内容</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="String的内容比较"><a href="#String的内容比较" class="headerlink" title="String的内容比较"></a>String的内容比较</h3><p>对于基本数据类型，可以通过“==”进行内容的比较，如下面的代码：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StringDemo03</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> x = <span class="number">30</span>;                            <span class="comment">// 声明一个整型变量</span></span><br><span class="line">        <span class="keyword">int</span> y = <span class="number">30</span>;                            <span class="comment">// 声明一个整型变量</span></span><br><span class="line">        System.out.println(<span class="string">"两个数字的比较结果："</span> + (x == y));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>程序运行结果：<code>两个数字的比较结果：true</code></p><p>下面按照以上的程序思路进行两个字符串的比较操作：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StringDemo04</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        String str1 = <span class="string">"hello"</span>;                          <span class="comment">// 直接赋值</span></span><br><span class="line">        String str2 = <span class="keyword">new</span> String(<span class="string">"hello"</span>);     <span class="comment">// 通过new赋值</span></span><br><span class="line">        String str3 = str2;                             <span class="comment">// 传递引用</span></span><br><span class="line">        System.out.println(<span class="string">"str1 == str2 --&gt;"</span> + (str1 == str2));</span><br><span class="line">        System.out.println(<span class="string">"str1 == str3 --&gt;"</span> + (str1 == str3));</span><br><span class="line">        System.out.println(<span class="string">"str2 == str3 --&gt;"</span> + (str2 == str3));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>程序运行结果为：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">str1 == str2 --&gt;false</span><br><span class="line">str1 == str3 --&gt;false</span><br><span class="line">str2 == str3 --&gt;true</span><br></pre></td></tr></table></figure><p>从程序运行结果中可以发现，虽然以上程序中String的内容都一样，但是比较结果有的相同，有的却不同。主要原因在于堆内存和栈内存。上面每个String对象的内容实际上都保存在堆内存中，而且堆内存中的内容相等。但是对于str1和str2来说，其内容分别保存在了不同的空间，所以即使内容相等，地址的值也是不相等的，“==”是用来进行数值比较的，所以str1和str2不相等。从程序中可以发现str2和str3指向了同一个堆内存空间，是同一个地址，所以最终结果是str2和str3的地址值相等的，同理str1和str3的地址值是不相等的，所以返回了false。栈内存和堆内存的示意图如下：</p><p><img src="//xiyouhujing.github.io/2019/05/16/Java笔记：String/String对象的声明.png" alt="String对象的声明"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;String类定义时单词的首字母大写，所以String本身也是一个类本类，但是此类在使用时却有很多的要求，而且此类在Java中也算是一个比较特殊的类。&lt;/p&gt;
+&lt;h3 id=&quot;实例化String对象&quot;&gt;&lt;a href=&quot;#实例化String对象&quot; class=&quot;header
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="http://xiyouhujing.github.io/categories/Java/"/>
+    
+    
+      <category term="java基础" scheme="http://xiyouhujing.github.io/tags/java%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
   
   <entry>
     <title>Java实例讲解：类设计分析</title>
