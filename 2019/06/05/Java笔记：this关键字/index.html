@@ -88,18 +88,18 @@
 
 
 
-<meta name="description" content="类与对象的关系在面向对象中，类和对象是最基本、最重要的组成单元。类实际上是表示一个客观世界某类群体的一些基本特征抽象。对象就是表示一个个具体的东西。例如，现实生活中，人可以称为一个类，因为人是一种广义的概念，并不是具体的。而某一个人就可以称为一个对象，某个人可以通过他的各种特征来描述，例如姓名、性别、年龄等。这些信息在面向对象的概念中就称为属性；当然人是可以吃饭、睡觉的，这些人的行为在类中就称为方">
+<meta name="description" content="this是Java中的关键字，除了可以用来强调调用的是本类中的方法，this还有以下作用：  表示类中的属性 可以使用this调用本类的构造方法 this表示当前对象  使用this调用本类中的属性在程序中可以使用this调用本类属性，例如： 1234567891011class Person&amp;#123;    private String name;    private int age;">
 <meta name="keywords" content="java基础">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java笔记：类与对象">
-<meta property="og:url" content="http://xiyouhujing.github.io/2019/04/15/Java笔记：类与对象/index.html">
+<meta property="og:title" content="Java笔记：this关键字">
+<meta property="og:url" content="http://xiyouhujing.github.io/2019/06/05/Java笔记：this关键字/index.html">
 <meta property="og:site_name" content="xiyou">
-<meta property="og:description" content="类与对象的关系在面向对象中，类和对象是最基本、最重要的组成单元。类实际上是表示一个客观世界某类群体的一些基本特征抽象。对象就是表示一个个具体的东西。例如，现实生活中，人可以称为一个类，因为人是一种广义的概念，并不是具体的。而某一个人就可以称为一个对象，某个人可以通过他的各种特征来描述，例如姓名、性别、年龄等。这些信息在面向对象的概念中就称为属性；当然人是可以吃饭、睡觉的，这些人的行为在类中就称为方">
+<meta property="og:description" content="this是Java中的关键字，除了可以用来强调调用的是本类中的方法，this还有以下作用：  表示类中的属性 可以使用this调用本类的构造方法 this表示当前对象  使用this调用本类中的属性在程序中可以使用this调用本类属性，例如： 1234567891011class Person&amp;#123;    private String name;    private int age;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-17T12:26:23.846Z">
+<meta property="og:updated_time" content="2019-06-13T10:08:59.796Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java笔记：类与对象">
-<meta name="twitter:description" content="类与对象的关系在面向对象中，类和对象是最基本、最重要的组成单元。类实际上是表示一个客观世界某类群体的一些基本特征抽象。对象就是表示一个个具体的东西。例如，现实生活中，人可以称为一个类，因为人是一种广义的概念，并不是具体的。而某一个人就可以称为一个对象，某个人可以通过他的各种特征来描述，例如姓名、性别、年龄等。这些信息在面向对象的概念中就称为属性；当然人是可以吃饭、睡觉的，这些人的行为在类中就称为方">
+<meta name="twitter:title" content="Java笔记：this关键字">
+<meta name="twitter:description" content="this是Java中的关键字，除了可以用来强调调用的是本类中的方法，this还有以下作用：  表示类中的属性 可以使用this调用本类的构造方法 this表示当前对象  使用this调用本类中的属性在程序中可以使用this调用本类属性，例如： 1234567891011class Person&amp;#123;    private String name;    private int age;">
 
 
 
@@ -129,7 +129,7 @@
 
 
 
-  <link rel="canonical" href="http://xiyouhujing.github.io/2019/04/15/Java笔记：类与对象/"/>
+  <link rel="canonical" href="http://xiyouhujing.github.io/2019/06/05/Java笔记：this关键字/"/>
 
 
 
@@ -145,7 +145,7 @@
   </script>
 
 
-  <title>Java笔记：类与对象 | xiyou</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>Java笔记：this关键字 | xiyou</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -317,7 +317,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xiyouhujing.github.io/2019/04/15/Java笔记：类与对象/">
+    <link itemprop="mainEntityOfPage" href="http://xiyouhujing.github.io/2019/06/05/Java笔记：this关键字/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xiyou">
@@ -334,7 +334,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java笔记：类与对象</h1>
+          <h1 class="post-title" itemprop="name headline">Java笔记：this关键字</h1>
         
 
         <div class="post-meta">
@@ -346,8 +346,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-15T19:39:10+08:00">
-                2019-04-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-05T15:43:55+08:00">
+                2019-06-05
               </time>
             
 
@@ -386,7 +386,7 @@
 
           
           
-             <span id="/2019/04/15/Java笔记：类与对象/" class="leancloud_visitors" data-flag-title="Java笔记：类与对象">
+             <span id="/2019/06/05/Java笔记：this关键字/" class="leancloud_visitors" data-flag-title="Java笔记：this关键字">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -412,7 +412,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2k
+                  1.6k
                 </span>
               
 
@@ -428,7 +428,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  7
+                  6
                 </span>
               
             </div>
@@ -449,74 +449,41 @@
       
 
       
-        <h3 id="类与对象的关系"><a href="#类与对象的关系" class="headerlink" title="类与对象的关系"></a>类与对象的关系</h3><p>在面向对象中，类和对象是最基本、最重要的组成单元。类实际上是表示一个客观世界某类群体的一些基本特征抽象。对象就是表示一个个具体的东西。例如，现实生活中，人可以称为一个类，因为人是一种广义的概念，并不是具体的。而某一个人就可以称为一个对象，某个人可以通过他的各种特征来描述，例如姓名、性别、年龄等。这些信息在面向对象的概念中就称为属性；当然人是可以吃饭、睡觉的，这些人的行为在类中就称为方法。</p>
-<p>如果要使用一个类，就一定要产生一个对象，每个对象之间是靠属性的不同来进行区分的，而每个对象所具备的操作就是类中规定好的方法。</p>
-<h3 id="类的定义"><a href="#类的定义" class="headerlink" title="类的定义"></a>类的定义</h3><p>类是由属性和方法组成的，属性中定义的是类需要的一个个具体信息，实际上一个属性就是一个变量，而方法是一些操作行为，但是在程序设计中，定义类也是要按照具体的语法要求完成的，类的定义语法如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class 类名称&#123;</span><br><span class="line">    数据类型 属性；</span><br><span class="line">    ···</span><br><span class="line">    public 返回值的数据类型 方法名称（参数1，参数2...）&#123;</span><br><span class="line">        程序语句；</span><br><span class="line">        [return 表达式；]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p><strong>类中定义方法的补充说明</strong></p>
-<p>可以发现，此处的方法与之前的方法定义有区别，并没有加上static关键字，这是因为此时定义的方法将有对象调用，而不像之前那样与主方法定义在一个类中并且由主方法之间调用。</p>
-</blockquote>
-<p>例如我们定义一个Person类：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    String name;             <span class="comment">// 声明姓名属性</span></span><br><span class="line">    <span class="keyword">int</span> age;                 <span class="comment">// 声明年龄属性</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">tell</span><span class="params">()</span></span>&#123;      <span class="comment">// 取得信息的方法</span></span><br><span class="line">        System.out.println(<span class="string">"姓名："</span> + name + <span class="string">"，年龄："</span> + age);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>类定义完成后，我们可以通过下图所示的图形样式来表示出类的定义：</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Person</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">name : String <br> age : int</td>
-</tr>
-<tr>
-<td style="text-align:center">+ tell() : void</td>
-</tr>
-</tbody>
-</table>
-</div>
+        <p>this是Java中的关键字，除了可以用来强调调用的是本类中的方法，this还有以下作用：</p>
 <ol>
-<li>第一层表示类的名称，类的名称要求开头首字母大写。</li>
-<li>第二层表示属性的定义，按照“访问权限 属性名称：属性类型”的格式定义，在本类中因为声明属性处没有写任何的访问权限，所以前面暂时不加任何的符号。</li>
-<li>第三层表示类中方法的定义，按照“访问权限 方法名称():方法返回值”的格式定义，在本类中，方法的声明处加上了public（此为访问权限，表示任何地方都可以访问），所以使用“+”表示，另外，如果方法中由传递的参数，则此方法定义格式为“访问权限 方法名称(参数名称: 参数类型, 参数名称: 参数类型, …): 方法返回值”</li>
+<li>表示类中的属性</li>
+<li>可以使用this调用本类的构造方法</li>
+<li>this表示当前对象</li>
 </ol>
-<h3 id="对象的创建及使用"><a href="#对象的创建及使用" class="headerlink" title="对象的创建及使用"></a>对象的创建及使用</h3><p>要想使用一个类则必须由对象，下面给出了对象的创建格式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">类名 对象名称 = null;                 // 声明对象</span><br><span class="line">对象名称 = new 类名();                // 实例化对象</span><br></pre></td></tr></table></figure>
-<p>以上格式产生对象分为声明对象和实例化对象两步。</p>
-<p>当然也可以直接通过以下方式一步完成：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">类名 对象名称 = new 类名();</span><br></pre></td></tr></table></figure>
+<h3 id="使用this调用本类中的属性"><a href="#使用this调用本类中的属性" class="headerlink" title="使用this调用本类中的属性"></a>使用this调用本类中的属性</h3><p>在程序中可以使用this调用本类属性，例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String n, <span class="keyword">int</span> a)</span></span>&#123;</span><br><span class="line">        name = n;</span><br><span class="line">        age = a;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getInfo</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"姓名："</span> + name + <span class="string">"，年龄："</span> + age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>该类中的构造方法意在为类中的属性赋值，但是其实从构造方法传递的参数名称上很难看出n或者a表示的意义，所以进行如下的修改：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name, <span class="keyword">int</span> age)</span></span>&#123;</span><br><span class="line">        name = name;</span><br><span class="line">        age = age;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getInfo</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"姓名："</span> + name + <span class="string">"，年龄："</span> + age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个时候就能看出构造方法中两个参数表示的意思了，但是同时也出现了新的问题，构造方法的本意是要将参数传递的name赋值给类中的name属性，把age的值赋给age属性，但是实际运行出来的结果却和我们想像的并不一样，例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person01</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person01</span><span class="params">(String name, <span class="keyword">int</span> age)</span></span>&#123;</span><br><span class="line">        name = name;</span><br><span class="line">        age = age;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getInfo</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"姓名："</span> + name + <span class="string">"，年龄："</span> + age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThisDemo01</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Person01 per1 = <span class="keyword">new</span> Person01(<span class="string">"张三"</span>,<span class="number">33</span>);</span><br><span class="line">        System.out.println(per1.getInfo());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>程序运行结果为：<code>姓名：null，年龄：0</code></p>
+<p>从结果来看，程序并没有将构造方法传递进去的参数赋值给属性，也就是说，现在的构造方法并不能将传递进去的参数值赋给类中的熟悉你个，这是由于在赋值时，属性并没有被明确的指出，而这种错误可以利用this关键字来结果，例如进行如下的修改：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person02</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person02</span><span class="params">(String name, <span class="keyword">int</span> age)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;                     <span class="comment">// 明确表示为类中的name属性赋值</span></span><br><span class="line">        <span class="keyword">this</span>.age = age;                       <span class="comment">// 明确表示为类中的age属性赋值</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getInfo</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"姓名："</span> + name + <span class="string">"，年龄："</span> + age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThisDemo02</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Person02 per2 = <span class="keyword">new</span> Person02(<span class="string">"张三"</span>, <span class="number">33</span>);</span><br><span class="line">        System.out.println(per2.getInfo());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>程序运行结果：<code>姓名：张三，年龄：33</code></p>
 <blockquote>
-<p>以上格式与之前数组定义的格式相似，因为类和数组都属于引用数据类型，只要引用数据类型的使用格式都可以使用如上的定义样式。</p>
+<p>实际上上面程序中的“name = name”、“age = age”中的两个name和两个age都是构造方法中的参数。更实际中的就近原则相似，在程序的构造方法中，已经存在了name和age属性，那么在构造方法中如果要使用name或age属性，则肯定按照就近取用的原则，所以上面的name和age使用都是构造方法中的参数。</p>
 </blockquote>
-<p>创建对象的具体范例：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    String name;                    <span class="comment">// 声明姓名属性</span></span><br><span class="line">    <span class="keyword">int</span> age;                        <span class="comment">// 声明年龄属性</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">tell</span><span class="params">()</span></span>&#123;             <span class="comment">// 取得信息的方法</span></span><br><span class="line">        System.out.println(<span class="string">"姓名："</span> + name + <span class="string">"，年龄："</span> + age);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClassDemo02</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">        Person per = <span class="keyword">new</span> Person();   <span class="comment">// 创建并实例化对象</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>如果要使用对象访问类中的某个属性或方法可以使用如下的语法实现：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">访问属性：对象名称.属性名</span><br><span class="line">访问方法：对象名称.方法名()</span><br></pre></td></tr></table></figure>
-<p>例如：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person2</span></span>&#123;</span><br><span class="line">    String name;                <span class="comment">// 声明姓名属性</span></span><br><span class="line">    <span class="keyword">int</span> age;                    <span class="comment">// 声明年龄属性</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">tell</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"姓名："</span> + name + <span class="string">"，年龄："</span> + age);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClassDemo03</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Person2 per = <span class="keyword">null</span>;            <span class="comment">// 声明对象</span></span><br><span class="line">        per = <span class="keyword">new</span> Person2();           <span class="comment">// 实例化对象</span></span><br><span class="line">        per.name = <span class="string">"张三"</span>;            <span class="comment">// 为name属性赋值</span></span><br><span class="line">        per.age = <span class="number">30</span>;                 <span class="comment">// 为age属性赋值</span></span><br><span class="line">        per.tell();                   <span class="comment">// 调用类中的方法</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="使用this调用构造方法"><a href="#使用this调用构造方法" class="headerlink" title="使用this调用构造方法"></a>使用this调用构造方法</h3><p>如果一个类中有多个构造方法，也可以利用this关键字互相调用。</p>
+<p>假设现在要求不管类中有多少个构造方法，只要对象一被实例化，就打印一行“一个新的对象被实例化”信息出来，很明显，如果在每个构造方法中编写此输出语句肯定不是最佳方法，所以可以利用this关键字完成，如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person03</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person03</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"一个新的Person对象被实例化"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person03</span><span class="params">(String name, <span class="keyword">int</span> age)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>();                                            <span class="comment">// 在此处调用Person类中的无参构造方法</span></span><br><span class="line">        <span class="keyword">this</span>.name = name;                                  <span class="comment">// 为name属性赋值</span></span><br><span class="line">        <span class="keyword">this</span>.age = age;                                    <span class="comment">// 为age属性赋值</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getInfo</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"姓名："</span> + name + <span class="string">"，年龄："</span> + age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThisDemo03</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Person03 per1 = <span class="keyword">new</span> Person03(<span class="string">"张三"</span>, <span class="number">33</span>);</span><br><span class="line">        System.out.println(per1.getInfo());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>程序运行结果：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">姓名：张三，年龄：30</span><br></pre></td></tr></table></figure>
-<h3 id="创建多个对象"><a href="#创建多个对象" class="headerlink" title="创建多个对象"></a>创建多个对象</h3><p>前面介绍过创建一个对象的方法，可以按照同样的格式同时创建多个对象，每个对象会分别占据自己的堆、栈空间。</p>
-<p>创建两个对象：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person3</span></span>&#123;</span><br><span class="line">    String name;          <span class="comment">// 声明姓名属性</span></span><br><span class="line">    <span class="keyword">int</span> age;              <span class="comment">// 声明年龄属性</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">tell</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"姓名："</span> + name + <span class="string">"，年龄："</span> + age);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClassDemo04</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Person3 per1 = <span class="keyword">null</span>;              <span class="comment">// 声明per1对象</span></span><br><span class="line">        Person3 per2 = <span class="keyword">null</span>;              <span class="comment">// 声明per2对象</span></span><br><span class="line">        per1 = <span class="keyword">new</span> Person3();             <span class="comment">// 实例化per1对象</span></span><br><span class="line">        per2 = <span class="keyword">new</span> Person3();             <span class="comment">// 实例化per2对象</span></span><br><span class="line">        per1.name = <span class="string">"张三"</span>;               <span class="comment">// 设置per1对象的name属性内容</span></span><br><span class="line">        per1.age = <span class="number">30</span>;                    <span class="comment">// 设置per1对象的age属性内容</span></span><br><span class="line">        per2.name = <span class="string">"李四"</span>;               <span class="comment">// 设置per2对象的name属性内容</span></span><br><span class="line">        per2.age = <span class="number">33</span>;                    <span class="comment">// 设置per2对象的age属性内容</span></span><br><span class="line">        System.out.print(<span class="string">"per1对象中的内容 --&gt;"</span>);</span><br><span class="line">        per1.tell();                      <span class="comment">// per1调用方法</span></span><br><span class="line">        System.out.print(<span class="string">"per2对象中的内容 --&gt;"</span>);</span><br><span class="line">        per2.tell();                      <span class="comment">// per2调用方法</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">一个新的Person对象被实例化</span><br><span class="line">姓名：张三，年龄：33</span><br></pre></td></tr></table></figure>
+<p>该程序中提供了两个构造方法，其中有两个参数的构造方法中使用this()的形式调用该类中的无参构造方法，所以即使是通过有两个参数的构造方法实例化，最终结果还是会把无参构造方法中的内容打印出来。</p>
+<p>另外需要注意的是，在使用this()调用构造方法的时候，由于构造方法是在实例化对象时被自动调用，也就是说在类中的所有方法中，只有构造方法是被优先调用的，所以使用this调用构造方法必须也只能放在构造方法的首行，下面就是一个错误的例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">()</span></span>&#123;</span><br><span class="line">        system.out.println(<span class="string">"一个新的Person对象被实例化。"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name, <span class="keyword">int</span> age)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">        <span class="keyword">this</span>();                                          <span class="comment">// 错误的调用，只能放在构造方法的首行</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getInfo</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>();                                          <span class="comment">// 错误的调用，只能放在构造方法的首行</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"姓名："</span> + name + <span class="string">"，年龄："</span> + age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>另外，this调用构造方法时一定要留一个构造方法作为出口，即程序中至少有个构造方法是不使用this调用其他构造方法的。一般都会将无参构造方法作为出口，即在无参构造方法中最好不要再去调用其他构造方法。</p>
+<h3 id="this表示当前对象"><a href="#this表示当前对象" class="headerlink" title="this表示当前对象"></a>this表示当前对象</h3><p>this最重要的特点就是表示当前对象，在Java中当前对象就是指当前正在调用类中方法的对象。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person04</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getInfo</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Person类 --&gt; "</span> + <span class="keyword">this</span>);         <span class="comment">// 直接打印this</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;                                        <span class="comment">// 此处返回null，为的是让语法不出错</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThisDemo06</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Person04 per1 = <span class="keyword">new</span> Person04();</span><br><span class="line">        Person04 per2 = <span class="keyword">new</span> Person04();</span><br><span class="line">        System.out.println(<span class="string">"MAIN方法 --&gt; "</span> + per1);         <span class="comment">// 直接打印对象</span></span><br><span class="line">        per1.getInfo();</span><br><span class="line">        System.out.println(<span class="string">"----------------------------"</span>);</span><br><span class="line">        System.out.println(<span class="string">"MAIN方法 --&gt; "</span> + per2);         <span class="comment">// 直接打印对象</span></span><br><span class="line">        per2.getInfo();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>程序运行结果：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">per1对象中的内容 --&gt;姓名：张三，年龄：30</span><br><span class="line">per2对象中的内容 --&gt;姓名：李四，年龄：33</span><br></pre></td></tr></table></figure>
-<p>类属于引用数据类型，而且从数组的使用上也可以发现，引用数据类型就是指一段堆内存空间可以同时被多个栈内存指向。下面来看一个引用传递的例子：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person4</span></span>&#123;</span><br><span class="line">    String name;</span><br><span class="line">    <span class="keyword">int</span> age;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">tell</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"姓名："</span> + name + <span class="string">"，年龄："</span> + age);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClassDemo05</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Person4 per1 = <span class="keyword">null</span>;</span><br><span class="line">        Person4 per2 = <span class="keyword">null</span>;</span><br><span class="line">        per1 = <span class="keyword">new</span> Person4();</span><br><span class="line">        per2 = per1;                 <span class="comment">// 把per1的堆内存空间使用权给per2</span></span><br><span class="line">        per1.name = <span class="string">"张三"</span>;</span><br><span class="line">        per1.age = <span class="number">30</span>;</span><br><span class="line">        <span class="comment">// 设置per2对象的内容，实际上就是设置per1对象的内容</span></span><br><span class="line">        per2.age = <span class="number">33</span>;</span><br><span class="line">        System.out.print(<span class="string">"per1对象中的内容 --&gt;"</span>);</span><br><span class="line">        per1.tell();</span><br><span class="line">        System.out.print(<span class="string">"per2对象中的内容 --&gt;"</span>);</span><br><span class="line">        per2.tell();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>程序运行结果：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">per1对象中的内容 --&gt;姓名：张三，年龄：33</span><br><span class="line">per2对象中的内容 --&gt;姓名：张三，年龄：33</span><br></pre></td></tr></table></figure>
-<p>从程序运行结果可以发现，两个对象的输出内容是一样的，实际上所谓的引用传递就是将一个堆内存空间的使用权给多个栈内存空间，每个栈内存空间都可以修改堆内存的内容。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person5</span></span>&#123;</span><br><span class="line">    String name;</span><br><span class="line">    <span class="keyword">int</span> age;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">tell</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"姓名："</span> + name + <span class="string">"，年龄："</span> + age);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClassDemo06</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Person5 per1 = <span class="keyword">null</span>;</span><br><span class="line">        Person5 per2 = <span class="keyword">null</span>;</span><br><span class="line">        per1 = <span class="keyword">new</span> Person5();</span><br><span class="line">        per2 = <span class="keyword">new</span> Person5();</span><br><span class="line">        per1.name = <span class="string">"张三"</span>;</span><br><span class="line">        per1.age = <span class="number">30</span>;</span><br><span class="line">        per2.name = <span class="string">"李四"</span>;</span><br><span class="line">        per2.age = <span class="number">33</span>;</span><br><span class="line">        per2 = per1;</span><br><span class="line">        System.out.print(<span class="string">"per1对象中的内容 --&gt;"</span>);</span><br><span class="line">        per1.tell();</span><br><span class="line">        System.out.print(<span class="string">"per2对象中的内容 --&gt;"</span>);</span><br><span class="line">        per2.tell();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>程序运行结果为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">per1对象中的内容 --&gt;姓名：张三，年龄：30</span><br><span class="line">per2对象中的内容 --&gt;姓名：张三，年龄：30</span><br></pre></td></tr></table></figure>
-<p>因为per2本身有堆内存空间，所以如果要想再指向per1对应的空间，则必须先断开已有的连接。而per2原来的空间没有任何的栈内存空间所引用，就形成了垃圾空间，等待垃圾收集机制进行回收。</p>
-<blockquote>
-<p><strong>关于垃圾空间的释放</strong></p>
-<p>Java本身提供垃圾收集机制（Garbage Collection, GC），会不定期地释放不用的内存空间，只要对象不使用了，就会等待GC释放空间。</p>
-</blockquote>
-<p>从上面的程序中明确的一点，即一个栈内存空间只能指向一个堆内存空间，如果要想再指向其他的堆内存空间，则必须先断开已有的指向才能分配新的指向。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">MAIN方法 --&gt; ThisDemo.Person04@21bcffb5</span><br><span class="line">Person类 --&gt; ThisDemo.Person04@21bcffb5</span><br><span class="line">----------------------------</span><br><span class="line">MAIN方法 --&gt; ThisDemo.Person04@380fb434</span><br><span class="line">Person类 --&gt; ThisDemo.Person04@380fb434</span><br></pre></td></tr></table></figure>
+<p>从结果来看，直接打印对象和调用getInfo()方法打印的结果是一样的，而且在getInfo()方法中打印的永远是this关键字，也就是说哪个对象调用了类中的方法，this就表示哪个对象。</p>
+<p>这样一个特性有什么用处呢？通过下面一个例子来理解：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -543,12 +510,12 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2019/04/15/Java笔记：类与对象/">Java笔记：类与对象</a></p>
+  <p><span>本文标题:</span><a href="/2019/06/05/Java笔记：this关键字/">Java笔记：this关键字</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 xiyou 的个人博客">xiyou</a></p>
-  <p><span>发布时间:</span>2019年04月15日 - 19:39</p>
-  <p><span>最后更新:</span>2019年04月17日 - 20:26</p>
-  <p><span>原始链接:</span><a href="/2019/04/15/Java笔记：类与对象/" title="Java笔记：类与对象">http://xiyouhujing.github.io/2019/04/15/Java笔记：类与对象/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://xiyouhujing.github.io/2019/04/15/Java笔记：类与对象/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2019年06月05日 - 15:43</p>
+  <p><span>最后更新:</span>2019年06月13日 - 18:08</p>
+  <p><span>原始链接:</span><a href="/2019/06/05/Java笔记：this关键字/" title="Java笔记：this关键字">http://xiyouhujing.github.io/2019/06/05/Java笔记：this关键字/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://xiyouhujing.github.io/2019/06/05/Java笔记：this关键字/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -592,8 +559,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/05/Java开发实战经典习题4-6/" rel="next" title="Java开发实战经典习题4-6">
-                <i class="fa fa-chevron-left"></i> Java开发实战经典习题4-6
+              <a href="/2019/05/24/Java笔记：引用传递及基本应用/" rel="next" title="Java笔记：引用传递及基本应用">
+                <i class="fa fa-chevron-left"></i> Java笔记：引用传递及基本应用
               </a>
             
           </div>
@@ -602,8 +569,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/04/18/Java笔记：封装性/" rel="prev" title="Java笔记：封装性">
-                Java笔记：封装性 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/09/27/使用JMeter和badboy进行性能测试/" rel="prev" title="使用JMeter和badboy进行性能测试">
+                使用JMeter和badboy进行性能测试 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -774,7 +741,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#类与对象的关系"><span class="nav-number">1.</span> <span class="nav-text">类与对象的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类的定义"><span class="nav-number">2.</span> <span class="nav-text">类的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象的创建及使用"><span class="nav-number">3.</span> <span class="nav-text">对象的创建及使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建多个对象"><span class="nav-number">4.</span> <span class="nav-text">创建多个对象</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用this调用本类中的属性"><span class="nav-number">1.</span> <span class="nav-text">使用this调用本类中的属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用this调用构造方法"><span class="nav-number">2.</span> <span class="nav-text">使用this调用构造方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#this表示当前对象"><span class="nav-number">3.</span> <span class="nav-text">this表示当前对象</span></a></li></ol></div>
             
 
           </div>
