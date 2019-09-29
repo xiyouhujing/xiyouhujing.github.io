@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xiyouhujing.github.io/"/>
-  <updated>2019-09-27T02:13:33.702Z</updated>
+  <updated>2019-09-29T03:00:43.247Z</updated>
   <id>http://xiyouhujing.github.io/</id>
   
   <author>
@@ -17,13 +17,74 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Java开发环境配置</title>
+    <link href="http://xiyouhujing.github.io/2019/09/27/Java%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    <id>http://xiyouhujing.github.io/2019/09/27/Java开发环境配置/</id>
+    <published>2019-09-27T09:17:36.000Z</published>
+    <updated>2019-09-29T03:00:43.247Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="下载安装JDK"><a href="#下载安装JDK" class="headerlink" title="下载安装JDK"></a>下载安装JDK</h3><p>1.JDK是Java开发工具，下载地址为：<a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html，点击如下图片的按钮：" target="_blank" rel="noopener">https://www.oracle.com/technetwork/java/javase/downloads/index.html，点击如下图片的按钮：</a></p><p><img src="//xiyouhujing.github.io/2019/09/27/Java开发环境配置/下载1.png" alt="下载1"></p><p>2.在跳转的页面中选择接受许可，之后根据自己的系统选择对应的安装程序，本文window 64为例，如下：</p><p><img src="//xiyouhujing.github.io/2019/09/27/Java开发环境配置/下载2.png" alt="下载2"></p><p>3.双击安装文件，然后提示的安装步骤进行安装即可，可以修改JDK的安装路径，例如我的安装路径为：D:\JDK，记住安装路径，在接下来配置环境变量中需要用到。</p><h3 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h3><p>1.安装完成后，邮件“我的电脑”/“此电脑”，点击“属性”，选择“高级系统设置”，如下图：</p><p><img src="//xiyouhujing.github.io/2019/09/27/Java开发环境配置/环境变量1.png" alt="环境变量1"></p><p>2.选择“高级”选项卡，点击“环境变量”，如下图：</p><p><img src="//xiyouhujing.github.io/2019/09/27/Java开发环境配置/环境变量2.png" alt="环境变量2"></p><p>3.在“系统变量”中分别设置JAVA_HOME、CLASSPATH、PATH三个属性，如果三个属性不存在，则新建，存在则选定后编辑，变量参数设置如下：</p><div class="table-container"><table><thead><tr><th>变量名</th><th>变量值</th></tr></thead><tbody><tr><td>JAVA_HOME</td><td>D:\JDK      (根据自己的安装路径选择)</td></tr><tr><td>CLASSPATH</td><td>.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;   （注意最前面有.; 符合用英文）</td></tr><tr><td>PATH</td><td>%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin  （win10中双击PATH后分条添加，否则无法识别）</td></tr></tbody></table></div><h3 id="测试JDK是否安装成功"><a href="#测试JDK是否安装成功" class="headerlink" title="测试JDK是否安装成功"></a>测试JDK是否安装成功</h3><p>1.ctrl+R，在弹出的对话框中输入cmd，回车。</p><p>2.在弹出的命令框中，输入java -version命令，如果出现如下结果，则说明java环境配置成功：</p><p><img src="//xiyouhujing.github.io/2019/09/27/Java开发环境配置/测试1.png" alt="测试1"></p><h3 id="安装Eclipse"><a href="#安装Eclipse" class="headerlink" title="安装Eclipse"></a>安装Eclipse</h3><p>目前市场上用于java开发的IDE比较多，比较推荐Eclipse和IntelliJ IDEA，IDEA功能很强大，但是要收费，Eclipse是免费开源的java开发工具，也是目前使用较多的开发工具，所以这里推荐安装Eclipse。</p><p>1.下载eclipse的安装文件，下载地址为：<a href="https://www.eclipse.org/downloads/packages/，选择Eclipse" target="_blank" rel="noopener">https://www.eclipse.org/downloads/packages/，选择Eclipse</a> IDE for Committers，并根据自己的电脑系统选择相应的版本，本次选择windows 64：</p><p><img src="//xiyouhujing.github.io/2019/09/27/Java开发环境配置/下载3.png" alt="下载3"></p><p>2.在跳转的界面中，默认的下载地址是日本一所大学，此时点击“select another mirror”，然后将页面往下拉，选择中国的镜像，这样下载速度较快，这里选择大连东软信息学院或者中国科技大学镜像，如下：</p><p><img src="//xiyouhujing.github.io/2019/09/27/Java开发环境配置/下载4.png" alt="下载4"></p><p><img src="//xiyouhujing.github.io/2019/09/27/Java开发环境配置/下载5.png" alt="下载5"></p><p>3.选择镜像之后，开始下载，下载完成后的文件名为eclipse-committers-2019-09-R-win32-x86_64.zip，解压，运行eclipse.exe。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;下载安装JDK&quot;&gt;&lt;a href=&quot;#下载安装JDK&quot; class=&quot;headerlink&quot; title=&quot;下载安装JDK&quot;&gt;&lt;/a&gt;下载安装JDK&lt;/h3&gt;&lt;p&gt;1.JDK是Java开发工具，下载地址为：&lt;a href=&quot;https://www.oracle.c
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="http://xiyouhujing.github.io/categories/Java/"/>
+    
+    
+      <category term="JDK" scheme="http://xiyouhujing.github.io/tags/JDK/"/>
+    
+      <category term="eclipse" scheme="http://xiyouhujing.github.io/tags/eclipse/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JMeter安装与使用</title>
+    <link href="http://xiyouhujing.github.io/2019/09/27/JMeter%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/"/>
+    <id>http://xiyouhujing.github.io/2019/09/27/JMeter安装与使用/</id>
+    <published>2019-09-27T08:54:13.000Z</published>
+    <updated>2019-09-27T09:19:10.561Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>JMeter是基于Java的测试工具，主要对web应用和软件进行接口测试和压力测试。</p><h3 id="安装前准备"><a href="#安装前准备" class="headerlink" title="安装前准备"></a>安装前准备</h3><p>在安装配置JMeter之前，需要确定电脑是否安装有Java环境，可以利用命令提示符查验：</p><p>1.ctrl + R，之后输入cmd，在弹出的命令行窗口中输入java -veision，如果出现如下结果，则表明电脑中存在Java环境，接下来便可以进行JMeter的安装：</p><p><img src="//xiyouhujing.github.io/2019/09/27/JMeter安装与使用/cmd截图.png" alt="cmd截图"></p><p>2.如果电脑中没有java环境，则首先要下载和配置java的开发工具包JDK，具体步骤参考</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot; title=&quot;介绍&quot;&gt;&lt;/a&gt;介绍&lt;/h3&gt;&lt;p&gt;JMeter是基于Java的测试工具，主要对web应用和软件进行接口测试和压力测试。&lt;/p&gt;
+&lt;h3 id=&quot;安装前准备&quot;&gt;&lt;a href=
+      
+    
+    </summary>
+    
+      <category term="测试" scheme="http://xiyouhujing.github.io/categories/%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="JMeter" scheme="http://xiyouhujing.github.io/tags/JMeter/"/>
+    
+  </entry>
+  
+  <entry>
     <title>使用JMeter和badboy进行性能测试</title>
     <link href="http://xiyouhujing.github.io/2019/09/27/%E4%BD%BF%E7%94%A8JMeter%E5%92%8Cbadboy%E8%BF%9B%E8%A1%8C%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/"/>
     <id>http://xiyouhujing.github.io/2019/09/27/使用JMeter和badboy进行性能测试/</id>
     <published>2019-09-27T02:11:55.000Z</published>
-    <updated>2019-09-27T02:13:33.702Z</updated>
+    <updated>2019-09-27T08:54:30.710Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>1.JMeter是用Java开发的，开源且免费的测试工具，类似于postman，但是postman</p>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot; title=&quot;介绍&quot;&gt;&lt;/a&gt;介绍&lt;/h3&gt;&lt;p&gt;1.JMeter是用Java开发的，开源且免费的测试工具，类似于postman，但是postman&lt;/p&gt;
+
+      
     
     </summary>
     
