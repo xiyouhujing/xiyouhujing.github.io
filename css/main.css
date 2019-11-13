@@ -185,7 +185,7 @@ th {
 }
 body {
   position: relative;
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Lato', "Microsoft YaHei", Arial, "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
   font-size: 16px;
   line-height: 2;
   color: #555;
@@ -216,7 +216,7 @@ h6 {
   padding: 0;
   font-weight: bold;
   line-height: 1.5;
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Lato', "Microsoft YaHei", Arial, "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
 }
 h2,
 h3,
@@ -226,51 +226,51 @@ h6 {
   margin: 20px 0 15px;
 }
 h1 {
-  font-size: 22px;
-}
-@media (max-width: 767px) {
-  h1 {
-    font-size: 18px;
-  }
-}
-h2 {
   font-size: 20px;
 }
 @media (max-width: 767px) {
-  h2 {
+  h1 {
     font-size: 16px;
   }
 }
-h3 {
+h2 {
   font-size: 18px;
 }
 @media (max-width: 767px) {
-  h3 {
+  h2 {
     font-size: 14px;
   }
 }
-h4 {
+h3 {
   font-size: 16px;
 }
 @media (max-width: 767px) {
-  h4 {
+  h3 {
     font-size: 12px;
   }
 }
-h5 {
+h4 {
   font-size: 14px;
 }
 @media (max-width: 767px) {
-  h5 {
+  h4 {
     font-size: 10px;
   }
 }
-h6 {
+h5 {
   font-size: 12px;
 }
 @media (max-width: 767px) {
-  h6 {
+  h5 {
     font-size: 8px;
+  }
+}
+h6 {
+  font-size: 10px;
+}
+@media (max-width: 767px) {
+  h6 {
+    font-size: 6px;
   }
 }
 p {
@@ -403,7 +403,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
   border: 1px solid #ddd;
-  font-size: 14px;
+  font-size: 15px;
   table-layout: fixed;
   word-wrap: break-all;
 }
@@ -485,14 +485,14 @@ pre,
   overflow: auto;
   margin: 20px 0;
   padding: 0;
-  font-size: 13px;
+  font-size: 14px;
   color: #4d4d4c;
   background: #f7f7f7;
   line-height: 1.6;
 }
 pre,
 code {
-  font-family: consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace;
+  font-family: consolas, Menlo, "Microsoft YaHei", Arial, "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei", monospace;
 }
 code {
   padding: 2px 4px;
@@ -500,7 +500,7 @@ code {
   color: #555;
   background: #eee;
   border-radius: 3px;
-  font-size: 13px;
+  font-size: 14px;
 }
 pre {
   padding: 10px;
@@ -1130,7 +1130,7 @@ pre .javascript .function {
   line-height: 36px;
   font-size: 20px;
   font-weight: normal;
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Lato', "Microsoft YaHei", Arial, "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
 }
 .site-subtitle {
   margin-top: 10px;
@@ -1219,7 +1219,7 @@ pre .javascript .function {
   opacity: 0;
 }
 .post-body {
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Lato', "Microsoft YaHei", Arial, "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
 }
 @media (max-width: 767px) {
   .post-body {
@@ -1507,7 +1507,7 @@ pre .javascript .function {
 .posts-expand .post-meta {
   margin: 3px 0 60px 0;
   color: #999;
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Lato', "Microsoft YaHei", Arial, "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
   font-size: 12px;
   text-align: center;
 }
@@ -1990,7 +1990,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #81544f;
+  background: #ff8660;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2756,7 +2756,7 @@ img:hover {
 .header {
   position: relative;
   margin: 0 auto;
-  width: 90%;
+  width: 87%;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .header {
@@ -2816,7 +2816,7 @@ img:hover {
   }
 }
 .container .main-inner {
-  width: 90%;
+  width: 87%;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .container .main-inner {
@@ -2832,7 +2832,7 @@ img:hover {
   float: right;
   box-sizing: border-box;
   padding: 40px;
-  width: 90%;
+  width: calc(100% - 252px);
   background: #fff;
   min-height: 700px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
