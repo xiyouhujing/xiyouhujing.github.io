@@ -1669,7 +1669,7 @@ pre .javascript .function {
   font-family: UKIJ Ekran;
 }
 .my_post_copyright {
-  width: 90%;
+  width: 85%;
   max-width: 45em;
   margin: 2.8em auto 0;
   padding: 0.5em 1em;
@@ -1990,7 +1990,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #6ef4ff;
+  background: #41c9ff;
 }
 .links-of-blogroll {
   font-size: 13px;
