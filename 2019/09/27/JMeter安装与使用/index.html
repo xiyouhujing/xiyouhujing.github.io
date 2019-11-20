@@ -107,7 +107,21 @@
 <meta property="og:image" content="http://xiyouhujing.github.io/2019/09/27/JMeter安装与使用/修改快捷方式.png">
 <meta property="og:image" content="http://xiyouhujing.github.io/2019/09/27/JMeter安装与使用/修改快捷方式2.png">
 <meta property="og:image" content="http://xiyouhujing.github.io/2019/09/27/JMeter安装与使用/修改快捷方式3.png">
-<meta property="og:updated_time" content="2019-09-29T09:30:06.779Z">
+<meta property="og:image" content="http://xiyouhujing.github.io/2019/09/27/JMeter安装与使用/更改路径.png">
+<meta property="og:image" content="http://xiyouhujing.github.io/2019/09/27/JMeter安装与使用/打开方式.png">
+<meta property="og:image" content="http://xiyouhujing.github.io/2019/09/27/JMeter安装与使用/更改语言.png">
+<meta property="og:image" content="http://xiyouhujing.github.io/2019/09/27/JMeter安装与使用/添加线程.png">
+<meta property="og:image" content="http://xiyouhujing.github.io/2019/09/27/JMeter安装与使用/设置线程数.png">
+<meta property="og:image" content="http://xiyouhujing.github.io/2019/09/27/JMeter安装与使用/配置元件.png">
+<meta property="og:image" content="http://xiyouhujing.github.io/2019/09/27/JMeter安装与使用/配置元件2.png">
+<meta property="og:image" content="http://xiyouhujing.github.io/2019/09/27/JMeter安装与使用/HTTP请求.png">
+<meta property="og:image" content="http://xiyouhujing.github.io/2019/09/27/JMeter安装与使用/HTTP请求2.png">
+<meta property="og:image" content="http://xiyouhujing.github.io/2019/09/27/JMeter安装与使用/HTTP信息头.png">
+<meta property="og:image" content="http://xiyouhujing.github.io/2019/09/27/JMeter安装与使用/HTTP信息头2.png">
+<meta property="og:image" content="http://xiyouhujing.github.io/2019/09/27/JMeter安装与使用/断言.png">
+<meta property="og:image" content="http://xiyouhujing.github.io/2019/09/27/JMeter安装与使用/断言2.png">
+<meta property="og:image" content="http://xiyouhujing.github.io/2019/09/27/JMeter安装与使用/察看结果树.png">
+<meta property="og:updated_time" content="2019-11-15T09:26:38.018Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JMeter安装与使用">
 <meta name="twitter:description" content="介绍JMeter是基于Java的测试工具，主要对web应用和软件进行接口测试和压力测试。 安装前准备在安装配置JMeter之前，需要确定电脑是否安装有Java环境，可以利用命令提示符查验： 1.ctrl + R，之后输入cmd，在弹出的命令行窗口中输入java -veision，如果出现如下结果，则表明电脑中存在Java环境，接下来便可以进行JMeter的安装：  2.如果电脑中没有java环境，">
@@ -424,7 +438,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  790
+                  1.4k
                 </span>
               
 
@@ -440,7 +454,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  5
                 </span>
               
             </div>
@@ -509,8 +523,40 @@
 <p><img src="//xiyouhujing.github.io/2019/09/27/JMeter安装与使用/修改快捷方式2.png" alt="修改快捷方式2"></p>
 <p>4.如果想自定义一个图标，可以网上下载一个自己喜欢的图标（ <a href="JMeter安装与使用\1.ico">1.ico</a> ），<strong>保存为ico格式</strong>，点击“更改图标”窗口的浏览按钮，选择自己想要的图标，点击确定，图标修改完成。</p>
 <p><img src="//xiyouhujing.github.io/2019/09/27/JMeter安装与使用/修改快捷方式3.png" alt="修改快捷方式3"></p>
-<p>6.如果不想每次点击jmeter的快捷方式都要打开命令窗口，可以进行如下修改：</p>
-<h3 id="使用Jmeter进行测试"><a href="#使用Jmeter进行测试" class="headerlink" title="使用Jmeter进行测试"></a>使用Jmeter进行测试</h3><h4 id="添加测试计划（）"><a href="#添加测试计划（）" class="headerlink" title="添加测试计划（）"></a>添加测试计划（）</h4>
+<p>5.如果使用默认的jmeter.bat启动的话，会出现一个CMD命令窗口之后再启动jmeter。如果不想每次点击jmeter的快捷方式都要打开命令窗口，可以进行如下修改：</p>
+<p>右键jmeter.bat快捷方式，点击属性，修改目标和启始位置（<strong>根据实际的jmeter解压路径填写</strong>）：</p>
+<p>目标：D:\Jmeter\apache-jmeter-5.1.1\bin\ApacheJMeter.jar</p>
+<p>起始位置：D:\Jmeter\apache-jmeter-5.1.1\bin</p>
+<p><img src="//xiyouhujing.github.io/2019/09/27/JMeter安装与使用/更改路径.png" alt="更改路径"></p>
+<p><strong>注意：默认ApacheJMeter.jar的打开方式是解压工具winrar，这里需要更改打开方式</strong></p>
+<p><img src="//xiyouhujing.github.io/2019/09/27/JMeter安装与使用/打开方式.png" alt="打开方式"></p>
+<h3 id="使用Jmeter进行测试"><a href="#使用Jmeter进行测试" class="headerlink" title="使用Jmeter进行测试"></a>使用Jmeter进行测试</h3><h4 id="更改JMeter默认语言"><a href="#更改JMeter默认语言" class="headerlink" title="更改JMeter默认语言"></a>更改JMeter默认语言</h4><p>点击【options】&gt;【choose language】变为简体中文，方便操作，如下图：</p>
+<p><img src="//xiyouhujing.github.io/2019/09/27/JMeter安装与使用/更改语言.png" alt="更改语言"></p>
+<h4 id="创建线程组"><a href="#创建线程组" class="headerlink" title="创建线程组"></a>创建线程组</h4><p>1、在“测试计划”上右键，依次选择【添加】&gt;【线程（用户）】&gt;【线程组】</p>
+<p><img src="//xiyouhujing.github.io/2019/09/27/JMeter安装与使用/添加线程.png" alt="添加线程"></p>
+<p>2、在线程组界面设置线程数和循环次数，我这里设置线程数为100，循环一次</p>
+<p><img src="//xiyouhujing.github.io/2019/09/27/JMeter安装与使用/设置线程数.png" alt="设置线程数"></p>
+<h4 id="添加HTTP请求默认值"><a href="#添加HTTP请求默认值" class="headerlink" title="添加HTTP请求默认值"></a>添加HTTP请求默认值</h4><p>1、在刚刚创建的线程组上右键，依次选择【添加】&gt;【配置元件】&gt;【HTTP请求默认值】</p>
+<p><img src="//xiyouhujing.github.io/2019/09/27/JMeter安装与使用/配置元件.png" alt="配置元件"></p>
+<p>2、在配置元件界面填写我们需要测试的程序协议、地址和端口，如下图所示：</p>
+<p><img src="//xiyouhujing.github.io/2019/09/27/JMeter安装与使用/配置元件2.png" alt="配置元件2"></p>
+<h4 id="构造HTTP请求"><a href="#构造HTTP请求" class="headerlink" title="构造HTTP请求"></a>构造HTTP请求</h4><p>1、在线程组上右键，依次选择【添加】&gt;【取样器】&gt;【HTTP请求】,如下图：</p>
+<p><img src="//xiyouhujing.github.io/2019/09/27/JMeter安装与使用/HTTP请求.png" alt="HTTP请求"></p>
+<p>2、由于我们刚才在HTTP默认值中设置了默认路径，我们这里使用默认路径的话，就在http请求界面的路径中输入反斜杠“/”就行，如下图：</p>
+<p><img src="//xiyouhujing.github.io/2019/09/27/JMeter安装与使用/HTTP请求2.png" alt="HTTP请求2"></p>
+<p>其中消息体数据根据实际情况填写，可以无参数。</p>
+<h4 id="添加HTTP请求头"><a href="#添加HTTP请求头" class="headerlink" title="添加HTTP请求头"></a>添加HTTP请求头</h4><p>1、在线程组上右键，依次选择【添加】&gt;【配置元件】&gt;【HTTP信息头管理器】，如下图：</p>
+<p><img src="//xiyouhujing.github.io/2019/09/27/JMeter安装与使用/HTTP信息头.png" alt="HTTP信息头"></p>
+<p>2、因为HTTP请求中没有传输数据，所以，这里设置为Content-Type:application/text（如果在HTTP请求中传入了数据，并且为json格式的数据，则可以设置为Content-Type:application/json）</p>
+<p><img src="//xiyouhujing.github.io/2019/09/27/JMeter安装与使用/HTTP信息头2.png" alt="HTTP信息头2"></p>
+<h4 id="添加断言"><a href="#添加断言" class="headerlink" title="添加断言"></a>添加断言</h4><p>1、在线程组上右键，依次点击【添加】&gt;【断言】&gt;【响应断言】，如下图：</p>
+<p><img src="//xiyouhujing.github.io/2019/09/27/JMeter安装与使用/断言.png" alt="断言"></p>
+<p>2、根据响应的数据来判断请求是否正常。这里只判断的响应代码是否为200。还可以配置错误信息，如下图所示：</p>
+<p><img src="//xiyouhujing.github.io/2019/09/27/JMeter安装与使用/断言2.png" alt="断言2"></p>
+<h4 id="察看结果树"><a href="#察看结果树" class="headerlink" title="察看结果树"></a>察看结果树</h4><p>1、在线程组上右键，依次选择【添加】&gt;【监听器】&gt;【察看结果树】</p>
+<p><img src="//xiyouhujing.github.io/2019/09/27/JMeter安装与使用/察看结果树.png" alt="察看结果树"></p>
+<p>2、点击运行按钮便可查看结果</p>
+
       
     </div>
     
@@ -539,7 +585,7 @@
   <p><span>本文标题:</span><a href="/2019/09/27/JMeter安装与使用/">JMeter安装与使用</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 xiyou 的个人博客">xiyou</a></p>
   <p><span>发布时间:</span>2019年09月27日 - 16:54</p>
-  <p><span>最后更新:</span>2019年09月29日 - 17:30</p>
+  <p><span>最后更新:</span>2019年11月15日 - 17:26</p>
   <p><span>原始链接:</span><a href="/2019/09/27/JMeter安装与使用/" title="JMeter安装与使用">http://xiyouhujing.github.io/2019/09/27/JMeter安装与使用/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://xiyouhujing.github.io/2019/09/27/JMeter安装与使用/"  aria-label="复制成功！"></i></span>
   </p>
@@ -678,7 +724,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -689,7 +735,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -700,7 +746,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -762,7 +808,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#介绍"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装前准备"><span class="nav-number">2.</span> <span class="nav-text">安装前准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Jmeter下载"><span class="nav-number">3.</span> <span class="nav-text">Jmeter下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Jmeter环境变量配置"><span class="nav-number">4.</span> <span class="nav-text">Jmeter环境变量配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试是否安装配置成功"><span class="nav-number">5.</span> <span class="nav-text">测试是否安装配置成功</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优化jmeter的使用"><span class="nav-number">6.</span> <span class="nav-text">优化jmeter的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用Jmeter进行测试"><span class="nav-number">7.</span> <span class="nav-text">使用Jmeter进行测试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#添加测试计划（）"><span class="nav-number">7.1.</span> <span class="nav-text">添加测试计划（）</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#介绍"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装前准备"><span class="nav-number">2.</span> <span class="nav-text">安装前准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Jmeter下载"><span class="nav-number">3.</span> <span class="nav-text">Jmeter下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Jmeter环境变量配置"><span class="nav-number">4.</span> <span class="nav-text">Jmeter环境变量配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试是否安装配置成功"><span class="nav-number">5.</span> <span class="nav-text">测试是否安装配置成功</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优化jmeter的使用"><span class="nav-number">6.</span> <span class="nav-text">优化jmeter的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用Jmeter进行测试"><span class="nav-number">7.</span> <span class="nav-text">使用Jmeter进行测试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#更改JMeter默认语言"><span class="nav-number">7.1.</span> <span class="nav-text">更改JMeter默认语言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建线程组"><span class="nav-number">7.2.</span> <span class="nav-text">创建线程组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加HTTP请求默认值"><span class="nav-number">7.3.</span> <span class="nav-text">添加HTTP请求默认值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构造HTTP请求"><span class="nav-number">7.4.</span> <span class="nav-text">构造HTTP请求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加HTTP请求头"><span class="nav-number">7.5.</span> <span class="nav-text">添加HTTP请求头</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加断言"><span class="nav-number">7.6.</span> <span class="nav-text">添加断言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#察看结果树"><span class="nav-number">7.7.</span> <span class="nav-text">察看结果树</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -798,7 +844,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">36.1k</span>
+    <span title="Site words total count">37.8k</span>
   
   -->
 </div>
@@ -816,7 +862,7 @@
 <div class="theme-info">
   <div class="powered-by"></div>
   <i class="fa fa-paint-brush" aria-hidden="true"></i><span class="post-count">
-  博客全站共36.1k字</span>
+  博客全站共37.8k字</span>
 </div>
 
 <!--
