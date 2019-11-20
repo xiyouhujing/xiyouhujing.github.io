@@ -97,7 +97,9 @@
 <meta property="og:description" content="通信系统的组成通信系统一般模型对于电通信来说，首先要把消息转变成电信号，然后经过发送设备，将信号送入信道，在接收端利用接收设备对接收信号作相应的处理后，送给信宿再转换为原来的消息。这个过程可以用下图所示的通信系统一般模型来概括。  1、信息源 信息源简称信源，其作用是把各种消息转换成原始电信号，根据消息的种类不同，信源可以分为模拟信源和数字信源。模拟信源输出连续的模拟信号，如话筒（声音-音频信号）">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://xiyouhujing.github.io/2019/11/18/通信原理笔记（一）/通信系统一般模型.jpg">
-<meta property="og:updated_time" content="2019-11-20T01:32:23.533Z">
+<meta property="og:image" content="http://xiyouhujing.github.io/2019/11/18/通信原理笔记（一）/模拟通信系统模型.jpg">
+<meta property="og:image" content="http://xiyouhujing.github.io/2019/11/18/通信原理笔记（一）/数字通信系统模型.jpg">
+<meta property="og:updated_time" content="2019-11-20T02:51:30.495Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="通信原理笔记（一）">
 <meta name="twitter:description" content="通信系统的组成通信系统一般模型对于电通信来说，首先要把消息转变成电信号，然后经过发送设备，将信号送入信道，在接收端利用接收设备对接收信号作相应的处理后，送给信宿再转换为原来的消息。这个过程可以用下图所示的通信系统一般模型来概括。  1、信息源 信息源简称信源，其作用是把各种消息转换成原始电信号，根据消息的种类不同，信源可以分为模拟信源和数字信源。模拟信源输出连续的模拟信号，如话筒（声音-音频信号）">
@@ -414,7 +416,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.2k
+                  1.5k
                 </span>
               
 
@@ -430,7 +432,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  4
                 </span>
               
             </div>
@@ -468,7 +470,13 @@
 <p>消息的传递时通过它的物理载体——电信号来实现的，即把消息寄托在电信号的某一参量上（如连续波的幅度、频率或相位；脉冲波的幅度、宽度或位置）。按信号参量的取值方式不同，可以把信号分为两类：<strong>模拟信号</strong>和<strong>数字信号</strong>。如果电信号的参数取值连续（不可数、无穷多），则称之为<strong>模拟信号</strong>，模拟信号有时也称为<strong>连续信号</strong>，这里连续的含义时指某信号的某一参量连续变化，或者说在某一取值范围内可以取无穷多个值，而不一定在时间上也连续；如果电信号的参量仅可能取有限个值，则称之为<strong>数字信号</strong>，数字信号有时也称为离散信号，这个离散是指信号的某一参量是离散变化的，而不一定在时间上也离散。</p>
 <p>通常，按照信道中传输的是模拟信号还是数字信号，相应地把通信系统分为<strong>模拟通信系统</strong>和<strong>数字通信系统</strong>。</p>
 <p>1、模拟通信系统模型</p>
-<p>模拟通信系统是利用模拟信号来传递信息的通信系统，其模型如下图所示，其中包含了两种重要变换。第一种变换是，在发送端把连续消息变换成原始电信号，在接收端进行相反的变换</p>
+<p>模拟通信系统是利用模拟信号来传递信息的通信系统，其模型如下图所示，其中包含了两种重要变换。第一种变换是，在发送端把连续消息变换成原始电信号，在接收端进行相反的变换，这种变换由信源和信宿来完成；第二种变换是，把基带信号变换成适合在信道中传输的信号，并在接收端进行反变换，完成这种变换和反变换的通常是调制器和解调器。经过调制以后的信号称为<strong>已调信号</strong>，它由两个基本特征：一是携带有信息；而是适应在信道中传输。由于已调信号的频谱通常具有带通形式，因而已调信号又称为<strong>带通信号</strong>（也称为<strong>频带信号</strong>）。</p>
+<p><img src="//xiyouhujing.github.io/2019/11/18/通信原理笔记（一）/模拟通信系统模型.jpg" alt="模拟通信系统模型"></p>
+<p>2、数字通信系统模型</p>
+<p>数字通信系统是利用数字信号来传递信息系统，如下图所示，数字通信涉及的技术问题很多，其中主要有信源编码与译码、信道编码与译码、数字调制与解调、同步以及加密与解密等。</p>
+<p><img src="//xiyouhujing.github.io/2019/11/18/通信原理笔记（一）/数字通信系统模型.jpg" alt="数字通信系统模型"></p>
+<p>1）信源编码与译码</p>
+<p>信源编码有两个基本功能：一是提高信息传输的有效性，即通过某种数据压缩技术设法减少码元数目和降低码元速率。</p>
 
       
     </div>
@@ -498,7 +506,7 @@
   <p><span>本文标题:</span><a href="/2019/11/18/通信原理笔记（一）/">通信原理笔记（一）</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 xiyou 的个人博客">xiyou</a></p>
   <p><span>发布时间:</span>2019年11月18日 - 14:19</p>
-  <p><span>最后更新:</span>2019年11月20日 - 09:32</p>
+  <p><span>最后更新:</span>2019年11月20日 - 10:51</p>
   <p><span>原始链接:</span><a href="/2019/11/18/通信原理笔记（一）/" title="通信原理笔记（一）">http://xiyouhujing.github.io/2019/11/18/通信原理笔记（一）/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://xiyouhujing.github.io/2019/11/18/通信原理笔记（一）/"  aria-label="复制成功！"></i></span>
   </p>
@@ -753,7 +761,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">37.8k</span>
+    <span title="Site words total count">38.1k</span>
   
   -->
 </div>
@@ -771,7 +779,7 @@
 <div class="theme-info">
   <div class="powered-by"></div>
   <i class="fa fa-paint-brush" aria-hidden="true"></i><span class="post-count">
-  博客全站共37.8k字</span>
+  博客全站共38.1k字</span>
 </div>
 
 <!--
