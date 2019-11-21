@@ -1,1 +1,553 @@
-null
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.7.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon2-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon2-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="alternate" href="/atom.xml" title="西柚的博客" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"flat"},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="通信系统的组成通信系统一般模型对于电通信来说，首先要把消息转变成电信号，然后经过发送设备，将信号送入信道，在接收端利用接收设备对接收信号作相应的处理后，送给信宿再转换为原来的消息。这个过程可以用下图所示的通信系统一般模型来概括。  1、信息源 信息源简称信源，其作用是把各种消息转换成原始电信号，根据消息的种类不同，信源可以分为模拟信源和数字信源。模拟信源输出连续的模拟信号，如话筒（声音-音频信号）">
+<meta name="keywords" content="通信原理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="通信原理笔记（一）">
+<meta property="og:url" content="http://xiyouhujing.github.io/2019/11/18/通信原理笔记（一）/index.html">
+<meta property="og:site_name" content="西柚的博客">
+<meta property="og:description" content="通信系统的组成通信系统一般模型对于电通信来说，首先要把消息转变成电信号，然后经过发送设备，将信号送入信道，在接收端利用接收设备对接收信号作相应的处理后，送给信宿再转换为原来的消息。这个过程可以用下图所示的通信系统一般模型来概括。  1、信息源 信息源简称信源，其作用是把各种消息转换成原始电信号，根据消息的种类不同，信源可以分为模拟信源和数字信源。模拟信源输出连续的模拟信号，如话筒（声音-音频信号）">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://xiyouhujing.github.io/2019/11/18/通信原理笔记（一）/通信系统一般模型.jpg">
+<meta property="og:image" content="http://xiyouhujing.github.io/2019/11/18/通信原理笔记（一）/模拟通信系统模型.jpg">
+<meta property="og:image" content="http://xiyouhujing.github.io/2019/11/18/通信原理笔记（一）/数字通信系统模型.jpg">
+<meta property="og:updated_time" content="2019-11-20T06:30:46.413Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="通信原理笔记（一）">
+<meta name="twitter:description" content="通信系统的组成通信系统一般模型对于电通信来说，首先要把消息转变成电信号，然后经过发送设备，将信号送入信道，在接收端利用接收设备对接收信号作相应的处理后，送给信宿再转换为原来的消息。这个过程可以用下图所示的通信系统一般模型来概括。  1、信息源 信息源简称信源，其作用是把各种消息转换成原始电信号，根据消息的种类不同，信源可以分为模拟信源和数字信源。模拟信源输出连续的模拟信号，如话筒（声音-音频信号）">
+<meta name="twitter:image" content="http://xiyouhujing.github.io/2019/11/18/通信原理笔记（一）/通信系统一般模型.jpg">
+
+<link rel="canonical" href="http://xiyouhujing.github.io/2019/11/18/通信原理笔记（一）/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>通信原理笔记（一） | 西柚的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">西柚的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">好好学习，天天向上</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://xiyouhujing.github.io/2019/11/18/通信原理笔记（一）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.jpg">
+      <meta itemprop="name" content="xiyou">
+      <meta itemprop="description" content="保持快乐，保持健康，保持可爱">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="西柚的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          通信原理笔记（一）
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-11-18 14:19:50" itemprop="dateCreated datePublished" datetime="2019-11-18T14:19:50+08:00">2019-11-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-20 14:30:46" itemprop="dateModified" datetime="2019-11-20T14:30:46+08:00">2019-11-20</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/通信/" itemprop="url" rel="index">
+                    <span itemprop="name">通信</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="通信系统的组成"><a href="#通信系统的组成" class="headerlink" title="通信系统的组成"></a>通信系统的组成</h3><h4 id="通信系统一般模型"><a href="#通信系统一般模型" class="headerlink" title="通信系统一般模型"></a>通信系统一般模型</h4><p>对于电通信来说，首先要把消息转变成电信号，然后经过发送设备，将信号送入信道，在接收端利用接收设备对接收信号作相应的处理后，送给信宿再转换为原来的消息。这个过程可以用下图所示的通信系统一般模型来概括。</p>
+<p><img src="//xiyouhujing.github.io/2019/11/18/通信原理笔记（一）/通信系统一般模型.jpg" alt="通信系统一般模型"></p>
+<p>1、信息源</p>
+<p>信息源简称<strong>信源</strong>，其作用是把各种消息转换成原始电信号，根据消息的种类不同，信源可以分为<strong>模拟信源</strong>和<strong>数字信源</strong>。<strong>模拟信源</strong>输出连续的模拟信号，如话筒（声音-音频信号）、摄像机（图像-视频信号）；<strong>数字信源</strong>则输出离散的数字信号，如电传机（键盘字符-数字信号）、计算机等各种数字终端。并且，模拟信源送出的信号经数字化处理后也可以发送数字信号。</p>
+<p>2、发送设备</p>
+<p>发送设备的作用是生产适合于在信道中传输的信号，即使发送信号的特性和信道特性相匹配，具有抗信道干扰的能力，并且具有足够的功率以满足远距离传输的需要。因此，发送设备涵盖的内容很多，可能包含变换、放大、滤波、编码、调制等过程。对于多路传输系统，发送设备中还包括多路复用器。</p>
+<p>3、信道</p>
+<p>信道是一种物理媒质，用来将来自发送设备的信号传送到接收端。在<strong>无线信道</strong>中，信道可以是自由空间；在<strong>有线信道</strong>中看，可以是明线、电缆和光纤。信道即给信号以通路，也会对信号产生各种干扰和噪声。</p>
+<p>上图中的噪声源是信道中的噪声及分散在通信系统其他各处的噪声的集中表示。噪声通常是随机的，形式多样的，它的出现干扰了正常的信号的传输。</p>
+<p>4、接收设备</p>
+<p>接收设备的功能是将信号放大和反变换（如译码、调解等），其目的是从受到减损的接收信号中正确恢复出原始电信号，对于多路复用信号，接收设备中还包括解除多路复用，实现正确分路的功能，此外，它还要尽可能减小在传输过程中噪声与干扰所带来的影响。</p>
+<p>5、受信者</p>
+<p>受信者简称<strong>信宿</strong>是传送消息的目的地，其功能与信源相反，即把原始电信号还原成相应的消息，如扬声器等。</p>
+<h4 id="模拟通信系统模型和数字通信系统模型"><a href="#模拟通信系统模型和数字通信系统模型" class="headerlink" title="模拟通信系统模型和数字通信系统模型"></a>模拟通信系统模型和数字通信系统模型</h4><p>通信传输的消息是多种多样的，大致可以分为两大类：一类为<strong>连续消息</strong>；另一类称为<strong>离散消息</strong>。<strong>连续消息</strong>是指消息的状态连续变化或不可数的，例如连续变化的话音、图像等；<strong>离散消息</strong>则是指消息的状态是可数的或离散的，如符号、数据等。</p>
+<p>消息的传递时通过它的物理载体——电信号来实现的，即把消息寄托在电信号的某一参量上（如连续波的幅度、频率或相位；脉冲波的幅度、宽度或位置）。按信号参量的取值方式不同，可以把信号分为两类：<strong>模拟信号</strong>和<strong>数字信号</strong>。如果电信号的参数取值连续（不可数、无穷多），则称之为<strong>模拟信号</strong>，模拟信号有时也称为<strong>连续信号</strong>，这里连续的含义时指某信号的某一参量连续变化，或者说在某一取值范围内可以取无穷多个值，而不一定在时间上也连续；如果电信号的参量仅可能取有限个值，则称之为<strong>数字信号</strong>，数字信号有时也称为离散信号，这个离散是指信号的某一参量是离散变化的，而不一定在时间上也离散。</p>
+<p>通常，按照信道中传输的是模拟信号还是数字信号，相应地把通信系统分为<strong>模拟通信系统</strong>和<strong>数字通信系统</strong>。</p>
+<p>1、模拟通信系统模型</p>
+<p>模拟通信系统是利用模拟信号来传递信息的通信系统，其模型如下图所示，其中包含了两种重要变换。第一种变换是，在发送端把连续消息变换成原始电信号，在接收端进行相反的变换，这种变换由信源和信宿来完成；第二种变换是，把基带信号变换成适合在信道中传输的信号，并在接收端进行反变换，完成这种变换和反变换的通常是调制器和解调器。经过调制以后的信号称为<strong>已调信号</strong>，它由两个基本特征：一是携带有信息；而是适应在信道中传输。由于已调信号的频谱通常具有带通形式，因而已调信号又称为<strong>带通信号</strong>（也称为<strong>频带信号</strong>）。</p>
+<p><img src="//xiyouhujing.github.io/2019/11/18/通信原理笔记（一）/模拟通信系统模型.jpg" alt="模拟通信系统模型"></p>
+<p>2、数字通信系统模型</p>
+<p>数字通信系统是利用数字信号来传递信息系统，如下图所示，数字通信涉及的技术问题很多，其中主要有信源编码与译码、信道编码与译码、数字调制与解调、同步以及加密与解密等。</p>
+<p><img src="//xiyouhujing.github.io/2019/11/18/通信原理笔记（一）/数字通信系统模型.jpg" alt="数字通信系统模型"></p>
+<p>1）信源编码与译码</p>
+<p>信源编码有两个基本功能：一是提高信息传输的有效性，即通过某种数据压缩技术设法减少码元数目和降低码元速率。码元速率决定传输所占的带宽，而传输带宽反映了通信的有效性。二是完成模/数（A/D）转换，即当信息源给出的是模拟信号时，信源编码器将其转换成数字信号，以实现模拟信号的数字化传输。信源译码时信源编码的逆过程。</p>
+<p>2）信道编码与译码</p>
+<p>信道编码的目的时增强数字信号的抗干扰能力。数字信号在信道传输时受到噪声等影响后将会引起差错。为了减小差错，信道编码器对传输的信息码元按一定的规则加入保护成分（监督元），组成所谓“抗干扰编码”。接收端的信道译码器按相应的逆规则进行解码，从中发现错误或纠正错误，提高通信系统的可靠性。</p>
+<p>3）加密与解密</p>
+<p>在需要实现保密通信的场合，为了保证所传信息的安全，认为的将被传输的数字序列扰乱，即加上密码，这种处理过程叫做加密。在接收端利用与发送端相同的密码复制品对受到的数字序列进行解密，恢复原来的信息。</p>
+<p>4）数字调制与解调</p>
+<p>数字调制就是把数字基带信号的频谱搬移到高频处，形成适合在信道中传输的带通信号。基本的数字调制方式有振幅键控（ASK）、频移键控（FSK）、绝对相移键控（PSK）、相对（差分）相移键控（DPSK）。在接收端可以采用相干解调或者非相干解调还原数字基本基带信号。</p>
+<p>5）同步</p>
+<p>同步是使收发两端的信号在时间上保持步调一致，是保证数字通信系统有序、准确、可靠工作的前提条件。按照同步的功能不同，分为载波同步、位同步、群（帧）同步和网同步。</p>
+<p>需要注意的是，上图是数字通信系统的一般化模型，实际上的数字痛惜系统不一定包括土中的所有环节，例如数字基带传输系统中，无需调制和解调；有的环节由于分散在各处，在图中也没有画出，例如同步。</p>
+
+    </div>
+
+    
+    
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>xiyou
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://xiyouhujing.github.io/2019/11/18/通信原理笔记（一）/" title="通信原理笔记（一）">http://xiyouhujing.github.io/2019/11/18/通信原理笔记（一）/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/通信原理/" rel="tag"># 通信原理</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2019/11/15/Django开发大型企业网站/" rel="next" title="Django开发大型企业网站">
+                  <i class="fa fa-chevron-left"></i> Django开发大型企业网站
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#通信系统的组成"><span class="nav-text">通信系统的组成</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#通信系统一般模型"><span class="nav-text">通信系统一般模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#模拟通信系统模型和数字通信系统模型"><span class="nav-text">模拟通信系统模型和数字通信系统模型</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="xiyou"
+      src="/images/touxiang.jpg">
+  <p class="site-author-name" itemprop="name">xiyou</p>
+  <div class="site-description" itemprop="description">保持快乐，保持健康，保持可爱</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/xiyouhujing" title="GitHub → https://github.com/xiyouhujing" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:hujingxiyou@163.com" title="E-Mail → mailto:hujingxiyou@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/hujingxiyou" title="CSDN → https://blog.csdn.net/hujingxiyou" rel="noopener" target="_blank"><i class="fa fa-fw fa-crosshairs"></i>CSDN</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">xiyou</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">90k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">1:22</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+  <script src="/js/local-search.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
