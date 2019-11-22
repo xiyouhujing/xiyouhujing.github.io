@@ -46,18 +46,18 @@
   };
 </script>
 
-  <meta name="description" content="前言 this是Java中的关键字，除了可以用来强调调用的是本类中的方法，this还有以下作用：  表示类中的属性 可以使用this调用本类的构造方法 this表示当前对象">
+  <meta name="description" content="前言  this是Java中的关键字，除了可以用来强调调用的是本类中的方法，this还有以下作用：  表示类中的属性 可以使用this调用本类的构造方法 this表示当前对象">
 <meta name="keywords" content="java基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java笔记：this关键字">
 <meta property="og:url" content="http://xiyouhujing.github.io/2019/06/05/Java笔记：this关键字/index.html">
 <meta property="og:site_name" content="西柚的博客">
-<meta property="og:description" content="前言 this是Java中的关键字，除了可以用来强调调用的是本类中的方法，this还有以下作用：  表示类中的属性 可以使用this调用本类的构造方法 this表示当前对象">
+<meta property="og:description" content="前言  this是Java中的关键字，除了可以用来强调调用的是本类中的方法，this还有以下作用：  表示类中的属性 可以使用this调用本类的构造方法 this表示当前对象">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-11-22T03:21:35.554Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java笔记：this关键字">
-<meta name="twitter:description" content="前言 this是Java中的关键字，除了可以用来强调调用的是本类中的方法，this还有以下作用：  表示类中的属性 可以使用this调用本类的构造方法 this表示当前对象">
+<meta name="twitter:description" content="前言  this是Java中的关键字，除了可以用来强调调用的是本类中的方法，this还有以下作用：  表示类中的属性 可以使用this调用本类的构造方法 this表示当前对象">
 
 <link rel="canonical" href="http://xiyouhujing.github.io/2019/06/05/Java笔记：this关键字/">
 
@@ -285,7 +285,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
+        <h3 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h3>
+<blockquote>
 <p>this是Java中的关键字，除了可以用来强调调用的是本类中的方法，this还有以下作用：</p>
 <ol>
 <li>表示类中的属性</li>
@@ -294,7 +295,8 @@
 </ol>
 </blockquote>
 <a id="more"></a>
-<h3 id="使用this调用本类中的属性"><a href="#使用this调用本类中的属性" class="headerlink" title="使用this调用本类中的属性"></a>使用this调用本类中的属性</h3><p>在程序中可以使用this调用本类属性，例如：</p>
+<h3 id="使用this调用本类中的属性"><a class="markdownIt-Anchor" href="#使用this调用本类中的属性"></a> 使用this调用本类中的属性</h3>
+<p>在程序中可以使用this调用本类属性，例如：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String n, <span class="keyword">int</span> a)</span></span>&#123;</span><br><span class="line">        name = n;</span><br><span class="line">        age = a;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getInfo</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"姓名："</span> + name + <span class="string">"，年龄："</span> + age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>该类中的构造方法意在为类中的属性赋值，但是其实从构造方法传递的参数名称上很难看出n或者a表示的意义，所以进行如下的修改：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name, <span class="keyword">int</span> age)</span></span>&#123;</span><br><span class="line">        name = name;</span><br><span class="line">        age = age;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getInfo</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"姓名："</span> + name + <span class="string">"，年龄："</span> + age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -307,7 +309,8 @@
 <blockquote>
 <p>实际上上面程序中的“name = name”、“age = age”中的两个name和两个age都是构造方法中的参数。更实际中的就近原则相似，在程序的构造方法中，已经存在了name和age属性，那么在构造方法中如果要使用name或age属性，则肯定按照就近取用的原则，所以上面的name和age使用都是构造方法中的参数。</p>
 </blockquote>
-<h3 id="使用this调用构造方法"><a href="#使用this调用构造方法" class="headerlink" title="使用this调用构造方法"></a>使用this调用构造方法</h3><p>如果一个类中有多个构造方法，也可以利用this关键字互相调用。</p>
+<h3 id="使用this调用构造方法"><a class="markdownIt-Anchor" href="#使用this调用构造方法"></a> 使用this调用构造方法</h3>
+<p>如果一个类中有多个构造方法，也可以利用this关键字互相调用。</p>
 <p>假设现在要求不管类中有多少个构造方法，只要对象一被实例化，就打印一行“一个新的对象被实例化”信息出来，很明显，如果在每个构造方法中编写此输出语句肯定不是最佳方法，所以可以利用this关键字完成，如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person03</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person03</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"一个新的Person对象被实例化"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person03</span><span class="params">(String name, <span class="keyword">int</span> age)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>();                                            <span class="comment">// 在此处调用Person类中的无参构造方法</span></span><br><span class="line">        <span class="keyword">this</span>.name = name;                                  <span class="comment">// 为name属性赋值</span></span><br><span class="line">        <span class="keyword">this</span>.age = age;                                    <span class="comment">// 为age属性赋值</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getInfo</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"姓名："</span> + name + <span class="string">"，年龄："</span> + age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThisDemo03</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Person03 per1 = <span class="keyword">new</span> Person03(<span class="string">"张三"</span>, <span class="number">33</span>);</span><br><span class="line">        System.out.println(per1.getInfo());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>程序运行结果：</p>
@@ -316,7 +319,8 @@
 <p>另外需要注意的是，在使用this()调用构造方法的时候，由于构造方法是在实例化对象时被自动调用，也就是说在类中的所有方法中，只有构造方法是被优先调用的，所以使用this调用构造方法必须也只能放在构造方法的首行，下面就是一个错误的例子：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">()</span></span>&#123;</span><br><span class="line">        system.out.println(<span class="string">"一个新的Person对象被实例化。"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name, <span class="keyword">int</span> age)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">        <span class="keyword">this</span>();                                          <span class="comment">// 错误的调用，只能放在构造方法的首行</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getInfo</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>();                                          <span class="comment">// 错误的调用，只能放在构造方法的首行</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"姓名："</span> + name + <span class="string">"，年龄："</span> + age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>另外，this调用构造方法时一定要留一个构造方法作为出口，即程序中至少有个构造方法是不使用this调用其他构造方法的。一般都会将无参构造方法作为出口，即在无参构造方法中最好不要再去调用其他构造方法。</p>
-<h3 id="this表示当前对象"><a href="#this表示当前对象" class="headerlink" title="this表示当前对象"></a>this表示当前对象</h3><p>this最重要的特点就是表示当前对象，在Java中当前对象就是指当前正在调用类中方法的对象。</p>
+<h3 id="this表示当前对象"><a class="markdownIt-Anchor" href="#this表示当前对象"></a> this表示当前对象</h3>
+<p>this最重要的特点就是表示当前对象，在Java中当前对象就是指当前正在调用类中方法的对象。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person04</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getInfo</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Person类 --&gt; "</span> + <span class="keyword">this</span>);         <span class="comment">// 直接打印this</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;                                        <span class="comment">// 此处返回null，为的是让语法不出错</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThisDemo06</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Person04 per1 = <span class="keyword">new</span> Person04();</span><br><span class="line">        Person04 per2 = <span class="keyword">new</span> Person04();</span><br><span class="line">        System.out.println(<span class="string">"MAIN方法 --&gt; "</span> + per1);         <span class="comment">// 直接打印对象</span></span><br><span class="line">        per1.getInfo();</span><br><span class="line">        System.out.println(<span class="string">"----------------------------"</span>);</span><br><span class="line">        System.out.println(<span class="string">"MAIN方法 --&gt; "</span> + per2);         <span class="comment">// 直接打印对象</span></span><br><span class="line">        per2.getInfo();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>程序运行结果：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">MAIN方法 --&gt; ThisDemo.Person04@21bcffb5</span><br><span class="line">Person类 --&gt; ThisDemo.Person04@21bcffb5</span><br><span class="line">----------------------------</span><br><span class="line">MAIN方法 --&gt; ThisDemo.Person04@380fb434</span><br><span class="line">Person类 --&gt; ThisDemo.Person04@380fb434</span><br></pre></td></tr></table></figure>
@@ -416,7 +420,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用this调用本类中的属性"><span class="nav-text">使用this调用本类中的属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用this调用构造方法"><span class="nav-text">使用this调用构造方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#this表示当前对象"><span class="nav-text">this表示当前对象</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-text"> 前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用this调用本类中的属性"><span class="nav-text"> 使用this调用本类中的属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用this调用构造方法"><span class="nav-text"> 使用this调用构造方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#this表示当前对象"><span class="nav-text"> this表示当前对象</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -503,7 +507,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">90k</span>
+    <span title="站点总字数">91k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
@@ -511,6 +515,15 @@
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     <span title="站点阅读时长">1:22</span>
 </div>
+
+
+  <script src='https://unpkg.com/mermaid@/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
+
 
 
         
@@ -564,7 +577,7 @@
 
 
 
-  <script src="/js/local-search.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <script src="/js/local-search.js"></script>
 
 
 
@@ -575,10 +588,73 @@
 
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme: 'forest',
+      logLevel: 3,
+      flowchart: { curve: 'linear' },
+      gantt: { axisFormat: '%m/%d/%Y' },
+      sequence: { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
 
   
+
+  
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+    
 
   
 

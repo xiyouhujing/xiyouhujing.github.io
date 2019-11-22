@@ -46,18 +46,18 @@
   };
 </script>
 
-  <meta name="description" content="前言 在面向对象程序中，构造方法的主要作用是为类中的属性初始化。在之前的学习过程中可以发现，在程序中只要出现了“()”就表示调用了方法，那么这个方法实际上就是表示要调用构造方法，构造方法可视为一种特殊的方法，它的定义方式与普通方法类似。">
+  <meta name="description" content="前言  在面向对象程序中，构造方法的主要作用是为类中的属性初始化。在之前的学习过程中可以发现，在程序中只要出现了“()”就表示调用了方法，那么这个方法实际上就是表示要调用构造方法，构造方法可视为一种特殊的方法，它的定义方式与普通方法类似。">
 <meta name="keywords" content="java基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java笔记：构造方法">
 <meta property="og:url" content="http://xiyouhujing.github.io/2019/05/13/Java笔记：构造方法/index.html">
 <meta property="og:site_name" content="西柚的博客">
-<meta property="og:description" content="前言 在面向对象程序中，构造方法的主要作用是为类中的属性初始化。在之前的学习过程中可以发现，在程序中只要出现了“()”就表示调用了方法，那么这个方法实际上就是表示要调用构造方法，构造方法可视为一种特殊的方法，它的定义方式与普通方法类似。">
+<meta property="og:description" content="前言  在面向对象程序中，构造方法的主要作用是为类中的属性初始化。在之前的学习过程中可以发现，在程序中只要出现了“()”就表示调用了方法，那么这个方法实际上就是表示要调用构造方法，构造方法可视为一种特殊的方法，它的定义方式与普通方法类似。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-11-22T03:18:20.591Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java笔记：构造方法">
-<meta name="twitter:description" content="前言 在面向对象程序中，构造方法的主要作用是为类中的属性初始化。在之前的学习过程中可以发现，在程序中只要出现了“()”就表示调用了方法，那么这个方法实际上就是表示要调用构造方法，构造方法可视为一种特殊的方法，它的定义方式与普通方法类似。">
+<meta name="twitter:description" content="前言  在面向对象程序中，构造方法的主要作用是为类中的属性初始化。在之前的学习过程中可以发现，在程序中只要出现了“()”就表示调用了方法，那么这个方法实际上就是表示要调用构造方法，构造方法可视为一种特殊的方法，它的定义方式与普通方法类似。">
 
 <link rel="canonical" href="http://xiyouhujing.github.io/2019/05/13/Java笔记：构造方法/">
 
@@ -285,7 +285,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
+        <h3 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h3>
+<blockquote>
 <p>在面向对象程序中，构造方法的主要作用是为类中的属性初始化。在之前的学习过程中可以发现，在程序中只要出现了“()”就表示调用了方法，那么这个方法实际上就是表示要调用构造方法，构造方法可视为一种特殊的方法，它的定义方式与普通方法类似。</p>
 </blockquote>
 <a id="more"></a>
@@ -406,7 +407,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-text">前言</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-text"> 前言</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -493,7 +494,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">90k</span>
+    <span title="站点总字数">91k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
@@ -501,6 +502,15 @@
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     <span title="站点阅读时长">1:22</span>
 </div>
+
+
+  <script src='https://unpkg.com/mermaid@/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
+
 
 
         
@@ -554,7 +564,7 @@
 
 
 
-  <script src="/js/local-search.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <script src="/js/local-search.js"></script>
 
 
 
@@ -565,10 +575,73 @@
 
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme: 'forest',
+      logLevel: 3,
+      flowchart: { curve: 'linear' },
+      gantt: { axisFormat: '%m/%d/%Y' },
+      sequence: { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
 
   
+
+  
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+    
 
   
 

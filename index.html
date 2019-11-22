@@ -207,6 +207,110 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://xiyouhujing.github.io/2019/10/18/LNMP环境搭建及zabbix服务搭建配置/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.jpg">
+      <meta itemprop="name" content="xiyou">
+      <meta itemprop="description" content="保持快乐，保持健康，保持可爱">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="西柚的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/10/18/LNMP环境搭建及zabbix服务搭建配置/" class="post-title-link" itemprop="url">LNMP环境搭建及zabbix服务搭建配置</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-10-18 16:03:22" itemprop="dateCreated datePublished" datetime="2019-10-18T16:03:22+08:00">2019-10-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-22 12:40:56" itemprop="dateModified" datetime="2019-11-22T12:40:56+08:00">2019-11-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>7.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>7 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h3>
+<blockquote>
+<p>在linux环境中安装nginx、mysql、php，搭建LNMP环境。搭建zabbix服务端，在客户机上安装zabbix客户端，基于zabbix客户端，编写一个脚本程序，检测linux客户端上特定软件包（本次指定openssl）的版本，上报到服务端</p>
+</blockquote>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/10/18/LNMP环境搭建及zabbix服务搭建配置/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <div>
+      
+    </div>
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://xiyouhujing.github.io/2019/11/18/通信原理笔记（一）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -277,7 +381,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="通信系统的组成"><a href="#通信系统的组成" class="headerlink" title="通信系统的组成"></a>通信系统的组成</h3><h4 id="通信系统一般模型"><a href="#通信系统一般模型" class="headerlink" title="通信系统一般模型"></a>通信系统一般模型</h4><p>对于电通信来说，首先要把消息转变成电信号，然后经过发送设备，将信号送入信道，在接收端利用接收设备对接收信号作相应的处理后，送给信宿再转换为原来的消息。这个过程可以用下图所示的通信系统一般模型来概括。</p>
+          <h3 id="通信系统的组成"><a class="markdownIt-Anchor" href="#通信系统的组成"></a> 通信系统的组成</h3>
+<h4 id="通信系统一般模型"><a class="markdownIt-Anchor" href="#通信系统一般模型"></a> 通信系统一般模型</h4>
+<p>对于电通信来说，首先要把消息转变成电信号，然后经过发送设备，将信号送入信道，在接收端利用接收设备对接收信号作相应的处理后，送给信宿再转换为原来的消息。这个过程可以用下图所示的通信系统一般模型来概括。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/11/18/通信原理笔记（一）/#more" rel="contents">
@@ -383,111 +489,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://xiyouhujing.github.io/2019/10/18/LNMP环境搭建及zabbix服务搭建配置/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/touxiang.jpg">
-      <meta itemprop="name" content="xiyou">
-      <meta itemprop="description" content="保持快乐，保持健康，保持可爱">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="西柚的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/10/18/LNMP环境搭建及zabbix服务搭建配置/" class="post-title-link" itemprop="url">LNMP环境搭建及zabbix服务搭建配置</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-10-18 16:03:22" itemprop="dateCreated datePublished" datetime="2019-10-18T16:03:22+08:00">2019-10-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-22 10:05:31" itemprop="dateModified" datetime="2019-11-22T10:05:31+08:00">2019-11-22</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
-                  </a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>7.4k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>7 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="LNMP环境搭建"><a href="#LNMP环境搭建" class="headerlink" title="LNMP环境搭建"></a>LNMP环境搭建</h3><h4 id="环境说明："><a href="#环境说明：" class="headerlink" title="环境说明："></a>环境说明：</h4><p>OS：   centos7.7_x64</p>
-<p>nginx： nginx-1.8.0</p>
-<p>php：   php-5.6.28</p>
-<p>mysql： mysql-5.7.28</p>
-<p>zabbix：zabbix-3.4.3</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/10/18/LNMP环境搭建及zabbix服务搭建配置/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <div>
-      
-    </div>
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://xiyouhujing.github.io/2019/09/27/Java开发环境配置/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -558,7 +559,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
+          <h3 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h3>
+<blockquote>
 <p>下载安装java开发工具JDK，以及进行环境的配置，下载安装java开发的ide，因为eclipse是使用较为广泛的java开发ide，所以这里安装的是eclipse。另外，也可以了解一下IntelliJ IDEA（收费的），我觉得IDEA用得更顺手。当然了，都只是开发工具，看拿个更适合自己吧，用得开心就行。</p>
 </blockquote>
           <!--noindex-->
@@ -661,7 +663,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>JMeter是基于Java的测试工具，主要对web应用和软件进行接口测试和压力测试。</p>
+          <h3 id="介绍"><a class="markdownIt-Anchor" href="#介绍"></a> 介绍</h3>
+<p>JMeter是基于Java的测试工具，主要对web应用和软件进行接口测试和压力测试。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/09/27/JMeter安装与使用/#more" rel="contents">
@@ -762,7 +765,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
+          <h3 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h3>
+<blockquote>
 <p>this是Java中的关键字，除了可以用来强调调用的是本类中的方法，this还有以下作用：</p>
 <ol>
 <li>表示类中的属性</li>
@@ -870,7 +874,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="引用传递"><a href="#引用传递" class="headerlink" title="引用传递"></a>引用传递</h3><p>所谓引用传递就是指将堆内存空间的使用权交给多个栈内存空间。</p>
+          <h3 id="引用传递"><a class="markdownIt-Anchor" href="#引用传递"></a> 引用传递</h3>
+<p>所谓引用传递就是指将堆内存空间的使用权交给多个栈内存空间。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/05/24/Java笔记：引用传递及基本应用/#more" rel="contents">
@@ -971,7 +976,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
+          <h3 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h3>
+<blockquote>
 <p>String类定义时单词的首字母大写，所以String本身也是一个类本类，但是此类在使用时却有很多的要求，而且此类在Java中也算是一个比较特殊的类。</p>
 </blockquote>
           <!--noindex-->
@@ -1074,7 +1080,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>定义并测试一个名为Student的类，包括的属性有“学号”、“姓名”以及3门课程“数学”、“英语”和“计算机”的成绩，包括的方法有计算3门课程的“总分”、“平均分”、“最高分”以及“最低分”。</p>
+          <h3 id="题目"><a class="markdownIt-Anchor" href="#题目"></a> 题目</h3>
+<p>定义并测试一个名为Student的类，包括的属性有“学号”、“姓名”以及3门课程“数学”、“英语”和“计算机”的成绩，包括的方法有计算3门课程的“总分”、“平均分”、“最高分”以及“最低分”。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/05/15/Java实例讲解：类设计分析/#more" rel="contents">
@@ -1323,7 +1330,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">90k</span>
+    <span title="站点总字数">91k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
@@ -1331,6 +1338,15 @@
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     <span title="站点阅读时长">1:22</span>
 </div>
+
+
+  <script src='https://unpkg.com/mermaid@/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
+
 
 
         
@@ -1384,7 +1400,7 @@
 
 
 
-  <script src="/js/local-search.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <script src="/js/local-search.js"></script>
 
 
 
@@ -1395,10 +1411,73 @@
 
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme: 'forest',
+      logLevel: 3,
+      flowchart: { curve: 'linear' },
+      gantt: { axisFormat: '%m/%d/%Y' },
+      sequence: { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
 
   
+
+  
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+    
 
   
 
