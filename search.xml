@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>通信原理笔记（一）</title>
-    <url>/2019/11/18/%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/</url>
-    <content><![CDATA[<h3 id="通信系统的组成"><a class="markdownIt-Anchor" href="#通信系统的组成"></a> 通信系统的组成</h3>
-<h4 id="通信系统一般模型"><a class="markdownIt-Anchor" href="#通信系统一般模型"></a> 通信系统一般模型</h4>
+    <title>通信原理笔记（一）：通信系统的组成</title>
+    <url>/2019/11/18/%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%BB%84%E6%88%90/</url>
+    <content><![CDATA[<h4 id="通信系统一般模型"><a class="markdownIt-Anchor" href="#通信系统一般模型"></a> 通信系统一般模型</h4>
 <p>对于电通信来说，首先要把消息转变成电信号，然后经过发送设备，将信号送入信道，在接收端利用接收设备对接收信号作相应的处理后，送给信宿再转换为原来的消息。这个过程可以用下图所示的通信系统一般模型来概括。</p>
 <a id="more"></a>
-<p><img src="//xiyouhujing.github.io/2019/11/18/通信原理笔记（一）/%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F%E4%B8%80%E8%88%AC%E6%A8%A1%E5%9E%8B.jpg" alt="通信系统一般模型"></p>
+<p><img src="//xiyouhujing.github.io/2019/11/18/通信原理笔记（一）：通信系统的组成/%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F%E4%B8%80%E8%88%AC%E6%A8%A1%E5%9E%8B.jpg" alt="通信系统一般模型"></p>
 <p>1、信息源</p>
 <p>信息源简称<strong>信源</strong>，其作用是把各种消息转换成原始电信号，根据消息的种类不同，信源可以分为<strong>模拟信源</strong>和<strong>数字信源</strong>。<strong>模拟信源</strong>输出连续的模拟信号，如话筒（声音-音频信号）、摄像机（图像-视频信号）；<strong>数字信源</strong>则输出离散的数字信号，如电传机（键盘字符-数字信号）、计算机等各种数字终端。并且，模拟信源送出的信号经数字化处理后也可以发送数字信号。</p>
 <p>2、发送设备</p>
@@ -25,10 +24,10 @@
 <p>通常，按照信道中传输的是模拟信号还是数字信号，相应地把通信系统分为<strong>模拟通信系统</strong>和<strong>数字通信系统</strong>。</p>
 <p>1、模拟通信系统模型</p>
 <p>模拟通信系统是利用模拟信号来传递信息的通信系统，其模型如下图所示，其中包含了两种重要变换。第一种变换是，在发送端把连续消息变换成原始电信号，在接收端进行相反的变换，这种变换由信源和信宿来完成；第二种变换是，把基带信号变换成适合在信道中传输的信号，并在接收端进行反变换，完成这种变换和反变换的通常是调制器和解调器。经过调制以后的信号称为<strong>已调信号</strong>，它由两个基本特征：一是携带有信息；而是适应在信道中传输。由于已调信号的频谱通常具有带通形式，因而已调信号又称为<strong>带通信号</strong>（也称为<strong>频带信号</strong>）。</p>
-<p><img src="//xiyouhujing.github.io/2019/11/18/通信原理笔记（一）/%E6%A8%A1%E6%8B%9F%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F%E6%A8%A1%E5%9E%8B.jpg" alt="模拟通信系统模型"></p>
+<p><img src="//xiyouhujing.github.io/2019/11/18/通信原理笔记（一）：通信系统的组成/%E6%A8%A1%E6%8B%9F%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F%E6%A8%A1%E5%9E%8B.jpg" alt="模拟通信系统模型"></p>
 <p>2、数字通信系统模型</p>
 <p>数字通信系统是利用数字信号来传递信息系统，如下图所示，数字通信涉及的技术问题很多，其中主要有信源编码与译码、信道编码与译码、数字调制与解调、同步以及加密与解密等。</p>
-<p><img src="//xiyouhujing.github.io/2019/11/18/通信原理笔记（一）/%E6%95%B0%E5%AD%97%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F%E6%A8%A1%E5%9E%8B.jpg" alt="数字通信系统模型"></p>
+<p><img src="//xiyouhujing.github.io/2019/11/18/通信原理笔记（一）：通信系统的组成/%E6%95%B0%E5%AD%97%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F%E6%A8%A1%E5%9E%8B.jpg" alt="数字通信系统模型"></p>
 <p>1）信源编码与译码</p>
 <p>信源编码有两个基本功能：一是提高信息传输的有效性，即通过某种数据压缩技术设法减少码元数目和降低码元速率。码元速率决定传输所占的带宽，而传输带宽反映了通信的有效性。二是完成模/数（A/D）转换，即当信息源给出的是模拟信号时，信源编码器将其转换成数字信号，以实现模拟信号的数字化传输。信源译码时信源编码的逆过程。</p>
 <p>2）信道编码与译码</p>
@@ -56,11 +55,10 @@
   <entry>
     <title>LNMP环境搭建及zabbix服务搭建配置</title>
     <url>/2019/10/18/LNMP%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E5%8F%8Azabbix%E6%9C%8D%E5%8A%A1%E6%90%AD%E5%BB%BA%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<h3 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h3>
+    <content><![CDATA[<p><strong>前言</strong></p>
 <blockquote>
 <p>在linux环境中安装nginx、mysql、php，搭建LNMP环境。搭建zabbix服务端，在客户机上安装zabbix客户端，基于zabbix客户端，编写一个脚本程序，检测linux客户端上特定软件包（本次指定openssl）的版本，上报到服务端</p>
 </blockquote>
-<a id="more"></a>
 <h3 id="lnmp环境搭建"><a class="markdownIt-Anchor" href="#lnmp环境搭建"></a> LNMP环境搭建</h3>
 <h4 id="环境说明"><a class="markdownIt-Anchor" href="#环境说明"></a> 环境说明：</h4>
 <p>OS：   centos7.7_x64</p>
@@ -68,7 +66,7 @@
 <p>php：   php-5.6.28</p>
 <p>mysql： mysql-5.7.28</p>
 <p>zabbix：zabbix-3.4.3</p>
-<!-- more -->
+<a id="more"></a>
 <h4 id="安装前准备"><a class="markdownIt-Anchor" href="#安装前准备"></a> 安装前准备</h4>
 <h5 id="关闭防火墙和selinux"><a class="markdownIt-Anchor" href="#关闭防火墙和selinux"></a> 关闭防火墙和selinux</h5>
 <p># systemctl status firewalld  //查看防火墙状态</p>
@@ -316,7 +314,7 @@ to be updated”的警告信息。</p>
   <entry>
     <title>Java开发环境配置</title>
     <url>/2019/09/27/Java%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<h3 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h3>
+    <content><![CDATA[<p><strong>前言</strong></p>
 <blockquote>
 <p>下载安装java开发工具JDK，以及进行环境的配置，下载安装java开发的ide，因为eclipse是使用较为广泛的java开发ide，所以这里安装的是eclipse。另外，也可以了解一下IntelliJ IDEA（收费的），我觉得IDEA用得更顺手。当然了，都只是开发工具，看拿个更适合自己吧，用得开心就行。</p>
 </blockquote>
@@ -379,8 +377,10 @@ to be updated”的警告信息。</p>
   <entry>
     <title>JMeter安装与使用</title>
     <url>/2019/09/27/JMeter%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h3 id="介绍"><a class="markdownIt-Anchor" href="#介绍"></a> 介绍</h3>
+    <content><![CDATA[<p><strong>前言</strong></p>
+<blockquote>
 <p>JMeter是基于Java的测试工具，主要对web应用和软件进行接口测试和压力测试。</p>
+</blockquote>
 <a id="more"></a>
 <h3 id="安装前准备"><a class="markdownIt-Anchor" href="#安装前准备"></a> 安装前准备</h3>
 <p>在安装配置JMeter之前，需要确定电脑是否安装有Java环境，可以利用命令提示符查验：</p>
@@ -484,7 +484,7 @@ to be updated”的警告信息。</p>
   <entry>
     <title>Java笔记：this关键字</title>
     <url>/2019/06/05/Java%E7%AC%94%E8%AE%B0%EF%BC%9Athis%E5%85%B3%E9%94%AE%E5%AD%97/</url>
-    <content><![CDATA[<h3 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h3>
+    <content><![CDATA[<p><strong>前言</strong></p>
 <blockquote>
 <p>this是Java中的关键字，除了可以用来强调调用的是本类中的方法，this还有以下作用：</p>
 <ol>
@@ -537,9 +537,11 @@ to be updated”的警告信息。</p>
   <entry>
     <title>Java笔记：引用传递及基本应用</title>
     <url>/2019/05/24/Java%E7%AC%94%E8%AE%B0%EF%BC%9A%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E5%8F%8A%E5%9F%BA%E6%9C%AC%E5%BA%94%E7%94%A8/</url>
-    <content><![CDATA[<h3 id="引用传递"><a class="markdownIt-Anchor" href="#引用传递"></a> 引用传递</h3>
-<p>所谓引用传递就是指将堆内存空间的使用权交给多个栈内存空间。</p>
+    <content><![CDATA[<p><strong>前言</strong></p>
+<p>值传递：是指在调用函数时将实际参数复制一份传递到函数中，这样在函数中如果对参数进行修改，将不会影响到实际参数。引用传递：是指在调用函数时将实际参数的地址直接传递到函数中，那么在函数中对参数进行修改，将会影响到实际参数。</p>
 <a id="more"></a>
+<h3 id="引用传递"><a class="markdownIt-Anchor" href="#引用传递"></a> 引用传递</h3>
+<p>所谓引用传递就是指将堆内存空间的使用权交给多个栈内存空间。</p>
 <h4 id="引用传递范例一"><a class="markdownIt-Anchor" href="#引用传递范例一"></a> 引用传递范例一</h4>
 <p>对象引用传递：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Demo</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> temp = <span class="number">30</span>;                    <span class="comment">// 此处为了访问方便，属性暂时不封装</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RefDemo01</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Demo d1 = <span class="keyword">new</span> Demo();</span><br><span class="line">        d1.temp = <span class="number">50</span>;</span><br><span class="line">        System.out.println(<span class="string">"fun()方法调用之前："</span> + d1.temp);</span><br><span class="line">        fun(d1);</span><br><span class="line">        System.out.println(<span class="string">"fun()方法调用之后："</span> + d1.temp);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span>  <span class="keyword">void</span> <span class="title">fun</span><span class="params">(Demo d2)</span></span>&#123;     <span class="comment">// 此处的方法由主方法直接调用</span></span><br><span class="line">        d2.temp = <span class="number">1000</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -588,7 +590,7 @@ to be updated”的警告信息。</p>
   <entry>
     <title>Java笔记：String</title>
     <url>/2019/05/16/Java%E7%AC%94%E8%AE%B0%EF%BC%9AString/</url>
-    <content><![CDATA[<h3 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h3>
+    <content><![CDATA[<p><strong>前言</strong></p>
 <blockquote>
 <p>String类定义时单词的首字母大写，所以String本身也是一个类本类，但是此类在使用时却有很多的要求，而且此类在Java中也算是一个比较特殊的类。</p>
 </blockquote>
@@ -906,7 +908,7 @@ to be updated”的警告信息。</p>
   <entry>
     <title>Java笔记：构造方法</title>
     <url>/2019/05/13/Java%E7%AC%94%E8%AE%B0%EF%BC%9A%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<h3 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h3>
+    <content><![CDATA[<p><strong>前言</strong></p>
 <blockquote>
 <p>在面向对象程序中，构造方法的主要作用是为类中的属性初始化。在之前的学习过程中可以发现，在程序中只要出现了“()”就表示调用了方法，那么这个方法实际上就是表示要调用构造方法，构造方法可视为一种特殊的方法，它的定义方式与普通方法类似。</p>
 </blockquote>
@@ -946,7 +948,7 @@ to be updated”的警告信息。</p>
   <entry>
     <title>Java笔记：封装性</title>
     <url>/2019/04/18/Java%E7%AC%94%E8%AE%B0%EF%BC%9A%E5%B0%81%E8%A3%85%E6%80%A7/</url>
-    <content><![CDATA[<h3 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h3>
+    <content><![CDATA[<p><strong>前言</strong></p>
 <blockquote>
 <p>封装是指隐藏对象的属性和实现细节，仅对外提供公共访问方式。封装可以被认为是一个保护屏障，防止该类的代码和数据被外部类定义的代码随机访问。要访问该类的代码和数据，必须通过严格的接口控制。</p>
 </blockquote>
@@ -989,8 +991,7 @@ to be updated”的警告信息。</p>
   <entry>
     <title>Java笔记：类与对象</title>
     <url>/2019/04/15/Java%E7%AC%94%E8%AE%B0%EF%BC%9A%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/</url>
-    <content><![CDATA[<h3 id="类与对象的关系"><a class="markdownIt-Anchor" href="#类与对象的关系"></a> 类与对象的关系</h3>
-<p>在面向对象中，类和对象是最基本、最重要的组成单元。类实际上是表示一个客观世界某类群体的一些基本特征抽象。对象就是表示一个个具体的东西。例如，现实生活中，人可以称为一个类，因为人是一种广义的概念，并不是具体的。而某一个人就可以称为一个对象，某个人可以通过他的各种特征来描述，例如姓名、性别、年龄等。这些信息在面向对象的概念中就称为属性；当然人是可以吃饭、睡觉的，这些人的行为在类中就称为方法。</p>
+    <content><![CDATA[<p>在面向对象中，类和对象是最基本、最重要的组成单元。类实际上是表示一个客观世界某类群体的一些基本特征抽象。对象就是表示一个个具体的东西。例如，现实生活中，人可以称为一个类，因为人是一种广义的概念，并不是具体的。而某一个人就可以称为一个对象，某个人可以通过他的各种特征来描述，例如姓名、性别、年龄等。这些信息在面向对象的概念中就称为属性；当然人是可以吃饭、睡觉的，这些人的行为在类中就称为方法。</p>
 <a id="more"></a>
 <p>如果要使用一个类，就一定要产生一个对象，每个对象之间是靠属性的不同来进行区分的，而每个对象所具备的操作就是类中规定好的方法。</p>
 <h3 id="类的定义"><a class="markdownIt-Anchor" href="#类的定义"></a> 类的定义</h3>
@@ -1071,16 +1072,9 @@ to be updated”的警告信息。</p>
   <entry>
     <title>Java开发实战经典习题4-6</title>
     <url>/2019/04/05/Java%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98%E7%BB%8F%E5%85%B8%E4%B9%A0%E9%A2%984-6/</url>
-    <content><![CDATA[<h4 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h4>
+    <content><![CDATA[<p><strong>前言</strong></p>
 <blockquote>
-<p>Java开发实战第四章习题：数组与方法。</p>
-<ul>
-<li>[x] 掌握数组的定义及使用方法</li>
-<li>[x] 掌握数组的应用传递</li>
-<li>[x] 掌握方法及方法的重载</li>
-<li>[x] 使用方法接收和返回一个数组</li>
-<li>[x] 了解Java对数组的操作支持</li>
-</ul>
+<p>Java开发实战第四章习题：数组与方法。掌握数组的定义及使用方法、掌握数组的应用传递、掌握方法及方法的重载、使用方法接收和返回一个数组、了解Java对数组的操作支持。</p>
 </blockquote>
 <a id="more"></a>
 <h4 id="编写程序求1230的和并显示要求使用方法完成"><a class="markdownIt-Anchor" href="#编写程序求1230的和并显示要求使用方法完成"></a> 编写程序求1!+2!+···+30!的和并显示，要求使用方法完成。</h4>
@@ -1241,10 +1235,13 @@ to be updated”的警告信息。</p>
   <entry>
     <title>Java笔记：数组的定义及使用</title>
     <url>/2019/03/30/Java%E7%AC%94%E8%AE%B0%EF%BC%9A%E6%95%B0%E7%BB%84%E7%9A%84%E5%AE%9A%E4%B9%89%E5%8F%8A%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h3 id="一维数组"><a class="markdownIt-Anchor" href="#一维数组"></a> 一维数组</h3>
+    <content><![CDATA[<p><strong>前言</strong></p>
+<blockquote>
 <p><strong>数组</strong>是一组相关数据的集合，一个数组实际上就是一连串的变量，数组按使用可以分为<strong>一维数组</strong>、<strong>二位数组</strong>和<strong>多维数组</strong>。</p>
-<p>一维数组可以存放上千万个数据，并且这些数据的类型完全相同。要使用Java的数组，必须经过声明数组和分配内存给数组两个步骤，一维数组的声明与分配内存的语法结构如下：</p>
+</blockquote>
 <a id="more"></a>
+<h3 id="一维数组"><a class="markdownIt-Anchor" href="#一维数组"></a> 一维数组</h3>
+<p>一维数组可以存放上千万个数据，并且这些数据的类型完全相同。要使用Java的数组，必须经过声明数组和分配内存给数组两个步骤，一维数组的声明与分配内存的语法结构如下：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">数据类型 数组名[] = null;      // 声明一维数组</span><br><span class="line">数组名 = new 数据类型[长度]；  // 分配内存给数组</span><br></pre></td></tr></table></figure>
 <p>对于数组的声明方式也可以用下面的形式：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">数据类型[] 数组名 = null;     // 声明一维数组</span><br></pre></td></tr></table></figure>
@@ -1334,18 +1331,9 @@ to be updated”的警告信息。</p>
   <entry>
     <title>Java开发实战经典习题3.7</title>
     <url>/2019/03/21/Java%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98%E7%BB%8F%E5%85%B8%E4%B9%A0%E9%A2%983-7/</url>
-    <content><![CDATA[<h4 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h4>
+    <content><![CDATA[<p><strong>前言</strong></p>
 <blockquote>
-<p>Java开发实战经典第三章习题：java基础程序设计</p>
-<ul>
-<li>[x] 掌握java中数据类型的划分方法</li>
-<li>[x] 掌握八种基本数据类型的使用方法</li>
-<li>[x] 掌握数据类型的转换方式</li>
-<li>[x] 掌握java中的运算位</li>
-<li>[x] 掌握各个运算符、表达式的运用</li>
-<li>[x] 掌握判断、循环语句的使用方法</li>
-<li>[x] 掌握break及continue关键字的作用</li>
-</ul>
+<p>Java开发实战经典第三章习题：java基础程序设计。掌握java中数据类型的划分方法、掌握八种基本数据类型的使用方法、掌握数据类型的转换方式、掌握java中的运算位、掌握各个运算符和表达式的运用、掌握判断和循环语句的使用方法、掌握break及continue关键字的作用。</p>
 </blockquote>
 <a id="more"></a>
 <h4 id="打印出1~10000范围中所有的水仙花数所谓水仙花数是指一个3位数其各位数字立方和等于该数本身-例如153就是一个水仙花数因为1531的三次方5的三次方3的三次方"><a class="markdownIt-Anchor" href="#打印出1~10000范围中所有的水仙花数所谓水仙花数是指一个3位数其各位数字立方和等于该数本身-例如153就是一个水仙花数因为1531的三次方5的三次方3的三次方"></a> 打印出1~10000范围中所有的“水仙花数”，所谓“水仙花数”是指一个3位数，其各位数字立方和等于该数本身。例如，153就是一个“水仙花数”，因为153=（1的三次方+5的三次方+3的三次方）。</h4>
@@ -1397,9 +1385,9 @@ to be updated”的警告信息。</p>
   <entry>
     <title>Java笔记：选择和循环语句</title>
     <url>/2019/03/18/Java%E7%AC%94%E8%AE%B0%EF%BC%9A%E9%80%89%E6%8B%A9%E5%92%8C%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/</url>
-    <content><![CDATA[<h2 id="程序的结构"><a class="markdownIt-Anchor" href="#程序的结构"></a> 程序的结构</h2>
-<p>一般来说程序的结构可以分为<strong>顺序结构</strong>、<strong>选择结构</strong>以及<strong>循环结构</strong>三种，这三种结构只有一个共同点，就是它们只有一个入口，也只有一个出口，这些单一的入、出口可以让程序易读、好维护，也可以减少调试时间。</p>
+    <content><![CDATA[<p>一般来说程序的结构可以分为<strong>顺序结构</strong>、<strong>选择结构</strong>以及<strong>循环结构</strong>三种，这三种结构只有一个共同点，就是它们只有一个入口，也只有一个出口，这些单一的入、出口可以让程序易读、好维护，也可以减少调试时间。</p>
 <a id="more"></a>
+<h2 id="程序的结构"><a class="markdownIt-Anchor" href="#程序的结构"></a> 程序的结构</h2>
 <h3 id="顺序结构"><a class="markdownIt-Anchor" href="#顺序结构"></a> 顺序结构</h3>
 <p>顺序结构下的程序至上而下的逐条执行，一条语句执行完之后继续执行下一条语句，一直到程序的末尾，其结构如下图所示：</p>
 <p><img src="//xiyouhujing.github.io/2019/03/18/Java笔记：选择和循环语句/%E7%A8%8B%E5%BA%8F%E7%9A%84%E9%A1%BA%E5%BA%8F%E7%BB%93%E6%9E%84%E6%B5%81%E7%A8%8B%E5%9B%BE.png" alt="程序的顺序结构流程图"></p>
@@ -1547,9 +1535,10 @@ to be updated”的警告信息。</p>
   <entry>
     <title>Java笔记：Java中的运算符</title>
     <url>/2019/03/16/Java%E7%AC%94%E8%AE%B0%EF%BC%9AJava%E4%B8%AD%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6/</url>
-    <content><![CDATA[<h3 id="java中的运算符"><a class="markdownIt-Anchor" href="#java中的运算符"></a> Java中的运算符</h3>
-<p>表达式时Java的一种语句，它由<strong>操作数</strong>和<strong>操作符</strong>组成，操作数可以是常量、变量，也可以是方法，而运算符就是数学中的运算符号，如“+”、“-”、“*”、“/”等，在表达式（z+100）中，z和100都是操作数，“+”就是运算符。</p>
-<p>Java提供了很多运算符，这些运算符除了做一般的数学运算之外，还可以做逻辑运算、位运算等。根据所使用类的不同，运算符可以分为<strong>赋值运算符</strong>、<strong>算术运算符</strong>、<strong>逻辑运算符</strong>、<strong>条件运算符</strong>以及<strong>括号运算符</strong>。</p>
+    <content><![CDATA[<p><strong>Java中的运算符</strong></p>
+<blockquote>
+<p>表达式是Java的一种语句，它由<strong>操作数</strong>和<strong>操作符</strong>组成，操作数可以是常量、变量，也可以是方法，而运算符就是数学中的运算符号，如“+”、“-”、“*”、“/”等，在表达式（z+100）中，z和100都是操作数，“+”就是运算符。Java提供了很多运算符，这些运算符除了做一般的数学运算之外，还可以做逻辑运算、位运算等。根据所使用类的不同，运算符可以分为<strong>赋值运算符</strong>、<strong>算术运算符</strong>、<strong>逻辑运算符</strong>、<strong>条件运算符</strong>以及<strong>括号运算符</strong>。</p>
+</blockquote>
 <a id="more"></a>
 <h3 id="赋值运算符号"><a class="markdownIt-Anchor" href="#赋值运算符号"></a> 赋值运算符号</h3>
 <p>想为各种不同数据类型的变量赋值时，就需要使用赋值运算符（=），等号（=）在Java中不是“等于”的意思，二十“赋值”的意思，例如：</p>
