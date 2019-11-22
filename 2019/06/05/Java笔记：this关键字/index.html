@@ -41,23 +41,23 @@
     },
     localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},
     path: 'search.xml',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     sidebarPadding: 40
   };
 </script>
 
-  <meta name="description" content="this是Java中的关键字，除了可以用来强调调用的是本类中的方法，this还有以下作用：  表示类中的属性 可以使用this调用本类的构造方法 this表示当前对象  使用this调用本类中的属性在程序中可以使用this调用本类属性，例如： 1234567891011class Person&amp;#123;    private String name;    private int age;">
+  <meta name="description" content="前言 this是Java中的关键字，除了可以用来强调调用的是本类中的方法，this还有以下作用：  表示类中的属性 可以使用this调用本类的构造方法 this表示当前对象">
 <meta name="keywords" content="java基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java笔记：this关键字">
 <meta property="og:url" content="http://xiyouhujing.github.io/2019/06/05/Java笔记：this关键字/index.html">
 <meta property="og:site_name" content="西柚的博客">
-<meta property="og:description" content="this是Java中的关键字，除了可以用来强调调用的是本类中的方法，this还有以下作用：  表示类中的属性 可以使用this调用本类的构造方法 this表示当前对象  使用this调用本类中的属性在程序中可以使用this调用本类属性，例如： 1234567891011class Person&amp;#123;    private String name;    private int age;">
+<meta property="og:description" content="前言 this是Java中的关键字，除了可以用来强调调用的是本类中的方法，this还有以下作用：  表示类中的属性 可以使用this调用本类的构造方法 this表示当前对象">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-13T10:08:59.796Z">
+<meta property="og:updated_time" content="2019-11-22T03:21:35.554Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java笔记：this关键字">
-<meta name="twitter:description" content="this是Java中的关键字，除了可以用来强调调用的是本类中的方法，this还有以下作用：  表示类中的属性 可以使用this调用本类的构造方法 this表示当前对象  使用this调用本类中的属性在程序中可以使用this调用本类属性，例如： 1234567891011class Person&amp;#123;    private String name;    private int age;">
+<meta name="twitter:description" content="前言 this是Java中的关键字，除了可以用来强调调用的是本类中的方法，this还有以下作用：  表示类中的属性 可以使用this调用本类的构造方法 this表示当前对象">
 
 <link rel="canonical" href="http://xiyouhujing.github.io/2019/06/05/Java笔记：this关键字/">
 
@@ -107,7 +107,7 @@
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container">
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -239,7 +239,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-06-13 18:08:59" itemprop="dateModified" datetime="2019-06-13T18:08:59+08:00">2019-06-13</time>
+                <time title="修改时间：2019-11-22 11:21:35" itemprop="dateModified" datetime="2019-11-22T11:21:35+08:00">2019-11-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -253,7 +253,14 @@
                 </span>
             </span>
 
-          <br>
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
@@ -278,12 +285,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>this是Java中的关键字，除了可以用来强调调用的是本类中的方法，this还有以下作用：</p>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
+<p>this是Java中的关键字，除了可以用来强调调用的是本类中的方法，this还有以下作用：</p>
 <ol>
 <li>表示类中的属性</li>
 <li>可以使用this调用本类的构造方法</li>
 <li>this表示当前对象</li>
 </ol>
+</blockquote>
+<a id="more"></a>
 <h3 id="使用this调用本类中的属性"><a href="#使用this调用本类中的属性" class="headerlink" title="使用this调用本类中的属性"></a>使用this调用本类中的属性</h3><p>在程序中可以使用this调用本类属性，例如：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String n, <span class="keyword">int</span> a)</span></span>&#123;</span><br><span class="line">        name = n;</span><br><span class="line">        age = a;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getInfo</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"姓名："</span> + name + <span class="string">"，年龄："</span> + age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>该类中的构造方法意在为类中的属性赋值，但是其实从构造方法传递的参数名称上很难看出n或者a表示的意义，所以进行如下的修改：</p>
@@ -348,8 +358,9 @@
 
 
       <footer class="post-footer">
+          
           <div class="post-tags">
-              <a href="/tags/java基础/" rel="tag"># java基础</a>
+              <a href="/tags/java基础/" rel="tag"><i class="fa fa-tag"></i> java基础</a>
           </div>
 
         
@@ -405,7 +416,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用this调用本类中的属性"><span class="nav-text">使用this调用本类中的属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用this调用构造方法"><span class="nav-text">使用this调用构造方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#this表示当前对象"><span class="nav-text">this表示当前对象</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用this调用本类中的属性"><span class="nav-text">使用this调用本类中的属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用this调用构造方法"><span class="nav-text">使用this调用构造方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#this表示当前对象"><span class="nav-text">this表示当前对象</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -491,15 +502,38 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
+      <span class="post-meta-item-text">站点总字数：</span>
     <span title="站点总字数">90k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     <span title="站点阅读时长">1:22</span>
 </div>
 
+
         
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
 
 
 
@@ -519,9 +553,7 @@
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/utils.js"></script>
 <script src="/js/schemes/pisces.js"></script>
 <script src="/js/next-boot.js"></script>
 

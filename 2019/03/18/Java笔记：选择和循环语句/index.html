@@ -41,18 +41,18 @@
     },
     localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},
     path: 'search.xml',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     sidebarPadding: 40
   };
 </script>
 
-  <meta name="description" content="程序的结构一般来说程序的结构可以分为顺序结构、选择结构以及循环结构三种，这三种结构只有一个共同点，就是它们只有一个入口，也只有一个出口，这些单一的入、出口可以让程序易读、好维护，也可以减少调试时间。 顺序结构顺序结构下的程序至上而下的逐条执行，一条语句执行完之后继续执行下一条语句，一直到程序的末尾，其结构如下图所示：  选择结构选择结构的流程图如下，这种结构可以依据判断条件的结构来决定要执行的语句">
+  <meta name="description" content="程序的结构一般来说程序的结构可以分为顺序结构、选择结构以及循环结构三种，这三种结构只有一个共同点，就是它们只有一个入口，也只有一个出口，这些单一的入、出口可以让程序易读、好维护，也可以减少调试时间。">
 <meta name="keywords" content="java基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java笔记：选择和循环语句">
 <meta property="og:url" content="http://xiyouhujing.github.io/2019/03/18/Java笔记：选择和循环语句/index.html">
 <meta property="og:site_name" content="西柚的博客">
-<meta property="og:description" content="程序的结构一般来说程序的结构可以分为顺序结构、选择结构以及循环结构三种，这三种结构只有一个共同点，就是它们只有一个入口，也只有一个出口，这些单一的入、出口可以让程序易读、好维护，也可以减少调试时间。 顺序结构顺序结构下的程序至上而下的逐条执行，一条语句执行完之后继续执行下一条语句，一直到程序的末尾，其结构如下图所示：  选择结构选择结构的流程图如下，这种结构可以依据判断条件的结构来决定要执行的语句">
+<meta property="og:description" content="程序的结构一般来说程序的结构可以分为顺序结构、选择结构以及循环结构三种，这三种结构只有一个共同点，就是它们只有一个入口，也只有一个出口，这些单一的入、出口可以让程序易读、好维护，也可以减少调试时间。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://xiyouhujing.github.io/2019/03/18/Java笔记：选择和循环语句/程序的顺序结构流程图.png">
 <meta property="og:image" content="http://xiyouhujing.github.io/2019/03/18/Java笔记：选择和循环语句/程序的选择结构流程图.png">
@@ -60,10 +60,10 @@
 <meta property="og:image" content="http://xiyouhujing.github.io/2019/03/18/Java笔记：选择和循环语句/while循环流程图.png">
 <meta property="og:image" content="http://xiyouhujing.github.io/2019/03/18/Java笔记：选择和循环语句/do···while循环流程图.png">
 <meta property="og:image" content="http://xiyouhujing.github.io/2019/03/18/Java笔记：选择和循环语句/for循环流程图.png">
-<meta property="og:updated_time" content="2019-04-04T02:52:19.741Z">
+<meta property="og:updated_time" content="2019-11-22T03:13:16.571Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java笔记：选择和循环语句">
-<meta name="twitter:description" content="程序的结构一般来说程序的结构可以分为顺序结构、选择结构以及循环结构三种，这三种结构只有一个共同点，就是它们只有一个入口，也只有一个出口，这些单一的入、出口可以让程序易读、好维护，也可以减少调试时间。 顺序结构顺序结构下的程序至上而下的逐条执行，一条语句执行完之后继续执行下一条语句，一直到程序的末尾，其结构如下图所示：  选择结构选择结构的流程图如下，这种结构可以依据判断条件的结构来决定要执行的语句">
+<meta name="twitter:description" content="程序的结构一般来说程序的结构可以分为顺序结构、选择结构以及循环结构三种，这三种结构只有一个共同点，就是它们只有一个入口，也只有一个出口，这些单一的入、出口可以让程序易读、好维护，也可以减少调试时间。">
 <meta name="twitter:image" content="http://xiyouhujing.github.io/2019/03/18/Java笔记：选择和循环语句/程序的顺序结构流程图.png">
 
 <link rel="canonical" href="http://xiyouhujing.github.io/2019/03/18/Java笔记：选择和循环语句/">
@@ -114,7 +114,7 @@
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container">
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -246,7 +246,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-04-04 10:52:19" itemprop="dateModified" datetime="2019-04-04T10:52:19+08:00">2019-04-04</time>
+                <time title="修改时间：2019-11-22 11:13:16" itemprop="dateModified" datetime="2019-11-22T11:13:16+08:00">2019-11-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -260,7 +260,14 @@
                 </span>
             </span>
 
-          <br>
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
@@ -286,6 +293,7 @@
 
       
         <h2 id="程序的结构"><a href="#程序的结构" class="headerlink" title="程序的结构"></a>程序的结构</h2><p>一般来说程序的结构可以分为<strong>顺序结构</strong>、<strong>选择结构</strong>以及<strong>循环结构</strong>三种，这三种结构只有一个共同点，就是它们只有一个入口，也只有一个出口，这些单一的入、出口可以让程序易读、好维护，也可以减少调试时间。</p>
+<a id="more"></a>
 <h3 id="顺序结构"><a href="#顺序结构" class="headerlink" title="顺序结构"></a>顺序结构</h3><p>顺序结构下的程序至上而下的逐条执行，一条语句执行完之后继续执行下一条语句，一直到程序的末尾，其结构如下图所示：</p>
 <p><img src="//xiyouhujing.github.io/2019/03/18/Java笔记：选择和循环语句/程序的顺序结构流程图.png" alt="程序的顺序结构流程图"></p>
 <h3 id="选择结构"><a href="#选择结构" class="headerlink" title="选择结构"></a>选择结构</h3><p>选择结构的流程图如下，这种结构可以依据判断条件的结构来决定要执行的语句，当判断条件的值为真时，就运行语句1；当判断的条件为假，则执行语句2。不论执行哪一句，最后都会回到语句3继续执行。选择结构的流程图如下：</p>
@@ -446,8 +454,9 @@
 
 
       <footer class="post-footer">
+          
           <div class="post-tags">
-              <a href="/tags/java基础/" rel="tag"># java基础</a>
+              <a href="/tags/java基础/" rel="tag"><i class="fa fa-tag"></i> java基础</a>
           </div>
 
         
@@ -589,15 +598,38 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
+      <span class="post-meta-item-text">站点总字数：</span>
     <span title="站点总字数">90k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     <span title="站点阅读时长">1:22</span>
 </div>
 
+
         
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
 
 
 
@@ -617,9 +649,7 @@
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/utils.js"></script>
 <script src="/js/schemes/pisces.js"></script>
 <script src="/js/next-boot.js"></script>
 

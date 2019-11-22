@@ -41,24 +41,24 @@
     },
     localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},
     path: 'search.xml',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     sidebarPadding: 40
   };
 </script>
 
-  <meta name="description" content="方法的定义方法就是一段可重复调用的代码，在有些地方也把方法叫做函数。方法的定义在Java中可以使用多种方式，以下格式定义的方法可以直接使用主方法（main()）调用，是因为在方法声明处加上了public static关键字。方法暂时使用如下的语句进行定义： 1234public station 返回值类型 方法名称（类型 参数1，类型 参数2，···）&amp;#123;    程序语句；    [ret">
+  <meta name="description" content="方法的定义方法就是一段可重复调用的代码，在有些地方也把方法叫做函数。方法的定义在Java中可以使用多种方式，以下格式定义的方法可以直接使用主方法（main()）调用，是因为在方法声明处加上了public static关键字。">
 <meta name="keywords" content="java基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java笔记：方法的声明及使用">
 <meta property="og:url" content="http://xiyouhujing.github.io/2019/04/04/Java笔记：方法的声明及使用/index.html">
 <meta property="og:site_name" content="西柚的博客">
-<meta property="og:description" content="方法的定义方法就是一段可重复调用的代码，在有些地方也把方法叫做函数。方法的定义在Java中可以使用多种方式，以下格式定义的方法可以直接使用主方法（main()）调用，是因为在方法声明处加上了public static关键字。方法暂时使用如下的语句进行定义： 1234public station 返回值类型 方法名称（类型 参数1，类型 参数2，···）&amp;#123;    程序语句；    [ret">
+<meta property="og:description" content="方法的定义方法就是一段可重复调用的代码，在有些地方也把方法叫做函数。方法的定义在Java中可以使用多种方式，以下格式定义的方法可以直接使用主方法（main()）调用，是因为在方法声明处加上了public static关键字。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://xiyouhujing.github.io/2019/04/04/Java笔记：方法的声明及使用/方法的递归调用.png">
-<meta property="og:updated_time" content="2019-04-05T10:08:02.131Z">
+<meta property="og:updated_time" content="2019-11-22T03:19:15.329Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java笔记：方法的声明及使用">
-<meta name="twitter:description" content="方法的定义方法就是一段可重复调用的代码，在有些地方也把方法叫做函数。方法的定义在Java中可以使用多种方式，以下格式定义的方法可以直接使用主方法（main()）调用，是因为在方法声明处加上了public static关键字。方法暂时使用如下的语句进行定义： 1234public station 返回值类型 方法名称（类型 参数1，类型 参数2，···）&amp;#123;    程序语句；    [ret">
+<meta name="twitter:description" content="方法的定义方法就是一段可重复调用的代码，在有些地方也把方法叫做函数。方法的定义在Java中可以使用多种方式，以下格式定义的方法可以直接使用主方法（main()）调用，是因为在方法声明处加上了public static关键字。">
 <meta name="twitter:image" content="http://xiyouhujing.github.io/2019/04/04/Java笔记：方法的声明及使用/方法的递归调用.png">
 
 <link rel="canonical" href="http://xiyouhujing.github.io/2019/04/04/Java笔记：方法的声明及使用/">
@@ -109,7 +109,7 @@
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container">
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -241,7 +241,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-04-05 18:08:02" itemprop="dateModified" datetime="2019-04-05T18:08:02+08:00">2019-04-05</time>
+                <time title="修改时间：2019-11-22 11:19:15" itemprop="dateModified" datetime="2019-11-22T11:19:15+08:00">2019-11-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -255,7 +255,14 @@
                 </span>
             </span>
 
-          <br>
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
@@ -280,7 +287,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="方法的定义"><a href="#方法的定义" class="headerlink" title="方法的定义"></a>方法的定义</h3><p>方法就是一段可重复调用的代码，在有些地方也把方法叫做函数。方法的定义在Java中可以使用多种方式，以下格式定义的方法可以直接使用主方法（main()）调用，是因为在方法声明处加上了public static关键字。方法暂时使用如下的语句进行定义：</p>
+        <h3 id="方法的定义"><a href="#方法的定义" class="headerlink" title="方法的定义"></a>方法的定义</h3><p>方法就是一段可重复调用的代码，在有些地方也把方法叫做函数。方法的定义在Java中可以使用多种方式，以下格式定义的方法可以直接使用主方法（main()）调用，是因为在方法声明处加上了public static关键字。</p>
+<a id="more"></a>
+<p>方法暂时使用如下的语句进行定义：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public station 返回值类型 方法名称（类型 参数1，类型 参数2，···）&#123;</span><br><span class="line">    程序语句；</span><br><span class="line">    [return 表达式]；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>要特别注意的是，如果不需要传递参数到方法中，只要将括号写出，不必填入任何类容。此外，如果方法没有返回值，则在返回类型处要明确写出void，此时，在方法中的return语句可以省略，方法执行完成之后无论是否存在返回值都将返回到方法的调用处并向下继续执行。</p>
 <p>例如，定义一个方法，在主方法中调用：</p>
@@ -355,8 +364,9 @@
 
 
       <footer class="post-footer">
+          
           <div class="post-tags">
-              <a href="/tags/java基础/" rel="tag"># java基础</a>
+              <a href="/tags/java基础/" rel="tag"><i class="fa fa-tag"></i> java基础</a>
           </div>
 
         
@@ -498,15 +508,38 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
+      <span class="post-meta-item-text">站点总字数：</span>
     <span title="站点总字数">90k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     <span title="站点阅读时长">1:22</span>
 </div>
 
+
         
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
 
 
 
@@ -526,9 +559,7 @@
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/utils.js"></script>
 <script src="/js/schemes/pisces.js"></script>
 <script src="/js/next-boot.js"></script>
 

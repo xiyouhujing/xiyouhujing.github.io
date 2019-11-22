@@ -41,18 +41,18 @@
     },
     localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},
     path: 'search.xml',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     sidebarPadding: 40
   };
 </script>
 
-  <meta name="description" content="下载安装JDK1.JDK是Java开发工具，下载地址为：https://www.oracle.com/technetwork/java/javase/downloads/index.html ，点击如下图片中的按钮：  2.在跳转的页面中选择接受许可，之后根据自己的系统选择对应的安装程序，本文window 64为例，如下：  3.双击安装文件，然后提示的安装步骤进行安装即可，可以修改JDK的安装路">
+  <meta name="description" content="前言 下载安装java开发工具JDK，以及进行环境的配置，下载安装java开发的ide，因为eclipse是使用较为广泛的java开发ide，所以这里安装的是eclipse。另外，也可以了解一下IntelliJ IDEA（收费的），我觉得IDEA用得更顺手。当然了，都只是开发工具，看拿个更适合自己吧，用得开心就行。">
 <meta name="keywords" content="JDK,eclipse">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java开发环境配置">
 <meta property="og:url" content="http://xiyouhujing.github.io/2019/09/27/Java开发环境配置/index.html">
 <meta property="og:site_name" content="西柚的博客">
-<meta property="og:description" content="下载安装JDK1.JDK是Java开发工具，下载地址为：https://www.oracle.com/technetwork/java/javase/downloads/index.html ，点击如下图片中的按钮：  2.在跳转的页面中选择接受许可，之后根据自己的系统选择对应的安装程序，本文window 64为例，如下：  3.双击安装文件，然后提示的安装步骤进行安装即可，可以修改JDK的安装路">
+<meta property="og:description" content="前言 下载安装java开发工具JDK，以及进行环境的配置，下载安装java开发的ide，因为eclipse是使用较为广泛的java开发ide，所以这里安装的是eclipse。另外，也可以了解一下IntelliJ IDEA（收费的），我觉得IDEA用得更顺手。当然了，都只是开发工具，看拿个更适合自己吧，用得开心就行。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://xiyouhujing.github.io/2019/09/27/Java开发环境配置/下载1.png">
 <meta property="og:image" content="http://xiyouhujing.github.io/2019/09/27/Java开发环境配置/下载2.png">
@@ -62,10 +62,10 @@
 <meta property="og:image" content="http://xiyouhujing.github.io/2019/09/27/Java开发环境配置/下载3.png">
 <meta property="og:image" content="http://xiyouhujing.github.io/2019/09/27/Java开发环境配置/下载4.png">
 <meta property="og:image" content="http://xiyouhujing.github.io/2019/09/27/Java开发环境配置/下载5.png">
-<meta property="og:updated_time" content="2019-11-13T02:00:20.849Z">
+<meta property="og:updated_time" content="2019-11-22T03:12:29.292Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java开发环境配置">
-<meta name="twitter:description" content="下载安装JDK1.JDK是Java开发工具，下载地址为：https://www.oracle.com/technetwork/java/javase/downloads/index.html ，点击如下图片中的按钮：  2.在跳转的页面中选择接受许可，之后根据自己的系统选择对应的安装程序，本文window 64为例，如下：  3.双击安装文件，然后提示的安装步骤进行安装即可，可以修改JDK的安装路">
+<meta name="twitter:description" content="前言 下载安装java开发工具JDK，以及进行环境的配置，下载安装java开发的ide，因为eclipse是使用较为广泛的java开发ide，所以这里安装的是eclipse。另外，也可以了解一下IntelliJ IDEA（收费的），我觉得IDEA用得更顺手。当然了，都只是开发工具，看拿个更适合自己吧，用得开心就行。">
 <meta name="twitter:image" content="http://xiyouhujing.github.io/2019/09/27/Java开发环境配置/下载1.png">
 
 <link rel="canonical" href="http://xiyouhujing.github.io/2019/09/27/Java开发环境配置/">
@@ -116,7 +116,7 @@
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container">
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -248,7 +248,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-13 10:00:20" itemprop="dateModified" datetime="2019-11-13T10:00:20+08:00">2019-11-13</time>
+                <time title="修改时间：2019-11-22 11:12:29" itemprop="dateModified" datetime="2019-11-22T11:12:29+08:00">2019-11-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -262,13 +262,20 @@
                 </span>
             </span>
 
-          <br>
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.1k</span>
+              <span>1.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -287,7 +294,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="下载安装JDK"><a href="#下载安装JDK" class="headerlink" title="下载安装JDK"></a>下载安装JDK</h3><p>1.JDK是Java开发工具，下载地址为：<a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">https://www.oracle.com/technetwork/java/javase/downloads/index.html</a> ，点击如下图片中的按钮：</p>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
+<p>下载安装java开发工具JDK，以及进行环境的配置，下载安装java开发的ide，因为eclipse是使用较为广泛的java开发ide，所以这里安装的是eclipse。另外，也可以了解一下IntelliJ IDEA（收费的），我觉得IDEA用得更顺手。当然了，都只是开发工具，看拿个更适合自己吧，用得开心就行。</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="下载安装JDK"><a href="#下载安装JDK" class="headerlink" title="下载安装JDK"></a>下载安装JDK</h3><p>1.JDK是Java开发工具，下载地址为：<a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">https://www.oracle.com/technetwork/java/javase/downloads/index.html</a> ，点击如下图片中的按钮：</p>
 <p><img src="//xiyouhujing.github.io/2019/09/27/Java开发环境配置/下载1.png" alt="下载1"></p>
 <p>2.在跳转的页面中选择接受许可，之后根据自己的系统选择对应的安装程序，本文window 64为例，如下：</p>
 <p><img src="//xiyouhujing.github.io/2019/09/27/Java开发环境配置/下载2.png" alt="下载2"></p>
@@ -366,9 +377,10 @@
 
 
       <footer class="post-footer">
+          
           <div class="post-tags">
-              <a href="/tags/JDK/" rel="tag"># JDK</a>
-              <a href="/tags/eclipse/" rel="tag"># eclipse</a>
+              <a href="/tags/JDK/" rel="tag"><i class="fa fa-tag"></i> JDK</a>
+              <a href="/tags/eclipse/" rel="tag"><i class="fa fa-tag"></i> eclipse</a>
           </div>
 
         
@@ -424,7 +436,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载安装JDK"><span class="nav-text">下载安装JDK</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置环境变量"><span class="nav-text">配置环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试JDK是否安装成功"><span class="nav-text">测试JDK是否安装成功</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Eclipse"><span class="nav-text">安装Eclipse</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载安装JDK"><span class="nav-text">下载安装JDK</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置环境变量"><span class="nav-text">配置环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试JDK是否安装成功"><span class="nav-text">测试JDK是否安装成功</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Eclipse"><span class="nav-text">安装Eclipse</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -510,15 +522,38 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
+      <span class="post-meta-item-text">站点总字数：</span>
     <span title="站点总字数">90k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     <span title="站点阅读时长">1:22</span>
 </div>
 
+
         
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
 
 
 
@@ -538,9 +573,7 @@
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/utils.js"></script>
 <script src="/js/schemes/pisces.js"></script>
 <script src="/js/next-boot.js"></script>
 
