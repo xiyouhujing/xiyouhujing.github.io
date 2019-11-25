@@ -51,18 +51,18 @@
 <meta name="keywords" content="java基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java笔记：方法的声明及使用">
-<meta property="og:url" content="http://xiyouhujing.github.io/2019/04/04/Java笔记：方法的声明及使用/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/04/04/Java笔记：方法的声明及使用/index.html">
 <meta property="og:site_name" content="xiyou&#39;s blog">
 <meta property="og:description" content="方法的定义 方法就是一段可重复调用的代码，在有些地方也把方法叫做函数。方法的定义在Java中可以使用多种方式，以下格式定义的方法可以直接使用主方法（main()）调用，是因为在方法声明处加上了public static关键字。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://xiyouhujing.github.io/2019/04/04/Java笔记：方法的声明及使用/%E6%96%B9%E6%B3%95%E7%9A%84%E9%80%92%E5%BD%92%E8%B0%83%E7%94%A8.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/04/Java笔记：方法的声明及使用/%E6%96%B9%E6%B3%95%E7%9A%84%E9%80%92%E5%BD%92%E8%B0%83%E7%94%A8.png">
 <meta property="og:updated_time" content="2019-11-22T03:19:15.329Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java笔记：方法的声明及使用">
 <meta name="twitter:description" content="方法的定义 方法就是一段可重复调用的代码，在有些地方也把方法叫做函数。方法的定义在Java中可以使用多种方式，以下格式定义的方法可以直接使用主方法（main()）调用，是因为在方法声明处加上了public static关键字。">
-<meta name="twitter:image" content="http://xiyouhujing.github.io/2019/04/04/Java笔记：方法的声明及使用/%E6%96%B9%E6%B3%95%E7%9A%84%E9%80%92%E5%BD%92%E8%B0%83%E7%94%A8.png">
+<meta name="twitter:image" content="http://yoursite.com/2019/04/04/Java笔记：方法的声明及使用/%E6%96%B9%E6%B3%95%E7%9A%84%E9%80%92%E5%BD%92%E8%B0%83%E7%94%A8.png">
 
-<link rel="canonical" href="http://xiyouhujing.github.io/2019/04/04/Java笔记：方法的声明及使用/">
+<link rel="canonical" href="http://yoursite.com/2019/04/04/Java笔记：方法的声明及使用/">
 
 
 <script id="page-configurations">
@@ -213,7 +213,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://xiyouhujing.github.io/2019/04/04/Java笔记：方法的声明及使用/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/04/Java笔记：方法的声明及使用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/touxiang.jpg">
@@ -327,7 +327,7 @@
 <p>从结果可以看出，虽然return中没有返回任何内容，但是一旦执行到了return语句之后，方法将不再执行，而返回到被调用处继续向下执行。</p>
 <h3 id="方法的递归调用"><a class="markdownIt-Anchor" href="#方法的递归调用"></a> 方法的递归调用</h3>
 <p>递归调用是一种特殊的调用形式，属于方法自身调用，如下图：</p>
-<p><img src="//xiyouhujing.github.io/2019/04/04/Java笔记：方法的声明及使用/%E6%96%B9%E6%B3%95%E7%9A%84%E9%80%92%E5%BD%92%E8%B0%83%E7%94%A8.png" alt="方法的递归调用"></p>
+<p><img src="//yoursite.com/2019/04/04/Java笔记：方法的声明及使用/%E6%96%B9%E6%B3%95%E7%9A%84%E9%80%92%E5%BD%92%E8%B0%83%E7%94%A8.png" alt="方法的递归调用"></p>
 <p>例如，要完成一个数字的累加操作，除了可以使用循环方式外，还可以使用递归调用：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MethodDemo05</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"计算结果："</span> + sum(<span class="number">100</span>));   <span class="comment">// 调用操作</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> num)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (num == <span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> num + sum(num - <span class="number">1</span>);     <span class="comment">// 递归调用</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>程序运行结果为：<code>计算结果：5050</code></p>
@@ -360,7 +360,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://xiyouhujing.github.io/2019/04/04/Java笔记：方法的声明及使用/" title="Java笔记：方法的声明及使用">http://xiyouhujing.github.io/2019/04/04/Java笔记：方法的声明及使用/</a>
+    <a href="http://yoursite.com/2019/04/04/Java笔记：方法的声明及使用/" title="Java笔记：方法的声明及使用">http://yoursite.com/2019/04/04/Java笔记：方法的声明及使用/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！

@@ -51,20 +51,20 @@
 <meta name="keywords" content="java基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java笔记：引用传递及基本应用">
-<meta property="og:url" content="http://xiyouhujing.github.io/2019/05/24/Java笔记：引用传递及基本应用/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/05/24/Java笔记：引用传递及基本应用/index.html">
 <meta property="og:site_name" content="xiyou&#39;s blog">
 <meta property="og:description" content="前言  值传递：是指在调用函数时将实际参数复制一份传递到函数中，这样在函数中如果对参数进行修改，将不会影响到实际参数。引用传递：是指在调用函数时将实际参数的地址直接传递到函数中，那么在函数中对参数进行修改，将会影响到实际参数。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://xiyouhujing.github.io/2019/05/24/Java笔记：引用传递及基本应用/%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E8%8C%83%E4%BE%8B%E7%9A%84%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90%E5%9B%BE.png">
-<meta property="og:image" content="http://xiyouhujing.github.io/2019/05/24/Java笔记：引用传递及基本应用/%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E8%8C%83%E4%BE%8B%E7%9A%84%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90%E5%9B%BE2.png">
-<meta property="og:image" content="http://xiyouhujing.github.io/2019/05/24/Java笔记：引用传递及基本应用/%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E8%8C%83%E4%BE%8B%E7%9A%84%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90%E5%9B%BE3.png">
+<meta property="og:image" content="http://yoursite.com/2019/05/24/Java笔记：引用传递及基本应用/%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E8%8C%83%E4%BE%8B%E7%9A%84%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90%E5%9B%BE.png">
+<meta property="og:image" content="http://yoursite.com/2019/05/24/Java笔记：引用传递及基本应用/%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E8%8C%83%E4%BE%8B%E7%9A%84%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90%E5%9B%BE2.png">
+<meta property="og:image" content="http://yoursite.com/2019/05/24/Java笔记：引用传递及基本应用/%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E8%8C%83%E4%BE%8B%E7%9A%84%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90%E5%9B%BE3.png">
 <meta property="og:updated_time" content="2019-11-22T07:26:55.178Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java笔记：引用传递及基本应用">
 <meta name="twitter:description" content="前言  值传递：是指在调用函数时将实际参数复制一份传递到函数中，这样在函数中如果对参数进行修改，将不会影响到实际参数。引用传递：是指在调用函数时将实际参数的地址直接传递到函数中，那么在函数中对参数进行修改，将会影响到实际参数。">
-<meta name="twitter:image" content="http://xiyouhujing.github.io/2019/05/24/Java笔记：引用传递及基本应用/%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E8%8C%83%E4%BE%8B%E7%9A%84%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90%E5%9B%BE.png">
+<meta name="twitter:image" content="http://yoursite.com/2019/05/24/Java笔记：引用传递及基本应用/%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E8%8C%83%E4%BE%8B%E7%9A%84%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90%E5%9B%BE.png">
 
-<link rel="canonical" href="http://xiyouhujing.github.io/2019/05/24/Java笔记：引用传递及基本应用/">
+<link rel="canonical" href="http://yoursite.com/2019/05/24/Java笔记：引用传递及基本应用/">
 
 
 <script id="page-configurations">
@@ -215,7 +215,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://xiyouhujing.github.io/2019/05/24/Java笔记：引用传递及基本应用/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/24/Java笔记：引用传递及基本应用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/touxiang.jpg">
@@ -304,21 +304,21 @@
 <p>程序运行结果：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fun()方法调用之前：50</span><br><span class="line">fun()方法调用之后：1000</span><br></pre></td></tr></table></figure>
 <p>从结果中可以发现，在fun()方法中接收了Demo类对象d1，并将temp属性的内容进行了修改，因为是引用传递，所以最终temp的值是1000，此程序可以通过下图进行理解：</p>
-<p><img src="//xiyouhujing.github.io/2019/05/24/Java笔记：引用传递及基本应用/%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E8%8C%83%E4%BE%8B%E7%9A%84%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90%E5%9B%BE.png" alt="引用传递范例的内存分析图"></p>
+<p><img src="//yoursite.com/2019/05/24/Java笔记：引用传递及基本应用/%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E8%8C%83%E4%BE%8B%E7%9A%84%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90%E5%9B%BE.png" alt="引用传递范例的内存分析图"></p>
 <h4 id="引用传递范例二"><a class="markdownIt-Anchor" href="#引用传递范例二"></a> 引用传递范例二</h4>
 <p>引用传递：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RefDemo02</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        String str1 = <span class="string">"hello"</span>;                 <span class="comment">// 实例化字符串对象</span></span><br><span class="line">        System.out.println(<span class="string">"fun()方法调用之前："</span> + str1);</span><br><span class="line">        fun(str1);                             <span class="comment">// 调用fun()方法</span></span><br><span class="line">        System.out.println(<span class="string">"fun()方法调用之后："</span> + str1);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span>  <span class="keyword">void</span> <span class="title">fun</span><span class="params">(String str2)</span></span>&#123;      <span class="comment">// 此处的方法由主方法直接调用</span></span><br><span class="line">        str2 = <span class="string">"MLDN"</span>;                         <span class="comment">// 修改字符串内容</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>程序运行结果：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fun()方法调用之前：hello</span><br><span class="line">fun()方法调用之后：hello</span><br></pre></td></tr></table></figure>
 <p>从运行结果可以发现，虽然此时传递的是一个String类型的对象，但是结果并没有像之前一样发生给吧，因为字符串的内容一旦声明就是不可改变的，改变的只是其内存地址的指向，如下图所示：</p>
-<p><img src="//xiyouhujing.github.io/2019/05/24/Java笔记：引用传递及基本应用/%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E8%8C%83%E4%BE%8B%E7%9A%84%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90%E5%9B%BE2.png" alt="引用传递范例的内存分析图2"></p>
+<p><img src="//yoursite.com/2019/05/24/Java笔记：引用传递及基本应用/%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E8%8C%83%E4%BE%8B%E7%9A%84%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90%E5%9B%BE2.png" alt="引用传递范例的内存分析图2"></p>
 <p>以上操作并不难理解，因为每个字符串对象都表示一个匿名对象，这样在fun()方法操作中，如果为str2重新设置内容，就相当于改变了str2的引用，而str1本身的内容并不会受到任何影响。</p>
 <h4 id="引用传递范例三"><a class="markdownIt-Anchor" href="#引用传递范例三"></a> 引用传递范例三</h4>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Demo2</span></span>&#123;</span><br><span class="line">    String temp = <span class="string">"hello"</span>;              <span class="comment">// 此处为了访问方便，属性暂不封装</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RefDemo03</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Demo2 d1 = <span class="keyword">new</span> Demo2();</span><br><span class="line">        d1.temp = <span class="string">"word"</span>;               <span class="comment">// 修改对象中的temp属性</span></span><br><span class="line">        System.out.println(<span class="string">"fun()方法调用之前："</span> + d1.temp);</span><br><span class="line">        fun(d1);</span><br><span class="line">        System.out.println(<span class="string">"fun()方法调用之后："</span> + d1.temp);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">fun</span><span class="params">(Demo2 d2)</span></span>&#123;</span><br><span class="line">        d2.temp = <span class="string">"MLDN"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>程序运行结果：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fun()方法调用之前：word</span><br><span class="line">fun()方法调用之后：MLDN</span><br></pre></td></tr></table></figure>
 <p>从结果可以看出，fun()方法中将属性的内容修改了，内存操作如下图：</p>
-<p><img src="//xiyouhujing.github.io/2019/05/24/Java笔记：引用传递及基本应用/%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E8%8C%83%E4%BE%8B%E7%9A%84%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90%E5%9B%BE3.png" alt="引用传递范例的内存分析图3"></p>
+<p><img src="//yoursite.com/2019/05/24/Java笔记：引用传递及基本应用/%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E8%8C%83%E4%BE%8B%E7%9A%84%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90%E5%9B%BE3.png" alt="引用传递范例的内存分析图3"></p>
 <p>本程序的分析方法与第一个范例完全一样，因为String是作为一个Demo2类的属性存在的，而在操作时更改的只是Demo2类中属性的内容。</p>
 <h3 id="接收本类的引用"><a class="markdownIt-Anchor" href="#接收本类的引用"></a> 接收本类的引用</h3>
 <p>以上为引用传递的基本形式，实际上，在对象引用传递上也可以在一个类中接收自己本类对象的实例，而且接受完之后，可以方便地通过此对象直接进行本类中封装属性的访问，如下：</p>
@@ -360,7 +360,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://xiyouhujing.github.io/2019/05/24/Java笔记：引用传递及基本应用/" title="Java笔记：引用传递及基本应用">http://xiyouhujing.github.io/2019/05/24/Java笔记：引用传递及基本应用/</a>
+    <a href="http://yoursite.com/2019/05/24/Java笔记：引用传递及基本应用/" title="Java笔记：引用传递及基本应用">http://yoursite.com/2019/05/24/Java笔记：引用传递及基本应用/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
