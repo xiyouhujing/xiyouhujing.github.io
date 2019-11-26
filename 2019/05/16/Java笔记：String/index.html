@@ -51,20 +51,20 @@
 <meta name="keywords" content="java基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java笔记：String">
-<meta property="og:url" content="https://hujingxiyou.coding.me/2019/05/16/Java笔记：String/index.html">
+<meta property="og:url" content="http://xiyouhujing.github.io/2019/05/16/Java笔记：String/index.html">
 <meta property="og:site_name" content="xiyou&#39;s blog">
 <meta property="og:description" content="前言  String类定义时单词的首字母大写，所以String本身也是一个类本类，但是此类在使用时却有很多的要求，而且此类在Java中也算是一个比较特殊的类。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://hujingxiyou.coding.me/2019/05/16/Java笔记：String/String%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%A3%B0%E6%98%8E.png">
-<meta property="og:image" content="https://hujingxiyou.coding.me/2019/05/16/Java笔记：String/new+String%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B0%E5%AE%9E%E4%BE%8B%E5%8C%96%E5%AF%B9%E8%B1%A1.png">
-<meta property="og:image" content="https://hujingxiyou.coding.me/2019/05/16/Java笔记：String/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%86%85%E5%AE%B9%E7%9A%84%E4%BF%AE%E6%94%B9.png">
+<meta property="og:image" content="http://xiyouhujing.github.io/2019/05/16/Java笔记：String/String%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%A3%B0%E6%98%8E.png">
+<meta property="og:image" content="http://xiyouhujing.github.io/2019/05/16/Java笔记：String/new+String%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B0%E5%AE%9E%E4%BE%8B%E5%8C%96%E5%AF%B9%E8%B1%A1.png">
+<meta property="og:image" content="http://xiyouhujing.github.io/2019/05/16/Java笔记：String/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%86%85%E5%AE%B9%E7%9A%84%E4%BF%AE%E6%94%B9.png">
 <meta property="og:updated_time" content="2019-11-22T07:30:01.355Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java笔记：String">
 <meta name="twitter:description" content="前言  String类定义时单词的首字母大写，所以String本身也是一个类本类，但是此类在使用时却有很多的要求，而且此类在Java中也算是一个比较特殊的类。">
-<meta name="twitter:image" content="https://hujingxiyou.coding.me/2019/05/16/Java笔记：String/String%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%A3%B0%E6%98%8E.png">
+<meta name="twitter:image" content="http://xiyouhujing.github.io/2019/05/16/Java笔记：String/String%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%A3%B0%E6%98%8E.png">
 
-<link rel="canonical" href="https://hujingxiyou.coding.me/2019/05/16/Java笔记：String/">
+<link rel="canonical" href="http://xiyouhujing.github.io/2019/05/16/Java笔记：String/">
 
 
 <script id="page-configurations">
@@ -215,7 +215,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://hujingxiyou.coding.me/2019/05/16/Java笔记：String/">
+    <link itemprop="mainEntityOfPage" href="http://xiyouhujing.github.io/2019/05/16/Java笔记：String/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/touxiang.jpg">
@@ -312,7 +312,7 @@
 <p>程序运行结果为：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">str1 == str2 --&gt;false</span><br><span class="line">str1 == str3 --&gt;false</span><br><span class="line">str2 == str3 --&gt;true</span><br></pre></td></tr></table></figure>
 <p>从程序运行结果中可以发现，虽然以上程序中String的内容都一样，但是比较结果有的相同，有的却不同。主要原因在于堆内存和栈内存。上面每个String对象的内容实际上都保存在堆内存中，而且堆内存中的内容相等。但是对于str1和str2来说，其内容分别保存在了不同的空间，所以即使内容相等，地址的值也是不相等的，“==”是用来进行数值比较的，所以str1和str2不相等。从程序中可以发现str2和str3指向了同一个堆内存空间，是同一个地址，所以最终结果是str2和str3的地址值相等的，同理str1和str3的地址值是不相等的，所以返回了false。栈内存和堆内存的示意图如下：</p>
-<p><img src="//hujingxiyou.coding.me/2019/05/16/Java笔记：String/String%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%A3%B0%E6%98%8E.png" alt=""></p>
+<p><img src="//xiyouhujing.github.io/2019/05/16/Java笔记：String/String%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%A3%B0%E6%98%8E.png" alt=""></p>
 <p>那么既然无法使用“==”进行判断，那该如何去判断两个字符串的内容是否相等呢？此时，即可利用String中专门提供的方法（String是一个类，则会存在各种方法）：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(String str)</span></span></span><br></pre></td></tr></table></figure>
 <p>例如，使用equals方法对String的内容进行比较：</p>
@@ -339,14 +339,14 @@
 <p>下面为使用new String()的方式实例化String对象的例子：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StringDemo08</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        String str = <span class="keyword">new</span> String(<span class="string">"hello"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>一个字符串就是一个String类的匿名对象，而如果使用new关键字，不管如何都会再开辟一个新的空间，但是此时，此空间的内容还是hello，所以上面的代码实际上是开辟了两个内存空间，但真正使用的只是一个使用关键字new开辟的空间，另外一个就是垃圾空间了，如图：</p>
-<p><img src="//hujingxiyou.coding.me/2019/05/16/Java笔记：String/new+String%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B0%E5%AE%9E%E4%BE%8B%E5%8C%96%E5%AF%B9%E8%B1%A1.png" alt="new+String方式实现实例化对象"></p>
+<p><img src="//xiyouhujing.github.io/2019/05/16/Java笔记：String/new+String%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B0%E5%AE%9E%E4%BE%8B%E5%8C%96%E5%AF%B9%E8%B1%A1.png" alt="new+String方式实现实例化对象"></p>
 <p>通过以上两种实现方式比较可以知道那种方式更合适，对于字符串的操作就采用直接赋值的方式完成，而不要采用构造方法传递字符串的方式完成，这样可以避免产生垃圾空间，当然，在String类中也存在一些其他的构造方法。</p>
 <h3 id="字符串的内容不可改变"><a class="markdownIt-Anchor" href="#字符串的内容不可改变"></a> 字符串的内容不可改变</h3>
 <p>在使用String类进行操作时还有一个特性是特别重要的，那就是字符串的内容一旦声明则不可以改变。例如：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StringDemo09</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        String str = <span class="string">"hello"</span>;        <span class="comment">// 声明字符串</span></span><br><span class="line">        str = str + <span class="string">" world!"</span>;        <span class="comment">// 修改字符串</span></span><br><span class="line">        System.out.println(<span class="string">"str = "</span> + str);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>程序运行结果：<code>str = hello world!</code>。</p>
 <p>从结果来看，String对象的内容确实已经修改了，但是其实String对象内容的改变是通过内存地址的“断开-连接”变化完成的，而本身字符串中的内容并没有任何变化，具体如下图：</p>
-<p><img src="//hujingxiyou.coding.me/2019/05/16/Java笔记：String/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%86%85%E5%AE%B9%E7%9A%84%E4%BF%AE%E6%94%B9.png" alt="字符串内容的修改"></p>
+<p><img src="//xiyouhujing.github.io/2019/05/16/Java笔记：String/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%86%85%E5%AE%B9%E7%9A%84%E4%BF%AE%E6%94%B9.png" alt="字符串内容的修改"></p>
 <h3 id="string类中常用的方法"><a class="markdownIt-Anchor" href="#string类中常用的方法"></a> String类中常用的方法</h3>
 <h4 id="字符串与字符数组的转换"><a class="markdownIt-Anchor" href="#字符串与字符数组的转换"></a> 字符串与字符数组的转换</h4>
 <p>字符串可以使用toCharArray()方法变成一个字符数组，也可以使用String类的构造方法把一个字符数组变成一个字符串。</p>
@@ -436,7 +436,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://hujingxiyou.coding.me/2019/05/16/Java笔记：String/" title="Java笔记：String">https://hujingxiyou.coding.me/2019/05/16/Java笔记：String/</a>
+    <a href="http://xiyouhujing.github.io/2019/05/16/Java笔记：String/" title="Java笔记：String">http://xiyouhujing.github.io/2019/05/16/Java笔记：String/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
