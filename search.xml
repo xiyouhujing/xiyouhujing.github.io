@@ -30,7 +30,7 @@
 <p><img src="//xiyouhujing.github.io/2019/11/26/Typora主题美化/%E5%AD%97%E4%BD%93%E6%96%87%E4%BB%B6.png" alt=""></p>
 <p>依次右键ttc和otf文件，并点击安装，至于woff字体文件，我也不知道在win10上怎么安装（恕我无能-_-），不过也没关系，我们在catfish中发现，也只有一处用到了这个字体，所以就直接忽略吧。安装完字体后，我们可以在C:\Windows\Fonts这个路径中发现多了思源黑体和思源宋体文件。</p>
 <p>最后，我们打开night主题的样式文件night.css，这里我建议复制该样式文件，重命名为“my-night.css”,为了防止我们将该样式文件改崩了，然后我们在my-night.css中进行修改，搜索“font-family”，将每个font-family后面的字体都替换成“Source Han Sans SC, sans-serif”，例如，修改正文字体：</p>
-<p><img src="//xiyouhujing.github.io/2019/11/26/Typora主题美化/%E5%AD%97%E4%BD%93%E6%9B%BF%E6%8D%A2.png" alt="字体替换"></p>
+<p><img src="//xiyouhujing.github.io/2019/11/26/Typora主题美化/%E5%AD%97%E4%BD%93%E6%9B%BF%E6%8D%A2.png" alt=""></p>
 <h3 id="主题选择"><a class="markdownIt-Anchor" href="#主题选择"></a> 主题选择</h3>
 <p>重启typora，在菜单栏点击【主题】，可以发现，在下拉菜单中会多出一个“my night”的主题，选择改主题，可以发现在night主题的基础上，字体变好看了：</p>
 <p><img src="//xiyouhujing.github.io/2019/11/26/Typora主题美化/mynight%E4%B8%BB%E9%A2%98.png" alt="mynight主题"></p>
