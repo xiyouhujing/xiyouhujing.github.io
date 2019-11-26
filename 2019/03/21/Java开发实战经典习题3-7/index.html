@@ -51,18 +51,18 @@
 <meta name="keywords" content="Java练习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java开发实战经典习题3.7">
-<meta property="og:url" content="http://xiyouhujing.github.io/2019/03/21/Java开发实战经典习题3-7/index.html">
+<meta property="og:url" content="https://hujingxiyou.coding.me/2019/03/21/Java开发实战经典习题3-7/index.html">
 <meta property="og:site_name" content="xiyou&#39;s blog">
 <meta property="og:description" content="前言  Java开发实战经典第三章习题：java基础程序设计。掌握java中数据类型的划分方法、掌握八种基本数据类型的使用方法、掌握数据类型的转换方式、掌握java中的运算位、掌握各个运算符和表达式的运用、掌握判断和循环语句的使用方法、掌握break及continue关键字的作用。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://xiyouhujing.github.io/2019/03/21/Java开发实战经典习题3-7/%E4%B8%89%E8%A7%92%E5%BD%A2.png">
+<meta property="og:image" content="https://hujingxiyou.coding.me/2019/03/21/Java开发实战经典习题3-7/%E4%B8%89%E8%A7%92%E5%BD%A2.png">
 <meta property="og:updated_time" content="2019-11-22T07:25:45.113Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java开发实战经典习题3.7">
 <meta name="twitter:description" content="前言  Java开发实战经典第三章习题：java基础程序设计。掌握java中数据类型的划分方法、掌握八种基本数据类型的使用方法、掌握数据类型的转换方式、掌握java中的运算位、掌握各个运算符和表达式的运用、掌握判断和循环语句的使用方法、掌握break及continue关键字的作用。">
-<meta name="twitter:image" content="http://xiyouhujing.github.io/2019/03/21/Java开发实战经典习题3-7/%E4%B8%89%E8%A7%92%E5%BD%A2.png">
+<meta name="twitter:image" content="https://hujingxiyou.coding.me/2019/03/21/Java开发实战经典习题3-7/%E4%B8%89%E8%A7%92%E5%BD%A2.png">
 
-<link rel="canonical" href="http://xiyouhujing.github.io/2019/03/21/Java开发实战经典习题3-7/">
+<link rel="canonical" href="https://hujingxiyou.coding.me/2019/03/21/Java开发实战经典习题3-7/">
 
 
 <script id="page-configurations">
@@ -213,7 +213,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://xiyouhujing.github.io/2019/03/21/Java开发实战经典习题3-7/">
+    <link itemprop="mainEntityOfPage" href="https://hujingxiyou.coding.me/2019/03/21/Java开发实战经典习题3-7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/touxiang.jpg">
@@ -331,7 +331,7 @@
 <h4 id="使用for循环打印由组成的三角形三角形每行的星数和行数相等"><a class="markdownIt-Anchor" href="#使用for循环打印由组成的三角形三角形每行的星数和行数相等"></a> 使用for循环打印由*组成的三角形，三角形每行的星数和行数相等</h4>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test3_12</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= <span class="number">4</span>-i; j++) &#123;</span><br><span class="line">                System.out.print(<span class="string">" "</span>);      <span class="comment">// 注意print为不换行输出</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt;= i; k++) &#123;</span><br><span class="line">                System.out.print(<span class="string">"* "</span>);     <span class="comment">// print不换行输出，注意星号后面还需要打印一个空格，不然三角形不对称</span></span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println(<span class="string">"  "</span>);       <span class="comment">// println换行输出</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>程序运行的结果如图：</p>
-<p><img src="//xiyouhujing.github.io/2019/03/21/Java开发实战经典习题3-7/%E4%B8%89%E8%A7%92%E5%BD%A2.png" alt=""></p>
+<p><img src="//hujingxiyou.coding.me/2019/03/21/Java开发实战经典习题3-7/%E4%B8%89%E8%A7%92%E5%BD%A2.png" alt=""></p>
 
     </div>
 
@@ -357,7 +357,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://xiyouhujing.github.io/2019/03/21/Java开发实战经典习题3-7/" title="Java开发实战经典习题3.7">http://xiyouhujing.github.io/2019/03/21/Java开发实战经典习题3-7/</a>
+    <a href="https://hujingxiyou.coding.me/2019/03/21/Java开发实战经典习题3-7/" title="Java开发实战经典习题3.7">https://hujingxiyou.coding.me/2019/03/21/Java开发实战经典习题3-7/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -448,13 +448,13 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -512,13 +512,13 @@
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">91k</span>
+    <span title="站点总字数">92k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1:23</span>
+    <span title="站点阅读时长">1:24</span>
 </div>
 
 
