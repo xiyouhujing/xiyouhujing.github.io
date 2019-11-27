@@ -305,21 +305,17 @@
 <p>在将hexo博客部署到coding之前，我已经在github上部署过，但是考虑到github是国外网站，每次打开博客访问较慢，而coding是国内网站，速度肯定快一些。所以，在部署到github的基础上，我又将hexo博客部署到coding上。coding pages是国内有名的软件研发管理平台coding旗下的一个功能，可以实时发布在coding.net里托管的代码。</p>
 </blockquote>
 <a id="more"></a>
-<h4 id="注册coding账号"><a class="markdownIt-Anchor" href="#注册coding账号"></a> 注册Coding账号</h4>
-<p>进入<a href="https://coding.net/" target="_blank" rel="noopener">coding官网</a>，点击右上角的注册按钮，注意不要点个人版登陆来注册，我试过个人版，部署到个人版之后，页面会显示404，所以直接注册就行，团队名称自己随意设置。</p>
+<h4 id="注册Coding账号"><a href="#注册Coding账号" class="headerlink" title="注册Coding账号"></a>注册Coding账号</h4><p>进入<a href="https://coding.net/" target="_blank" rel="noopener">coding官网</a>，点击右上角的注册按钮，注意不要点个人版登陆来注册，我试过个人版，部署到个人版之后，页面会显示404，所以直接注册就行，团队名称自己随意设置。</p>
 <p><img src="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/%E5%B0%86hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0coding/%E6%B3%A8%E5%86%8C1.png" alt=""></p>
-<h4 id="创建项目"><a class="markdownIt-Anchor" href="#创建项目"></a> 创建项目</h4>
-<p>注册后登陆，在项目页面点新建项目：</p>
+<h4 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h4><p>注册后登陆，在项目页面点新建项目：</p>
 <p><img src="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/%E5%B0%86hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0coding/%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE1.png" alt=""></p>
-<p>创建项目页面，项目名称随便填，项目地址格式为：<a href="http://xn--6qqv7i2xdt95b.coding.me" target="_blank" rel="noopener">你的域名.coding.me</a>。</p>
+<p>创建项目页面，项目名称随便填，项目地址格式为：你的域名.coding.me。</p>
 <p><img src="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/%E5%B0%86hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0coding/%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE2.png" alt=""></p>
-<h4 id="配置ssh公钥"><a class="markdownIt-Anchor" href="#配置ssh公钥"></a> 配置SSH公钥</h4>
-<p>点击coding页面右上角的头像，选择个人设置，点击SSH公钥，再点击右上角的新增公钥：</p>
+<h4 id="配置SSH公钥"><a href="#配置SSH公钥" class="headerlink" title="配置SSH公钥"></a>配置SSH公钥</h4><p>点击coding页面右上角的头像，选择个人设置，点击SSH公钥，再点击右上角的新增公钥：</p>
 <p><img src="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/%E5%B0%86hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0coding/%E6%96%B0%E5%A2%9E%E5%85%AC%E9%92%A51.png" alt=""></p>
 <p>如果之前没有部署到github，可以点击上面图片中的“点击查看SSH公钥使用办法”来生成公钥。我这里之前部署到github了，可以使用同一个公钥，在本地文件夹C:\Users\你的user名\.ssh中，找到id_rsa.pub文件，并将其内容复制到如下页面，记得勾选上永久有效，最后点添加：</p>
 <p><img src="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/%E5%B0%86hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0coding/%E6%96%B0%E5%A2%9E%E5%85%AC%E9%92%A52.png" alt=""></p>
-<h4 id="配置站点配置文件"><a class="markdownIt-Anchor" href="#配置站点配置文件"></a> 配置站点配置文件</h4>
-<p>打开coding中的你的项目，右下角选择SSH，复制SSH后面的地址：</p>
+<h4 id="配置站点配置文件"><a href="#配置站点配置文件" class="headerlink" title="配置站点配置文件"></a>配置站点配置文件</h4><p>打开coding中的你的项目，右下角选择SSH，复制SSH后面的地址：</p>
 <p><img src="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/%E5%B0%86hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0coding/SSH%E5%9C%B0%E5%9D%80.png" alt=""></p>
 <p>打开站点配置文件_config.yml（注意非主题配置文件），搜索deploy，在后面添加coding: 你的项目SSH地址。</p>
 <p><img src="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/%E5%B0%86hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0coding/%E7%AB%99%E7%82%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%BF%AE%E6%94%B9.png" alt=""></p>
@@ -329,8 +325,7 @@
 <p><img src="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/%E5%B0%86hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0coding/push%E5%92%8Cdeploy.png" alt=""></p>
 <p>部署成功之后，coding项目中可以查看部署成功的代码：</p>
 <p><img src="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/%E5%B0%86hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0coding/%E6%9F%A5%E7%9C%8B%E6%88%90%E5%8A%9F%E9%83%A8%E7%BD%B2%E7%9A%84%E4%BB%A3%E7%A0%81.png" alt=""></p>
-<h4 id="构建静态网站"><a class="markdownIt-Anchor" href="#构建静态网站"></a> 构建静态网站</h4>
-<p>进入项目页面-构建与部署-静态网站，点击新建（这里我之前已经为我的博客新建了静态网站，所以，下面会有一个静态网站）：</p>
+<h4 id="构建静态网站"><a href="#构建静态网站" class="headerlink" title="构建静态网站"></a>构建静态网站</h4><p>进入项目页面-构建与部署-静态网站，点击新建（这里我之前已经为我的博客新建了静态网站，所以，下面会有一个静态网站）：</p>
 <p><img src="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/%E5%B0%86hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0coding/pages%E6%9C%8D%E5%8A%A11.png" alt=""></p>
 <p>在新建静态网站页面，填写网站名称，触发机制默认自动部署，选择推送到master时触发构建，填写完成后点保存：</p>
 <p><img src="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/%E5%B0%86hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0coding/pages%E6%9C%8D%E5%8A%A12.png" alt=""></p>
@@ -431,7 +426,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#注册coding账号"><span class="nav-text"> 注册Coding账号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建项目"><span class="nav-text"> 创建项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置ssh公钥"><span class="nav-text"> 配置SSH公钥</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置站点配置文件"><span class="nav-text"> 配置站点配置文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构建静态网站"><span class="nav-text"> 构建静态网站</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#注册Coding账号"><span class="nav-text">注册Coding账号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建项目"><span class="nav-text">创建项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置SSH公钥"><span class="nav-text">配置SSH公钥</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置站点配置文件"><span class="nav-text">配置站点配置文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构建静态网站"><span class="nav-text">构建静态网站</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
