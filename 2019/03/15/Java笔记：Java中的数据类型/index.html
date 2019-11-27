@@ -47,18 +47,18 @@
   };
 </script>
 
-  <meta name="description" content="数据类型划分Java的数据类型可以分为基本数据类型和应用数据类型两类，原始数据类型也称为基本数据类型，包括最基本的boolean、byte、char、short、int、long、float、与double等类型；引用数据类型以一种特殊的方式指向变量的实体，类似于C/C++的指针，这类变量在声明时不会分配内存，必须另外开辟内存空间的操作，如字符串和数组均属于这种数据类型。">
+  <meta name="description" content="数据类型划分 Java的数据类型可以分为基本数据类型和应用数据类型两类，原始数据类型也称为基本数据类型，包括最基本的boolean、byte、char、short、int、long、float、与double等类型；引用数据类型以一种特殊的方式指向变量的实体，类似于C/C++的指针，这类变量在声明时不会分配内存，必须另外开辟内存空间的操作，如字符串和数组均属于这种数据类型。">
 <meta name="keywords" content="java基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java笔记：Java中的数据类型">
 <meta property="og:url" content="http://xiyouhujing.github.io/2019/03/15/Java笔记：Java中的数据类型/index.html">
 <meta property="og:site_name" content="xiyou&#39;s blog">
-<meta property="og:description" content="数据类型划分Java的数据类型可以分为基本数据类型和应用数据类型两类，原始数据类型也称为基本数据类型，包括最基本的boolean、byte、char、short、int、long、float、与double等类型；引用数据类型以一种特殊的方式指向变量的实体，类似于C/C++的指针，这类变量在声明时不会分配内存，必须另外开辟内存空间的操作，如字符串和数组均属于这种数据类型。">
+<meta property="og:description" content="数据类型划分 Java的数据类型可以分为基本数据类型和应用数据类型两类，原始数据类型也称为基本数据类型，包括最基本的boolean、byte、char、short、int、long、float、与double等类型；引用数据类型以一种特殊的方式指向变量的实体，类似于C/C++的指针，这类变量在声明时不会分配内存，必须另外开辟内存空间的操作，如字符串和数组均属于这种数据类型。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-11-26T07:10:41.126Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java笔记：Java中的数据类型">
-<meta name="twitter:description" content="数据类型划分Java的数据类型可以分为基本数据类型和应用数据类型两类，原始数据类型也称为基本数据类型，包括最基本的boolean、byte、char、short、int、long、float、与double等类型；引用数据类型以一种特殊的方式指向变量的实体，类似于C/C++的指针，这类变量在声明时不会分配内存，必须另外开辟内存空间的操作，如字符串和数组均属于这种数据类型。">
+<meta name="twitter:description" content="数据类型划分 Java的数据类型可以分为基本数据类型和应用数据类型两类，原始数据类型也称为基本数据类型，包括最基本的boolean、byte、char、short、int、long、float、与double等类型；引用数据类型以一种特殊的方式指向变量的实体，类似于C/C++的指针，这类变量在声明时不会分配内存，必须另外开辟内存空间的操作，如字符串和数组均属于这种数据类型。">
 
 <link rel="canonical" href="http://xiyouhujing.github.io/2019/03/15/Java笔记：Java中的数据类型/">
 
@@ -268,7 +268,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>4.6k</span>
+              <span>4.9k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -287,12 +287,31 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="数据类型划分"><a href="#数据类型划分" class="headerlink" title="数据类型划分"></a>数据类型划分</h2><p>Java的数据类型可以分为<strong>基本数据类型</strong>和<strong>应用数据类型两类</strong>，原始数据类型也称为基本数据类型，包括最基本的boolean、byte、char、short、int、long、float、与double等类型；引用数据类型以一种特殊的方式指向变量的实体，类似于C/C++的指针，这类变量在声明时不会分配内存，必须另外开辟内存空间的操作，如字符串和数组均属于这种数据类型。</p>
+        <h2 id="数据类型划分"><a class="markdownIt-Anchor" href="#数据类型划分"></a> 数据类型划分</h2>
+<p>Java的数据类型可以分为<strong>基本数据类型</strong>和<strong>应用数据类型两类</strong>，原始数据类型也称为基本数据类型，包括最基本的boolean、byte、char、short、int、long、float、与double等类型；引用数据类型以一种特殊的方式指向变量的实体，类似于C/C++的指针，这类变量在声明时不会分配内存，必须另外开辟内存空间的操作，如字符串和数组均属于这种数据类型。</p>
 <a id="more"></a>
 <p>Java的数据类型如下图所示：</p>
-<p>$f(n)<br>\begin{cases}<br>\text{基本数据类型}<br>\begin{cases}<br>\text{数值型}<br>\begin{cases}<br>\text{整数类型（byte、short、int、long）}\\<br>\text{浮点类型（float、double）}<br>\end{cases}\\<br>\text{字符型(char)}\\<br>\text{布尔型（boolean）}<br>\end{cases}\\<br>\text{引用数据类型}<br>\begin{cases}<br>\text{类（class）}\\<br>\text{接口（interface）}\\<br>\text{数组}<br>\end{cases}<br>\end{cases}$</p>
-<h2 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h2><p>Java中基本的数据类型如下表所示：</p>
-<div class="table-container">
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mrow><mo fence="true">{</mo><mtable rowspacing="0.3599999999999999em" columnalign="left left" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mtext>基本数据类型</mtext><mrow><mo fence="true">{</mo><mtable rowspacing="0.3599999999999999em" columnalign="left left" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mtext>数值型</mtext><mrow><mo fence="true">{</mo><mtable rowspacing="0.3599999999999999em" columnalign="left left" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mtext>整数类型（byte、short、int、long）</mtext></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mtext>浮点类型（float、double）</mtext></mstyle></mtd></mtr></mtable></mrow></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mtext>字符型(char)</mtext></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mtext>布尔型（boolean）</mtext></mstyle></mtd></mtr></mtable></mrow></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mtext>引用数据类型</mtext><mrow><mo fence="true">{</mo><mtable rowspacing="0.3599999999999999em" columnalign="left left" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mtext>类（class）</mtext></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mtext>接口（interface）</mtext></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mtext>数组</mtext></mstyle></mtd></mtr></mtable></mrow></mrow></mstyle></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">f(n)
+\begin{cases}
+\text{基本数据类型}
+\begin{cases}
+\text{数值型}
+\begin{cases}
+\text{整数类型（byte、short、int、long）}\\
+\text{浮点类型（float、double）}
+\end{cases}\\
+\text{字符型(char)}\\
+\text{布尔型（boolean）}
+\end{cases}\\
+\text{引用数据类型}
+\begin{cases}
+\text{类（class）}\\
+\text{接口（interface）}\\
+\text{数组}
+\end{cases}
+\end{cases}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:10.200039999999998em;vertical-align:-4.85002em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:5.350019999999998em;"><span style="top:0.8000099999999999em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎩</span></span></span><span style="top:0.8000099999999999em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:0.5000100000000001em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:0.20001000000000024em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-0.09998999999999958em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-0.3999899999999994em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-0.6999899999999992em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-0.999989999999999em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-1.299989999999999em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-1.5999899999999991em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-1.8999899999999992em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-2.1999899999999992em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-3.1500099999999995em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎨</span></span></span><span style="top:-4.300009999999999em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-4.600009999999999em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-4.900009999999999em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-5.200009999999999em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-5.50001em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-5.8000099999999986em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-6.100009999999999em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-6.400009999999998em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-6.700009999999999em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-7.000009999999998em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-7.3000099999999986em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-7.600019999999997em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎧</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:4.85002em;"><span></span></span></span></span></span></span><span class="mord"><span class="mtable"><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:5.350015000000001em;"><span style="top:-7.350015000000001em;"><span class="pstrut" style="height:5.190015em;"></span><span class="mord"><span class="mord text"><span class="mord cjk_fallback">基本数据类型</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.9500200000000003em;"><span style="top:-1.59999em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎩</span></span></span><span style="top:-1.59999em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-1.89999em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-2.19999em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-3.1500100000000004em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎨</span></span></span><span style="top:-4.30001em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-4.60001em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-4.90001em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-5.20002em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎧</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.45002em;"><span></span></span></span></span></span></span><span class="mord"><span class="mtable"><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:3.190015em;"><span style="top:-5.190015em;"><span class="pstrut" style="height:3.75em;"></span><span class="mord"><span class="mord text"><span class="mord cjk_fallback">数值型</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size4">{</span></span><span class="mord"><span class="mtable"><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.69em;"><span style="top:-3.69em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord text"><span class="mord cjk_fallback">整数类型（</span><span class="mord">byte</span><span class="mord cjk_fallback">、</span><span class="mord">short</span><span class="mord cjk_fallback">、</span><span class="mord">int</span><span class="mord cjk_fallback">、</span><span class="mord">long</span><span class="mord cjk_fallback">）</span></span></span></span><span style="top:-2.25em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord text"><span class="mord cjk_fallback">浮点类型（</span><span class="mord">float</span><span class="mord cjk_fallback">、</span><span class="mord">double</span><span class="mord cjk_fallback">）</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.19em;"><span></span></span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span><span style="top:-2.9319849999999996em;"><span class="pstrut" style="height:3.75em;"></span><span class="mord"><span class="mord text"><span class="mord cjk_fallback">字符型</span><span class="mord">(char)</span></span></span></span><span style="top:-1.4919849999999992em;"><span class="pstrut" style="height:3.75em;"></span><span class="mord"><span class="mord text"><span class="mord cjk_fallback">布尔型（</span><span class="mord">boolean</span><span class="mord cjk_fallback">）</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.6900150000000007em;"><span></span></span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span><span style="top:-2.2499999999999987em;"><span class="pstrut" style="height:5.190015em;"></span><span class="mord"><span class="mord text"><span class="mord cjk_fallback">引用数据类型</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.35002em;"><span style="top:-2.19999em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎩</span></span></span><span style="top:-2.19999em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-3.1500100000000004em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎨</span></span></span><span style="top:-4.30001em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-4.60002em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎧</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.8500199999999998em;"><span></span></span></span></span></span></span><span class="mord"><span class="mtable"><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.41em;"><span style="top:-4.41em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord text"><span class="mord cjk_fallback">类（</span><span class="mord">class</span><span class="mord cjk_fallback">）</span></span></span></span><span style="top:-2.97em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord text"><span class="mord cjk_fallback">接口（</span><span class="mord">interface</span><span class="mord cjk_fallback">）</span></span></span></span><span style="top:-1.5300000000000002em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord text"><span class="mord cjk_fallback">数组</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.9099999999999997em;"><span></span></span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:4.850015000000001em;"><span></span></span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></p>
+<h2 id="基本数据类型"><a class="markdownIt-Anchor" href="#基本数据类型"></a> 基本数据类型</h2>
+<p>Java中基本的数据类型如下表所示：</p>
 <table>
 <thead>
 <tr>
@@ -344,11 +363,12 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h3 id="整数类型"><a href="#整数类型" class="headerlink" title="整数类型"></a>整数类型</h3><p>整数类型可以分为<strong>long</strong>、<strong>int</strong>、<strong>short</strong>、及<strong>byte</strong> 4种，其中long为64位，即8个字节（bytes），int为32位，即4个字节，short为16位，也就是2个字节，byte为8位，也就是1个字节。例如，sum是一个短整型变量，在程序中作出如下声明：</p>
+<h3 id="整数类型"><a class="markdownIt-Anchor" href="#整数类型"></a> 整数类型</h3>
+<p>整数类型可以分为<strong>long</strong>、<strong>int</strong>、<strong>short</strong>、及<strong>byte</strong> 4种，其中long为64位，即8个字节（bytes），int为32位，即4个字节，short为16位，也就是2个字节，byte为8位，也就是1个字节。例如，sum是一个短整型变量，在程序中作出如下声明：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">short</span> num;   <span class="comment">//声明sum为短整型</span></span><br></pre></td></tr></table></figure>
 <p>经过声明之后，Java会在可使用的内存空间中寻找一个占有两个字节的块供sum变量使用。在Java中对于一个整型常量，其默认类型为int型，所以一般在声明常量时不要超过int数据类型的范围。</p>
-<h4 id="数据溢出"><a href="#数据溢出" class="headerlink" title="数据溢出"></a>数据溢出</h4><p>当整数的数据大小超过其类型可以表示的范围，而程序中又没有做数值范围的检查时，一个整型变量所输出的值将会发生紊乱，且不是预期的运行结果。例如下面的程序中声明了一个整型的数，并把它赋值为整型所可以表示范围的最大值，然后将它分别加1和加2：</p>
+<h4 id="数据溢出"><a class="markdownIt-Anchor" href="#数据溢出"></a> 数据溢出</h4>
+<p>当整数的数据大小超过其类型可以表示的范围，而程序中又没有做数值范围的检查时，一个整型变量所输出的值将会发生紊乱，且不是预期的运行结果。例如下面的程序中声明了一个整型的数，并把它赋值为整型所可以表示范围的最大值，然后将它分别加1和加2：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DataDemo01</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> max = Integer.MAX_VALUE;                         <span class="comment">// 得到整型的最大值</span></span><br><span class="line">        System.out.println(<span class="string">"整型的最大值："</span> + max);           <span class="comment">// 输出最大值</span></span><br><span class="line">        System.out.println(<span class="string">"整型最大值 + 1："</span> + (max + <span class="number">1</span>));   <span class="comment">// 最大值加1</span></span><br><span class="line">        System.out.println(<span class="string">"整型最大值 + 2："</span> + (max + <span class="number">2</span>));   <span class="comment">// 最大值加2</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>程序的运行结果如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">整型的最大值：2147483647</span><br><span class="line">整型最大值+1：-2147483648</span><br><span class="line">整型最大值+2：-2147483647</span><br></pre></td></tr></table></figure>
@@ -357,10 +377,10 @@
 <p>程序运行的结果如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">整型的最大值：2147483647</span><br><span class="line">整型最大值+1：-2147483648</span><br><span class="line">整型最大值+2：2147483649</span><br><span class="line">整型最大值+2：2147483649</span><br></pre></td></tr></table></figure>
 <p>处理int型的溢出，可以采用强制类型转换方式，但是对于long型的溢出，就没有处理办法了，此时就需要在程序中加上变量值的界限检查，在运行时才不会发生错误。</p>
-<h3 id="字符类型"><a href="#字符类型" class="headerlink" title="字符类型"></a>字符类型</h3><p>字符类型在内存中占两个字节，可以用来保存英文字母等字符。给字符变量赋值可以使用数字和字符，它们都能使程序正确的运行，例如，Java中使用Unicode编码系统，Unicode中小写的a是以97表示的，所以，如果要给一个字符变量赋值为a，可以使用小写“a”，也可以使用数字97，需要注意的是，字符要用一队单引号（’ ‘）括起。程序中字符类型的声明如下：</p>
+<h3 id="字符类型"><a class="markdownIt-Anchor" href="#字符类型"></a> 字符类型</h3>
+<p>字符类型在内存中占两个字节，可以用来保存英文字母等字符。给字符变量赋值可以使用数字和字符，它们都能使程序正确的运行，例如，Java中使用Unicode编码系统，Unicode中小写的a是以97表示的，所以，如果要给一个字符变量赋值为a，可以使用小写“a”，也可以使用数字97，需要注意的是，字符要用一队单引号（’ '）括起。程序中字符类型的声明如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> ch = <span class="string">'a'</span>;   <span class="comment">// 声明ch为字符型，其值为a</span></span><br></pre></td></tr></table></figure>
-<p>在程序中输出一个包括双引号的字符串时，可以把字符变量赋值为转义字符，再将它输出，即：再程序中声明一个字符类型变量ch，然后把ch设置为“\\””，再进行输出操作，或者，也可以直接再要输出的字符穿中加入特殊的转义字符。常用的转义字符如下表：</p>
-<div class="table-container">
+<p>在程序中输出一个包括双引号的字符串时，可以把字符变量赋值为转义字符，再将它输出，即：再程序中声明一个字符类型变量ch，然后把ch设置为“\&quot;”，再进行输出操作，或者，也可以直接再要输出的字符穿中加入特殊的转义字符。常用的转义字符如下表：</p>
 <table>
 <thead>
 <tr>
@@ -377,7 +397,7 @@
 </tr>
 <tr>
 <td style="text-align:center">2</td>
-<td style="text-align:center">\\</td>
+<td style="text-align:center">\</td>
 <td style="text-align:center">反斜线</td>
 </tr>
 <tr>
@@ -387,7 +407,7 @@
 </tr>
 <tr>
 <td style="text-align:center">4</td>
-<td style="text-align:center">\’</td>
+<td style="text-align:center">’</td>
 <td style="text-align:center">单引号</td>
 </tr>
 <tr>
@@ -397,7 +417,7 @@
 </tr>
 <tr>
 <td style="text-align:center">6</td>
-<td style="text-align:center">\”</td>
+<td style="text-align:center">&quot;</td>
 <td style="text-align:center">双引号</td>
 </tr>
 <tr>
@@ -412,20 +432,23 @@
 </tr>
 </tbody>
 </table>
-</div>
 <p>例如：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DataDemo03</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">char</span> ch1 = <span class="string">'\"'</span>;                            <span class="comment">// 定义转义字符</span></span><br><span class="line">        <span class="keyword">char</span> ch2 = <span class="string">'\\'</span>;                            <span class="comment">// 定义转义字符</span></span><br><span class="line">        System.out.println(<span class="string">"ch1 = "</span> + ch1);         <span class="comment">// 打印输出</span></span><br><span class="line">        System.out.println(<span class="string">"ch2 = "</span> + ch2);         <span class="comment">// 打印输出</span></span><br><span class="line">        System.out.println(<span class="string">"\"Hello World\""</span>);      <span class="comment">// 直接输出转义字符</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>程序输出如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ch1 = &quot;</span><br><span class="line">ch2 = \</span><br><span class="line">&quot;Hello World&quot;</span><br></pre></td></tr></table></figure>
-<h3 id="浮点数类型与双精度浮点数类型"><a href="#浮点数类型与双精度浮点数类型" class="headerlink" title="浮点数类型与双精度浮点数类型"></a>浮点数类型与双精度浮点数类型</h3><p>在Java中，带有小数点的数据类型称为浮点数类型（float），其长度为32个字节，当浮点数的表示范围不够大时，还有一种双精度（double）浮点数可以使用，双精度浮点数类型的长度为64个字节。两种数据类型的声明如下：</p>
+<h3 id="浮点数类型与双精度浮点数类型"><a class="markdownIt-Anchor" href="#浮点数类型与双精度浮点数类型"></a> 浮点数类型与双精度浮点数类型</h3>
+<p>在Java中，带有小数点的数据类型称为浮点数类型（float），其长度为32个字节，当浮点数的表示范围不够大时，还有一种双精度（double）浮点数可以使用，双精度浮点数类型的长度为64个字节。两种数据类型的声明如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> num;          <span class="comment">// 声明num为双精度浮点型变量</span></span><br><span class="line"><span class="keyword">float</span> sum = <span class="number">3.0f</span>；   <span class="comment">// 声明sum为浮点型变量，其初值为3.0</span></span><br></pre></td></tr></table></figure>
 <p>需要注意的是，在Java中使用浮点型数值时，默认类型时double，在数值后面可以加上D或者d，作为double类型的标识，在数据后面加上F或者f，则作为float类型的标识。若什么都没加，Java会将该数据默认为double类型。</p>
-<h3 id="布尔类型"><a href="#布尔类型" class="headerlink" title="布尔类型"></a>布尔类型</h3><p>布尔（boolean）类型的变量只有true（真）和false（假）两种，程序中对布尔类型的数据声明如下：</p>
+<h3 id="布尔类型"><a class="markdownIt-Anchor" href="#布尔类型"></a> 布尔类型</h3>
+<p>布尔（boolean）类型的变量只有true（真）和false（假）两种，程序中对布尔类型的数据声明如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">boolean</span> flag = <span class="keyword">true</span>;   <span class="comment">// 声明布尔变量flag，并赋值为true</span></span><br></pre></td></tr></table></figure>
-<h2 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h2><p>数据类型的转换方式可以分为<strong>自动类型转换</strong>及<strong>强制类型转换</strong>两种。</p>
-<h3 id="自动转换"><a href="#自动转换" class="headerlink" title="自动转换"></a>自动转换</h3><p>在程序中已经定义好了数据类型的变量，若要用另一种数据类习表示时，Java会在下列条件皆成立时，自动做数据类型的转换：</p>
-<p>​    （1） 转换前的数据类型与转换后的类型兼容。</p>
-<p>​    （2） 转换后的数据类型的表示范围比转换前的类型大。</p>
+<h2 id="数据类型转换"><a class="markdownIt-Anchor" href="#数据类型转换"></a> 数据类型转换</h2>
+<p>数据类型的转换方式可以分为<strong>自动类型转换</strong>及<strong>强制类型转换</strong>两种。</p>
+<h3 id="自动转换"><a class="markdownIt-Anchor" href="#自动转换"></a> 自动转换</h3>
+<p>在程序中已经定义好了数据类型的变量，若要用另一种数据类习表示时，Java会在下列条件皆成立时，自动做数据类型的转换：</p>
+<p>​	（1） 转换前的数据类型与转换后的类型兼容。</p>
+<p>​	（2） 转换后的数据类型的表示范围比转换前的类型大。</p>
 <p>例如，将short类型的变量a转换成int类型，由于short与int皆为整数类型，符合上述条件（1）；而int的表示范围比short大，符合条件（2），因此Java会自动将原为short类型的变量a转换成int类型。</p>
 <p>值得注意的是，类型的转换只限该行语句，并不会影响原先所定义的变量的类型，而且通过自动类型的转换可以保证数据的精确度，它不会因为转换而损失数据内容，这种类型的转换方式也称为<strong>扩大转换</strong>。</p>
 <p>以扩大转换来看，字符和整数是可以使用自动类型转换的，整数和浮点数亦是兼容的，但是由于boolean类型只能存放true或false，与整数及字符是不兼容的，因此不能做类型的转换。下面介绍当两个数其中一个为浮点数时，其运算结果会怎么变化：</p>
@@ -433,7 +456,8 @@
 <p>程序运行结果为：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x/y = 1.3519603</span><br><span class="line">10/3.5 = 2.857142857142857</span><br><span class="line">10/3 = 3</span><br></pre></td></tr></table></figure>
 <p>从输出结果来看，int类型与float类型进行计算之后，输出的结果会变成float类型，一个整型常量和一个浮点型常量进行计算之后，结果也会变成一个浮点数据，而如果两个int型的常量进行计算，最终结果也时int型，而其小树部分将会被忽略。也就是说，假设有一个整数和双精度浮点数作运算时，Java会把整数转换成双精度浮点数后再做运算，运算结果也会变成双精度浮点数。</p>
-<h3 id="强制转换"><a href="#强制转换" class="headerlink" title="强制转换"></a>强制转换</h3><p>当两个整数进行运算时，其运算结果也会是整数，例如，做除法运算8/3，其结果为整数2，而不是实际的2.33333···，因此，在Java中若是想要得到的计算结果是浮点数时，就必须将数据类型做强制性的转换，转换语法如下：</p>
+<h3 id="强制转换"><a class="markdownIt-Anchor" href="#强制转换"></a> 强制转换</h3>
+<p>当两个整数进行运算时，其运算结果也会是整数，例如，做除法运算8/3，其结果为整数2，而不是实际的2.33333···，因此，在Java中若是想要得到的计算结果是浮点数时，就必须将数据类型做强制性的转换，转换语法如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">（要转换的数据类型） 变量名称；</span><br></pre></td></tr></table></figure>
 <p>因为这种强制类型的转换时直接变写在程序代码中的，所以也称为<strong>显示转换</strong>。强制转换例子如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DataDemo05</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">float</span> f = <span class="number">30.3f</span>;</span><br><span class="line">        <span class="keyword">int</span> x = (<span class="keyword">int</span>)f;</span><br><span class="line">        System.out.println(<span class="string">"x = "</span> + x);</span><br><span class="line">        System.out.println(<span class="string">"10 / 3 = "</span> + ((<span class="keyword">float</span>)<span class="number">10</span> /<span class="number">3</span> ));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -531,7 +555,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型划分"><span class="nav-text">数据类型划分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本数据类型"><span class="nav-text">基本数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#整数类型"><span class="nav-text">整数类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据溢出"><span class="nav-text">数据溢出</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符类型"><span class="nav-text">字符类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浮点数类型与双精度浮点数类型"><span class="nav-text">浮点数类型与双精度浮点数类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#布尔类型"><span class="nav-text">布尔类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型转换"><span class="nav-text">数据类型转换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#自动转换"><span class="nav-text">自动转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#强制转换"><span class="nav-text">强制转换</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型划分"><span class="nav-text"> 数据类型划分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本数据类型"><span class="nav-text"> 基本数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#整数类型"><span class="nav-text"> 整数类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据溢出"><span class="nav-text"> 数据溢出</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符类型"><span class="nav-text"> 字符类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浮点数类型与双精度浮点数类型"><span class="nav-text"> 浮点数类型与双精度浮点数类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#布尔类型"><span class="nav-text"> 布尔类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型转换"><span class="nav-text"> 数据类型转换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#自动转换"><span class="nav-text"> 自动转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#强制转换"><span class="nav-text"> 强制转换</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
