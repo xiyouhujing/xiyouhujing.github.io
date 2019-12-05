@@ -302,11 +302,9 @@
 <p>图床是指存储图片的服务器，简单来说，就是一个保存图片的仓库，将图片上传到这个仓库后，我们可以用一个URL地址来查看这张图片。</p>
 </blockquote>
 <a id="more"></a>
-<h3 id="为何要使用图床"><a class="markdownIt-Anchor" href="#为何要使用图床"></a> 为何要使用图床</h3>
-<p>最近用typora写博客，需要插入大量的截图，使用这些截图时，一般有两种方式，一是将截图先保存到本地，然后在typora中出插入图片的本地路径，另外一种是将图片放在我写的博客的相同路径下，在拖到相应的md文件中。但是，本地路径获取图片不太靠谱，一旦我的图片改变路径了，博客中就没法显示，我用的是第二种，但是这种会造成增加文件的体积，博客越来越多时，上传到博客的速度也会变慢。所以我开始考虑选择使用图床。</p>
+<h3 id="为何要使用图床"><a href="#为何要使用图床" class="headerlink" title="为何要使用图床"></a>为何要使用图床</h3><p>最近用typora写博客，需要插入大量的截图，使用这些截图时，一般有两种方式，一是将截图先保存到本地，然后在typora中出插入图片的本地路径，另外一种是将图片放在我写的博客的相同路径下，在拖到相应的md文件中。但是，本地路径获取图片不太靠谱，一旦我的图片改变路径了，博客中就没法显示，我用的是第二种，但是这种会造成增加文件的体积，博客越来越多时，上传到博客的速度也会变慢。所以我开始考虑选择使用图床。</p>
 <p>国内有很多免费图床，但是我都不太放心，毕竟一旦这些图床挂掉了，我博客里的图片就无法显示了。所以，我选择自己在github上自己搭建图床，比较靠谱。</p>
-<h3 id="在github中创建项目"><a class="markdownIt-Anchor" href="#在github中创建项目"></a> 在GitHub中创建项目</h3>
-<p>在前言中提到图床起始就是一个保存图片的库，所以，首先我们需要用github创建一个图片库来保存我们的图片。</p>
+<h3 id="在GitHub中创建项目"><a href="#在GitHub中创建项目" class="headerlink" title="在GitHub中创建项目"></a>在GitHub中创建项目</h3><p>在前言中提到图床起始就是一个保存图片的库，所以，首先我们需要用github创建一个图片库来保存我们的图片。</p>
 <p>没有使用过github的首先需要在注册<a href="https://github.com/" target="_blank" rel="noopener">GitHub账号</a>，很简单，就部介绍了。登陆后点击主页面右上角的加号，选择“New repository”:</p>
 <p><img src="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/%E5%9C%A8git2ub%E4%B8%8A%E6%90%AD%E5%BB%BAtyporpm%E5%9B%BE%E5%BA%8A/%E5%88%9B%E5%BB%BArepository.png" alt=""></p>
 <p>在建库页面，进行相关的设置：</p>
@@ -321,16 +319,14 @@
 <p><img src="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/%E5%9C%A8git2ub%E4%B8%8A%E6%90%AD%E5%BB%BAtyporpm%E5%9B%BE%E5%BA%8A/%E5%88%9B%E5%BB%BAtoken.png" alt=""></p>
 <p>下面就是生成的token，记得点击红框中右侧的按钮，复制保存到其他地方，这个token只显示一次。</p>
 <p><img src="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/%E5%9C%A8git2ub%E4%B8%8A%E6%90%AD%E5%BB%BAtyporpm%E5%9B%BE%E5%BA%8A/%E5%A4%8D%E5%88%B6token.png" alt=""></p>
-<h3 id="安装配置picgo"><a class="markdownIt-Anchor" href="#安装配置picgo"></a> 安装配置PicGo</h3>
-<p>PicGo是一款简易的图床上传工具，可以通过拖拽或者复制粘贴的方式将图片上传至图床，下载地址：<a href="https://github.com/Molunerfinn/PicGo/releases/tag/v2.1.2%EF%BC%9A" target="_blank" rel="noopener">https://github.com/Molunerfinn/PicGo/releases/tag/v2.1.2：</a></p>
+<h3 id="安装配置PicGo"><a href="#安装配置PicGo" class="headerlink" title="安装配置PicGo"></a>安装配置PicGo</h3><p>PicGo是一款简易的图床上传工具，可以通过拖拽或者复制粘贴的方式将图片上传至图床，下载地址：<a href="https://github.com/Molunerfinn/PicGo/releases/tag/v2.1.2：" target="_blank" rel="noopener">https://github.com/Molunerfinn/PicGo/releases/tag/v2.1.2：</a></p>
 <p><img src="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/%E5%9C%A8git2ub%E4%B8%8A%E6%90%AD%E5%BB%BAtyporpm%E5%9B%BE%E5%BA%8A/%E4%B8%8B%E8%BD%BDPicGo.png" alt=""></p>
 <p>正常安装下载好的PicGo，打开后界面如下：</p>
 <p><img src="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/%E5%9C%A8git2ub%E4%B8%8A%E6%90%AD%E5%BB%BAtyporpm%E5%9B%BE%E5%BA%8A/picgo%E7%95%8C%E9%9D%A2.png" alt=""></p>
 <p>点击左边栏的【图床设置】-【GitHub图床】，将我们在GitHub上建的图片仓库与之绑定，如下图：</p>
 <p><img src="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/%E5%9C%A8git2ub%E4%B8%8A%E6%90%AD%E5%BB%BAtyporpm%E5%9B%BE%E5%BA%8A/picgo%E8%AE%BE%E7%BD%AE.png" alt=""></p>
 <p>设置完成后点击确定即可完成绑定，然后点击【设为默认图床】。</p>
-<h3 id="使用"><a class="markdownIt-Anchor" href="#使用"></a> 使用</h3>
-<p>点击PicGo左侧的上传，然后点击【上传区】，将本地图片拖上去，或者在截图之后，点击剪贴板图片上传，然后会默认生成链接，直接在typora中复制链接就行。</p>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>点击PicGo左侧的上传，然后点击【上传区】，将本地图片拖上去，或者在截图之后，点击剪贴板图片上传，然后会默认生成链接，直接在typora中复制链接就行。</p>
 <p><img src="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/%E5%9C%A8git2ub%E4%B8%8A%E6%90%AD%E5%BB%BAtyporpm%E5%9B%BE%E5%BA%8A/%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87.png" alt=""></p>
 <p>上传完成后，可以在PicGo的相册和GitHub的仓库中看到上传的照片了。</p>
 <p><img src="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/%E5%9C%A8git2ub%E4%B8%8A%E6%90%AD%E5%BB%BAtyporpm%E5%9B%BE%E5%BA%8A/GitHub%E7%9B%B8%E5%86%8C.png" alt=""></p>
@@ -430,7 +426,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#为何要使用图床"><span class="nav-number">1.</span> <span class="nav-text"> 为何要使用图床</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在github中创建项目"><span class="nav-number">2.</span> <span class="nav-text"> 在GitHub中创建项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装配置picgo"><span class="nav-number">3.</span> <span class="nav-text"> 安装配置PicGo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用"><span class="nav-number">4.</span> <span class="nav-text"> 使用</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#为何要使用图床"><span class="nav-number">1.</span> <span class="nav-text">为何要使用图床</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在GitHub中创建项目"><span class="nav-number">2.</span> <span class="nav-text">在GitHub中创建项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装配置PicGo"><span class="nav-number">3.</span> <span class="nav-text">安装配置PicGo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用"><span class="nav-number">4.</span> <span class="nav-text">使用</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -517,13 +513,13 @@
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">95k</span>
+    <span title="站点总字数">96k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1:26</span>
+    <span title="站点阅读时长">1:27</span>
 </div>
 
 
