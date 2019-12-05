@@ -47,18 +47,18 @@
   };
 </script>
 
-  <meta name="description" content="Java新特性——可变参数在调用一个方法时，必须根据方法的定义传递指定的参数，但是在JDK 1.5（JAVA SE 5.0）之后产生了新的概念——可变参数，即方法中可以接收的参数不再是固定的，而是随着需要传递的，可变参数的定义格式如下：">
+  <meta name="description" content="Java新特性——可变参数 在调用一个方法时，必须根据方法的定义传递指定的参数，但是在JDK 1.5（JAVA SE 5.0）之后产生了新的概念——可变参数，即方法中可以接收的参数不再是固定的，而是随着需要传递的，可变参数的定义格式如下：">
 <meta name="keywords" content="java基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java笔记：Java新特性对数组的支持">
 <meta property="og:url" content="http://xiyouhujing.github.io/2019/04/05/Java笔记：Java新特性对数组的支持/index.html">
 <meta property="og:site_name" content="xiyou&#39;s blog">
-<meta property="og:description" content="Java新特性——可变参数在调用一个方法时，必须根据方法的定义传递指定的参数，但是在JDK 1.5（JAVA SE 5.0）之后产生了新的概念——可变参数，即方法中可以接收的参数不再是固定的，而是随着需要传递的，可变参数的定义格式如下：">
+<meta property="og:description" content="Java新特性——可变参数 在调用一个方法时，必须根据方法的定义传递指定的参数，但是在JDK 1.5（JAVA SE 5.0）之后产生了新的概念——可变参数，即方法中可以接收的参数不再是固定的，而是随着需要传递的，可变参数的定义格式如下：">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-11-22T03:23:23.787Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java笔记：Java新特性对数组的支持">
-<meta name="twitter:description" content="Java新特性——可变参数在调用一个方法时，必须根据方法的定义传递指定的参数，但是在JDK 1.5（JAVA SE 5.0）之后产生了新的概念——可变参数，即方法中可以接收的参数不再是固定的，而是随着需要传递的，可变参数的定义格式如下：">
+<meta name="twitter:description" content="Java新特性——可变参数 在调用一个方法时，必须根据方法的定义传递指定的参数，但是在JDK 1.5（JAVA SE 5.0）之后产生了新的概念——可变参数，即方法中可以接收的参数不再是固定的，而是随着需要传递的，可变参数的定义格式如下：">
 
 <link rel="canonical" href="http://xiyouhujing.github.io/2019/04/05/Java笔记：Java新特性对数组的支持/">
 
@@ -287,7 +287,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="Java新特性——可变参数"><a href="#Java新特性——可变参数" class="headerlink" title="Java新特性——可变参数"></a>Java新特性——可变参数</h3><p>在调用一个方法时，必须根据方法的定义传递指定的参数，但是在JDK 1.5（JAVA SE 5.0）之后产生了新的概念——可变参数，即方法中可以接收的参数不再是固定的，而是随着需要传递的，可变参数的定义格式如下：</p>
+        <h3 id="java新特性可变参数"><a class="markdownIt-Anchor" href="#java新特性可变参数"></a> Java新特性——可变参数</h3>
+<p>在调用一个方法时，必须根据方法的定义传递指定的参数，但是在JDK 1.5（JAVA SE 5.0）之后产生了新的概念——可变参数，即方法中可以接收的参数不再是固定的，而是随着需要传递的，可变参数的定义格式如下：</p>
 <a id="more"></a>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">返回值类型 方法名称(类型...参数名称)&#123;&#125;</span><br></pre></td></tr></table></figure>
 <p>向方法中传递可变参数后，其中的参数是以数组的形式保存下来的。</p>
@@ -298,7 +299,8 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> temp[] = &#123;<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>&#125;;      <span class="comment">// 定义数组</span></span><br><span class="line">fun(temp);                   <span class="comment">// 向可变参数中传递数组</span></span><br></pre></td></tr></table></figure>
 <p>对于以上传递数组的操作，也可以变成以下形式的代码：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fun(<span class="keyword">new</span> <span class="keyword">int</span>[] &#123;<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>&#125;)</span><br></pre></td></tr></table></figure>
-<h3 id="Java新特性——foreach输出"><a href="#Java新特性——foreach输出" class="headerlink" title="Java新特性——foreach输出"></a>Java新特性——foreach输出</h3><p>数组的输出一般都会使用for循环，但是在JDK 1.5之后为了方便数组的输出，提供了一种foreach语法，此语法的使用格式如下：</p>
+<h3 id="java新特性foreach输出"><a class="markdownIt-Anchor" href="#java新特性foreach输出"></a> Java新特性——foreach输出</h3>
+<p>数组的输出一般都会使用for循环，但是在JDK 1.5之后为了方便数组的输出，提供了一种foreach语法，此语法的使用格式如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(数据类型 变量名称：数组名称)&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>例如：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NewDemo02</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.print(<span class="string">"不传递参数 （fun()）："</span>);</span><br><span class="line">        fun();                                 <span class="comment">// 不传递参数</span></span><br><span class="line">        System.out.print(<span class="string">"\n传递1个参数 （fun(1)）:"</span>);</span><br><span class="line">        fun(<span class="number">1</span>);                                <span class="comment">// 传递一个参数</span></span><br><span class="line">        System.out.print(<span class="string">"\n传递5个参数 （fun(1, 2, 3, 4, 5)）："</span>);</span><br><span class="line">        fun(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>);                    <span class="comment">// 传递五个参数</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span>...arg)</span></span>&#123;                <span class="comment">// 可变参数，可以接收任意多个参数</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> x : arg)&#123;                            <span class="comment">// 使用foreach输出</span></span><br><span class="line">            System.out.print(x + <span class="string">"、"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -397,7 +399,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Java新特性——可变参数"><span class="nav-number">1.</span> <span class="nav-text">Java新特性——可变参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java新特性——foreach输出"><span class="nav-number">2.</span> <span class="nav-text">Java新特性——foreach输出</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#java新特性可变参数"><span class="nav-number">1.</span> <span class="nav-text"> Java新特性——可变参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java新特性foreach输出"><span class="nav-number">2.</span> <span class="nav-text"> Java新特性——foreach输出</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
