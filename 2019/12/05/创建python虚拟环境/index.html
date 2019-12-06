@@ -47,29 +47,28 @@
   };
 </script>
 
-  <meta name="description" content="前言  Typora是一款非常好用的makedown文本编辑器，界面简单干净，所见即所得，所以在记笔记写博客时是一款非常好用的工具。当然了，一个好看的适合自己的主题，会让自己在写作时赏心悦目。这篇文章是根据我自己的风格和喜好，在typora官网night主题的基础上，结合catfish主题的优点，进行的一些调整，注意是字体上的调整。">
-<meta name="keywords" content="Typora">
+  <meta name="description" content="虚拟环境  为什么需要虚拟环境 我们通过pip install XXX的方式安装第三方包，这样所有的包安装到系统的python环境中，但是这样就有一个问题，当我电脑上的Django版本和我需要迁移过来的django项目版本不一致时，就会出现问题，但是如果我电脑上同时拥有这两个版本的django，就解决这个问题了。如何让两个版本的django同时存在呢，这就需要用到虚拟环境了。">
+<meta name="keywords" content="Django,python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Typora主题美化">
-<meta property="og:url" content="http://xiyouhujing.github.io/2019/11/26/Typora主题美化/index.html">
+<meta property="og:title" content="创建python虚拟环境">
+<meta property="og:url" content="http://xiyouhujing.github.io/2019/12/05/创建python虚拟环境/index.html">
 <meta property="og:site_name" content="xiyou&#39;s blog">
-<meta property="og:description" content="前言  Typora是一款非常好用的makedown文本编辑器，界面简单干净，所见即所得，所以在记笔记写博客时是一款非常好用的工具。当然了，一个好看的适合自己的主题，会让自己在写作时赏心悦目。这篇文章是根据我自己的风格和喜好，在typora官网night主题的基础上，结合catfish主题的优点，进行的一些调整，注意是字体上的调整。">
+<meta property="og:description" content="虚拟环境  为什么需要虚拟环境 我们通过pip install XXX的方式安装第三方包，这样所有的包安装到系统的python环境中，但是这样就有一个问题，当我电脑上的Django版本和我需要迁移过来的django项目版本不一致时，就会出现问题，但是如果我电脑上同时拥有这两个版本的django，就解决这个问题了。如何让两个版本的django同时存在呢，这就需要用到虚拟环境了。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/typora%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/%E5%81%8F%E5%A5%BD%E8%AE%BE%E7%BD%AE1.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/typora%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/%E4%B8%BB%E9%A2%98%E6%96%87%E4%BB%B6%E5%A4%B9.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/typora%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/%E4%B8%BB%E9%A2%98%E7%BD%91%E7%AB%99.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/typora%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/night%E4%B8%BB%E9%A2%98.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/typora%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/catfish%E4%B8%BB%E9%A2%98%E4%B8%8B%E8%BD%BD.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/typora%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/%E5%AD%97%E4%BD%93%E6%96%87%E4%BB%B6.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/typora%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/%E5%AD%97%E4%BD%93%E6%9B%BF%E6%8D%A2.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/typora%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/mynight%E4%B8%BB%E9%A2%98.png">
-<meta property="og:updated_time" content="2019-11-28T02:38:16.801Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/%E5%88%9B%E5%BB%BApython%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/%E5%88%9B%E5%BB%BApython%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/%E8%BF%9B%E5%85%A5%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/%E5%88%9B%E5%BB%BApython%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/%E5%AE%89%E8%A3%85django.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/%E5%88%9B%E5%BB%BApython%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%832.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/%E5%88%9B%E5%BB%BApython%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E8%B7%AF%E5%BE%84.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/%E5%88%9B%E5%BB%BApython%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/%E6%88%90%E5%8A%9F%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E8%B7%AF%E5%BE%84.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/%E5%88%9B%E5%BB%BApython%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/pycharm%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83.png">
+<meta property="og:updated_time" content="2019-12-06T01:21:56.067Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Typora主题美化">
-<meta name="twitter:description" content="前言  Typora是一款非常好用的makedown文本编辑器，界面简单干净，所见即所得，所以在记笔记写博客时是一款非常好用的工具。当然了，一个好看的适合自己的主题，会让自己在写作时赏心悦目。这篇文章是根据我自己的风格和喜好，在typora官网night主题的基础上，结合catfish主题的优点，进行的一些调整，注意是字体上的调整。">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/typora%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/%E5%81%8F%E5%A5%BD%E8%AE%BE%E7%BD%AE1.png">
+<meta name="twitter:title" content="创建python虚拟环境">
+<meta name="twitter:description" content="虚拟环境  为什么需要虚拟环境 我们通过pip install XXX的方式安装第三方包，这样所有的包安装到系统的python环境中，但是这样就有一个问题，当我电脑上的Django版本和我需要迁移过来的django项目版本不一致时，就会出现问题，但是如果我电脑上同时拥有这两个版本的django，就解决这个问题了。如何让两个版本的django同时存在呢，这就需要用到虚拟环境了。">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/%E5%88%9B%E5%BB%BApython%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83.png">
 
-<link rel="canonical" href="http://xiyouhujing.github.io/2019/11/26/Typora主题美化/">
+<link rel="canonical" href="http://xiyouhujing.github.io/2019/12/05/创建python虚拟环境/">
 
 
 <script id="page-configurations">
@@ -83,7 +82,7 @@
   };
 </script>
 
-  <title>Typora主题美化 | xiyou's blog</title>
+  <title>创建python虚拟环境 | xiyou's blog</title>
   
 
 
@@ -220,7 +219,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://xiyouhujing.github.io/2019/11/26/Typora主题美化/">
+    <link itemprop="mainEntityOfPage" href="http://xiyouhujing.github.io/2019/12/05/创建python虚拟环境/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/touxiang.jpg">
@@ -233,7 +232,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Typora主题美化
+          创建python虚拟环境
         </h1>
 
         <div class="post-meta">
@@ -243,14 +242,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-11-26 15:18:37" itemprop="dateCreated datePublished" datetime="2019-11-26T15:18:37+08:00">2019-11-26</time>
+              <time title="创建时间：2019-12-05 17:15:10" itemprop="dateCreated datePublished" datetime="2019-12-05T17:15:10+08:00">2019-12-05</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-28 10:38:16" itemprop="dateModified" datetime="2019-11-28T10:38:16+08:00">2019-11-28</time>
+                <time title="修改时间：2019-12-06 09:21:56" itemprop="dateModified" datetime="2019-12-06T09:21:56+08:00">2019-12-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -258,8 +257,8 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/工具/" itemprop="url" rel="index">
-                    <span itemprop="name">工具</span>
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
                   </a>
                 </span>
             </span>
@@ -277,14 +276,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.2k</span>
+              <span>2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -296,38 +295,73 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><strong>前言</strong></p>
-<blockquote>
-<p>Typora是一款非常好用的makedown文本编辑器，界面简单干净，所见即所得，所以在记笔记写博客时是一款非常好用的工具。当然了，一个好看的适合自己的主题，会让自己在写作时赏心悦目。这篇文章是根据我自己的风格和喜好，在typora官网night主题的基础上，结合catfish主题的优点，进行的一些调整，注意是字体上的调整。</p>
-</blockquote>
+        <h2 id="虚拟环境"><a class="markdownIt-Anchor" href="#虚拟环境"></a> 虚拟环境</h2>
+<h3 id="为什么需要虚拟环境"><a class="markdownIt-Anchor" href="#为什么需要虚拟环境"></a> 为什么需要虚拟环境</h3>
+<p>我们通过pip install XXX的方式安装第三方包，这样所有的包安装到系统的python环境中，但是这样就有一个问题，当我电脑上的Django版本和我需要迁移过来的django项目版本不一致时，就会出现问题，但是如果我电脑上同时拥有这两个版本的django，就解决这个问题了。如何让两个版本的django同时存在呢，这就需要用到虚拟环境了。</p>
 <a id="more"></a>
-<h3 id="偏好设置"><a class="markdownIt-Anchor" href="#偏好设置"></a> 偏好设置</h3>
-<p>首先我们打开typora，选择【文件】-【偏好设置】-【外观】</p>
-<p><img src="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/typora%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/%E5%81%8F%E5%A5%BD%E8%AE%BE%E7%BD%AE1.png" alt=""></p>
-<p>点击上面图片的【打开主题文件夹】，会直接跳到本地你的typora主题文件夹，包括各个主题的文件夹，和各个主题的css文件：</p>
-<p><img src="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/typora%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/%E4%B8%BB%E9%A2%98%E6%96%87%E4%BB%B6%E5%A4%B9.png" alt=""></p>
-<p>点击偏好页面的【获取主题】，将会跳转到<a href="http://theme.typora.io/" target="_blank" rel="noopener">typora主题官网</a>，我们可以在这个网站上找到我们心仪的主题：</p>
-<p><img src="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/typora%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/%E4%B8%BB%E9%A2%98%E7%BD%91%E7%AB%99.png" alt=""></p>
-<h3 id="night和catfish主题"><a class="markdownIt-Anchor" href="#night和catfish主题"></a> night和catfish主题</h3>
-<p>我比较喜欢night的全黑界面，但是nigth默认的字体是宋体，不是很好看，例如：</p>
-<p><img src="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/typora%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/night%E4%B8%BB%E9%A2%98.png" alt=""></p>
-<p>官网上的另一个主题catfish，其官方说明是：</p>
-<blockquote>
-<p>无衬线字体，衬线字体和等宽字体分别采用思源黑体，思源宋体， mononoki ，在 Windows 下有良好的中文呈现效果。</p>
-</blockquote>
-<p>但是，catfish的页面是白色的，我不喜欢白色，看长了时间眼睛会累，另外，它的代码块字体我也不是很喜欢，还是比较喜欢night主题的代码块，而且，catfish主题的表格样式没有竖线，我也不喜欢，所以，综上来看，除了catfish主题的正文字体，我还是比较喜欢night主题的风格，所以，我决定在night主题的基础上进行修改，这样修改的幅度较小。</p>
-<h3 id="修改night主题"><a class="markdownIt-Anchor" href="#修改night主题"></a> 修改night主题</h3>
-<p>由于只需要catfish主题中的字体，而catfish中自带了思源黑体、思源宋体、mononoki字体文件，我们可以直接下载这些字体，这里我为了方便就直接下载catfish主题了：</p>
-<p><img src="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/typora%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/catfish%E4%B8%BB%E9%A2%98%E4%B8%8B%E8%BD%BD.png" alt=""></p>
-<p>解压下载下来的catfish主题文件，打开catfish文件夹，可以看到下面有很多字体文件：</p>
-<p><img src="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/typora%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/%E5%AD%97%E4%BD%93%E6%96%87%E4%BB%B6.png" alt=""></p>
-<p>依次右键ttc和otf文件，并点击安装，至于woff字体文件，我也不知道在win10上怎么安装（恕我无能-_-），不过也没关系，我们在catfish中发现，也只有一处用到了这个字体，所以就直接忽略吧。安装完字体后，我们可以在C:\Windows\Fonts这个路径中发现多了思源黑体和思源宋体文件。</p>
-<p>最后，我们打开night主题的样式文件night.css，这里我建议复制该样式文件，重命名为“my-night.css”,为了防止我们将该样式文件改崩了，然后我们在my-night.css中进行修改，搜索“font-family”，将每个font-family后面的字体都替换成“Source Han Sans SC, sans-serif”，例如，修改正文字体：</p>
-<p><img src="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/typora%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/%E5%AD%97%E4%BD%93%E6%9B%BF%E6%8D%A2.png" alt=""></p>
-<h3 id="主题选择"><a class="markdownIt-Anchor" href="#主题选择"></a> 主题选择</h3>
-<p>重启typora，在菜单栏点击【主题】，可以发现，在下拉菜单中会多出一个“my night”的主题，选择改主题，可以发现在night主题的基础上，字体变好看了：</p>
-<p><img src="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/typora%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/mynight%E4%B8%BB%E9%A2%98.png" alt=""></p>
-<p>当然了，如果在这个主题样式中，依旧有不满意的，可以继续修改，比如字体大小、代码块样式等，本人没学过css，所以就不继续瞎改了。</p>
+<h3 id="virtualenv"><a class="markdownIt-Anchor" href="#virtualenv"></a> virtualenv</h3>
+<h4 id="安装virtualenv"><a class="markdownIt-Anchor" href="#安装virtualenv"></a> 安装virtualenv</h4>
+<p>virtualenv是用来创建虚拟环境的软件工具，可以通过pip或者pip3来安装（如果安装了两个版本的python环境，用pip3来安装工具到python3）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install virtualenv</span><br><span class="line">pip3 install virtualenv</span><br></pre></td></tr></table></figure>
+<h4 id="创建虚拟环境"><a class="markdownIt-Anchor" href="#创建虚拟环境"></a> 创建虚拟环境</h4>
+<p>在需要创建虚拟环境的路径下，通过以下命令创建虚拟环境，如果电脑同时存在两个版本的python，想指定特定的版本作为虚拟环境的解释器的话，可以通过<code>-p</code>参数来指定具体的python解释器：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">virtualenv [-p C:\python36\python.exe] [virutalenv name]</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/%E5%88%9B%E5%BB%BApython%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83.png" alt=""></p>
+<p>执行命令之后会在相应的路径下生成一个虚拟环境的文件夹abc-env</p>
+<h4 id="进入和退出虚拟环境"><a class="markdownIt-Anchor" href="#进入和退出虚拟环境"></a> 进入和退出虚拟环境</h4>
+<p>创建好虚拟环境之后，可以进入虚拟环境中，需要注意的是，windows和linux进入虚拟环境的方式不同，本篇是在window上进行操作的。</p>
+<p>windows进入虚拟环境：进入到虚拟环境abc-env的Scripts文件夹中，然后执行<code>activate</code></p>
+<p><img src="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/%E5%88%9B%E5%BB%BApython%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/%E8%BF%9B%E5%85%A5%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83.png" alt=""></p>
+<p>然后可以在这个虚拟环境下安装我们的python包，例如安装1.10版本的Django，当我们迁移不同版本django项目时，创建虚拟环境十分有用。</p>
+<p><img src="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/%E5%88%9B%E5%BB%BApython%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/%E5%AE%89%E8%A3%85django.png" alt=""></p>
+<p>当我们需要退出虚拟环境时，直接执行命令<code>deactivate</code>。</p>
+<h3 id="virtualenvwrapper"><a class="markdownIt-Anchor" href="#virtualenvwrapper"></a> virtualenvwrapper</h3>
+<p>virtualenvwrapper这个软件包可以让我们更方便简单的管理虚拟环境，不再需要像virtualenv那也需要跑到某个目录下来创建虚拟环境，并且激活的时候也要到相应的scripts目录下激活。</p>
+<h4 id="安装virtualenvwrapper"><a class="markdownIt-Anchor" href="#安装virtualenvwrapper"></a> 安装virtualenvwrapper</h4>
+<p>安装vitualenvwrapper时会自动安装virtualenv，所以可以直接安装virtualenvwrapper，在windows操作系统下安装：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install virtualenvwrapper-win</span><br><span class="line">pip3 install virtualenvwrapper-win</span><br></pre></td></tr></table></figure>
+<h4 id="创建虚拟环境-2"><a class="markdownIt-Anchor" href="#创建虚拟环境-2"></a> 创建虚拟环境</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkvirtualenv my_env</span><br></pre></td></tr></table></figure>
+<p>用这种方法创建虚拟环境不用像之前那样指定文件夹下创建，它会在在你当前用户下创建一个env的文件夹，然后将这个虚拟环境安装到这个目录下，如果你的电脑安装了python2和python3，并且两个版本都安装了virtualenvwrapper，那么将会使用环境变量中第一个出现的python版本作为虚拟环境的python解释器。</p>
+<p><img src="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/%E5%88%9B%E5%BB%BApython%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%832.png" alt=""></p>
+<p>如图，即使我在F盘中直接创建虚拟环境，也只会在我的用户名文件夹下生成一个Envs文件夹用来存放虚拟环境，并在创建完成后自动进入该虚拟环境中。</p>
+<h4 id="操作虚拟环境"><a class="markdownIt-Anchor" href="#操作虚拟环境"></a> 操作虚拟环境</h4>
+<ol>
+<li>进入虚拟环境</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">workon my_env</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>退出当前虚拟环境</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deactivate</span><br></pre></td></tr></table></figure>
+<p>和virtualenv退出虚拟环境的命令相同</p>
+<ol start="3">
+<li>删除某个虚拟环境</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rmvirtualenv my_env</span><br></pre></td></tr></table></figure>
+<p>其实也就是删除Envs文件夹下相应的虚拟环境文件夹</p>
+<ol start="4">
+<li>列出虚拟环境</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsvirtualenv</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>进入虚拟环境所在的目录</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cdvirtualenv</span><br></pre></td></tr></table></figure>
+<h4 id="修改virtualenv的默认路径"><a class="markdownIt-Anchor" href="#修改virtualenv的默认路径"></a> 修改virtualenv的默认路径</h4>
+<p>因为虚拟环境默认时安装到C盘的，而如果安装多个虚拟环境，会占用C盘大量的空间，是不明智的，所以，可以更改virtualenv的默认路径。</p>
+<p>在【我的电脑】-&gt;【右键】-&gt;【属性】-&gt;【高级系统设置】-&gt; 【环境变量】-&gt;【系统变量】中添加一个参数WORKON_HOME，将这个参数的值设置为你需要的路径。这里我在E盘创建了Envs文件夹，所以参数值为<code>E:\Envs\</code>：</p>
+<p><img src="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/%E5%88%9B%E5%BB%BApython%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E8%B7%AF%E5%BE%84.png" alt=""></p>
+<p>修改完环境变量后，新建虚拟环境，发现虚拟环境的默认路径已经修改为指定的默认路径：</p>
+<p><img src="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/%E5%88%9B%E5%BB%BApython%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/%E6%88%90%E5%8A%9F%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E8%B7%AF%E5%BE%84.png" alt=""></p>
+<h4 id="创建虚拟环境时指定python版本"><a class="markdownIt-Anchor" href="#创建虚拟环境时指定python版本"></a> 创建虚拟环境时指定python版本</h4>
+<p>在使用<code>mkvirtualenvs</code>的时候，可以指定<code>--python</code>的参数来指定具体的python路径：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkvirtualenv --python==C:\python36\python.exe my_env</span><br></pre></td></tr></table></figure>
+<h3 id="pycharm中创建虚拟环境"><a class="markdownIt-Anchor" href="#pycharm中创建虚拟环境"></a> pycharm中创建虚拟环境</h3>
+<p>如果利用pycharm创建django项目，可以在创建的同时创建虚拟环境。</p>
+<p>选择【File】-&gt;【New project】-&gt;【Django】:</p>
+<p><img src="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/%E5%88%9B%E5%BB%BApython%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/pycharm%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83.png" alt=""></p>
+<p>其中虚拟环境的路径，会根据你的项目路径改变，自动放在项目文件夹的venv文件夹下，当然也可以自己选择存放虚拟环境的路径。虚拟环境的解释器也可以根据本地存在的python解释器来选择。这种方式比较方便，但是创建项目的时候就会比较慢了。</p>
 
     </div>
 
@@ -353,7 +387,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://xiyouhujing.github.io/2019/11/26/Typora主题美化/" title="Typora主题美化">http://xiyouhujing.github.io/2019/11/26/Typora主题美化/</a>
+    <a href="http://xiyouhujing.github.io/2019/12/05/创建python虚拟环境/" title="创建python虚拟环境">http://xiyouhujing.github.io/2019/12/05/创建python虚拟环境/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -365,24 +399,22 @@
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/Typora/" rel="tag"><i class="fa fa-tag"></i> Typora</a>
+              <a href="/tags/Django/" rel="tag"><i class="fa fa-tag"></i> Django</a>
+              <a href="/tags/python/" rel="tag"><i class="fa fa-tag"></i> python</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/2019/11/25/将hexo博客部署到coding/" rel="next" title="将hexo博客部署到coding">
-                  <i class="fa fa-chevron-left"></i> 将hexo博客部署到coding
+                <a href="/2019/11/27/在github上搭建typora图床/" rel="next" title="在github上搭建typora图床">
+                  <i class="fa fa-chevron-left"></i> 在github上搭建typora图床
                 </a>
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/2019/11/27/在github上搭建typora图床/" rel="prev" title="在github上搭建typora图床">
-                  在github上搭建typora图床 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
       </footer>
@@ -421,7 +453,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#偏好设置"><span class="nav-number">1.</span> <span class="nav-text"> 偏好设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#night和catfish主题"><span class="nav-number">2.</span> <span class="nav-text"> night和catfish主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改night主题"><span class="nav-number">3.</span> <span class="nav-text"> 修改night主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主题选择"><span class="nav-number">4.</span> <span class="nav-text"> 主题选择</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#虚拟环境"><span class="nav-number">1.</span> <span class="nav-text"> 虚拟环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么需要虚拟环境"><span class="nav-number">1.1.</span> <span class="nav-text"> 为什么需要虚拟环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#virtualenv"><span class="nav-number">1.2.</span> <span class="nav-text"> virtualenv</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装virtualenv"><span class="nav-number">1.2.1.</span> <span class="nav-text"> 安装virtualenv</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建虚拟环境"><span class="nav-number">1.2.2.</span> <span class="nav-text"> 创建虚拟环境</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#进入和退出虚拟环境"><span class="nav-number">1.2.3.</span> <span class="nav-text"> 进入和退出虚拟环境</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#virtualenvwrapper"><span class="nav-number">1.3.</span> <span class="nav-text"> virtualenvwrapper</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装virtualenvwrapper"><span class="nav-number">1.3.1.</span> <span class="nav-text"> 安装virtualenvwrapper</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建虚拟环境-2"><span class="nav-number">1.3.2.</span> <span class="nav-text"> 创建虚拟环境</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#操作虚拟环境"><span class="nav-number">1.3.3.</span> <span class="nav-text"> 操作虚拟环境</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改virtualenv的默认路径"><span class="nav-number">1.3.4.</span> <span class="nav-text"> 修改virtualenv的默认路径</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建虚拟环境时指定python版本"><span class="nav-number">1.3.5.</span> <span class="nav-text"> 创建虚拟环境时指定python版本</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pycharm中创建虚拟环境"><span class="nav-number">1.4.</span> <span class="nav-text"> pycharm中创建虚拟环境</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
