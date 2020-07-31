@@ -60,7 +60,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/Django%E5%BC%80%E5%8F%91%E5%A4%A7%E5%9E%8B%E4%BC%81%E4%B8%9A%E7%BD%91%E7%AB%99/pycharm%E6%96%B0%E5%BB%BA%E9%A1%B9%E7%9B%AE.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/Django%E5%BC%80%E5%8F%91%E5%A4%A7%E5%9E%8B%E4%BC%81%E4%B8%9A%E7%BD%91%E7%AB%99/Django%E6%88%90%E5%8A%9F%E8%BF%90%E8%A1%8C.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/Django%E5%BC%80%E5%8F%91%E5%A4%A7%E5%9E%8B%E4%BC%81%E4%B8%9A%E7%BD%91%E7%AB%99/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%95%8C%E9%9D%A2.png">
-<meta property="og:updated_time" content="2019-12-18T02:31:47.529Z">
+<meta property="og:updated_time" content="2019-12-20T09:27:03.930Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Django开发大型企业网站（一）">
 <meta name="twitter:description" content="前言  这篇博客的目的是通过python的web框架Django来搭建一个大型的企业网站。学习的课程来源于b站：https://www.bilibili.com/video/av60229021?p=6">
@@ -247,7 +247,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-18 10:31:47" itemprop="dateModified" datetime="2019-12-18T10:31:47+08:00">2019-12-18</time>
+                <time title="修改时间：2019-12-20 17:27:03" itemprop="dateModified" datetime="2019-12-20T17:27:03+08:00">2019-12-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -274,14 +274,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>4.9k</span>
+              <span>7.4k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>4 分钟</span>
+              <span>7 分钟</span>
             </span>
 
         </div>
@@ -382,7 +382,7 @@
 <li>在生产环境中，禁止开启debug模式，不然又很大的安全隐患。</li>
 </ol>
 <p>关闭debug模式，修改为<code>DEBUG=False</code>。关闭了之后，就必须设置<code>ALLOWED_HOSTS</code>变量，这个变量是用来设置以后别人只能通过这个变量中的IP地址或者域名来进行访问。</p>
-<h2 id="视图与url分发器"><a class="markdownIt-Anchor" href="#视图与url分发器"></a> 视图与URL分发器</h2>
+<h2 id="视图与url"><a class="markdownIt-Anchor" href="#视图与url"></a> 视图与URL</h2>
 <h3 id="视图函数"><a class="markdownIt-Anchor" href="#视图函数"></a> 视图函数</h3>
 <p>视图函数一般都写在<code>app</code>的<code>views.py</code>中，并且视图中的第一个参数永远都是<code>request</code>（一个HttpRequest）对象。这个对象存储了请求过来的所有信息，包括携带的参数以及一些头部信息等。在视图中，一般都是完成逻辑相关的操作。比如这个请求时添加一篇博客，那么可以通过request来接收这些数据，然后存储到数据库中，最后再把执行的结果返回给浏览器。视图函数的返回结果必须时<code>HttpResponseBase</code>对象或者子类的对象，示例代码如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HttpResponse</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">book_list</span><span class="params">(request)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> HttpResponse(<span class="string">"图书列表"</span>)</span><br></pre></td></tr></table></figure>
@@ -433,12 +433,74 @@
 <p><code>url</code>是会根据主<code>urls.py</code>和app中的<code>urls.py</code>进行拼接的，因此注意不要多加斜杠。</p>
 </li>
 </ol>
-<h2 id="url命名"><a class="markdownIt-Anchor" href="#url命名"></a> URL命名</h2>
-<h3 id="为什么需要url命名"><a class="markdownIt-Anchor" href="#为什么需要url命名"></a> 为什么需要url命名</h3>
+<h3 id="url命名"><a class="markdownIt-Anchor" href="#url命名"></a> URL命名</h3>
+<h4 id="为什么需要url命名"><a class="markdownIt-Anchor" href="#为什么需要url命名"></a> 为什么需要url命名</h4>
 <p>因为url是经常变化的，如果在代码中写死可能会经常改代码，给url取个名字，以后使用url的时候就使用它的名字进行反转就可以了，就不需要写死url了。</p>
-<h3 id="如何给一个url指定名称"><a class="markdownIt-Anchor" href="#如何给一个url指定名称"></a> 如何给一个url指定名称</h3>
+<h4 id="如何给一个url指定名称"><a class="markdownIt-Anchor" href="#如何给一个url指定名称"></a> 如何给一个url指定名称</h4>
 <p>在<code>path</code>函数中，传递一个<code>name</code>参数就可以指定了，示例代码如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">urlpatterns = [</span><br><span class="line">    path(<span class="string">''</span>, views.index, name=<span class="string">'index'</span>),</span><br><span class="line">    path(<span class="string">'login/'</span>, views.login, name=<span class="string">'login'</span>),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h4 id="应用命名空间"><a class="markdownIt-Anchor" href="#应用命名空间"></a> 应用命名空间</h4>
+<p>在多个app直接，有可能产生同名的url，这时候为了避免反转url的时候产生混淆，可以使用应用命名空间来做区分，定义应用命名空间只要在<code>app</code>的<code>urls.py</code>中定义一个叫做<code>app_name</code>的变量，来指定这个应用的命名空间即可，示例代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">app_name = <span class="string">'front'</span></span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    path(<span class="string">''</span>, views.index, name=<span class="string">'index'</span>),</span><br><span class="line">    path(<span class="string">'login/'</span>, views.login, name=<span class="string">'login'</span>),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>以后再做反转的时候就可以使用<code>应用命名空间：url名称</code>的方式进行反正，示例代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">login_url = reverse(<span class="string">'front:login'</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="应用app命名空间和实例命名空间"><a class="markdownIt-Anchor" href="#应用app命名空间和实例命名空间"></a> 应用（app）命名空间和实例命名空间</h4>
+<p>一个app可以创建多个实例，可以使用多个url映射一个app，所以就会产生一个问题，以后在做反转的时候，如果使用应用命名空间，那么将会发生混淆，为了避免这个问题，可以使用实例命名空间，只要在<code>include</code>函数中传递一个<code>namespace</code>变量即可，示例代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">urlpatterns = [</span><br><span class="line">    path(<span class="string">'admin/'</span>, admin.site.urls),</span><br><span class="line">    path(<span class="string">'cms1/'</span>, include(<span class="string">'cms.urls'</span>, namespace=<span class="string">'cms1'</span>)),</span><br><span class="line">    path(<span class="string">'cms2/'</span>, include(<span class="string">'cms.urls'</span>, namespace=<span class="string">'cms2'</span>)),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>以后再做反转的时候，就可以根据实例命名空间来指定具体的url，示例代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">(request)</span>:</span></span><br><span class="line">    username = request.GET.get(<span class="string">'username'</span>)</span><br><span class="line">    <span class="keyword">if</span> username:</span><br><span class="line">        <span class="keyword">return</span> HttpResponse(<span class="string">"CMS首页"</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="comment"># 获取当前的命名空间</span></span><br><span class="line">        current_spacename = request.resolver_match.namespace</span><br><span class="line">        <span class="keyword">return</span> redirect(<span class="string">'%s:login'</span>%current_spacename)</span><br></pre></td></tr></table></figure>
+<h3 id="include函数的用法"><a class="markdownIt-Anchor" href="#include函数的用法"></a> include函数的用法</h3>
+<ol>
+<li>
+<p><code>include(module, namespace=None)</code>:</p>
+<ul>
+<li>module：子url的模块字符串</li>
+<li>namespace：实例命名空间。这个地方需要注意一点，如果指定实例命名空间，那么前提必须是要先指定应用命名空间，也就是在子<code>urls.py</code>中添加<code>app_name</code>变量。</li>
+</ul>
+</li>
+<li>
+<p><code>include((pattern_list, app_namespace), namespace=None)</code>:</p>
+<p><code>include</code>函数的第一个参数既可以为一个字符串，也可以是一个元组，如果是元组，那么元组的第一个参数是子<code>urls.py</code>模块的字符串，元组的第二个参数是应用命名空间，也就是说，应用命名空间既可以在子<code>urls.py</code>中通过<code>app_name</code>指定，也可以在<code>include</code>函数中指定。</p>
+</li>
+<li>
+<p><code>include(pattern_list)</code>:</p>
+<p><code>pattern_list</code>是一个列表，这个列表中装的是<code>path</code>或者<code>re_path</code>函数，示例代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">path(<span class="string">'movie/'</span>, include([</span><br><span class="line">    path(<span class="string">''</span>, views.movie),</span><br><span class="line">    path(<span class="string">'list/'</span>, views.movie_list),</span><br><span class="line">]))</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="re_path函数"><a class="markdownIt-Anchor" href="#re_path函数"></a> re_path函数</h3>
+<ol>
+<li>
+<p>re_path和path的作用是一样的，只不过<code>re_path</code>是在写url的时候可以用正则表达式，功能更强大。</p>
+</li>
+<li>
+<p>写正则表达式都推荐使用原生字符串，也就是以<code>r</code>开头的字符串</p>
+</li>
+<li>
+<p>在正则表达式中定义变量，需要使用圆括号括起来，这个参数是有名字的，那么需要使用<code>?P&lt;参数名字&gt;</code>，然后在后面添加正则表达式的规则，示例代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> re_path</span><br><span class="line"><span class="keyword">from</span> . <span class="keyword">import</span> views</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    <span class="comment"># r''：代表的是原生字符串（raw）</span></span><br><span class="line">    re_path(<span class="string">r'^$'</span>, views.article),</span><br><span class="line">    <span class="comment"># /article/list/&lt;year&gt;/</span></span><br><span class="line">    re_path(<span class="string">r'^list/(?P&lt;year&gt;\d&#123;4&#125;)/$'</span>, views.article_list),</span><br><span class="line">    re_path(<span class="string">r'^list/(?P&lt;month&gt;\d&#123;2&#125;)/$'</span>, views.article_list_month),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>如果不是特别要求，直接使用<code>path</code>就够了，避免将代码弄得很复杂。除非是url中确实是需要使用正则表达式来解决才使用<code>re_path</code></p>
+</li>
+</ol>
+<h3 id="reverse函数"><a class="markdownIt-Anchor" href="#reverse函数"></a> reverse函数</h3>
+<ol>
+<li>
+<p>如果在反转url的时候，需要添加参数，那么可以传递<code>kwargs</code>参数到<code>reverse</code>函数中，示例代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">detail_url = reverse(<span class="string">'detail'</span>, kwargs=&#123;<span class="string">"article_id"</span>:<span class="number">1</span>, <span class="string">"page"</span>:<span class="number">2</span>&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>如果想要添加查询字符串的参数，则必须手动进行拼接，示例代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">login_url = reverse(<span class="string">'login'</span> ) + <span class="string">"?next=/"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="自定义urlpath转换器"><a class="markdownIt-Anchor" href="#自定义urlpath转换器"></a> 自定义URL（PATH）转换器</h3>
+<h4 id="需求"><a class="markdownIt-Anchor" href="#需求"></a> 需求</h4>
+<p>实现一个获取文章列表的demo，用户可以根据<code>/articles/文章分类/</code>的方式来获取文章，其中文章分类采用的是<code>分类1+分类2+分类3...</code>的方式拼接的，并且如果只有一个分类，就不需要加号，示例如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 1. 第一种：获取python分类下的文章</span><br><span class="line">/articles/python/</span><br><span class="line"># 2. 第二种：获取python和django分类下的文章</span><br><span class="line">/articles/python+django/</span><br><span class="line"># 3. 第三种：获取python和django和flask分类下的文章</span><br><span class="line">/articles/python+django+flask/</span><br><span class="line">以此类推...</span><br></pre></td></tr></table></figure>
+<p>在“文章分类”参数传到视图函数之前，要把这些分类分开来存储到列表中，比如参数是<code>python+django</code>，那么传到视图函数的时候就要变成<code>['python', 'django']</code>。</p>
+<p>以后再使用<code>reverse</code>反转的时候，限制传递“文章分类”的参数应该是一个列表，并且将这个列表变成<code>python+django</code>的形式。</p>
 
     </div>
 
@@ -532,7 +594,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#介绍"><span class="nav-number">1.</span> <span class="nav-text"> 介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#web服务器和应用服务器以及web应用框架"><span class="nav-number">1.1.</span> <span class="nav-text"> web服务器和应用服务器以及web应用框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#url组成部分"><span class="nav-number">1.2.</span> <span class="nav-text"> URL组成部分</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第一个django项目"><span class="nav-number">2.</span> <span class="nav-text"> 第一个Django项目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装虚拟环境和django"><span class="nav-number">2.1.</span> <span class="nav-text"> 安装虚拟环境和Django</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建一个django项目"><span class="nav-number">2.2.</span> <span class="nav-text"> 创建一个Django项目</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#命令行方式"><span class="nav-number">2.2.1.</span> <span class="nav-text"> 命令行方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用pycharm创建"><span class="nav-number">2.2.2.</span> <span class="nav-text"> 用pycharm创建</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行项目"><span class="nav-number">2.3.</span> <span class="nav-text"> 运行项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#改变端口号"><span class="nav-number">2.4.</span> <span class="nav-text"> 改变端口号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#让同局域网中的其他电脑访问本机项目"><span class="nav-number">2.5.</span> <span class="nav-text"> 让同局域网中的其他电脑访问本机项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#项目结构介绍"><span class="nav-number">2.6.</span> <span class="nav-text"> 项目结构介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#debug模式"><span class="nav-number">2.7.</span> <span class="nav-text"> DEBUG模式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#视图与url分发器"><span class="nav-number">3.</span> <span class="nav-text"> 视图与URL分发器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#视图函数"><span class="nav-number">3.1.</span> <span class="nav-text"> 视图函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#url映射"><span class="nav-number">3.2.</span> <span class="nav-text"> URL映射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#url添加参数"><span class="nav-number">3.3.</span> <span class="nav-text"> URL添加参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#url参数的转换器"><span class="nav-number">3.4.</span> <span class="nav-text"> URL参数的转换器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#urls模块化"><span class="nav-number">3.5.</span> <span class="nav-text"> URLS模块化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#url命名"><span class="nav-number">4.</span> <span class="nav-text"> URL命名</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么需要url命名"><span class="nav-number">4.1.</span> <span class="nav-text"> 为什么需要url命名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何给一个url指定名称"><span class="nav-number">4.2.</span> <span class="nav-text"> 如何给一个url指定名称</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#介绍"><span class="nav-number">1.</span> <span class="nav-text"> 介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#web服务器和应用服务器以及web应用框架"><span class="nav-number">1.1.</span> <span class="nav-text"> web服务器和应用服务器以及web应用框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#url组成部分"><span class="nav-number">1.2.</span> <span class="nav-text"> URL组成部分</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第一个django项目"><span class="nav-number">2.</span> <span class="nav-text"> 第一个Django项目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装虚拟环境和django"><span class="nav-number">2.1.</span> <span class="nav-text"> 安装虚拟环境和Django</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建一个django项目"><span class="nav-number">2.2.</span> <span class="nav-text"> 创建一个Django项目</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#命令行方式"><span class="nav-number">2.2.1.</span> <span class="nav-text"> 命令行方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用pycharm创建"><span class="nav-number">2.2.2.</span> <span class="nav-text"> 用pycharm创建</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行项目"><span class="nav-number">2.3.</span> <span class="nav-text"> 运行项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#改变端口号"><span class="nav-number">2.4.</span> <span class="nav-text"> 改变端口号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#让同局域网中的其他电脑访问本机项目"><span class="nav-number">2.5.</span> <span class="nav-text"> 让同局域网中的其他电脑访问本机项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#项目结构介绍"><span class="nav-number">2.6.</span> <span class="nav-text"> 项目结构介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#debug模式"><span class="nav-number">2.7.</span> <span class="nav-text"> DEBUG模式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#视图与url"><span class="nav-number">3.</span> <span class="nav-text"> 视图与URL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#视图函数"><span class="nav-number">3.1.</span> <span class="nav-text"> 视图函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#url映射"><span class="nav-number">3.2.</span> <span class="nav-text"> URL映射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#url添加参数"><span class="nav-number">3.3.</span> <span class="nav-text"> URL添加参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#url参数的转换器"><span class="nav-number">3.4.</span> <span class="nav-text"> URL参数的转换器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#urls模块化"><span class="nav-number">3.5.</span> <span class="nav-text"> URLS模块化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#url命名"><span class="nav-number">3.6.</span> <span class="nav-text"> URL命名</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么需要url命名"><span class="nav-number">3.6.1.</span> <span class="nav-text"> 为什么需要url命名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何给一个url指定名称"><span class="nav-number">3.6.2.</span> <span class="nav-text"> 如何给一个url指定名称</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#应用命名空间"><span class="nav-number">3.6.3.</span> <span class="nav-text"> 应用命名空间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#应用app命名空间和实例命名空间"><span class="nav-number">3.6.4.</span> <span class="nav-text"> 应用（app）命名空间和实例命名空间</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#include函数的用法"><span class="nav-number">3.7.</span> <span class="nav-text"> include函数的用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#re_path函数"><span class="nav-number">3.8.</span> <span class="nav-text"> re_path函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reverse函数"><span class="nav-number">3.9.</span> <span class="nav-text"> reverse函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义urlpath转换器"><span class="nav-number">3.10.</span> <span class="nav-text"> 自定义URL（PATH）转换器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#需求"><span class="nav-number">3.10.1.</span> <span class="nav-text"> 需求</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -548,20 +610,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -609,7 +671,7 @@
 <div class="copyright">
   
   &copy; 2018 – 
-  <span itemprop="copyrightYear">2019</span>
+  <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -619,13 +681,13 @@
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">101k</span>
+    <span title="站点总字数">106k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1:32</span>
+    <span title="站点阅读时长">1:36</span>
 </div>
 
 
