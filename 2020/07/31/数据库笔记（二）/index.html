@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.7.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon2-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon2-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="alternate" href="/atom.xml" title="xiyou's blog" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"flat"},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
+    bookmark: {"enable":true,"color":"#222","save":"auto"},
+    fancybox: true,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},
+    path: 'search.xml',
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="Oracle  Oracle简介  Oracle Database，又名Oracle RDBMS，或者简称Oracle，是甲骨文公司的一款关系数据库管理系统 是目前世界上使用最为广泛的数据库管理系统 适用于各类大、中、小型应用   Oracle客户端工具  Oracle SQL Developer：适合初学人员 PL/SQL Developer：适合开发人员 Toad for Oracle：适合">
+<meta name="keywords" content="数据库">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库笔记（二）">
+<meta property="og:url" content="http://xiyouhujing.github.io/2020/07/31/数据库笔记（二）/index.html">
+<meta property="og:site_name" content="xiyou&#39;s blog">
+<meta property="og:description" content="Oracle  Oracle简介  Oracle Database，又名Oracle RDBMS，或者简称Oracle，是甲骨文公司的一款关系数据库管理系统 是目前世界上使用最为广泛的数据库管理系统 适用于各类大、中、小型应用   Oracle客户端工具  Oracle SQL Developer：适合初学人员 PL/SQL Developer：适合开发人员 Toad for Oracle：适合">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2022-01-06T09:48:02.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据库笔记（二）">
+<meta name="twitter:description" content="Oracle  Oracle简介  Oracle Database，又名Oracle RDBMS，或者简称Oracle，是甲骨文公司的一款关系数据库管理系统 是目前世界上使用最为广泛的数据库管理系统 适用于各类大、中、小型应用   Oracle客户端工具  Oracle SQL Developer：适合初学人员 PL/SQL Developer：适合开发人员 Toad for Oracle：适合">
+
+<link rel="canonical" href="http://xiyouhujing.github.io/2020/07/31/数据库笔记（二）/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>数据库笔记（二） | xiyou's blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">xiyou's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">再释怀一些，再勇敢一些</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://xiyouhujing.github.io/2020/07/31/数据库笔记（二）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.jpg">
+      <meta itemprop="name" content="xiyou">
+      <meta itemprop="description" content="保持快乐，保持健康，保持可爱">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xiyou's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          数据库笔记（二）
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-31 17:06:00" itemprop="dateCreated datePublished" datetime="2020-07-31T17:06:00+08:00">2020-07-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-01-06 17:48:02" itemprop="dateModified" datetime="2022-01-06T17:48:02+08:00">2022-01-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="oracle"><a class="markdownIt-Anchor" href="#oracle"></a> Oracle</h2>
+<h3 id="oracle简介"><a class="markdownIt-Anchor" href="#oracle简介"></a> Oracle简介</h3>
+<ul>
+<li>Oracle Database，又名Oracle RDBMS，或者简称Oracle，是甲骨文公司的一款关系数据库管理系统</li>
+<li>是目前世界上使用最为广泛的数据库管理系统</li>
+<li>适用于各类大、中、小型应用</li>
+</ul>
+<h3 id="oracle客户端工具"><a class="markdownIt-Anchor" href="#oracle客户端工具"></a> Oracle客户端工具</h3>
+<ul>
+<li>Oracle SQL Developer：适合初学人员</li>
+<li>PL/SQL Developer：适合开发人员</li>
+<li>Toad for Oracle：适合DBA人员</li>
+</ul>
+<h3 id="oracle数据类型"><a class="markdownIt-Anchor" href="#oracle数据类型"></a> Oracle数据类型</h3>
+<p>VARCHAR2：存储可变长度的字符数据</p>
+<p>CHAR：存储固定长度字符数据</p>
+<p>NUMBER：存储零、正数、定长负数以及浮点数</p>
+<p>FLOAT：38位十进制的浮点数</p>
+<p>INTEGER：存储整数，若插入、更新的数值有小数，则会被四舍五入</p>
+<p>DATE：存储日期类型，可以精确到秒</p>
+<p>TIMESTAMP：和DATE相比，这个可以精确到纳秒，存储时间精度更高</p>
+<p>CLOB：存储单字节和多字节字符数据，最多4GB</p>
+<p>BLOB：没有字符集语义的比特流，一般是图像、声音、视频等文件，最多4GB</p>
+<h3 id="oracle数据库对象"><a class="markdownIt-Anchor" href="#oracle数据库对象"></a> Oracle数据库对象</h3>
+<p>数据库对象是数据库的组成部分，Oracle数据库常见的数据对象有：</p>
+<ul>
+<li>表（Table）</li>
+<li>视图（View）</li>
+<li>索引（Index）</li>
+<li>序列（sequence）</li>
+<li>存储过程（Procedure）</li>
+<li>函数（function）</li>
+</ul>
+<h3 id="oracle表的使用方法"><a class="markdownIt-Anchor" href="#oracle表的使用方法"></a> Oracle表的使用方法</h3>
+<h4 id="创建表的语法"><a class="markdownIt-Anchor" href="#创建表的语法"></a> 创建表的语法</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE [schema.] table</span><br><span class="line">			  (column datatype [DEFAULT exprl]</span><br><span class="line">              		  [column_constraint],</span><br><span class="line">              		  ···</span><br><span class="line">              		  [table_constraint]).</span><br></pre></td></tr></table></figure>
+<p>示例：创建一张班级表，包括班级ID、班级名</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE CLASSINFO(</span><br><span class="line">	CLASSID NUMBER(2),</span><br><span class="line">	CLASSNAME VARCHAR(10)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h4 id="表的使用方式"><a class="markdownIt-Anchor" href="#表的使用方式"></a> 表的使用方式</h4>
+<p>列约束：在Oracle中，一个安全的表，要通过建表时对表列设置约束的方式来实现，常用的列约束有：</p>
+<ul>
+<li>PRIMARY KEY：一个表只能建一个主键，并确保唯一；</li>
+<li>FOREIGN KEY：一列或者多列的组合作为外键，是同一表或者其他表的主键或唯一键；</li>
+<li>NOT NULL：指定列不接受NULL值；</li>
+<li>UNIQUE：指定存储在列中的每一个值都必须唯一；</li>
+<li>DEFAULT：default_vale：指定列的默认值</li>
+</ul>
+<h4 id="修改表"><a class="markdownIt-Anchor" href="#修改表"></a> 修改表</h4>
+<p><strong>添加列</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE tablename</span><br><span class="line">	ADD (column datatype [default expr]</span><br><span class="line">         [, column datatype···])；</span><br></pre></td></tr></table></figure>
+<p><strong>修改列</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE tablename</span><br><span class="line">	MODIFY (column datatype [default expr]</span><br><span class="line">	[, column datatype]···);</span><br></pre></td></tr></table></figure>
+<p><strong>删除表</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DROP TABLE tablename；</span><br></pre></td></tr></table></figure>
+<h4 id="oracle索引"><a class="markdownIt-Anchor" href="#oracle索引"></a> Oracle索引</h4>
+<p><strong>索引</strong></p>
+<ul>
+<li>一个排序的数据，用于提高查询效率的数据库对象</li>
+<li>通过快速定位数据，减少磁盘的I/O</li>
+<li>数据库服务自动使用和维护，删除或破坏索引不会对数据表造成影响</li>
+</ul>
+<p><strong>索引的分类</strong></p>
+<ul>
+<li>唯一索引：确保在所建列上只有一个唯一值（或值组合）</li>
+<li>非唯一索引：提高检索速度</li>
+<li>单列索引：只有一列</li>
+<li>复合索引：有多列</li>
+</ul>
+<p><strong>创建索引语法</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CREATE INDEX index</span><br><span class="line">	ON table (column[, column]···);</span><br></pre></td></tr></table></figure>
+<p><strong>查看索引结构语法</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM USER_IND_COLUMNS</span><br><span class="line">	WHERE INDEX_NAME=&apos;indexname&apos;;</span><br></pre></td></tr></table></figure>
+<p><strong>删除索引语法</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DROP INDEX indexname</span><br></pre></td></tr></table></figure>
+<h4 id="oracle视图"><a class="markdownIt-Anchor" href="#oracle视图"></a> Oracle视图</h4>
+<p><strong>什么是视图</strong></p>
+<p>视图是由数据库表产生，它限制用户能看到和修改的结果</p>
+<p><strong>视图的作用</strong></p>
+<ul>
+<li>限制敏感数据的访问</li>
+<li>简化查询</li>
+<li>增加数据独立性</li>
+<li>对于相同的数据，提供不同的展示</li>
+</ul>
+<p><strong>创建视图语法</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CREATE [OR REPLACE] [FORCE | NOFORCE] VIEW viewname</span><br><span class="line">	[(alias[, alias]...)]</span><br><span class="line">	AS subquery --查询字句</span><br><span class="line">	[WITH CHECK OPTION [CONSTRAINT constraint]]</span><br><span class="line">	[WITH READ ONLY]</span><br></pre></td></tr></table></figure>
+<p><strong>注释</strong>：FORCE ，无论视图基于的表存在与否，都建立该视图，NOFORCE，若表不存在则不建该视图；CREATE OR REPLACE命令创建或修改视图</p>
+<p><strong>查询视图语法</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM viewname;</span><br></pre></td></tr></table></figure>
+<p><strong>删除视图语法</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DROP VIEW viewname;</span><br></pre></td></tr></table></figure>
+<h4 id="oracle序列"><a class="markdownIt-Anchor" href="#oracle序列"></a> Oracle序列</h4>
+<p><strong>什么是序列</strong></p>
+<ul>
+<li>序列（SEQUENCE）是序列号生成器，可以为表中的行自动生成序列号；</li>
+<li>产生一组等间隔的数值（类型为数字）</li>
+<li>不占用磁盘空间，占用内存</li>
+</ul>
+<p><strong>序列的作用</strong></p>
+<ul>
+<li>主要用途是生成表的主键值，可以在插入语句中引用</li>
+<li>可以通过查询检查当前值，或使序列增至下一个值</li>
+</ul>
+<p><strong>创建序列语法</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CREATE SEQUENCE sequencename        --指定序列的名称</span><br><span class="line">	[INCREMENT BY n]                             --用于定义序列的增长步长</span><br><span class="line">	[START WITH n]                                   --定义序列的初始值，默认为1</span><br><span class="line">	[&#123;MAXVALUE n | NOMAXVALUE&#125;]    --定义序列能生成的最小值</span><br><span class="line">	[&#123;MINVALUE n | NOMINVALUE&#125;]      --定义序列能生成的最小值</span><br><span class="line">	[&#123;CYCLE | NOCYCLE&#125;]                           --当序列生成器的值达到上限后是否循环</span><br><span class="line">	[&#123;CACHE n | NOCACHE&#125;];                    --在内存里预先存储一些序列号，提高速度，默认为20</span><br></pre></td></tr></table></figure>
+<p><strong>序列的属性</strong></p>
+<p>NEXTVAL：返回下一个可用的序列值，每次返回一个唯一值，全局唯一</p>
+<p>CURRVAL：获取当前的序列值</p>
+<h4 id="oracle基本的sql语句"><a class="markdownIt-Anchor" href="#oracle基本的sql语句"></a> Oracle基本的SQL语句</h4>
+<p>SQL语句分类：SQL结构化查询语言，一共包括如下6类：</p>
+<ul>
+<li>数据查询语言（DQL）：关键字包括SELECT、WHERE、ORDER BY、GROUP BY和HAVING等，主要作用使查询数据</li>
+<li>指针控制语言（CCL）：关键字包括DECLARE CURSOR、FETCH INTO等，主要作用时通过游标读取数据</li>
+<li>数据操作语言（DML）：关键字包括INSERT、UPDATE和DELETE等，主要作用是对数据进行修改</li>
+<li>事务处理语言（TPL）：关键字包括BEGIN TRANSACTION、COMMIT和ROLLBACK等，主要作用是控制事务</li>
+<li>数据定义语言（DDL）：关键字包括CREATE、DROP和TRUNCATE等，主要作用是管理数据库对象</li>
+<li>数据控制语言（DCL）：关键字包括GRANT、REVOKE等，主要作用是对操作和数据进行赋权</li>
+</ul>
+<p><strong>Oracle删除语句</strong></p>
+<p>DELETE：删除表中数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DELETE [FROM] table [WHERE condition]</span><br></pre></td></tr></table></figure>
+<p>TRUNCATE：清空表中数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TRUNCATE TABLE table</span><br></pre></td></tr></table></figure>
+<p>注意：TRUNCATE命令是一次性把表中的数据全部删除，不记录事务日志，删除数据不能恢复，也不会激活与表有关的触发器，执行速度快；DELETE命令是每次从表中删除一行，并且删除操作记录到事务日志中，删除数据可以恢复，执行速度慢。</p>
+
+    </div>
+
+    
+    
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>xiyou
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://xiyouhujing.github.io/2020/07/31/数据库笔记（二）/" title="数据库笔记（二）">http://xiyouhujing.github.io/2020/07/31/数据库笔记（二）/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/数据库/" rel="tag"><i class="fa fa-tag"></i> 数据库</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2020/07/31/数据库笔记（一）/" rel="next" title="数据库笔记（一）">
+                  <i class="fa fa-chevron-left"></i> 数据库笔记（一）
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+                <a href="/2020/08/11/联通学院：计算机网络知识/" rel="prev" title="联通学院：计算机网络知识">
+                  联通学院：计算机网络知识 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#oracle"><span class="nav-number">1.</span> <span class="nav-text"> Oracle</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#oracle简介"><span class="nav-number">1.1.</span> <span class="nav-text"> Oracle简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#oracle客户端工具"><span class="nav-number">1.2.</span> <span class="nav-text"> Oracle客户端工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#oracle数据类型"><span class="nav-number">1.3.</span> <span class="nav-text"> Oracle数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#oracle数据库对象"><span class="nav-number">1.4.</span> <span class="nav-text"> Oracle数据库对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#oracle表的使用方法"><span class="nav-number">1.5.</span> <span class="nav-text"> Oracle表的使用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建表的语法"><span class="nav-number">1.5.1.</span> <span class="nav-text"> 创建表的语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#表的使用方式"><span class="nav-number">1.5.2.</span> <span class="nav-text"> 表的使用方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改表"><span class="nav-number">1.5.3.</span> <span class="nav-text"> 修改表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#oracle索引"><span class="nav-number">1.5.4.</span> <span class="nav-text"> Oracle索引</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#oracle视图"><span class="nav-number">1.5.5.</span> <span class="nav-text"> Oracle视图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#oracle序列"><span class="nav-number">1.5.6.</span> <span class="nav-text"> Oracle序列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#oracle基本的sql语句"><span class="nav-number">1.5.7.</span> <span class="nav-text"> Oracle基本的SQL语句</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="xiyou"
+      src="/images/touxiang.jpg">
+  <p class="site-author-name" itemprop="name">xiyou</p>
+  <div class="site-description" itemprop="description">保持快乐，保持健康，保持可爱</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/xiyouhujing" title="GitHub → https://github.com/xiyouhujing" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:hujingxiyou@163.com" title="E-Mail → mailto:hujingxiyou@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/hujingxiyou" title="CSDN → https://blog.csdn.net/hujingxiyou" rel="noopener" target="_blank"><i class="fa fa-fw fa-crosshairs"></i>CSDN</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">xiyou</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">109k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">1:39</span>
+</div>
+
+
+  <script src='https://unpkg.com/mermaid@/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+<script src="/js/utils.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme: 'forest',
+      logLevel: 3,
+      flowchart: { curve: 'linear' },
+      gantt: { axisFormat: '%m/%d/%Y' },
+      sequence: { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+
+  
+
+  
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+    
+
+  
+
+</body>
+</html>

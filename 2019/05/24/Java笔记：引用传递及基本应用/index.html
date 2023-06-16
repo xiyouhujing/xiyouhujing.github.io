@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.7.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon2-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon2-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="alternate" href="/atom.xml" title="xiyou's blog" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"flat"},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
+    bookmark: {"enable":true,"color":"#222","save":"auto"},
+    fancybox: true,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},
+    path: 'search.xml',
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="前言  值传递：是指在调用函数时将实际参数复制一份传递到函数中，这样在函数中如果对参数进行修改，将不会影响到实际参数。引用传递：是指在调用函数时将实际参数的地址直接传递到函数中，那么在函数中对参数进行修改，将会影响到实际参数。">
+<meta name="keywords" content="java基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java笔记：引用传递及基本应用">
+<meta property="og:url" content="http://xiyouhujing.github.io/2019/05/24/Java笔记：引用传递及基本应用/index.html">
+<meta property="og:site_name" content="xiyou&#39;s blog">
+<meta property="og:description" content="前言  值传递：是指在调用函数时将实际参数复制一份传递到函数中，这样在函数中如果对参数进行修改，将不会影响到实际参数。引用传递：是指在调用函数时将实际参数的地址直接传递到函数中，那么在函数中对参数进行修改，将会影响到实际参数。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/Java%E7%AC%94%E8%AE%B0%EF%BC%88%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E5%8F%8A%E5%9F%BA%E6%9C%AC%E5%BA%94%E7%94%A8%EF%BC%89/%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E8%8C%83%E4%BE%8B%E7%9A%84%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90%E5%9B%BE.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/Java%E7%AC%94%E8%AE%B0%EF%BC%88%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E5%8F%8A%E5%9F%BA%E6%9C%AC%E5%BA%94%E7%94%A8%EF%BC%89/%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E8%8C%83%E4%BE%8B%E7%9A%84%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90%E5%9B%BE2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/Java%E7%AC%94%E8%AE%B0%EF%BC%88%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E5%8F%8A%E5%9F%BA%E6%9C%AC%E5%BA%94%E7%94%A8%EF%BC%89/%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E8%8C%83%E4%BE%8B%E7%9A%84%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90%E5%9B%BE3.png">
+<meta property="og:updated_time" content="2022-01-06T09:48:02.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java笔记：引用传递及基本应用">
+<meta name="twitter:description" content="前言  值传递：是指在调用函数时将实际参数复制一份传递到函数中，这样在函数中如果对参数进行修改，将不会影响到实际参数。引用传递：是指在调用函数时将实际参数的地址直接传递到函数中，那么在函数中对参数进行修改，将会影响到实际参数。">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/Java%E7%AC%94%E8%AE%B0%EF%BC%88%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E5%8F%8A%E5%9F%BA%E6%9C%AC%E5%BA%94%E7%94%A8%EF%BC%89/%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E8%8C%83%E4%BE%8B%E7%9A%84%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90%E5%9B%BE.png">
+
+<link rel="canonical" href="http://xiyouhujing.github.io/2019/05/24/Java笔记：引用传递及基本应用/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Java笔记：引用传递及基本应用 | xiyou's blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">xiyou's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">再释怀一些，再勇敢一些</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://xiyouhujing.github.io/2019/05/24/Java笔记：引用传递及基本应用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.jpg">
+      <meta itemprop="name" content="xiyou">
+      <meta itemprop="description" content="保持快乐，保持健康，保持可爱">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xiyou's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Java笔记：引用传递及基本应用
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-05-24 17:19:08" itemprop="dateCreated datePublished" datetime="2019-05-24T17:19:08+08:00">2019-05-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-01-06 17:48:02" itemprop="dateModified" datetime="2022-01-06T17:48:02+08:00">2022-01-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>6.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>6 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><strong>前言</strong></p>
+<blockquote>
+<p>值传递：是指在调用函数时将实际参数复制一份传递到函数中，这样在函数中如果对参数进行修改，将不会影响到实际参数。引用传递：是指在调用函数时将实际参数的地址直接传递到函数中，那么在函数中对参数进行修改，将会影响到实际参数。</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="引用传递"><a class="markdownIt-Anchor" href="#引用传递"></a> 引用传递</h3>
+<p>所谓引用传递就是指将堆内存空间的使用权交给多个栈内存空间。</p>
+<h4 id="引用传递范例一"><a class="markdownIt-Anchor" href="#引用传递范例一"></a> 引用传递范例一</h4>
+<p>对象引用传递：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Demo</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> temp = <span class="number">30</span>;                    <span class="comment">// 此处为了访问方便，属性暂时不封装</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RefDemo01</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Demo d1 = <span class="keyword">new</span> Demo();</span><br><span class="line">        d1.temp = <span class="number">50</span>;</span><br><span class="line">        System.out.println(<span class="string">"fun()方法调用之前："</span> + d1.temp);</span><br><span class="line">        fun(d1);</span><br><span class="line">        System.out.println(<span class="string">"fun()方法调用之后："</span> + d1.temp);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span>  <span class="keyword">void</span> <span class="title">fun</span><span class="params">(Demo d2)</span></span>&#123;     <span class="comment">// 此处的方法由主方法直接调用</span></span><br><span class="line">        d2.temp = <span class="number">1000</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>程序运行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fun()方法调用之前：50</span><br><span class="line">fun()方法调用之后：1000</span><br></pre></td></tr></table></figure>
+<p>从结果中可以发现，在fun()方法中接收了Demo类对象d1，并将temp属性的内容进行了修改，因为是引用传递，所以最终temp的值是1000，此程序可以通过下图进行理解：</p>
+<p><img src="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/Java%E7%AC%94%E8%AE%B0%EF%BC%88%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E5%8F%8A%E5%9F%BA%E6%9C%AC%E5%BA%94%E7%94%A8%EF%BC%89/%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E8%8C%83%E4%BE%8B%E7%9A%84%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90%E5%9B%BE.png" alt=""></p>
+<h4 id="引用传递范例二"><a class="markdownIt-Anchor" href="#引用传递范例二"></a> 引用传递范例二</h4>
+<p>引用传递：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RefDemo02</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        String str1 = <span class="string">"hello"</span>;                 <span class="comment">// 实例化字符串对象</span></span><br><span class="line">        System.out.println(<span class="string">"fun()方法调用之前："</span> + str1);</span><br><span class="line">        fun(str1);                             <span class="comment">// 调用fun()方法</span></span><br><span class="line">        System.out.println(<span class="string">"fun()方法调用之后："</span> + str1);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span>  <span class="keyword">void</span> <span class="title">fun</span><span class="params">(String str2)</span></span>&#123;      <span class="comment">// 此处的方法由主方法直接调用</span></span><br><span class="line">        str2 = <span class="string">"MLDN"</span>;                         <span class="comment">// 修改字符串内容</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>程序运行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fun()方法调用之前：hello</span><br><span class="line">fun()方法调用之后：hello</span><br></pre></td></tr></table></figure>
+<p>从运行结果可以发现，虽然此时传递的是一个String类型的对象，但是结果并没有像之前一样发生给吧，因为字符串的内容一旦声明就是不可改变的，改变的只是其内存地址的指向，如下图所示：</p>
+<p><img src="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/Java%E7%AC%94%E8%AE%B0%EF%BC%88%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E5%8F%8A%E5%9F%BA%E6%9C%AC%E5%BA%94%E7%94%A8%EF%BC%89/%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E8%8C%83%E4%BE%8B%E7%9A%84%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90%E5%9B%BE2.png" alt=""></p>
+<p>以上操作并不难理解，因为每个字符串对象都表示一个匿名对象，这样在fun()方法操作中，如果为str2重新设置内容，就相当于改变了str2的引用，而str1本身的内容并不会受到任何影响。</p>
+<h4 id="引用传递范例三"><a class="markdownIt-Anchor" href="#引用传递范例三"></a> 引用传递范例三</h4>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Demo2</span></span>&#123;</span><br><span class="line">    String temp = <span class="string">"hello"</span>;              <span class="comment">// 此处为了访问方便，属性暂不封装</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RefDemo03</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Demo2 d1 = <span class="keyword">new</span> Demo2();</span><br><span class="line">        d1.temp = <span class="string">"word"</span>;               <span class="comment">// 修改对象中的temp属性</span></span><br><span class="line">        System.out.println(<span class="string">"fun()方法调用之前："</span> + d1.temp);</span><br><span class="line">        fun(d1);</span><br><span class="line">        System.out.println(<span class="string">"fun()方法调用之后："</span> + d1.temp);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">fun</span><span class="params">(Demo2 d2)</span></span>&#123;</span><br><span class="line">        d2.temp = <span class="string">"MLDN"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>程序运行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fun()方法调用之前：word</span><br><span class="line">fun()方法调用之后：MLDN</span><br></pre></td></tr></table></figure>
+<p>从结果可以看出，fun()方法中将属性的内容修改了，内存操作如下图：</p>
+<p><img src="https://raw.githubusercontent.com/xiyouhujing/TyporaPic/master/Java%E7%AC%94%E8%AE%B0%EF%BC%88%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E5%8F%8A%E5%9F%BA%E6%9C%AC%E5%BA%94%E7%94%A8%EF%BC%89/%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E8%8C%83%E4%BE%8B%E7%9A%84%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90%E5%9B%BE3.png" alt=""></p>
+<p>本程序的分析方法与第一个范例完全一样，因为String是作为一个Demo2类的属性存在的，而在操作时更改的只是Demo2类中属性的内容。</p>
+<h3 id="接收本类的引用"><a class="markdownIt-Anchor" href="#接收本类的引用"></a> 接收本类的引用</h3>
+<p>以上为引用传递的基本形式，实际上，在对象引用传递上也可以在一个类中接收自己本类对象的实例，而且接受完之后，可以方便地通过此对象直接进行本类中封装属性的访问，如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Demo3</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> temp = <span class="number">30</span>;                     <span class="comment">// 声明temp属性并封装</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fun</span><span class="params">(Demo3 d2)</span></span>&#123;                 <span class="comment">// 接收本类的引用</span></span><br><span class="line">        d2.temp = <span class="number">50</span>;                          <span class="comment">// 直接通过对象调用本类的私有属性</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getTemp</span><span class="params">()</span></span>&#123;                      <span class="comment">// getter方法</span></span><br><span class="line">        <span class="keyword">return</span> temp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setTemp</span><span class="params">(<span class="keyword">int</span> t)</span></span>&#123;                <span class="comment">// setter方法</span></span><br><span class="line">        temp = t;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RefDemo04</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Demo3 d1 = <span class="keyword">new</span> Demo3();               <span class="comment">// 实例化Demo对象</span></span><br><span class="line">        d1.setTemp(<span class="number">50</span>);                       <span class="comment">// 修改temp内容</span></span><br><span class="line">        d1.fun(d1);                           <span class="comment">// 此处把Demo对象传回到自己的类中</span></span><br><span class="line">        System.out.println(<span class="string">"temp = "</span> + d1.getTemp());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>程序运行结果为：<code>temp = 50</code></p>
+<p>此种引用方式的传递在关于对象比较操作时才会经常使用，其他时候基本上都很少使用。</p>
+<h3 id="范例一对一关系"><a class="markdownIt-Anchor" href="#范例一对一关系"></a> 范例——一对一关系</h3>
+<p>使用引用传递还可以表示出生活中的以下一种场景：一个人有一本书，一本书属于一个人。因而可以得出这样的结论：人应该是一个具体的类，书也应该是一个具体的类，在人的类中应该存在一个属性表示书，在书的类中也应该存在一个属性表示人。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;                            <span class="comment">// 姓名</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;                                <span class="comment">// 年龄</span></span><br><span class="line">    <span class="keyword">private</span> Book book;                              <span class="comment">// 一个人有一本书</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name, <span class="keyword">int</span> age)</span></span>&#123;            <span class="comment">// 通过构造方法设置内容</span></span><br><span class="line">        <span class="keyword">this</span>.setName(name);</span><br><span class="line">        <span class="keyword">this</span>.setAge(age);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String n)</span></span>&#123;                  <span class="comment">// 设置姓名</span></span><br><span class="line">        name = n;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span></span>&#123;                        <span class="comment">// 返回姓名</span></span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> a)</span></span>&#123;                      <span class="comment">// 设置年龄</span></span><br><span class="line">        age = a;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span></span>&#123;                            <span class="comment">// 返回年龄</span></span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setBook</span><span class="params">(Book b)</span></span>&#123;                    <span class="comment">// 设置本人的书</span></span><br><span class="line">        book = b;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Book <span class="title">getBook</span><span class="params">()</span></span>&#123;                          <span class="comment">// 得到本人的书</span></span><br><span class="line">        <span class="keyword">return</span> book;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Book</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String title;                          <span class="comment">// 标题</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">float</span> price;                           <span class="comment">// 价格</span></span><br><span class="line">    <span class="keyword">private</span> Person person;                         <span class="comment">// 一本书属于一个人</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Book</span><span class="params">(String title, <span class="keyword">float</span> price)</span></span>&#123;        <span class="comment">// 通过构造方法设置属性内容</span></span><br><span class="line">        <span class="keyword">this</span>.setTitle(title);</span><br><span class="line">        <span class="keyword">this</span>.setPrice(price);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setTitle</span><span class="params">(String t)</span></span>&#123;</span><br><span class="line">        title = t;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getTitle</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> title;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setPrice</span><span class="params">(<span class="keyword">float</span> p)</span></span>&#123;</span><br><span class="line">        price = p;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">float</span> <span class="title">getPrice</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> price;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setPerson</span><span class="params">(Person person)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.person = person;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Person <span class="title">getPerson</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> person;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RefDemo05</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Person per = <span class="keyword">new</span> Person(<span class="string">"张三"</span>, <span class="number">30</span>);                  <span class="comment">// 实例化Person对象</span></span><br><span class="line">        Book bk = <span class="keyword">new</span> Book(<span class="string">"JAVA SE 核心开发"</span>, <span class="number">90.0f</span>);        <span class="comment">// 实例化Book对象</span></span><br><span class="line">        per.setBook(bk);                                     <span class="comment">// 设置两个对象间的关系，一个人有一本书</span></span><br><span class="line">        bk.setPerson(per);                                  <span class="comment">// 设置两个对象间的关系，一本书属于一个人</span></span><br><span class="line">        System.out.println(<span class="string">"从人找到书 --&gt; 姓名："</span> + per.getName() + <span class="string">"；年龄："</span></span><br><span class="line">        + per.getAge() + <span class="string">"；书名："</span> + per.getBook().getTitle() + <span class="string">"；价格："</span></span><br><span class="line">        + per.getBook().getPrice());</span><br><span class="line">        System.out.println(<span class="string">"从书找到人 --&gt; 书名："</span> + bk.getTitle() + <span class="string">"；价格："</span></span><br><span class="line">        + bk.getPrice() + <span class="string">"；姓名："</span> + bk.getPerson().getName() + <span class="string">"；年龄："</span></span><br><span class="line">        + bk.getPerson().getAge());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>程序运行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">从人找到书 --&gt; 姓名：张三；年龄：30；书名：JAVA SE 核心开发；价格：90.0</span><br><span class="line">从书找到人 --&gt; 书名：JAVA SE 核心开发；价格：90.0；姓名：张三；年龄：30</span><br></pre></td></tr></table></figure>
+<h3 id="范例进一步深入一对一关系"><a class="markdownIt-Anchor" href="#范例进一步深入一对一关系"></a> 范例——进一步深入一对一关系</h3>
+<p>现在有一个新的要求，一个人有一个孩子，每个孩子还会有一本书。因为一个孩子也是一个人，所以并不需要单独建立一个孩子类，只需要简单的修改Person类，在类中增加一个自己的引用即可。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person1</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;                            <span class="comment">// 姓名</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;                                <span class="comment">// 年龄</span></span><br><span class="line">    <span class="keyword">private</span> Book1 book;                             <span class="comment">// 一个人有一本书</span></span><br><span class="line">    <span class="keyword">private</span> Person1 child;                           <span class="comment">// 一个人有一个孩子</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person1</span><span class="params">(String name, <span class="keyword">int</span> age)</span></span>&#123;            <span class="comment">// 通过构造方法设置内容</span></span><br><span class="line">        <span class="keyword">this</span>.setName(name);</span><br><span class="line">        <span class="keyword">this</span>.setAge(age);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String n)</span></span>&#123;                  <span class="comment">// 设置姓名</span></span><br><span class="line">        name = n;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span></span>&#123;                        <span class="comment">// 返回姓名</span></span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> a)</span></span>&#123;                      <span class="comment">// 设置年龄</span></span><br><span class="line">        age = a;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span></span>&#123;                            <span class="comment">// 返回年龄</span></span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setBook</span><span class="params">(Book1 b)</span></span>&#123;                    <span class="comment">// 设置本人的书</span></span><br><span class="line">        book = b;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Book1 <span class="title">getBook</span><span class="params">()</span></span>&#123;                          <span class="comment">// 得到本人的书</span></span><br><span class="line">        <span class="keyword">return</span> book;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setChild</span><span class="params">(Person1 child)</span></span>&#123;             <span class="comment">// 设置孩子</span></span><br><span class="line">        <span class="keyword">this</span>.child = child;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Person1 <span class="title">getChild</span><span class="params">()</span></span>&#123;                       <span class="comment">// 得到孩子</span></span><br><span class="line">        <span class="keyword">return</span> child;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Book1</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String title;                          <span class="comment">// 标题</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">float</span> price;                           <span class="comment">// 价格</span></span><br><span class="line">    <span class="keyword">private</span> Person1 person;                         <span class="comment">// 一本书属于一个人</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Book1</span><span class="params">(String title, <span class="keyword">float</span> price)</span></span>&#123;        <span class="comment">// 通过构造方法设置属性内容</span></span><br><span class="line">        <span class="keyword">this</span>.setTitle(title);</span><br><span class="line">        <span class="keyword">this</span>.setPrice(price);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setTitle</span><span class="params">(String t)</span></span>&#123;</span><br><span class="line">        title = t;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getTitle</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> title;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setPrice</span><span class="params">(<span class="keyword">float</span> p)</span></span>&#123;</span><br><span class="line">        price = p;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">float</span> <span class="title">getPrice</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> price;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setPerson</span><span class="params">(Person1 person)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.person = person;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Person1 <span class="title">getPerson</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> person;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RefDemo06</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Person1 per = <span class="keyword">new</span> Person1(<span class="string">"张三"</span>, <span class="number">30</span>);            <span class="comment">// 实例化Person对象</span></span><br><span class="line">        Person1 cld = <span class="keyword">new</span> Person1(<span class="string">"张草"</span>, <span class="number">10</span>);            <span class="comment">// 定义一个孩子</span></span><br><span class="line">        Book1 bk = <span class="keyword">new</span> Book1(<span class="string">"JAVA SE 核心开发"</span>, <span class="number">90.0f</span>);        <span class="comment">// 实例化Book对象</span></span><br><span class="line">        Book1 b = <span class="keyword">new</span> Book1(<span class="string">"一千零一夜"</span>, <span class="number">30.3f</span>);               <span class="comment">// 定义孩子的书</span></span><br><span class="line">        per.setBook(bk);                                    <span class="comment">// 设置对象间的关系，一个人有一本书</span></span><br><span class="line">        bk.setPerson(per);                                  <span class="comment">// 设置对象间的关系，一本书属于一个人</span></span><br><span class="line">        cld.setBook(b);                                     <span class="comment">// 设置对象间的关系，一个孩子有一本书</span></span><br><span class="line">        b.setPerson(cld);                                   <span class="comment">// 设置对象间的关系，一本书属于一个孩子</span></span><br><span class="line">        per.setChild(cld);                                  <span class="comment">// 设置对象间的关系，一个人有一个孩子</span></span><br><span class="line">        System.out.println(<span class="string">"从人找到书 --&gt; 姓名："</span> + per.getName() + <span class="string">"；年龄："</span></span><br><span class="line">                + per.getAge() + <span class="string">"；书名："</span> + per.getBook().getTitle() + <span class="string">"；价格："</span></span><br><span class="line">                + per.getBook().getPrice());</span><br><span class="line">        System.out.println(<span class="string">"从书找到人 --&gt; 书名："</span> + bk.getTitle() + <span class="string">"；价格："</span></span><br><span class="line">                + bk.getPrice() + <span class="string">"；姓名："</span> + bk.getPerson().getName() + <span class="string">"；年龄："</span></span><br><span class="line">                + bk.getPerson().getAge());</span><br><span class="line">        System.out.println(per.getName() + <span class="string">"的孩子 --&gt; 姓名："</span> + per.getChild().getName()</span><br><span class="line">        + <span class="string">"；年龄："</span> + per.getChild().getAge() + <span class="string">"；书名："</span> + per.getChild().getBook().getTitle()</span><br><span class="line">        + <span class="string">"；价格："</span> + per.getChild().getBook().getPrice());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>程序运行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">从人找到书 --&gt; 姓名：张三；年龄：30；书名：JAVA SE 核心开发；价格：90.0</span><br><span class="line">从书找到人 --&gt; 书名：JAVA SE 核心开发；价格：90.0；姓名：张三；年龄：30</span><br><span class="line">张三的孩子 --&gt; 姓名：张草；年龄：10；书名：一千零一夜；价格：30.3</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>xiyou
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://xiyouhujing.github.io/2019/05/24/Java笔记：引用传递及基本应用/" title="Java笔记：引用传递及基本应用">http://xiyouhujing.github.io/2019/05/24/Java笔记：引用传递及基本应用/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/java基础/" rel="tag"><i class="fa fa-tag"></i> java基础</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2019/05/16/Java笔记：String/" rel="next" title="Java笔记：String">
+                  <i class="fa fa-chevron-left"></i> Java笔记：String
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+                <a href="/2019/06/05/Java笔记：this关键字/" rel="prev" title="Java笔记：this关键字">
+                  Java笔记：this关键字 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#引用传递"><span class="nav-number">1.</span> <span class="nav-text"> 引用传递</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#引用传递范例一"><span class="nav-number">1.1.</span> <span class="nav-text"> 引用传递范例一</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引用传递范例二"><span class="nav-number">1.2.</span> <span class="nav-text"> 引用传递范例二</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引用传递范例三"><span class="nav-number">1.3.</span> <span class="nav-text"> 引用传递范例三</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接收本类的引用"><span class="nav-number">2.</span> <span class="nav-text"> 接收本类的引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#范例一对一关系"><span class="nav-number">3.</span> <span class="nav-text"> 范例——一对一关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#范例进一步深入一对一关系"><span class="nav-number">4.</span> <span class="nav-text"> 范例——进一步深入一对一关系</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="xiyou"
+      src="/images/touxiang.jpg">
+  <p class="site-author-name" itemprop="name">xiyou</p>
+  <div class="site-description" itemprop="description">保持快乐，保持健康，保持可爱</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/xiyouhujing" title="GitHub → https://github.com/xiyouhujing" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:hujingxiyou@163.com" title="E-Mail → mailto:hujingxiyou@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/hujingxiyou" title="CSDN → https://blog.csdn.net/hujingxiyou" rel="noopener" target="_blank"><i class="fa fa-fw fa-crosshairs"></i>CSDN</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">xiyou</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">109k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">1:39</span>
+</div>
+
+
+  <script src='https://unpkg.com/mermaid@/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+<script src="/js/utils.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme: 'forest',
+      logLevel: 3,
+      flowchart: { curve: 'linear' },
+      gantt: { axisFormat: '%m/%d/%Y' },
+      sequence: { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+
+  
+
+  
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+    
+
+  
+
+</body>
+</html>
